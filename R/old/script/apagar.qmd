@@ -1,0 +1,83 @@
+---
+title: "apagar"
+format: html
+editor: visual
+---
+
+```{r}
+#| label: test
+#| include: false
+#| echo: false
+#| error: false
+
+library(tidyverse)
+library(gt)
+tbl_1  = airquality %>% head()
+tbl_2 = mtcars %>% head()
+```
+
+```{r}
+#| label: tbl-table-1
+#| tbl-cap: "qualidade do ar"
+#| echo: false
+
+tbl_1 %>% gt(caption = "qualidade do ar")
+```
+
+asdsa dsad sadsa das see @tbl-table-1.
+
+```{r}
+#| label: tbl-table-2
+#| tbl-cap: "mtCarros"
+#| echo: false
+
+tbl_2 %>% gt()
+
+```
+
+$$
+\frac{\partial \mathrm C}{ \partial \mathrm t } + \frac{1}{2}\sigma^{2} \mathrm S^{2}
+\frac{\partial^{2} \mathrm C}{\partial \mathrm C^2}
+  + \mathrm r \mathrm S \frac{\partial \mathrm C}{\partial \mathrm S}\ =
+  \mathrm r \mathrm C 
+$$ {#eq-black-scholes}
+
+$$
+\sum_{x=1} \frac{1}{2}
+$${#eq-crieiagora}
+
+
+@eq-crieiagora
+
+```{mermaid}
+flowchart LR
+  A[Hard edge] --> B(Round edge)
+  B --> C{Decision}
+  C --> D[Result one]
+  C --> E[Result two]
+```
+
+```{mermaid}
+flowchart LR
+  A[tidyverse] --> B[grafico]
+  C[ploty] --> B
+  D[test] --> B
+  B --> E{decisao}
+
+```
+
+
+```{r}
+#| label: grafico
+#| fig-cap: grafico-linhas
+airquality %>% ggplot(aes(y=Solar.R,x = Month)) + geom_line()
+
+```
+
+
+asdasdas
+sada
+
+sadasd
+
+veja {#grafico-linhas}

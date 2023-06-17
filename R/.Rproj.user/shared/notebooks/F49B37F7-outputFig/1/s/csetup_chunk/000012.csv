@@ -1,0 +1,88 @@
+"0","library(tidyverse)
+"
+"2","── [1mAttaching core tidyverse packages[22m ───────────────── tidyverse 2.0.0 ──
+[32m✔[39m [34mdplyr    [39m 1.1.2     [32m✔[39m [34mreadr    [39m 2.1.4
+[32m✔[39m [34mforcats  [39m 1.0.0     [32m✔[39m [34mstringr  [39m 1.5.0
+[32m✔[39m [34mggplot2  [39m 3.4.2     [32m✔[39m [34mtibble   [39m 3.2.1
+[32m✔[39m [34mlubridate[39m 1.9.2     [32m✔[39m [34mtidyr    [39m 1.3.0
+[32m✔[39m [34mpurrr    [39m 1.0.1     "
+"2","── [1mConflicts[22m ─────────────────────────────────── tidyverse_conflicts() ──
+[31m✖[39m [34mdplyr[39m::[32mfilter()[39m masks [34mstats[39m::filter()
+[31m✖[39m [34mdplyr[39m::[32mlag()[39m    masks [34mstats[39m::lag()
+[36mℹ[39m Use the ]8;;http://conflicted.r-lib.org/conflicted package]8;; to force all conflicts to become errors"
+"0","library(quantmod)"
+"2","Carregando pacotes exigidos: xts
+"
+"2","Carregando pacotes exigidos: zoo
+"
+"2","
+Attaching package: ‘zoo’
+
+"
+"2","The following objects are masked from ‘package:base’:
+
+    as.Date, as.Date.numeric
+
+"
+"2","
+######################### Warning from 'xts' package ##########################
+#                                                                             #
+# The dplyr lag() function breaks how base R's lag() function is supposed to  #
+# work, which breaks lag(my_xts). Calls to lag(my_xts) that you type or       #
+# source() into this session won't work correctly.                            #
+#                                                                             #
+# Use stats::lag() to make sure you're not using dplyr::lag(), or you can add #
+# conflictRules('dplyr', exclude = 'lag') to your .Rprofile to stop           #
+# dplyr from breaking base R's lag() function.                                #
+#                                                                             #
+# Code in packages is not affected. It's protected by R's namespace mechanism #
+# Set `options(xts.warn_dplyr_breaks_lag = FALSE)` to suppress this warning.  #
+#                                                                             #
+###############################################################################
+"
+"2","
+Attaching package: ‘xts’
+
+"
+"2","The following objects are masked from ‘package:dplyr’:
+
+    first, last
+
+"
+"2","Carregando pacotes exigidos: TTR
+"
+"2","Registered S3 method overwritten by 'quantmod':
+  method            from
+  as.zoo.data.frame zoo 
+"
+"0","library(scales)"
+"2","
+Attaching package: ‘scales’
+
+"
+"2","The following object is masked from ‘package:purrr’:
+
+    discard
+
+"
+"2","The following object is masked from ‘package:readr’:
+
+    col_factor
+
+"
+"0","library(PerformanceAnalytics)"
+"2","
+Attaching package: ‘PerformanceAnalytics’
+
+"
+"2","The following object is masked from ‘package:graphics’:
+
+    legend
+
+"
+"0","library(openxlsx)"
+"0","library(gt)"
+"0",""
+"0","symbols = c(""BTC-USD"",""ETH-USD"",""USDC-USD"", ""USDT-USD"", ""BNB-USD"", ""XRP-USD"", ""ADA-USD"",""DOGE-USD"",""SOL-USD"",""MATIC-USD"")"
+"0","asset_return_long = read.xlsx(""outputData/dataAssetReturn.xlsx"")"
+"0","possibilities = read.xlsx(""outputData/dataPossibilities.xlsx"")"

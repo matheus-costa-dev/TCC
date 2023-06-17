@@ -1,0 +1,8 @@
+"0","#| label: test"
+"0","#| warnings: false"
+"0","#| echo: false"
+"0","#| error: false"
+"0",""
+"0","library(tidyverse)"
+"0","library(gt)"
+"0","tbl_1  = airquality %>% head()"

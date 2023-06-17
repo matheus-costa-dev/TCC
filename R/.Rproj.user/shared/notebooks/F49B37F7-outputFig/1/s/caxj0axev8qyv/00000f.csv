@@ -1,0 +1,22 @@
+"0","possibilities %>%
+  ggplot(aes(x = sd, y = mean, color = sharpeRatePortfolio)) +
+  geom_point() +
+  theme_classic() +
+  scale_y_continuous(labels = scales::percent) +
+  scale_x_continuous(labels = scales::percent) +
+  labs(x = 'Risco',
+       y = 'Retorno esperado',
+       title = ""Optimização de portfolio & Fronteira eficiente"",
+       colour = ""Indice sharpe"") +
+  geom_point(aes(x = sd,
+                 y = mean), data = min_var, color = 'red') +
+  geom_point(aes(x = sd,
+                 y = mean), data = max_sr, color = 'red') +
+  geom_text(x=min_var$sd, y = min_var$mean + .0002,label=""Menor risco"", color = ""red"") +
+  geom_text(x=max_sr$sd, y = max_sr$mean + .0002,label=""Maior indice sharpe"", color = ""red"", check_overlap = T) +
+  theme_bw() +
+  theme( plot.title = element_text(hjust = .5))
+"
+"2","Error in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y,  : 
+  invalid input 'Optimiza��o de portfolio & Fronteira eficiente' in 'utf8towcs'
+"
