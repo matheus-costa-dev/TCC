@@ -3,7 +3,7 @@ library(quantmod)
 library(scales)
 library(PerformanceAnalytics)
 library(openxlsx)
-source("functions/loopPossibilites.R")
+source("functions/possibilites.R")
 
 options(scipen=999)
 from = "2020-01-01"
@@ -43,29 +43,35 @@ by = .1
 w = 1/length(symbols) %>% rep(length(symbols))
 
 
-possibilities = read.xlsx("outputData/Possibilities0.1-0.1375.xlsx") %>% 
+possibilities = read.xlsx("outputData/Possibilities0.xlsx") %>% 
   mutate_all(~as.numeric(.x)) %>%
   select(1:Nsymbols) %>%
   setNames(symbols)
 
 possibilities = loopPossibilites(possibilities,asset_return,Nsymbols,rfr)
 
-write.xlsx(possibilities,"outputData/PossibilitiesStockMarket0.1-0.xlsx")
+write.xlsx(possibilities,"outputData/PossibilitiesStockMarket0.00531.xlsx")
 
-min_var01375 <- slice_min(possibilities01375,sd)
-max_sr01375 <- slice_max(possibilities01375,sharpeRatePortfolio)
-max_re01375 <- slice_max(possibilities01375,mean)
-
-sd_portfolio_optimized01375 = sd(portfolio_return_opmitized01375$portfolio.returns)
-mean_portfolio_optimized01375 = mean(portfolio_return_opmitized01375$portfolio.returns)
-sr_portfolio_optimized01375 = max_sr01375$sharpeRatePortfolio
+min_var <- slice_min(possibilities,sd)
+max_sr <- slice_max(possibilities,sharpeRatePortfolio)
+max_re <- slice_max(possibilities,sharpeRatePortfolio)
 
 
+bestCombination = slice_max(possibilities,sharpeRatePortfolio)
+summaryBestCombination = bestCombination[which(bestCombination[1:Nsymbols] > 0)]
 
-portfolio_return = Return.portfolio(asset_return,weights = w,rebalance_on = "months")
-sd_portfolio = sd(portfolio_return$portfolio.returns)
-mean_portfolio = mean(portfolio_return$portfolio.returns)
-sr_portfolio = SharpeRatio(portfolio_return,Rf=rfr,FUN = "StdDev")
+
+
+w = max_sr[1:Nsymbols] %>% unlist()
+
+portfolio_return_opmitized = Return.portfolio(asset_return,
+                                              weights = w,
+                                              rebalance_on = "months")
+
+sd_portfolio_optimized = sd(portfolio_return_opmitized$portfolio.returns)
+mean_portfolio_optimized = mean(portfolio_return_opmitized$portfolio.returns)
+sr_portfolio_optimized = max_sr$sharpeRatePortfolio
+
 
 ## grafico risco x retorno
 
@@ -121,44 +127,6 @@ portfolio_plot %>%
         legend.spacing.x = unit(0,"mm") ,
         legend.direction = "horizontal")
 
-### possibilidades
-
-possibilities = rep(list(seq(0,1,by)),length(symbols)) %>%
-  reduce(cbind) %>% as_tibble() %>%
-  setNames(symbols)
-
-possibilities = do.call(expand.grid, possibilities[1:length(symbols)])
-rows = which(rowSums(possibilities) == 1)
-possibilities = possibilities[rows,]
-
-for(i in 1:nrow(possibilities)) {
-  
-  
-  w = possibilities[i,1:length(symbols)]  %>% as.numeric()
-  
-  portfolio_return = Return.portfolio(asset_return,weights = w,rebalance_on = "months")
-  
-  possibilities[i ,"sharpeRatePortfolio"] = SharpeRatio(portfolio_return,Rf=rfr,FUN = "StdDev")
-  possibilities[i ,"sd"] = sd(portfolio_return$portfolio.returns)
-  possibilities[i,"mean"] = mean(portfolio_return$portfolio.returns)
-  
-  print(paste(i,nrow(possibilities),sep = " - "))
-  
-}
-
-min_var <- possibilities[which.min(possibilities$sd),]
-max_sr <- possibilities[which.max(possibilities$sharpeRatePortfolio),]
-max_re <- possibilities[which.max(possibilities$mean),]
-
-w = max_sr[1:length(symbols)] %>% unlist()
-
-portfolio_return_opmitized = Return.portfolio(asset_return,
-                                              weights = w,
-                                              rebalance_on = "months")
-
-sd_portfolio_optimized = sd(portfolio_return_opmitized$portfolio.returns)
-mean_portfolio_optimized = mean(portfolio_return_opmitized$portfolio.returns)
-sr_portfolio_optimized = max_sr$sharpeRatePortfolio
 
 ### grafico risco x retorno optimizado
 

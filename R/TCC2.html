@@ -1,0 +1,1233 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt" xml:lang="pt"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.361">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Matheus Pereira Costa">
+
+<title>TCC</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="TCC2_files/libs/clipboard/clipboard.min.js"></script>
+<script src="TCC2_files/libs/quarto-html/quarto.js"></script>
+<script src="TCC2_files/libs/quarto-html/popper.min.js"></script>
+<script src="TCC2_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="TCC2_files/libs/quarto-html/anchor.min.js"></script>
+<link href="TCC2_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="TCC2_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="TCC2_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="TCC2_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="TCC2_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="TCC2_files/libs/quarto-diagram/mermaid.min.js"></script>
+<script src="TCC2_files/libs/quarto-diagram/mermaid-init.js"></script>
+<link href="TCC2_files/libs/quarto-diagram/mermaid.css" rel="stylesheet">
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body>
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Índice</h2>
+   
+  <ul>
+  <li><a href="#tema" id="toc-tema" class="nav-link active" data-scroll-target="#tema"><span class="header-section-number">1</span> TEMA</a></li>
+  <li><a href="#resumo" id="toc-resumo" class="nav-link" data-scroll-target="#resumo"><span class="header-section-number">2</span> RESUMO</a></li>
+  <li><a href="#sec-introducao" id="toc-sec-introducao" class="nav-link" data-scroll-target="#sec-introducao"><span class="header-section-number">3</span> INTRODUÇÃO</a></li>
+  <li><a href="#sec-problemaPesquisa" id="toc-sec-problemaPesquisa" class="nav-link" data-scroll-target="#sec-problemaPesquisa"><span class="header-section-number">4</span> PROBLEMA DE PESQUISA</a></li>
+  <li><a href="#sec-objetivos" id="toc-sec-objetivos" class="nav-link" data-scroll-target="#sec-objetivos"><span class="header-section-number">5</span> OBJETIVOS</a>
+  <ul class="collapse">
+  <li><a href="#sec-objetivos-Geral" id="toc-sec-objetivos-Geral" class="nav-link" data-scroll-target="#sec-objetivos-Geral"><span class="header-section-number">5.1</span> GERAL</a></li>
+  <li><a href="#sec-objetivos-Especifico" id="toc-sec-objetivos-Especifico" class="nav-link" data-scroll-target="#sec-objetivos-Especifico"><span class="header-section-number">5.2</span> ESPECÍFICOS</a></li>
+  </ul></li>
+  <li><a href="#sec-metodologia" id="toc-sec-metodologia" class="nav-link" data-scroll-target="#sec-metodologia"><span class="header-section-number">6</span> METODOLOGIA</a></li>
+  <li><a href="#sec-desenvolvimento" id="toc-sec-desenvolvimento" class="nav-link" data-scroll-target="#sec-desenvolvimento"><span class="header-section-number">7</span> DESENVOLVIMENTO</a>
+  <ul class="collapse">
+  <li><a href="#sec-desenvolvimento-Criptomoeda" id="toc-sec-desenvolvimento-Criptomoeda" class="nav-link" data-scroll-target="#sec-desenvolvimento-Criptomoeda"><span class="header-section-number">7.1</span> CRIPTOMOEDA</a></li>
+  <li><a href="#sec-desenvolvimento-Moeda" id="toc-sec-desenvolvimento-Moeda" class="nav-link" data-scroll-target="#sec-desenvolvimento-Moeda"><span class="header-section-number">7.2</span> MOEDA</a></li>
+  <li><a href="#sec-desenvolvimento-Markowitz" id="toc-sec-desenvolvimento-Markowitz" class="nav-link" data-scroll-target="#sec-desenvolvimento-Markowitz"><span class="header-section-number">7.3</span> MARKOWITZ</a></li>
+  </ul></li>
+  <li><a href="#sec-Resultados" id="toc-sec-Resultados" class="nav-link" data-scroll-target="#sec-Resultados"><span class="header-section-number">8</span> RESULTADOS</a></li>
+  <li><a href="#sec-Conclusão" id="toc-sec-Conclusão" class="nav-link" data-scroll-target="#sec-Conclusão"><span class="header-section-number">9</span> Conclusão</a></li>
+  <li><a href="#sec-Bibliografia" id="toc-sec-Bibliografia" class="nav-link" data-scroll-target="#sec-Bibliografia"><span class="header-section-number">10</span> BIBLIOGRAFIA</a></li>
+  </ul>
+</nav>
+</div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">TCC</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Autor</div>
+    <div class="quarto-title-meta-contents">
+             <p>Matheus Pereira Costa </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Data de Publicação</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">18 de junho de 2023</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="tema" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="tema"><span class="header-section-number">1</span> TEMA</h2>
+<p>Analise da aplicação da teoria moderna de portfolio sobre o mercado das criptomoedas</p>
+</section>
+<section id="resumo" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="resumo"><span class="header-section-number">2</span> RESUMO</h2>
+<p>O mercado de criptomoeda tem se apresentado como alternativa aos ativos de renda variável, transformando assim novos modelos de negócios e formas de realizar transações, no entanto por ser algo recente ainda há poucos estudos utilizando a moderna teoria de portfólio de Markowitz aplicado a este setor, devido à alta instabilidade deste mercado apresenta tem por consequência o desejo em verificar a aplicação da moderna teoria de portfólio de Markowitz. Por isso essa pesquisa se caracteriza como uma pesquisa exploratória-quantitativa que usará como abordagem de revisão bibliográfica e análise de documentos.</p>
+<p>Context: O mercado de criptomoeda tem se maturado como uma forte alternativa ao mercado de ações convencionais, transformando assim novos modelos de negócios e formas de realizar transações</p>
+<p>Gap: no entanto por ser algo recente ainda há poucos estudos utilizando a moderna teoria de portfólio de Markowitz aplicado a este setor</p>
+<p>Purpose: devido a alta instabilidade deste mercado apresenta tem por consequência o desejo em verificar a aplicação da moderna teoria de portfólio de Markowitz</p>
+<p>Methodology: Por isso essa pesquisa se caracteriza como uma pesquisa exploratória-quantitativa que usará como abordagem de revisão bibliográfica e análise de documentos</p>
+<p>Results:</p>
+</section>
+<section id="sec-introducao" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="sec-introducao"><span class="header-section-number">3</span> INTRODUÇÃO</h2>
+<p>O termo criptomoeda foi um dos assuntos mais discutidos na última década principalmente durante o período de pandemia da covid-19 <span class="citation" data-cites="ozdurak2022">(<a href="#ref-ozdurak2022" role="doc-biblioref">Ozdurak, Umut, e Ozay 2022</a>)</span>, no qual esse período foi marcado por grandes incertezas dos investidores em relação ao mercado tradicional devido as diversas restrições impostas pelos governos locais na tentativa de conter o avanço do vírus. <span class="citation" data-cites="volosovych2023">(<a href="#ref-volosovych2023" role="doc-biblioref">Volosovych, Shevchenko, e Sholoiko 2023</a>)</span></p>
+<p>Durante esse período o mercado de criptoativos tiveram um crescimento de $235,5 Bilhões em 2016 para $1,3 Trilhões 2021. <span class="citation" data-cites="volosovych2023">(COINMARKETCAP. 2021 APUD <a href="#ref-volosovych2023" role="doc-biblioref">Volosovych, Shevchenko, e Sholoiko 2023</a>)</span></p>
+<p>Sendo constatado durante um estudo realizado por (Drozdz et al 2020) ao utilizar a correlação de Pearson comparou o mercado de ativos, moedas, commodities e criptomoedas e encontrou que o mercado de criptmoedas é facilmente influenciável em períodos turbulentos pelo mercado de ativos tradicional enquanto os demais não possuem uma correlação significativa. <span class="citation" data-cites="nguyen2022">(APUD <a href="#ref-nguyen2022" role="doc-biblioref">Nguyen et al. 2022</a>)</span></p>
+<p>Sendo ela de tal forma para alguns investidores uma forma alternativa de investimento além do ouro.</p>
+<p>além disso com a escalada da utilização de criptomoedas para realizar pagamentos e negócios também foi verificado segundo <span class="citation" data-cites="shirakawa2019">(<a href="#ref-shirakawa2019" role="doc-biblioref">Shirakawa e Korwatanasakul 2019</a>)</span> a utilização de tais novos meios para a realização de atividades ilegais como lavagem de dinheiro, financiamento ao tráfico de drogas entre outros crimes.</p>
+<p>Sendo de tal forma foi levantada a questão conceitual da classificação das criptomoedas e como deveria ser tratada no âmbito jurídico e legislativo.</p>
+<p>No qual para <span class="citation" data-cites="white2020">(<a href="#ref-white2020" role="doc-biblioref">White et al. 2020</a>)</span> ao classificar o bitcoin definiu com base no seu comportamento como algum produto baseado em tecnologia, uma classe de ativo emergente ou um evento bolha ao invés de ser uma moeda ou título.</p>
+<p>Foi analisado por (Brauneis and Mestel, 2019) os benefícios da inclusão das criptmoedas no portfolio utilizando a estrutura de markowtiz e constataram que elas reduziam o risco do portfolio <span class="citation" data-cites="ozdurak2022">(APUD <a href="#ref-ozdurak2022" role="doc-biblioref">Ozdurak, Umut, e Ozay 2022</a>)</span></p>
+<p>Porém existe poucos estudos sobre a utilização do método criado por markowtiz aplicado somente ao mercado de criptmoedas e, esta lacuna que o corrente trabalho visa preencher.</p>
+<p>Para fins nesse estudo foi adotado a classificação de uma classe de ativo financeiro emergente devido a sua natureza especulativa e o seu perfil de risco e retorno do mercado no qual este trabalho busca verifica a possibilidade da aplicação da moderna teoria de portfólio de Markowitz sobre essa classe de ativo utilizando assim o índice Sharpe para encontrar portfólio tangente e o portfólio de menor risco.</p>
+<p>Este trabalho está dividido da seguinte maneira, na seção <a href="#sec-desenvolvimento">Seção&nbsp;7</a> Desenvolvimento , seção <a href="#sec-Resultados">Seção&nbsp;8</a> Resultados e na seção <a href="#sec-Conclusão">Seção&nbsp;9</a> Conclusão .</p>
+<p>Na seção <a href="#sec-desenvolvimento">Seção&nbsp;7</a> é subdivido em <a href="#sec-desenvolvimento-Criptomoeda">Seção&nbsp;7.1</a> Criptmoeda; aonde se aborda os conceitos de criptomoeda, criptografia, blockchain, mineração, apresenta,os riscos, oportunidades e a diferença do mercado de ações tradicional para o de criptmoedas, <a href="#sec-desenvolvimento-Moeda">Seção&nbsp;7.2</a> Moeda; é apresentado o conceito de moeda, suas funções, classificação da criptmoeda, regulação e a situação regulatória de cada país sobre o assunto e <a href="#sec-desenvolvimento-Markowitz">Seção&nbsp;7.3</a> Markowitz; o conceito e suas aplicações</p>
+</section>
+<section id="sec-problemaPesquisa" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="sec-problemaPesquisa"><span class="header-section-number">4</span> PROBLEMA DE PESQUISA</h2>
+<p>Qual o impacto da utilização da moderna teoria de portfólio sobre o mercado de cripto ativos dado a alta instabilidade do mesmo.</p>
+</section>
+<section id="sec-objetivos" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="sec-objetivos"><span class="header-section-number">5</span> OBJETIVOS</h2>
+<section id="sec-objetivos-Geral" class="level3" data-number="5.1">
+<h3 data-number="5.1" class="anchored" data-anchor-id="sec-objetivos-Geral"><span class="header-section-number">5.1</span> GERAL</h3>
+<p>verificar o impacto da utilização da moderna teoria de portfólio sobre o mercado de criptoativos.</p>
+</section>
+<section id="sec-objetivos-Especifico" class="level3" data-number="5.2">
+<h3 data-number="5.2" class="anchored" data-anchor-id="sec-objetivos-Especifico"><span class="header-section-number">5.2</span> ESPECÍFICOS</h3>
+<ul>
+<li>Conceituar criptoativos como ativos financeiros</li>
+<li>Diferenciar os criptoativos dos ativos financeiros usuais</li>
+<li>Analisar os impactos das regulações desse setor no Brasil</li>
+<li>Analisar se a alta instabilidade do setor afeta diretamente na utilização do método da moderna teoria de portfolio</li>
+<li>Comparar o resultado da utilização do método contra uma simples seleção de portifólio</li>
+</ul>
+</section>
+</section>
+<section id="sec-metodologia" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="sec-metodologia"><span class="header-section-number">6</span> METODOLOGIA</h2>
+<p>Esse trabalho teve por intenção realizar um estudo pra verificar a aplicabilidade do método da moderna teoria de portfólio ao setor das criptomoedas.</p>
+<p>Portanto para alcançar ao objetivo traçado esta pesquisa se identifica em sua abordagem como quantitativa e possui natureza básica com objetivos exploratórios, usando o método dedutivo.</p>
+<p>Tendo como fonte de pesquisa utilizada para o embasamento cientifico obtidas através das seguintes plataformas: Periódicos CAPES, Scopus e Google Acadêmico. As pesquisas foram limitadas em até 5 anos de diferença com restrição da linguagem em português e inglês.</p>
+<p>Para realizar os cálculos foi utilizado a linguagem de programação R e os seguintes pacotes: <strong>corrplot</strong> <span class="citation" data-cites="wei2021">(<a href="#ref-wei2021" role="doc-biblioref">Wei e Simko 2021</a>)</span>, <strong>knitr</strong> <span class="citation" data-cites="xie2014">(<a href="#ref-xie2014" role="doc-biblioref">Xie 2014</a>)</span>, <strong>openxlsx</strong> <span class="citation" data-cites="schauberger2023">(<a href="#ref-schauberger2023" role="doc-biblioref">Schauberger e Walker 2023</a>)</span>, <strong>PerformanceAnalytics</strong> <span class="citation" data-cites="peterson2020">(<a href="#ref-peterson2020" role="doc-biblioref">Peterson e Carl 2020</a>)</span>, <strong>quantmod</strong> <span class="citation" data-cites="ryan2022">(<a href="#ref-ryan2022" role="doc-biblioref">Ryan e Ulrich 2022</a>)</span>, <strong>rbcb</strong> <span class="citation" data-cites="freitas2022">(<a href="#ref-freitas2022" role="doc-biblioref">Freitas 2022</a>)</span> ,<strong>RColorBrewer</strong> <span class="citation" data-cites="neuwirth2022">(<a href="#ref-neuwirth2022" role="doc-biblioref">Neuwirth 2022</a>)</span>, <strong>scales</strong><span class="citation" data-cites="wickham2022">(<a href="#ref-wickham2022" role="doc-biblioref">Wickham e Seidel 2022</a>)</span> e <strong>tidyverse</strong><span class="citation" data-cites="wickham2019">(<a href="#ref-wickham2019" role="doc-biblioref">Wickham et al. 2019</a>)</span>.</p>
+<p>é ilustrado a utilização em cada um dos pacotes mencionados no seguinte diagrama</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+ a([Obtenção de dados]) ---|Selic| b[rbcb] 
+ a ---|Criptmoedas| c[quantmod] 
+ b &amp; c --&gt; d[Transformação]
+ d --&gt; e[tidyverse] &amp; f[base] &amp; g[PerformanceAnalytics]
+ e &amp; f &amp; g --&gt; h{Resultado}
+ h --&gt; i[Grafico] &amp; j[Tabela]
+ i --&gt; k[tidyverse] &amp; l[corrplot] &amp; m[RColorBrewer]
+ j --&gt; n[tidyverse] &amp; o[knitr]
+  
+</pre>
+</div>
+</div>
+</div>
+</div>
+<p>Foram utilizadas também como fonte o livro <span class="citation" data-cites="regenstein2018">(<a href="#ref-regenstein2018" role="doc-biblioref">Regenstein 2018</a>)</span> e o site <span class="citation" data-cites="portfoli2018">(Codingfinance, <a href="#ref-portfoli2018" role="doc-biblioref">2018</a>)</span> para a realização dos codigos em R.</p>
+<p>Os cálculos para a realização dos retornos mensais, retornos do portfólio e do índice Sharpe foram performados através das seguintes funções <em>Return.calculate</em>, <em>Return.portfolio</em> e <em>SharpeRatio</em>. Estas funções pertencem ao pacote <strong>PerformanceAnalytics</strong>.</p>
+<p>Sendo a formula aplicada da função <em>Return.Calculate</em></p>
+<p><span id="eq-return"><span class="math display">\[
+R = log(r_{i,t}) - log(r_{i,t - 1})
+\tag{1}\]</span></span></p>
+<p>Onde:</p>
+<p><span class="math inline">\(_{i}\)</span> = Ativo<br>
+<span class="math inline">\(_{t}\)</span> = Período<br>
+<span class="math inline">\(r\)</span> = Valor do ativo<br>
+<span class="math inline">\(R\)</span> = Retorno</p>
+<p>Sendo a formula aplicada da função <em>Return.portfolio</em></p>
+<p><span id="eq-portfolioReturn"><span class="math display">\[
+R_{p} = \sum_{t = 1}^{N}i_{t}w_{t}
+\tag{2}\]</span></span></p>
+<p>Onde:</p>
+<p><span class="math inline">\(i_{t}\)</span> = o ativo no período<br>
+<span class="math inline">\(w_{t}\)</span> = Peso no período<br>
+<span class="math inline">\(R_{p}\)</span> = Retorno do portfolio</p>
+<p>Sendo a formula aplicada da função <em>SharpeRatio</em></p>
+<p><span id="eq-sharpeRation"><span class="math display">\[
+sr = \frac{R_{p} - R_{f}}{\sigma_{p}}  
+\tag{3}\]</span></span></p>
+<p>Onde:</p>
+<p><span class="math inline">\(sr\)</span> = Indice sharpe<br>
+<span class="math inline">\(R_{p}\)</span> = Retorno do portfolio<br>
+<span class="math inline">\(R_{f}\)</span> = Taxa livre de risco<br>
+<span class="math inline">\(\sigma_{p}\)</span>= Desvio padrão do portfolio</p>
+<p>A taxa livre de risco foi utilizada com base na taxa selic utilizando a estrutura de <span class="citation" data-cites="ramalho2020">(<a href="#ref-ramalho2020" role="doc-biblioref">RAMALHO 2020</a>)</span> no qual transforma a taxa selic anual média para mensal através da equação de conversão de juros anual para mensal através da seguinte formula matematica</p>
+<p><span class="math display">\[
+i_{a.m} = (1+\overline{i_{a.a}} )^{\frac{1}{12}} - 1
+\]</span></p>
+<p>Onde:</p>
+<p><span class="math inline">\(i_{a.m}\)</span> = taxa de juros ao mês</p>
+<p><span class="math inline">\(i_{a.a}\)</span> = taxa de juros média ao ano</p>
+<p>Para tal os dados foram obtidos através da função <em>get_series</em> do pacote <strong>rbcb</strong> no qual realiza consultas na API do banco central, sendo os dados coletados do mesmo periodo analisado das criptmoedas 01/01/2020 até 01/01/2023sendo a taxa selic anual média de 6.56%e a taxa selic mensal de 0.03%.</p>
+<p>Para performar os cálculos das matrizes de covariância, correlação e a expectativa de retorno média foram utilizadas as funções <em>cov</em>, <em>cor</em> e <em>mean</em> do pacote <strong>Base</strong>.</p>
+<p>Sendo a formula aplicada da função <em>cov</em></p>
+<p><span id="eq-covariance"><span class="math display">\[
+cov(x,y) = \frac{\sum_{i=1}^{n}(x_{i}-\overline{x})(y_{i}-\overline{y})}{n-1}
+\tag{4}\]</span></span></p>
+<p>Onde:</p>
+<p><span class="math inline">\(x_{i}\)</span> = valor de x<br>
+<span class="math inline">\(\overline{x}\)</span> = média dos valores de x<br>
+<span class="math inline">\(y_{i}\)</span> = valor de y<br>
+<span class="math inline">\(\overline{y}\)</span> = média dos valores de y<br>
+<span class="math inline">\(n\)</span> = tamanho da amostra</p>
+<p>Sendo a formula aplicada da função <em>cor</em></p>
+<p><span id="eq-correlation"><span class="math display">\[
+cor(x,y) = \frac{cov(x,y)}{\sigma_{x}\sigma{y}}
+\tag{5}\]</span></span></p>
+<p>Onde:</p>
+<p><span class="math inline">\(cov(x,y)\)</span> = o resultado da covariância de x e y<br>
+<span class="math inline">\(\sigma_{x}\)</span>= o desvio padrão de x<br>
+<span class="math inline">\(\sigma_{y}\)</span> = o desvio padrão de y</p>
+<p>Sendo a formula aplicada da função <em>mean</em></p>
+<p><span id="eq-mean"><span class="math display">\[
+E(R) = \frac{\sum x}{n}
+\tag{6}\]</span></span></p>
+<p>x = os valores de x</p>
+<p>n = tamanho da amostra</p>
+<p>Para realizar a criação dos gráficos foi utilizado um conjunto de funções do pacote <strong>tidyverse</strong> sendo eles: <em>ggplot</em>, <em>geom_point</em>, <em>theme_classic</em>, <em>scale_y_continuous</em>, <em>scale_x_continuous</em> e <em>labs</em>.</p>
+<p>Além dessa aplicação para a realização de gráficos o pacote do tidyverse também foi utilizado para realizar a transformação da tabela de um formato largo para o longo através da função <em>pivot_longer</em>, nesse processo também foi necessário a transformação do arquivo provindo do formato xts para o formato tidy usando a função <em>as.data.frame</em> e <em>rownames_to_column</em>.</p>
+<p>Esses procedimentos de transformação dos dados foram aplicados para que pudesse ser feito o gráfico retorno esperado e risco de cada ativo. Para realizar as diversas combinações de pesos possíveis ao portfólio, foi usado as funções <em>expand.grid</em>, <em>do.call</em>, <em>rep, list</em>, <em>rowSums</em> ,<em>which, seq</em>, <em>length</em> e <em>setNames</em> do pacote <strong>Base</strong> e <em>as_tibble</em> e <em>reduce</em> do pacote <strong>tidyverse</strong>.</p>
+<p>Para a realização do gráfico de covariancia foram utilizadas as funções <em>corrplot</em> do pacote <strong>corrplot</strong> para realizar o gráfico e <em>brewer.pal</em> para a seleção da paleta de cores do pacote <strong>RColorBrewer</strong>.</p>
+<p>É importante salientar que é variada por 0.1, ou seja 10%, os pesos em cada combinação respeitando que a somatória de todos os pesos da carteira deva ser igual a 1, sendo 1 igual a 100%, gerando assim um total de 18832 possíveis combinações com 8 ativos na carteira.</p>
+<p>Para iterar sobre cada um dos pesos foi utilizado o <em>FOR</em> que é uma função de looping até que determinada condição seja satisfeita.</p>
+<p>Os dados foram obtidos através da plataforma Yahoo Finance utilizando a função <em>getSymbols</em> do pacote <strong>quantmod</strong>, tendo o período analisado de 01/01/2020 até 01/01/2023</p>
+<p>Sendo os ativos selecionados: BTC-USD, ETH-USD, BNB-USD, XRP-USD, ADA-USD, DOGE-USD, SOL-USD, MATIC-USD. O critério utilizado pra fazer a seleção das criptomoedas foi as 8 maiores criptomoedas em relação a capitalização de mercado, sendo removido o USDT-USD e USDC-USD devido a elas funcionarem como uma moeda digital fiduciaria no qual é pareado o seu valor 1:1 com o dolar, sendo este dado extraído da plataforma do coinmarketcap.</p>
+</section>
+<section id="sec-desenvolvimento" class="level2" data-number="7">
+<h2 data-number="7" class="anchored" data-anchor-id="sec-desenvolvimento"><span class="header-section-number">7</span> DESENVOLVIMENTO</h2>
+<section id="sec-desenvolvimento-Criptomoeda" class="level3" data-number="7.1">
+<h3 data-number="7.1" class="anchored" data-anchor-id="sec-desenvolvimento-Criptomoeda"><span class="header-section-number">7.1</span> CRIPTOMOEDA</h3>
+<p>A categorização no qual as criptomoedas podem ser enxergadas variam entre pesquisadores.</p>
+<p>O termo criptomoeda pode ser visto como parte mais abrangente de ativos financeiros, podendo ser categorizadas dentre os seguintes grupos: criptomoedas, títulos cripto e criptoativos de utilidade. <span class="citation" data-cites="giudici2020">(<a href="#ref-giudici2020" role="doc-biblioref">Giudici, Milne, e Vinogradov 2020</a>)</span></p>
+<ul>
+<li>Criptomoedas: ativos que atuam na blockchain para realizar trocas ou transferências entre os participantes da rede e, portanto, são usados como um meio de pagamento tendo ainda subdivisões entre moedas flutuantes, no qual a quantidade é fixada e o mercado determina seu preço tendo por exemplo o Bitcoin e o Ethereum, e as moedas estáveis, no qual o seu preço é fixo sendo esse determinado por uma instituição como por exemplo o Theter. <span class="citation" data-cites="giudici2020">(<a href="#ref-giudici2020" role="doc-biblioref">Giudici, Milne, e Vinogradov 2020</a>)</span></li>
+<li>Títulos cripto; são ativos que oferecem pagamentos futuros como por exemplo a participação nos lucros. <span class="citation" data-cites="giudici2020">(<a href="#ref-giudici2020" role="doc-biblioref">Giudici, Milne, e Vinogradov 2020</a>)</span></li>
+<li>Criptoativos de utilidade; são um meio de dar acesso ou resgate a um pré-lançamento de um produto ou serviço especifico. <span class="citation" data-cites="giudici2020">(<a href="#ref-giudici2020" role="doc-biblioref">Giudici, Milne, e Vinogradov 2020</a>)</span></li>
+</ul>
+<p>já para <span class="citation" data-cites="ozdurak2022">(<a href="#ref-ozdurak2022" role="doc-biblioref">Ozdurak, Umut, e Ozay 2022</a>)</span> elas podem ser classificadas em diversos grupos como instrumentos financeiros, valores mobiliários, commodities ou instrumento de pagamento.</p>
+<p>Sendo ela assegurada através da tecnologia da criptografia ao invés de uma terceira entidade de confiança, para realizar transferências de propriedade e financeira. <span class="citation" data-cites="giudici2020">(<a href="#ref-giudici2020" role="doc-biblioref">Giudici, Milne, e Vinogradov 2020</a>)</span></p>
+<p>Sendo seu mercado compreendido como um sistema complexo baseado em especulação portanto é gerador de condições instáveis e alguns vieses no qual os investidores possuem estratégias. <span class="citation" data-cites="volosovych2023">(MNIF et al., 2020 APUD <a href="#ref-volosovych2023" role="doc-biblioref">Volosovych, Shevchenko, e Sholoiko 2023</a>)</span></p>
+<p>Além disso ainda há divergências entre a possibilidade do bitcoin ser uma alternativa ao ouro Alguns pesquisadores afirmam, isso ocorre devido à falta de confiança na política monetária local enquanto outros afirmam que não se assemelha ao ouro e nem tem a capacidade de servir como um ativo porta seguro. <span class="citation" data-cites="kliber2019">(<a href="#ref-kliber2019" role="doc-biblioref">Kliber et al. 2019</a>)</span></p>
+<p>O fato é que a sua adoção foi aumentada fortemente durante o período inflacionado da pandemia da covid-19. <span class="citation" data-cites="ozdurak2022">(<a href="#ref-ozdurak2022" role="doc-biblioref">Ozdurak, Umut, e Ozay 2022</a>)</span></p>
+<p>em estudos realizados por (De Luca; Loperfido) constatou que as noticias negativas são mais impactantes no mercado financeiro tradicional que as notícias boas <span class="citation" data-cites="nguyen2022">(APUD <a href="#ref-nguyen2022" role="doc-biblioref">Nguyen et al. 2022</a>)</span></p>
+<p>Já no mercado de criptoativos ocorre o oposto segundo (Sapkota. 2022) tendo assim as noticias boas mais impactos sobre os retornos do que as negativas <span class="citation" data-cites="nguyen2022">(APUD <a href="#ref-nguyen2022" role="doc-biblioref">Nguyen et al. 2022</a>)</span></p>
+<p>Sendo que o mercado global de criptomoeda cresceu durante o período da pandemia da covid-19, em julho de 2016 seu valor era de $235,5 Bilhões, já em 2021 seu valor aumentou para $1,3 Trilhões. <span class="citation" data-cites="volosovych2023">(COINMARKETCAP. 2021 APUD <a href="#ref-volosovych2023" role="doc-biblioref">Volosovych, Shevchenko, e Sholoiko 2023</a>)</span></p>
+<p>Em relação ao mercado de ativos tradicionais dos estados unidos, china e de outros países desenvolvidos e em desenvolvimento sofreram com uma queda durante o período inicial da pandemia mas começaram a se recuperar ainda em julho de 2020 <span class="citation" data-cites="nguyen2022">(<a href="#ref-nguyen2022" role="doc-biblioref">Nguyen et al. 2022</a>)</span></p>
+<p>Até o ouro que é um ativo de menor risco foi afetado negativamente pela covid-19 <span class="citation" data-cites="nguyen2022">(<a href="#ref-nguyen2022" role="doc-biblioref">Nguyen et al. 2022</a>)</span></p>
+<p>Os impactos causados durante esse período moldaram o cenário atual das criptomoedas tendo como exemplo: a alta inflação, queda no produto interno bruto, distanciamento social e diversas restrições das quarenta impostas. <span class="citation" data-cites="volosovych2023">(<a href="#ref-volosovych2023" role="doc-biblioref">Volosovych, Shevchenko, e Sholoiko 2023</a>)</span></p>
+<section id="sec-desenvolvimento-Criptomoeda-Contextualizacao" class="level4" data-number="7.1.1">
+<h4 data-number="7.1.1" class="anchored" data-anchor-id="sec-desenvolvimento-Criptomoeda-Contextualizacao"><span class="header-section-number">7.1.1</span> CONTEXTUALIZAÇÂO</h4>
+<p>As criptomoedas, no geral, são observadas por diversos grupos da sociedade ao redor do mundo, sendo eles: investidores, financeiras, organizações governamentais, bancos centrais, legisladores, economistas, pesquisadores e etc. umas das explicações possíveis a esse fenômeno se dá ao fato do alto nível de liquidez como resultado de uma flexibilização monetária e pequenos rendimentos de ativos financeiros. <span class="citation" data-cites="arzova2021">(<a href="#ref-arzova2021" role="doc-biblioref">Arzova e ?zdurak 2021</a>)</span></p>
+<p>Sendo o seu termo surgido com o advento da inovação tecnológica desenvolvida pelo pseudônimo Satoshi Nakamoto ao criar o BITCOIN com o intuito de ser um meio de troca, contrário as moedas tradicionais, a criptomoeda não se baseia na figura de uma autoridade central, mas sim na criptografia pra controlar e administrar-la. <span class="citation" data-cites="kliber2019">(<a href="#ref-kliber2019" role="doc-biblioref">Kliber et al. 2019</a>)</span></p>
+<p>No qual a criação do bitcoin concretiza os desejos dos movimentos de grupos anarquistas, no qual via o instrumento da criptografia como um alternativa viável contra o controle e supervisão estatal por volta dos anos 1980 e 1990. <span class="citation" data-cites="mattos2020">(<a href="#ref-mattos2020" role="doc-biblioref">Mattos, Abouchedid, e Silva 2020</a>)</span></p>
+<p>Tendo assim, o bitcoin e outras criptomoedas que surgiram com o tempo, características de uma moeda descentralizada que operam sob a blockchain, de forma que seja operada peer-to-peer ou seja de pessoa para pessoa sem a interferência de terceiras partes envolvidas como por exemplo bancos para a realização da validação de sua transação, dessa forma, a validação de cada transação é feita por computadores conectados à rede. <span class="citation" data-cites="mattos2020">(<a href="#ref-mattos2020" role="doc-biblioref">Mattos, Abouchedid, e Silva 2020</a>)</span></p>
+<p>Portanto o bitcoin encerra um ciclo de tentativas afim de solucionar o problema de transicionamento de pagamentos sem terceiras partes envolvidas de tal modo que fossem transparentes, seguras e descentralizadas em uma rede de ponto a ponto. <span class="citation" data-cites="nascimento2022">(<a href="#ref-nascimento2022" role="doc-biblioref">Nascimento, Mira, e Bison 2022</a>)</span></p>
+</section>
+<section id="sec-desenvolvimento-Criptomoeda-Criptografia" class="level4" data-number="7.1.2">
+<h4 data-number="7.1.2" class="anchored" data-anchor-id="sec-desenvolvimento-Criptomoeda-Criptografia"><span class="header-section-number">7.1.2</span> CRIPTOGRAFIA</h4>
+<p>Para garantir a segurança da rede e das transações nela feita é utilizado funções criptografadas denominadas hash, é um protocolo do consenso no qual fornece a validação entre nós anônimos sobre o status atual do histórico de transações armazenado em um livro-razão, comumente referido como blockchain. <span class="citation" data-cites="schellinger2020">(<a href="#ref-schellinger2020" role="doc-biblioref">Schellinger 2020</a>)</span></p>
+<p>Porém, vale a pena se ressaltar que o conceito da utilização de criptografia, dentro de um sistema de pagamento já havia sido elaborado em 1983 por David Chaum. <span class="citation" data-cites="letho2022">(<a href="#ref-letho2022" role="doc-biblioref">Letho, Chelwa, e Alhassan 2022</a>)</span></p>
+<p>A ideia era proteger os dados do usuário de pagamentos eletrônicos de serem usados por terceiras partes, desde sua criação, envio e recebimento para isso ele propôs um sistema de pagamento irrastreável usando um sistema de assinatura cega, no qual consiste no uso de senha para encriptografar e descriptografar a informação, tendo o objetivo proibir terceiras partes envolvidas de rastrear os detalhes do pagamento, incluindo a hora, o beneficiário e o número de pagamentos efetuados. <span class="citation" data-cites="letho2022">(<a href="#ref-letho2022" role="doc-biblioref">Letho, Chelwa, e Alhassan 2022</a>)</span></p>
+<p>Segundo (Kaspersky,2022) O conceito da criptografia é, no cenário de dinheiro digital, uma técnica que protege e preserva as informações da mensagem eletrônica, podendo ser visualizada para apenas o emissor e o receptor. De tal forma a palavra criptografia é uma derivação da palavra grega kryptos que significa objeto escondido <span class="citation" data-cites="ngwakwe2022">(APUD <a href="#ref-ngwakwe2022" role="doc-biblioref">Ngwakwe 2022</a>)</span></p>
+<p>A criptografia funciona da seguinte forma; os textos são misturados transformando em um texto codificado e assim indecifrável, apenas o usuário destinatário final do texto poderá descodificar. (NGWAKWE, 2022) Há duas formas principais de criptografia aplicadas nas criptomoedas, sendo através da chave assimétrica e simétrica. <span class="citation" data-cites="ngwakwe2022">(<a href="#ref-ngwakwe2022" role="doc-biblioref">Ngwakwe 2022</a>)</span></p>
+<p>Na chave assimétrica ela é composta por chave pública e privada, enquanto os dados são enviados pela publica o receptor da mensagem apenas poderá descriptografar os dados utilizando a chave privada. <span class="citation" data-cites="ngwakwe2022">(<a href="#ref-ngwakwe2022" role="doc-biblioref">Ngwakwe 2022</a>)</span></p>
+<p>Na chave simétrica é gerada uma única chave secreta tanto para encriptografar quanto para descriptografar os dados, sendo compartilhada essa chave apenas aos envolvidos. <span class="citation" data-cites="ngwakwe2022">(<a href="#ref-ngwakwe2022" role="doc-biblioref">Ngwakwe 2022</a>)</span></p>
+<p>Sendo a utilização da criptografia aplicada na blockchain através das funções hash, que seriam equações matemática. <span class="citation" data-cites="guo2022">(<a href="#ref-guo2022" role="doc-biblioref">Guo e Yu 2022</a>)</span></p>
+<p>Essas funções hashs tem por propriedades: o tamanho fixo, suscetibilidade, unidirecionalidade, resistência à colisão e alta sensibilidade. <span class="citation" data-cites="zhai2019">(<a href="#ref-zhai2019" role="doc-biblioref">Zhai et al. 2019</a>)</span></p>
+<p>O valor resultante dessa função é armazenado no cabeçalho do bloco junto com o hash do bloco anterior, sendo que através delas se torna possível fazer cálculos que comprovem a integridade na informação do bloco anterior. <span class="citation" data-cites="zhai2019">(<a href="#ref-zhai2019" role="doc-biblioref">Zhai et al. 2019</a>)</span></p>
+<p>Por consequência, a falsificação do pertencimento da propriedade se torna impossível, devido a necessidade de alterar os dados anteriores da cadeia inteira, aonde é mantido na internet por muitos usuários, distribuído na blockchain, se tornando inimaginável <span class="citation" data-cites="giudici2020">(<a href="#ref-giudici2020" role="doc-biblioref">Giudici, Milne, e Vinogradov 2020</a>)</span></p>
+<p>As chaves geradas através do processo de criptografia são normalmente administradas por carteiras digitais que tem por função armazenar as criptomoedas. <span class="citation" data-cites="biernacki2021">(<a href="#ref-biernacki2021" role="doc-biblioref">Biernacki e Plechawska-Wójcik 2021</a>)</span></p>
+</section>
+<section id="sec-desenvolvimento-Criptomoeda-ativosSelecionados" class="level4" data-number="7.1.3">
+<h4 data-number="7.1.3" class="anchored" data-anchor-id="sec-desenvolvimento-Criptomoeda-ativosSelecionados"><span class="header-section-number">7.1.3</span> SOBRE AS CRIPTMOEDAS UTILIZADAS</h4>
+<p>Foram utilizadas nesse trabalho 8 Criptmoedas, nesta seção traz uma breve revisão sobre elas, sendo elas: BTC-USD, ETH-USD, BNB-USD, XRP-USD, ADA-USD, DOGE-USD, SOL-USD, MATIC-USD.</p>
+<ol type="1">
+<li><p>BTC: O bitcoin foi criada em 2008 com característica de ser uma moeda descentralizada no qual permite transações entre as partes sem intermediários e não possui alguma entidade a controlando, porém há contribuições continuas de diversos programadores para a continua evolução e melhoramento da rede. <span class="citation" data-cites="bitcoin">(<a href="#ref-bitcoin" role="doc-biblioref"><span>«Bitcoin (BTC) Preço, Gráfico, Capitalização de Mercado»</span>, s.d.</a>)</span></p></li>
+<li><p>ETH: Assim como o bitcoin, ethereum também é uma criptomoeda descentralizada e funciona como um meio para que as outras criptomoedas possam operar em sua rede, tendo como destaque a elaboração dos smart contracts. Ela teve seu whitepape publicado em 2013, porém só foi fundada em 2014 por oito confundadores, dentre eles o Vitalik Buterin é o mais conhecido, a sua sede fica na cidade de Zug sendo localizada na Suiça. Tendo como seus principais objetivos ser uma plataforma universal para outras criptmoedas executem seus softwares nela. <span class="citation" data-cites="ethereum">(<a href="#ref-ethereum" role="doc-biblioref"><span>«Ethereum (ETH) Preço, Gráfico, Capitalização de Mercado | CoinMarketCap»</span>, s.d.</a>)</span></p></li>
+<li><p>BNB: O BNB é um token da binance que por sua vez é uma exchange, ela oferece desconto em taxas aos seus detentores e direito de participação em lançamentos de tokens dentro de sua plataforma, sendo ele lançado em 2017 através de uma ICO . <span class="citation" data-cites="bnb">(<a href="#ref-bnb" role="doc-biblioref"><span>«BNB (BNB) Preço, Gráfico, Capitalização de Mercado»</span>, s.d.</a>)</span></p></li>
+<li><p>XRP: A XRP é uma moeda nativa da plataforma da Ripple foi criada em 2012 pela empresa Ripple Labs Inc seu intuito é ser um sistema de pagamento global, sendo, uma as suas principais vantagens, o custo baixo ao enviar dinheiro por sua rede <span class="citation" data-cites="xrp">(<a href="#ref-xrp" role="doc-biblioref"><span>«XRP (XRP) Preço, Gráfico, Capitalização de Mercado»</span>, s.d.</a>)</span>. Ela fica localizada em são Francisco, Estados Unidos <span class="citation" data-cites="rocketre">(<a href="#ref-rocketre" role="doc-biblioref"><span>«RocketReach - Find Email, Phone, Social Media for 450M+ Professionals»</span>, s.d.</a>)</span></p></li>
+<li><p>ADA: A ADA é a sigla do token da CARDANO no qual foi lançada em 2017 sendo ela utilizada por empresas agrícolas no rasteiro dos seus produtos. Tendo como característica a participação democrática dos detentores de sua moeda sobre as mudanças projetadas na rede por sua equipe. <span class="citation" data-cites="cardano">(<a href="#ref-cardano" role="doc-biblioref"><span>«Cardano (ADA) Preço, Gráfico, Capitalização de Mercado»</span>, s.d.</a>)</span></p></li>
+<li><p>DOGE: A criptomoeda DOGE é uma moeda meme de uma raça de cachorro Shiba Inu no qual foi criada em 2013, sendo um dos seus fundadores o Billy Markus porém só foi lançada em 2014. Ela é usada principalmente como um sistema de gorjeta no fórum do Reddit e é usada com o intuito especulativo já que ela é amplamente influenciada pelas redes sociais. <span class="citation" data-cites="dogecoin">(<a href="#ref-dogecoin" role="doc-biblioref"><span>«Dogecoin (DOGE): o que é, valor hoje e como comprar | Coinext»</span>, s.d.</a>)</span></p></li>
+<li><p>SOL: A criptmoeda da Solana foi criada com o intuito de facilitar a elaboração de Dapp que também são conhecidos como aplicativos descentralizados. Ela foi criada em 2020 pela empresa Solana Foundation ela tem sua sede em Genebra que fica localizada na suíça. Ela apresenta uma inovação no sistema ao introduzir o sistema de proof of history no qual permite maior usabilidade no protocolo <span class="citation" data-cites="solana">(<a href="#ref-solana" role="doc-biblioref"><span>«Solana (SOL) Preço, Gráfico, Capitalização de Mercado»</span>, s.d.</a>)</span></p></li>
+<li><p>MATIC: A Matic funciona como meio para transações dentro da rede da polygon tendo como funcionalidades a possibilidade da participação das decisões adotadas dentro do projeto, funcionar como um meio de pagamento e staking que é uma forma de obter renda passiva com o ativo. Sendo a polygon uma plataforma que busca por facilitar a conexão entre redes compatíveis com a ethereum e reduzir problemas nesse processo. Sendo criada em 2017 por Jaynti Kanani, Sandeep Nailwal e Anurag Arjun. <span class="citation" data-cites="polygon">(<a href="#ref-polygon" role="doc-biblioref"><span>«Polygon - Products, Competitors, Financials, Employees, Headquarters Locations»</span>, s.d.</a>)</span> ela foi criada em Mumbai que fica situada na Índia <span class="citation" data-cites="whatis">(<a href="#ref-whatis" role="doc-biblioref"><span>«What Is Polygon? (MATIC) | Kraken»</span>, s.d.</a>)</span></p></li>
+</ol>
+</section>
+<section id="sec-desenvolvimento-Criptomoeda-Carteira" class="level4" data-number="7.1.4">
+<h4 data-number="7.1.4" class="anchored" data-anchor-id="sec-desenvolvimento-Criptomoeda-Carteira"><span class="header-section-number">7.1.4</span> CARTEIRA</h4>
+<p>A carteira digital possui duas funções sendo a primeira de ser uma ferramenta de administração de criptomoedas e a segunda de uma ferramenta de interação com a rede da blockchain. <span class="citation" data-cites="biernacki2021">(<a href="#ref-biernacki2021" role="doc-biblioref">Biernacki e Plechawska-Wójcik 2021</a>)</span> .</p>
+<p>Elas possuem um endereço alfanumérico gerado das chaves públicas e privadas no qual este endereço é uma localização especifica na rede da blockchain que permite a realização de transferências. <span class="citation" data-cites="biernacki2021">(<a href="#ref-biernacki2021" role="doc-biblioref">Biernacki e Plechawska-Wójcik 2021</a>)</span></p>
+<p>Sendo possível classificar entre dois tipos de carteiras existentes: online e offline, também conhecidas como hot wallets e cold wallets. <span class="citation" data-cites="nowroozi2023">(<a href="#ref-nowroozi2023" role="doc-biblioref">Nowroozi et al. 2023</a>)</span></p>
+<p>As online/hot wallets tem por característica só funcionar se conectado a internet. Tendo como exemplo: online, computador e móvel. <span class="citation" data-cites="nowroozi2023">(<a href="#ref-nowroozi2023" role="doc-biblioref">Nowroozi et al. 2023</a>)</span></p>
+<p>As offline/cold wallets é o inverso, são armazenadas em arquivos físicos que independem de conexão com a internet. Tendo como exemplos: carteira de papel e carteira física. <span class="citation" data-cites="nowroozi2023">(<a href="#ref-nowroozi2023" role="doc-biblioref">Nowroozi et al. 2023</a>)</span></p>
+<section id="sec-desenvolvimento-Criptomoeda-Carteira-hotwallet" class="level5" data-number="7.1.4.1">
+<h5 data-number="7.1.4.1" class="anchored" data-anchor-id="sec-desenvolvimento-Criptomoeda-Carteira-hotwallet"><span class="header-section-number">7.1.4.1</span> HOT WALLETS</h5>
+<p>Carteira computador: são carteiras no qual as chaves privadas ficam armazenadas no disco rígido do computador e para usa-las é necessário a instalação de algum software. <span class="citation" data-cites="biernacki2021">(<a href="#ref-biernacki2021" role="doc-biblioref">Biernacki e Plechawska-Wójcik 2021</a>)</span></p>
+<p>Carteira online: são carteiras disponíveis através dos navegadores sem precisar realizar alguma instalação de software. <span class="citation" data-cites="nowroozi2023">(<a href="#ref-nowroozi2023" role="doc-biblioref">Nowroozi et al. 2023</a>)</span></p>
+<p>Carteira móvel: são carteiras que podem ser instaladas em smartphones dando assim acesso rápido em qualquer lugar. <span class="citation" data-cites="biernacki2021">(TRUST WALLET TOOL PAGE APUD <a href="#ref-biernacki2021" role="doc-biblioref">Biernacki e Plechawska-Wójcik 2021</a>)</span></p>
+</section>
+<section id="sec-desenvolvimento-Criptomoeda-coldwallet" class="level5" data-number="7.1.4.2">
+<h5 data-number="7.1.4.2" class="anchored" data-anchor-id="sec-desenvolvimento-Criptomoeda-coldwallet"><span class="header-section-number">7.1.4.2</span> COLD WALLETS</h5>
+<p>Carteira de papel: são carteiras que é impresso num papel um QR code que contém as duas chaves, pública e privada. <span class="citation" data-cites="nowroozi2023">(<a href="#ref-nowroozi2023" role="doc-biblioref">Nowroozi et al. 2023</a>)</span></p>
+<p>Carteira física: são produtos eletrônicos físicos como um pendrive no qual dentro dela é gerado a chave pública e privadas. Este tipo em especifico é entre as opções a mais segura. <span class="citation" data-cites="nowroozi2023">(<a href="#ref-nowroozi2023" role="doc-biblioref">Nowroozi et al. 2023</a>)</span></p>
+</section>
+</section>
+<section id="sec-desenvolvimento-Criptomoeda-Blockchain" class="level4" data-number="7.1.5">
+<h4 data-number="7.1.5" class="anchored" data-anchor-id="sec-desenvolvimento-Criptomoeda-Blockchain"><span class="header-section-number">7.1.5</span> BLOCKCHAIN</h4>
+<p>Sendo o conceito de blockchain, para o mercado de criptomoedas, como um livro-razão aonde se registra dados das transações, sendo que só pode ser adicionado o novo dado ao final deste livro. <span class="citation" data-cites="kolb2021">(<a href="#ref-kolb2021" role="doc-biblioref">Kolb et al. 2021</a>)</span></p>
+<p>Novos blocos são adicionados por certos nós na rede e vinculados criptograficamente a blocos de dados anteriores, tornando o blockchain inviolável e acessível a todos na rede. <span class="citation" data-cites="schellinger2020">(<a href="#ref-schellinger2020" role="doc-biblioref">Schellinger 2020</a>)</span></p>
+<p>de acordo com (SILVA; BOVÉRIO, 2018) a blockchain é dividida entre 3 grupos, sendo elas 1.0, 2.0 e 3.0. <span class="citation" data-cites="junior2021">(APUD <a href="#ref-junior2021" role="doc-biblioref">Junior e Asrilhant 2021</a>)</span></p>
+<ul>
+<li>1.0 apresenta conceitos de moedas virtuais e no sistema de pagamento, tendo o bitcoin como sua representante, de acordo com [SILVA; BOVÉRIO, 2018 APUD <span class="citation" data-cites="junior2021">Junior e Asrilhant (<a href="#ref-junior2021" role="doc-biblioref">2021</a>)</span>]</li>
+<li>2.0 tem a característica principal a formalização de negociações entre participantes sem intermediários, sendo dessa forma denominado esse processo de contratos inteligentes. <span class="citation" data-cites="junior2021">(CARDOSO, 2018 APUD <a href="#ref-junior2021" role="doc-biblioref">Junior e Asrilhant 2021</a>)</span></li>
+<li>3.0 de acordo com (SILVA. BOVÉRIO. 2018) tem sua característica principal na distribuição de dados. <span class="citation" data-cites="junior2021">(APUD <a href="#ref-junior2021" role="doc-biblioref">Junior e Asrilhant 2021</a>)</span></li>
+</ul>
+<p>O processo de operação da blockchain é exemplificado por <span class="citation" data-cites="mattos2020">(<a href="#ref-mattos2020" role="doc-biblioref">Mattos, Abouchedid, e Silva 2020</a>)</span> no seguinte trecho:</p>
+<div data-custom-style="Citação - ABNT">
+<p>“os Bitcoins saem da e-wallet (conta na rede blockchain) do agente A e entram na e-wallet do agente B em poucos segundos, porém pendente de validação. Essa validação ocorrerá no sistema DLT, no qual diversos computadores participantes concorrerão para validar a transação por meio da finalização do proof-of-work (mineração) necessário para criar um novo bloco, que satisfaz todos os protocolos requeridos pelo sistema DLT. O primeiro computador a criar o bloco ganha como recompensa alguns Bitcoins; o novo bloco, por sua vez, é propagado pela rede e outros computadores irão checar se o bloco é válido – já que o sistema é descentralizado, ou seja, não há um órgão central que faz essa validação – antes de incluí-lo no sistema blockchain. Após esse processo, o agente B receberá a confirmação da transação dos Bitcoins enviados pelo agente A.”</p>
+</div>
+<p>De forma que o nó valide determinado bloco na blockchain é feito um trabalho denominado de mineiração. <span class="citation" data-cites="aragon2018">(ULRICH. 2014 APUD <a href="#ref-aragon2018" role="doc-biblioref">Aragon 2018</a>)</span></p>
+</section>
+<section id="sec-desenvolvimento-Criptomoeda-Mineração" class="level4" data-number="7.1.6">
+<h4 data-number="7.1.6" class="anchored" data-anchor-id="sec-desenvolvimento-Criptomoeda-Mineração"><span class="header-section-number">7.1.6</span> MINERAÇÂO</h4>
+<p>O conceito de mineiração consiste em um processo no qual computadores conectados a rede tentam solucionar os calculos matemáticos, sendo a recompensa uma fração da moeda criada no processo e posteriormente valida um bloco de transações na rede, no caso do bitcoin o nivel é ajustado até que atinja o numero máximo de moedas definidos em seu protocolo criação, que é de 21 milhões de moedas sejam criadas até 2140 <span class="citation" data-cites="aragon2018">(ULRICH. 2014 APUD <a href="#ref-aragon2018" role="doc-biblioref">Aragon 2018</a>)</span></p>
+<p>O processo denominado mineração se deu através da analogia com a mineração de matérias como o ouro, sendo os mineradores comparados assim aos garimpeiros ao selecionar uma combinação matemática de números pra ser adicionada aos blocos, dessa forma os mineradores não possuem a função de emissão de moedas. <span class="citation" data-cites="volosovych2023">(<a href="#ref-volosovych2023" role="doc-biblioref">Volosovych, Shevchenko, e Sholoiko 2023</a>)</span></p>
+<p>Sendo desse processo gerador da problemática do impacto ambiental ocasionado ao realizar o processo de mineração já que é exigido um elevado custo de energia elétrica, por outro lado esse problema poderia ser reduzido ao se utilizar fontes de energias renováveis, tornando o processo de mineração mais barato ao minerador e menos nocivo ao meio ambiente <span class="citation" data-cites="ozdurak2022">(<a href="#ref-ozdurak2022" role="doc-biblioref">Ozdurak, Umut, e Ozay 2022</a>)</span></p>
+</section>
+<section id="sec-desenvolvimento-Criptomoeda-Riscos" class="level4" data-number="7.1.7">
+<h4 data-number="7.1.7" class="anchored" data-anchor-id="sec-desenvolvimento-Criptomoeda-Riscos"><span class="header-section-number">7.1.7</span> RISCOS</h4>
+<section id="sec-desenvolvimento-Criptomoeda-Riscos-Infomação" class="level5" data-number="7.1.7.1">
+<h5 data-number="7.1.7.1" class="anchored" data-anchor-id="sec-desenvolvimento-Criptomoeda-Riscos-Infomação"><span class="header-section-number">7.1.7.1</span> ASSIMETRIA DA INFORMAÇÂO</h5>
+<p>Outro problema do mercado de criptomoedas é a assimetria das informações entre os mercados, seja elas causadas por problemas de softwares (Bugs, hacks e etc), Alto volume de vendas que impactaria o preço ou o desfazimento do time responsável por alguma moeda . <span class="citation" data-cites="benedetti2021">(<a href="#ref-benedetti2021" role="doc-biblioref">Benedetti e Nikbakht 2021</a>)</span></p>
+</section>
+<section id="sec-desenvolvimento-Criptomoeda-Riscos-BolhaFinanceira" class="level5" data-number="7.1.7.2">
+<h5 data-number="7.1.7.2" class="anchored" data-anchor-id="sec-desenvolvimento-Criptomoeda-Riscos-BolhaFinanceira"><span class="header-section-number">7.1.7.2</span> BOLHA FINANCEIRA</h5>
+<p>Outro ponto que vale a pena se destacar é a presença de bolhas no mercado de criptomoedas devido a sua elevada expectativa do seu preço no futuro e ao risco incorrido podendo superar até aos casos históricos da South sea company e a cisco. <span class="citation" data-cites="white2020">(<a href="#ref-white2020" role="doc-biblioref">White et al. 2020</a>)</span></p>
+</section>
+<section id="sec-desenvolvimento-Criptomoeda-Riscos-Golpes" class="level5" data-number="7.1.7.3">
+<h5 data-number="7.1.7.3" class="anchored" data-anchor-id="sec-desenvolvimento-Criptomoeda-Riscos-Golpes"><span class="header-section-number">7.1.7.3</span> GOLPES</h5>
+<p>De acordo com <span class="citation" data-cites="bartoletti2021">(<a href="#ref-bartoletti2021" role="doc-biblioref">Bartoletti et al. 2021</a>)</span> scams, que traduzido para português significa golpes, são definidas como comportamento ilegal que tem por intenção obter algo ilegalmente ao enganar pessoas.</p>
+<p>Os golpes aplicados no setor de criptomoedas podem ser categorizados como sete categorias principais: Esquemas ponzi, malware, falsos serviços criptos, golpes de taxas avançadas, e-mail negro, ICO’s falsas e lavagem de dinheiro. <span class="citation" data-cites="bartoletti2021">(<a href="#ref-bartoletti2021" role="doc-biblioref">Bartoletti et al. 2021</a>)</span></p>
+<ul>
+<li>Esquema Ponzi: De acordo com (MOORE; HAN; CLAYTON. 2012) Esquemas ponzi são programas de investimentos de altos rendimentos que prometem altos lucro ao pagamento alto níveis de juros. <span class="citation" data-cites="bartoletti2021">(APUD <a href="#ref-bartoletti2021" role="doc-biblioref">Bartoletti et al. 2021</a>)</span></li>
+<li>Malware: Devido a propriedade da irrastrebailidade das criptomoedas os desenvolvedores de vírus exploram essa característica. Sendo categorizadas entre dois tipos principais de vírus Ransomware, Crypto loggers. <span class="citation" data-cites="bartoletti2021">(<a href="#ref-bartoletti2021" role="doc-biblioref">Bartoletti et al. 2021</a>)</span>
+<ul>
+<li>Ransomware: é um tipo de vírus que ao infectar o aparelho da vítima encripta os dados do aparelho e só é liberado mediante pagamento de resgate. <span class="citation" data-cites="bartoletti2021">(<a href="#ref-bartoletti2021" role="doc-biblioref">Bartoletti et al. 2021</a>)</span></li>
+<li>Crypto loggers: Já no caso desse vírus, ele é mais sutil ao ser uma interface transparente que tenta descobrir a chave secreta da carteira da vitma e assim realizar pagamentos da conta dele para a do golpista. <span class="citation" data-cites="bartoletti2021">(<a href="#ref-bartoletti2021" role="doc-biblioref">Bartoletti et al. 2021</a>)</span></li>
+</ul></li>
+<li>FALSOS SERVIÇOS CRIPTOS: Existe múltiplos serviços para a administração dos ativos no ecossistema de criptomoedas sendo entre eles: serviço de Exchange, carteiras e mixers. Devido a isso criminosos desenvolveram serviços fraudulentos se passando como real como por exemplo: falsa Exchange, falsa carteira, falso mix, falso piscina de mineração e falsa doações. <span class="citation" data-cites="bartoletti2021">(<a href="#ref-bartoletti2021" role="doc-biblioref">Bartoletti et al. 2021</a>)</span>
+<ul>
+<li>Falsa Exchange: Estas exchanges enganam os usuários ao oferecer preços de mercado mais competitivo para compra de criptomoedas e fácil acesso a moedas baratas.<span class="citation" data-cites="bartoletti2021">(<a href="#ref-bartoletti2021" role="doc-biblioref">Bartoletti et al. 2021</a>)</span></li>
+<li>Falsa carteira: Estas carteiras podem ser categorizadas entre comportamentos ilegais distintos como roubo total da quantia na carteira enquanto outras roubam diariamente pequenas porcentagens e outras roubam o dinheiro quando o deposito excede um limite traçado. <span class="citation" data-cites="bartoletti2021">(<a href="#ref-bartoletti2021" role="doc-biblioref">Bartoletti et al. 2021</a>)</span></li>
+<li>Falso minxing: serviços mixing permitem, ao randomizar o número de transações e utilizar algum endereço externo, apagar os links entre endereços iniciais e finais nos movimentos da blockchain porém eles recebem o dinheiro e não reenviam ao cliente desse serviço. <span class="citation" data-cites="bartoletti2021">(<a href="#ref-bartoletti2021" role="doc-biblioref">Bartoletti et al. 2021</a>)</span></li>
+<li>Falsa piscina de mineração: Nesse tipo de golpe é solicitado dinheiro para o investimento em maquinas pra realizar a mineração de criptomoedas, porém o dinheiro não é investido e eles pagam as taxas dos mais antigos com o dinheiro dos mais novos investidores. <span class="citation" data-cites="bartoletti2021">(<a href="#ref-bartoletti2021" role="doc-biblioref">Bartoletti et al. 2021</a>)</span></li>
+<li>Falsa doação: Nesse golpe é criado campanhas de doações falsas prometendo ajudar em algum projeto ou pessoa e ao invés de destinar o dinheiro ao fim prometido, eles somem com o dinheiro. <span class="citation" data-cites="bartoletti2021">(<a href="#ref-bartoletti2021" role="doc-biblioref">Bartoletti et al. 2021</a>)</span></li>
+</ul></li>
+<li>GOLPES DE TAXAS AVANÇADAS: De acordo com (Phillips &amp; Wilder, 2020) Essa pratica se caracteriza ao convencer a vítima enviar criptomoeda a um endereço particular com promessas de retorno maior. <span class="citation" data-cites="trozze2022">(<a href="#ref-trozze2022" role="doc-biblioref">Trozze et al. 2022</a>)</span></li>
+<li>EMAIL NEGRO: São e-mails enviados as vítimas que o golpista alega ter hackeado e gravado a vítima através da webcam e solicita pagamento de resgate para não publicar em redes sociais e deletar o material coletado. <span class="citation" data-cites="bartoletti2021">(<a href="#ref-bartoletti2021" role="doc-biblioref">Bartoletti et al. 2021</a>)</span>. Segundo (Xia et al., 2020a) no contexto da covid-19 eles ameaçaram espalhar o coronavírus propositalmente a vítima se não pagar em criptomoeda. <span class="citation" data-cites="trozze2022">(<a href="#ref-trozze2022" role="doc-biblioref">Trozze et al. 2022</a>)</span></li>
+<li>ICO’S FALSAS: Falsas ICOs’ se divulgam com alguma característica particular que as demais não possuem sendo por exemplo com apoio de falsa celebridades ou um time falso de trabalho induzindo assim ao comprador adquirir participação no projeto falso. <span class="citation" data-cites="bartoletti2021">(<a href="#ref-bartoletti2021" role="doc-biblioref">Bartoletti et al. 2021</a>)</span></li>
+<li>LAVAGEM DE DINHEIRO: Sendo o conceito de lavagem de dinheiro definidios por <span class="citation" data-cites="silveira2020">(<a href="#ref-silveira2020" role="doc-biblioref">Silveira 2020</a>)</span> como fruto de uma ação ilegal que para ser usado como dinheiro legal é feito um disfarce sobre sua origem.</li>
+</ul>
+</section>
+</section>
+<section id="sec-desenvolvimento-Criptomoeda-Beneficios" class="level4" data-number="7.1.8">
+<h4 data-number="7.1.8" class="anchored" data-anchor-id="sec-desenvolvimento-Criptomoeda-Beneficios"><span class="header-section-number">7.1.8</span> BENEFICIOS</h4>
+<section id="sec-desenvolvimento-Criptomoeda-Beneficios-Financeiros" class="level5" data-number="7.1.8.1">
+<h5 data-number="7.1.8.1" class="anchored" data-anchor-id="sec-desenvolvimento-Criptomoeda-Beneficios-Financeiros"><span class="header-section-number">7.1.8.1</span> FINANCEIROS</h5>
+<p>Por outro lado, o processo de mineração criptomoeda se tornou uma forma de renda acessível aonde há uma alta inflação e falta de confiança nos governos locais. <span class="citation" data-cites="kliber2019">(<a href="#ref-kliber2019" role="doc-biblioref">Kliber et al. 2019</a>)</span></p>
+<p>Um exemplo é o caso da Venezuela, pois em um período a eletricidade era subsidiada então não havia custos de energia para o indivíduo. No entanto em 2016 o presidente Maduro anunciou a proibição de mineração de bitcoin e outras criptomoedas, em 2018 foi declarado legal novamente devido a vontade do governo de lançar a sua própria criptomoeda nacional. <span class="citation" data-cites="kliber2019">(<a href="#ref-kliber2019" role="doc-biblioref">Kliber et al. 2019</a>)</span></p>
+<p>Além disso há críticas ao sistema financeiro tradicional devido os seus altos custos com intermediários financeiros, demoras transacionais e a papelada atuam como um fardo aos consumidores. <span class="citation" data-cites="ma2020">(<a href="#ref-ma2020" role="doc-biblioref">Ma et al. 2020</a>)</span></p>
+<p>O que por sua vez as criptomoedas além de eliminar os custos com intermediários e reduzir o tempo transacional, elas fornecem um sistema transparente, tendo a capacidade de contratos inteligentes e remessas de dinheiro a nível global. <span class="citation" data-cites="ma2020">(<a href="#ref-ma2020" role="doc-biblioref">Ma et al. 2020</a>)</span></p>
+<p>Há ainda, através das ICO (Initial Coin Ofering, oferta inicial da moeda), uma nova forma de arrecadar fundos para pequenas startups. <span class="citation" data-cites="xu2021">(<a href="#ref-xu2021" role="doc-biblioref">Xu et al. 2021</a>)</span></p>
+</section>
+<section id="sec-desenvolvimento-Criptomoeda-Beneficios-Ico" class="level5" data-number="7.1.8.2">
+<h5 data-number="7.1.8.2" class="anchored" data-anchor-id="sec-desenvolvimento-Criptomoeda-Beneficios-Ico"><span class="header-section-number">7.1.8.2</span> ICO</h5>
+<p>Sendo, em seu conceito, uma forma descentralizada de fundo colaborativo no qual é empregado sobre a rede da blockchain para arrecadação através da emissão de tokens tendo assim como característica o rápido método de financiamento e um limite baixo. <span class="citation" data-cites="xu2021">(<a href="#ref-xu2021" role="doc-biblioref">Xu et al. 2021</a>)</span></p>
+<p>esses tokens dão direito ao comprador na participação dos lucros e o direito de utilizar algum tipo de produto ou serviço. <span class="citation" data-cites="giudici2020">(<a href="#ref-giudici2020" role="doc-biblioref">Giudici, Milne, e Vinogradov 2020</a>)</span></p>
+<p>Sendo o processo para a emissão de tokens através das ICOs realizados através da publicação de whitepaper que seria a descrição detalhada do projeto apresentado tendo incluso o time, o preço, propriedades técnicas e o plano pra aplicação do capital obtido. <span class="citation" data-cites="xu2021">(<a href="#ref-xu2021" role="doc-biblioref">Xu et al. 2021</a>)</span></p>
+<p>A duração de um projeto lançado via ICO é determinado por sua equipe e pode variar entre dias ou meses, de forma que se alcançado o objetivo traçado ou o período acabar, o ICO é encerrado. <span class="citation" data-cites="xu2021">(CHEN. 2019 APUD <a href="#ref-xu2021" role="doc-biblioref">Xu et al. 2021</a>)</span></p>
+<p>Há ainda projetos que antes de realizarem o lançamento do projeto através das ICOs, praticam a pré-venda a preços reduzidos comparados ao da emissão como forma de atrair investidores em seus estágios iniciais, e esses investidores podem ser recompensados através de bônus assim que encerrar o projeto [ADHAMI; GIUDICI; MARTINAZZI. 2018 APUD <span class="citation" data-cites="xu2021">Xu et al. (<a href="#ref-xu2021" role="doc-biblioref">2021</a>)</span>]</p>
+<p>Sendo categorizados entre ICOs de sucesso ou fracasso, as de sucesso são aquelas que arrecadam o dinheiro de forma igual ou superior as metas pré-estabelecidas, caso não o projeto é categorizado como um fracasso. <span class="citation" data-cites="xu2021">(<a href="#ref-xu2021" role="doc-biblioref">Xu et al. 2021</a>)</span></p>
+<p>por outro lado, a assimetria da informação e ambiente relativamente incerto incorrem a maiores risco aos investidores. <span class="citation" data-cites="xu2021">(<a href="#ref-xu2021" role="doc-biblioref">Xu et al. 2021</a>)</span></p>
+<p>A falta de regulação aumenta o risco de investimento dado que na situação em que o investidor comprou um token no qual a ICO fracassou no seu processo de arrecadação de fundos, ele pode ter grande perdas já que os tokens podem não ser mais negociados na internet. <span class="citation" data-cites="xu2021">(<a href="#ref-xu2021" role="doc-biblioref">Xu et al. 2021</a>)</span></p>
+</section>
+<section id="sec-desenvolvimento-Criptomoeda-Beneficios-Social" class="level5" data-number="7.1.8.3">
+<h5 data-number="7.1.8.3" class="anchored" data-anchor-id="sec-desenvolvimento-Criptomoeda-Beneficios-Social"><span class="header-section-number">7.1.8.3</span> SOCIAL</h5>
+<p>Uma outra possibilidade seria o uso dessa nova tecnologia ao sistema financeiro, visando facilitar a inclusão financeira aos indivíduos marginais da sociedade, no qual não possuem banco e assim não se comunicam com um sistema financeiro formal. Sendo dessa forma as remessas financeiras através de criptomoedas e transferências mobiles uma possível mudança no paradigma da inclusão financeira e inovação. <span class="citation" data-cites="ma2020">(<a href="#ref-ma2020" role="doc-biblioref">Ma et al. 2020</a>)</span></p>
+<p>Segundo (FORBES, 2018) cerca de 50 milhões de brasileiros não possuía conta em um sistema bancário em 2017 e que esse valor corresponderia a 25% de sua população, de tal forma a introdução da criptomoeda seria uma solução viável para resolver esse problema, mas também acabaria por enfrentar na dificuldade de mudança cultural de transações em um país onde estes grupos marginalizados, até então, desconhece o funcionamento de uma conta corrente. <span class="citation" data-cites="breunig2020">(<a href="#ref-breunig2020" role="doc-biblioref">Breunig 2020</a>)</span></p>
+<p>Além disso com o surgimento da blockchain e o desenvolvimento dos contratos inteligentes permitiram empreendedores de levantar capital seja via moeda fiduciária, sendo necessário sua troca ser realizada em Exchange, e criptomoeda por meio da emissão de tokens digitais, também conhecido como ICO (Initial Coin Ofering, oferta inicial da moeda). <span class="citation" data-cites="giudici2020">(<a href="#ref-giudici2020" role="doc-biblioref">Giudici, Milne, e Vinogradov 2020</a>)</span></p>
+<p>Outro fator importante a se destacar é as diferenças entre o mercado cripto e o mercado de ações tradicional</p>
+</section>
+</section>
+<section id="sec-desenvolvimento-Criptomoeda-DiferençaMercados" class="level4" data-number="7.1.9">
+<h4 data-number="7.1.9" class="anchored" data-anchor-id="sec-desenvolvimento-Criptomoeda-DiferençaMercados"><span class="header-section-number">7.1.9</span> DIFERENÇA MERCADO DE AÇÕES E MERCADO DE CRIPTOMOEDAS</h4>
+<p>No mercado de ações tem por característica ser centralizado, ou seja, os investidores não negociam entre si, eles interagem através de intermediários, e eles negociam na bolsa de valores, tendo dessa forma uma ou mais instituições reguladoras fiscalizando. <span class="citation" data-cites="benedetti2021">(<a href="#ref-benedetti2021" role="doc-biblioref">Benedetti e Nikbakht 2021</a>)</span></p>
+<p>Já no mercado de criptomoedas é o inverso que ocorre, já que possui como característica em sua criação a descentralização, dessa forma cada usuário interage entre si, sem mais da necessidade de um ou mais entes intermediando a negociação. <span class="citation" data-cites="benedetti2021">(<a href="#ref-benedetti2021" role="doc-biblioref">Benedetti e Nikbakht 2021</a>)</span></p>
+<p>O ambiente regulatório e a diferença tecnológicas possibilitadas pela blockchain são duas importantes diferenças entre os mercados. <span class="citation" data-cites="benedetti2021">(<a href="#ref-benedetti2021" role="doc-biblioref">Benedetti e Nikbakht 2021</a>)</span></p>
+<p>A falta de regulação aos mercados de criptoativos é a que mais distância do mercado de ações tradicional, mesmo que tenha sido implementados procedimentos para uma maior segurança como Know your costumer (KYC, conheça seu cliente), anti money laudering (AML, Anti lavagem de dinheiro), cibersegurança e exigência de reservas. Ainda falta regulações para garantir a integridade do mercado. <span class="citation" data-cites="benedetti2021">(<a href="#ref-benedetti2021" role="doc-biblioref">Benedetti e Nikbakht 2021</a>)</span></p>
+<p>Porém devido a essa ausência aliada com as tecnologias da blockchain propiciam um ambiente para inovações em tipos de aplicações comerciais como por exemplo tipos de pedidos (fill or kill, market, limit e etc), politicas nas taxas de negociações (fee per trade, percentage of traded amount e etc), tipos de participantes (market-makers, proprietary, algorithmic trading support e etc) entre outros. <span class="citation" data-cites="benedetti2021">(<a href="#ref-benedetti2021" role="doc-biblioref">Benedetti e Nikbakht 2021</a>)</span></p>
+</section>
+<section id="sec-desenvolvimento-Criptomoeda-Classificação" class="level4" data-number="7.1.10">
+<h4 data-number="7.1.10" class="anchored" data-anchor-id="sec-desenvolvimento-Criptomoeda-Classificação"><span class="header-section-number">7.1.10</span> CLASSIFICAÇÃO</h4>
+<p>Além disso A classificação do bitcoin como comodities é algo incerto tendo ele mais semelhança em seu comportamento entre algum produto baseado em tecnologia, uma classe de ativo emergente ou um evento bolha ao invés de ser uma moeda ou título. <span class="citation" data-cites="white2020">(<a href="#ref-white2020" role="doc-biblioref">White et al. 2020</a>)</span></p>
+<p>Portanto devido a essa perturbação no setor financeiro sobre a conceituação de criptomoeda como uma moeda fiduciária ou não, é um tema bastante debatido e difuso entre os pesquisadores no qual cabe uma análise mais profunda sobre o conceito de moeda, o papel que as moedas exercem e do ponto de vista jurídico para melhor entendimento se as criptomoedas como bitcoin devam ser classificadas como ou um ativo financeiro ou moeda fiduciária</p>
+</section>
+</section>
+<section id="sec-desenvolvimento-Moeda" class="level3" data-number="7.2">
+<h3 data-number="7.2" class="anchored" data-anchor-id="sec-desenvolvimento-Moeda"><span class="header-section-number">7.2</span> MOEDA</h3>
+<p>A conceituação sobre o fator que levou ao surgimento da moeda como atualmente é conhecida, é distinta entre as correntes clássicas da economia e as correntes keynesiana e etnográfica.</p>
+<p>Para a teoria clássica da economia, a moeda derivou através da divisão do trabalho nas economias que tinham por características o escambo nas relações de trocas diretas, tendo por evolução ao dinheiro papel devido a necessidade de um produto que fosse transferível e durável, tornando assim como a principal função da moeda como ser um meio de pagamento. <span class="citation" data-cites="filho2020">(<a href="#ref-filho2020" role="doc-biblioref">Filho e Teixeira 2020</a>)</span></p>
+<p>Já para a teoria etnográfica, a moeda em sua essência não teria partido do escambo, pois na antiguidade não há provas que apontem para intensas atividade do escambo, a manifestação do dinheiro se dá através do formato de credito. <span class="citation" data-cites="bernardo2019">(<a href="#ref-bernardo2019" role="doc-biblioref">Bernardo, Nori, e Bernardelli 2019</a>)</span></p>
+<p>Dado ao fato que as trocas realizadas entre os integrantes do mesmo grupo social praticavam eram trocas de favores, ou seja, cada membro produzia um bem que seria ofertado ao outro mediante a demanda e em troca ele adquiria uma obrigação da que em momento posterior o retribuiria, desenvolvendo assim um sentimento de dívida atribuído aos demais indivíduos daquela sociedade. Dessa forma surge o credito. Sendo a pratica do escambo esporadicamente observada entre tribos diferentes que tinham a incerteza de voltar a se ver novamente. <span class="citation" data-cites="bernardo2019">(<a href="#ref-bernardo2019" role="doc-biblioref">Bernardo, Nori, e Bernardelli 2019</a>)</span></p>
+<p>Dessa forma é possível observar duas formas de se retratar ao surgimento da moeda, para a teoria econômica foi através do escambo, dinheiro e credito. Para a teoria etnográfica isso se dá pelo credito e dinheiro, removendo assim o escambo dessa conjectura. <span class="citation" data-cites="bernardo2019">(<a href="#ref-bernardo2019" role="doc-biblioref">Bernardo, Nori, e Bernardelli 2019</a>)</span></p>
+<p>Sendo para (KNAPP. 20023) o conceito do dinheiro, uma criação do estado com finalidade de ser meio de pagamento para obrigações fiscais através de um longo processo histórico. <span class="citation" data-cites="bernardo2019">(APUD <a href="#ref-bernardo2019" role="doc-biblioref">Bernardo, Nori, e Bernardelli 2019</a>)</span></p>
+<p>Ou seja, a moeda é um reconhecimento de dívida no qual há a transformação em dinheiro em seu sentido literal através do poder do estado de declarar que é passível de quitação de outras dividas. <span class="citation" data-cites="mattos2020">(<a href="#ref-mattos2020" role="doc-biblioref">Mattos, Abouchedid, e Silva 2020</a>)</span></p>
+<section id="sec-desenvolvimento-Moeda-Funções" class="level4" data-number="7.2.1">
+<h4 data-number="7.2.1" class="anchored" data-anchor-id="sec-desenvolvimento-Moeda-Funções"><span class="header-section-number">7.2.1</span> FUNÇÔES</h4>
+<p>Segundo (NUNES, 2016) Para que seja considerado uma moeda, ela deve exercer três funções elementares sendo estas: meio de troca, unidade de conta e reserva de valor. <span class="citation" data-cites="aragon2018">(<a href="#ref-aragon2018" role="doc-biblioref">Aragon 2018</a>)</span></p>
+<p>A função meio de troca é o que possibilita a realização de compra e venda entre bens e serviços, a função unidade de conta é o que permite uma padronização monetária para que as mercadorias e os insumos sejam quantificados em dinheiro e a função reserva de valor resguardar o valor do dinheiro utilizado para que em momento posterior possa ser usado como meio de troca. <span class="citation" data-cites="estellita2020">(<a href="#ref-estellita2020" role="doc-biblioref">Estellita 2020</a>)</span></p>
+<p>Além dessas três funções clássicas da moeda, ela deve conter as seguintes características: divisibilidade, durabilidade, alta complexibilidade para falsificação, manuseabilidade e transportabilidade. <span class="citation" data-cites="breunig2020">(<a href="#ref-breunig2020" role="doc-biblioref">Breunig 2020</a>)</span></p>
+<p>De acordo com (ARAÚJO; SILVA, 2017) no caso especifico do bitcoin, ele tem as propriedades da divisibilidade e portabilidade possuindo assim características de ser um meio de pagamento descentralizado. <span class="citation" data-cites="junior2021">(APUD <a href="#ref-junior2021" role="doc-biblioref">Junior e Asrilhant 2021</a>)</span></p>
+</section>
+<section id="sec-desenvolvimento-Moeda-Classificações" class="level4" data-number="7.2.2">
+<h4 data-number="7.2.2" class="anchored" data-anchor-id="sec-desenvolvimento-Moeda-Classificações"><span class="header-section-number">7.2.2</span> CLASSIFICAÇÂO</h4>
+<p>Para (WOODFORD, 2011) As criptomoedas com características semelhantes ao bitcoin possuem as funções reservas de valor, meio de troca mas não a da unidade de conta pois a falta de uma ampla aceitação da sociedade para utilizarem ao realizar trocas entre si. <span class="citation" data-cites="white2020">(<a href="#ref-white2020" role="doc-biblioref">White et al. 2020</a>)</span></p>
+<p>Já para <span class="citation" data-cites="breunig2020">(<a href="#ref-breunig2020" role="doc-biblioref">Breunig 2020</a>)</span> o bitcoin não deva ser categorizado como uma moeda fiduciária devido não possuir a função reserva de valor dado ao fato das altas variações do seu preço.</p>
+<p>Sendo confirmado esse pensamento também por <span class="citation" data-cites="aragon2018">(<a href="#ref-aragon2018" role="doc-biblioref">Aragon 2018</a>)</span> ao relacionar a alta volatilidade do bitcoin com o principal fator impeditivo de classifica-la como moeda e assim a afastando de seu proposito originário.</p>
+<p>Já para (HARADA. 2020) o bitcoin é uma moeda por idealização anti-inflacionária por tal motivo a sua função reserva de valor é eficiente. <span class="citation" data-cites="junior2021">(APUD <a href="#ref-junior2021" role="doc-biblioref">Junior e Asrilhant 2021</a>)</span></p>
+<p>O que também confirma (SOUSA, 2021) ao relacionar o bitcoin ao aumento com poder de compra no decorrer do tempo devido a propriedade de deflação da moeda. <span class="citation" data-cites="junior2021">(APUD <a href="#ref-junior2021" role="doc-biblioref">Junior e Asrilhant 2021</a>)</span></p>
+<p>Por fim destaca <span class="citation" data-cites="white2020">(<a href="#ref-white2020" role="doc-biblioref">White et al. 2020</a>)</span> que comportamento do bitcoin é diferente das demais moedas nacionais, tendo um perfil risco e retorno atraentes como aplicações financeiras, o elevado nível de correlação com índices de derivativos que culminam em características de elementos especulativos, de tal forma se portando como uma classe de ativo emergente com um grau de risco.</p>
+<p>No geral há ainda muitas indefinições de pesquisadores sobre sua classificação sob o ponto de vista econômico, porém é inegável que a natureza especulativa do mercado é um fator preponderante pra sua função reserva de valor, no qual este fator tende a ser menos impeditivo para tal classificação dado a característica deflacionária no caso em específico do bitcoin.</p>
+</section>
+<section id="sec-desenvolvimento-Moeda-Regulação" class="level4" data-number="7.2.3">
+<h4 data-number="7.2.3" class="anchored" data-anchor-id="sec-desenvolvimento-Moeda-Regulação"><span class="header-section-number">7.2.3</span> REGULAÇÂO</h4>
+<p>As criptomoedas de acordo com os seus críticos, não estão livres das fraudes e escândalos, por exemplo em 2014 a plataforma Mt. Gox no Japão houve muitos milhões em bitcoin roubados e em 2016 teve $50 milhões de ethereum furtados sob um ataque DAO, organização autônoma descentralizada, além disso criptopagamento não são regulados e não restringem compras, isso inclui as ilegais. <span class="citation" data-cites="giudici2020">(<a href="#ref-giudici2020" role="doc-biblioref">Giudici, Milne, e Vinogradov 2020</a>)</span></p>
+<p>sendo apontadas que há três tipos de atividades que permeiam o âmbito da criptomoeda e são de preocupação e interesse, sendo elas: as atividades ilegais ao permitir repasses de forma anonimato, as de armazenamento das atividades feitas e por fim as legais que já está em um grau de regulação adiantado, cabendo assim definir entre como deva ser classificado as criptomoedas como uma moeda, derivativo, título ou um veículo de transferência de dinheiro. <span class="citation" data-cites="white2020">(<a href="#ref-white2020" role="doc-biblioref">White et al. 2020</a>)</span></p>
+<p>Os legisladores estão cientes que a utilização das criptomoedas poderia ser usada para atividades ilegais como: lavagem de dinheiro, negócios ilegais e financiamento ao terrorismo. <span class="citation" data-cites="shirakawa2019">(<a href="#ref-shirakawa2019" role="doc-biblioref">Shirakawa e Korwatanasakul 2019</a>)</span></p>
+<p>Segundo (BÖHME et al.&nbsp;2015) Nos estudos realizados é demonstrado que durante o período inicial do bitcoin a utilização da criptomoeda em maioria era pra fins de compra de drogas. <span class="citation" data-cites="giudici2020">(<a href="#ref-giudici2020" role="doc-biblioref">Giudici, Milne, e Vinogradov 2020</a>)</span></p>
+<p>De acordo com (FOLEY et al.2019) 46% das transações utilizando o bitcoin como meio de pagamento, eram pra fins ilícitos. <span class="citation" data-cites="giudici2020">(APUD <a href="#ref-giudici2020" role="doc-biblioref">Giudici, Milne, e Vinogradov 2020</a>)</span></p>
+<p>Esse fato pode ser explicado devido à ausência de uma terceira parte para que possa examinar os fluxos suspeitos e relatar as autoridades competentes, que usualmente esse papel é exercido por bancos. <span class="citation" data-cites="estellita2020">(<a href="#ref-estellita2020" role="doc-biblioref">Estellita 2020</a>)</span></p>
+</section>
+<section id="sec-desenvolvimento-Moeda-Conceito" class="level4" data-number="7.2.4">
+<h4 data-number="7.2.4" class="anchored" data-anchor-id="sec-desenvolvimento-Moeda-Conceito"><span class="header-section-number">7.2.4</span> CONCEITO</h4>
+<p>Para o âmbito jurídico a moeda deve possuir o cursor legal que é classificado quando as pessoas de uma determinada sociedade tem por obrigação aceitar a moeda, o cursor forçado quando não é permitido pedir reembolso em forma de outros ativos e o poder liberatório quando é meio jurídico valido para quitar dívidas e obrigações contraídas. <span class="citation" data-cites="castello2019">(<a href="#ref-castello2019" role="doc-biblioref">Castello 2019</a>)</span></p>
+<p>Sendo assim a moeda em conceito jurídico podendo ser visto através de duas correntes, sendo a primeira atrelada ao que é legalmente definido e a segunda relacionada a questão social de como a sociedade confia naquele mecanismo para facilitar trocas. <span class="citation" data-cites="castello2019">(<a href="#ref-castello2019" role="doc-biblioref">Castello 2019</a>)</span></p>
+<p>No Japão a moeda consta com a característica com o poder liberatório pois é permitido a utilização aos que acreditam ter vantagem sobre a moeda fiduciária, sendo dessa forma a voluntariedade o principal fator para a definição de moeda. <span class="citation" data-cites="castello2019">(<a href="#ref-castello2019" role="doc-biblioref">Castello 2019</a>)</span></p>
+<p>No geral as criptomoedas tem diversas classificações acerca de como deva ser compreendida ao redor do mundo, enquanto alguns países baniram o direito de da comercialização e da circulação da moeda como é o caso de Nepal, porém em sua grande maioria é liberado, na Itália e Japão é exigido o registro e a licença da operação da criptomoeda e no México é aceito como meio de pagamento. <span class="citation" data-cites="shirakawa2019">(<a href="#ref-shirakawa2019" role="doc-biblioref">Shirakawa e Korwatanasakul 2019</a>)</span></p>
+</section>
+<section id="sec-desenvolvimento-Moeda-Problematica" class="level4" data-number="7.2.5">
+<h4 data-number="7.2.5" class="anchored" data-anchor-id="sec-desenvolvimento-Moeda-Problematica"><span class="header-section-number">7.2.5</span> PROBLEMATICA</h4>
+<p>De acordo com FATF as criptomoedas por sua natureza da descentralização, transnacionalidade, anonimato e transição entre mundo virtual ao real, são potenciais catalisadores para lavagem de dinheiro sendo agrupados em três grandes temas descentralização, pseudoanonimidade e globalidade. <span class="citation" data-cites="estellita2020">(<a href="#ref-estellita2020" role="doc-biblioref">Estellita 2020</a>)</span></p>
+<p>Descentralização: De acordo com (GRZYWOTZ, 2019, p.&nbsp;98) devido a inexistência no universo das criptomoedas de uma figura intermediária nas operações que fiscalizem e reportem as autoridades competentes sobre operações suspeitas que até então esse papel é exercicido por bancos, torna complexo a operação de investigação por parte da justiça sendo dessa forma as exchanges um auxilio para tal fim já que elas conectam o mundo real econômico ao mundo virtual econômico .<span class="citation" data-cites="estellita2020">(<a href="#ref-estellita2020" role="doc-biblioref">Estellita 2020</a>)</span></p>
+<p>Pseudoanonimidade: Segundo (GRZYWOTZ, 2019, p.&nbsp;98) devido a não necessidade de identificação ao abrir uma conta para começar a realizar transações e a possibilidade do mesmo individuo ter diversos endereços de carteira, acaba por aumentar o nível de anonimidade possível no universo de criptmoedas. <span class="citation" data-cites="estellita2020">(APUD <a href="#ref-estellita2020" role="doc-biblioref">Estellita 2020</a>)</span></p>
+<p>Sendo esta problemática um pouco reduzida com a adoção procedimentos que exigem a identificação do cliente em exchanges pra abrir uma conta como o kyc (know your costumer, conheça seu cliente). <span class="citation" data-cites="estellita2020">(<a href="#ref-estellita2020" role="doc-biblioref">Estellita 2020</a>)</span></p>
+<p>Globalidade: De acordo com (GRZYWOTZ, 2019, p.&nbsp;100) em virtude das livres transações globais sem algum tipo de impeditivo e controle acaba por favorecer aqueles que obtém dinheiro de origem ilícita e desejam realizar a lavagem de dinheiro. <span class="citation" data-cites="estellita2020">(APUD <a href="#ref-estellita2020" role="doc-biblioref">Estellita 2020</a>)</span></p>
+<p>De acordo com essa temática <span class="citation" data-cites="silveira2020">(<a href="#ref-silveira2020" role="doc-biblioref">Silveira 2020</a>)</span> destaca o trilema penal ou seja os três dilemas atuais envolvendo criptomoedas ao direito penal econômico. Sendo eles: a lavagem de dinheiro, evasão de divisas e sonegação fiscal.</p>
+<p>Sendo a sonegação fiscal de acordo com a Receita Federal Brasileira aplicado as criptomoedas, a omissão dos criptoativos na declaração anual de pessoas físicas. <span class="citation" data-cites="silveira2020">(<a href="#ref-silveira2020" role="doc-biblioref">Silveira 2020</a>)</span></p>
+<p>vale se destacar que no caso de sonegação fiscal algumas variantes desse tipo poderiam surgir como por exemplo a proteção patrimonial em caso de separação sendo esta exemplificada ao se comprar criptomoedas sem o conhecimento do outro conjunge. <span class="citation" data-cites="silveira2020">(<a href="#ref-silveira2020" role="doc-biblioref">Silveira 2020</a>)</span></p>
+<p>E por fim a evasão de divisas se caracteriza pela saída da moeda para outro país ou realizar depósitos em outro país sem o devido consentimento legal. <span class="citation" data-cites="silveira2020">(<a href="#ref-silveira2020" role="doc-biblioref">Silveira 2020</a>)</span></p>
+<p>Sendo o conceito de lavagem de dinheiro definidios por <span class="citation" data-cites="silveira2020">(<a href="#ref-silveira2020" role="doc-biblioref">Silveira 2020</a>)</span> como fruto de uma ação ilegal que para ser usado como dinheiro legal é feito um disfarce sobre sua origem.</p>
+<p>Sendo que Segundo Grupo de Ação Financeira Internacional (GAFI), existem três fases nesse processo, sendo: Inserção, Ocultação e Integração. <span class="citation" data-cites="silveira2020">(<a href="#ref-silveira2020" role="doc-biblioref">Silveira 2020</a>)</span></p>
+<ul>
+<li>INSERÇÃO: Tem por objetivo esconder a origem do dinheiro ao efetua depósitos ou compras, dessa maneira o criminoso o envia para países com regras financeiras mais liberais. <span class="citation" data-cites="silveira2020">(<a href="#ref-silveira2020" role="doc-biblioref">Silveira 2020</a>)</span></li>
+<li>OCULTAÇÂO: nessa fase o intuito é atrapalhar investigações sobre a origem do dinheiro ao movimentar o ativo entre contas anônimas e assim eliminar as evidencias. <span class="citation" data-cites="silveira2020">(<a href="#ref-silveira2020" role="doc-biblioref">Silveira 2020</a>)</span></li>
+<li>INTEGRAÇÂO: É a etapa final no qual consiste em introduzi-lo ao sistema econômico. <span class="citation" data-cites="silveira2020">(<a href="#ref-silveira2020" role="doc-biblioref">Silveira 2020</a>)</span>. Sendo na fase de ocultação aplicadas a criptomoedas destaca por <span class="citation" data-cites="estellita2020">(<a href="#ref-estellita2020" role="doc-biblioref">Estellita 2020</a>)</span> com a adesão dos serviços de mixing sendo por ela categorizado entre simples e complexo</li>
+</ul>
+<section id="sec-desenvolvimento-Moeda-Problematica-Mixing" class="level5" data-number="7.2.5.1">
+<h5 data-number="7.2.5.1" class="anchored" data-anchor-id="sec-desenvolvimento-Moeda-Problematica-Mixing"><span class="header-section-number">7.2.5.1</span> MIXING</h5>
+<p>O intuito desse tipo de pratica é eliminar os rastros das criptomoedas dentro da rede da blockchain, devido ao fato dos serviços de carteiras, comumente conhecida como exchanges cemtralizadas, que ficam com a chave privada ao invés do usuário e de tal forma operam como banco no quesito de o dinheiro depositado não significa a própria cédula em especifico como sua propriedade, mas sim a quantidade possuída dentro do sistema. Tem por consequência a possibilidade de realizar a mistura dos ativos para fins de lavagem de dinheiro. <span class="citation" data-cites="estellita2020">(<a href="#ref-estellita2020" role="doc-biblioref">Estellita 2020</a>)</span>.</p>
+<p>Tendo assim mixing expecializados que por sua vez operam de forma mais complexa ao criar camadas extras de ocultação dos rastros das moedas. As moedas enviadas por diversos usuários pra esse serviço, são jogadas em uma piscina com outras moedas legais e misturadas e por fim devolvidas ao endereço especificado pelo usuário, podendo ainda ser fracionadas em pequenas transações e esse ciclo repetido inúmeras vezes. <span class="citation" data-cites="estellita2020">(<a href="#ref-estellita2020" role="doc-biblioref">Estellita 2020</a>)</span>.</p>
+</section>
+</section>
+<section id="sec-desenvolvimento-Moeda-RegulaçãoMundo" class="level4" data-number="7.2.6">
+<h4 data-number="7.2.6" class="anchored" data-anchor-id="sec-desenvolvimento-Moeda-RegulaçãoMundo"><span class="header-section-number">7.2.6</span> CLASSIFICAÇÃO AO REDOR DO MUNDO</h4>
+<p>Sendo a china, em um período, uma das maiores mineradoras de criptomoedas do mundo, acabou por proibir em todo o seu território as transações e o processo de mineração sob a alegação do alto gasto de energia e computacional para tal. <span class="citation" data-cites="neto2023">(<a href="#ref-neto2023" role="doc-biblioref">Neto 2023</a>)</span></p>
+<p>O País de el salvador acabou por oficializar o bitcoin como uma moeda legal em seu território, dessa forma as emissões de títulos passam também a ser lastreadas em criptomoedas. <span class="citation" data-cites="neto2023">(<a href="#ref-neto2023" role="doc-biblioref">Neto 2023</a>)</span></p>
+<p>No Estados Unidos há um embate entre as entidades regulatórias sobre como deve ser classificado as criptomoedas para SEC (Securities and Exchange Commission) classifica as criptomoedas no geral como títulos devido que qualquer um que oferte moeda digital ou tokens digitais em troca de moedas fiduciárias estão sujeitos a sua regulação. Porém para CFTC (Commodity Futures Trading Commission) a classifica como comodities devido algumas moedas ofertarem contratos inteligentes de tal forma que o pagamento é realizado no futuro sendo assim que o contrato seja completamente executado no qual essa operação é conhecida como contrato futuro, e portanto a regulação estaria sujeita a ela. <span class="citation" data-cites="emmert2022">(<a href="#ref-emmert2022" role="doc-biblioref">Emmert 2022</a>)</span></p>
+<p>Além desses embates de entidades regulatórias há a discussão de ser do âmbito estadual ou federal tal jurisdição, sendo um exemplo o estado do Texas que aprovou a lei que define como uma representação digital de valor, usado como meio de troca e reserva de valor. Permitindo assim que bancos estatais ofereçam serviços cripto a clientes. <span class="citation" data-cites="martini2022">(<a href="#ref-martini2022" role="doc-biblioref">Martini 2022</a>)</span></p>
+<p>A união europeia em um caso julgado em operação de cambio com divisa tradicionais e operações com moedas virtuais, decidiu ao não reconhecimento da criptomoeda como moeda fiduciária, porém salientou que ao operar com bitcoin ou qualquer outra moeda estrangeira as consequências jurídicas-tributarias serão tratadas como as mesmas. <span class="citation" data-cites="castello2019">(<a href="#ref-castello2019" role="doc-biblioref">Castello 2019</a>)</span></p>
+<p>No Reino Unido, em 2020, foi proibido a negociação de determinados derivativos de criptomoedas, devido a não confiança na natureza dos ativos e a volatilidade em seus preços. <span class="citation" data-cites="martini2022">(<a href="#ref-martini2022" role="doc-biblioref">Martini 2022</a>)</span></p>
+<p>porem atualmente o FCA, Financial Conduct Authority que é uma entidade regulatória do Reino Unido, adotou procedimentos de segurança no intuito da proteção contra lavagem de dinheiro e financiamento ao terrorismo, no qual regula determinadas criptomoedas <span class="citation" data-cites="cryptoas2019">(<a href="#ref-cryptoas2019" role="doc-biblioref"><span>«Cryptoassets: AML / CTF Regime»</span> 2019</a>)</span></p>
+<p>O Brasil, atualmente, se integra um grupo seleto de países que possuem regulamentação para as criptomoedas por intermédio da Lei 14.478/2022, no qual conceitua as criptomoedas como os ativos virtuais, os classificando como representação de valor que pode ser negociada, utilizada como meio de pagamento ou com propósitos de investimentos, fazendo a desassociação entre o bitcoin como moeda fiduciária. <span class="citation" data-cites="neto2023">(<a href="#ref-neto2023" role="doc-biblioref">Neto 2023</a>)</span></p>
+<p>A lei também procura regular as corretoras, Exchanges, pois elas só poderão atuar em território brasileiro mediante autorização dos órgãos da administração pública, além disso também ficou permitido ao Banco Central acumular ou prestar serviço de ativos virtuais. <span class="citation" data-cites="neto2023">(<a href="#ref-neto2023" role="doc-biblioref">Neto 2023</a>)</span></p>
+</section>
+</section>
+<section id="sec-desenvolvimento-Markowitz" class="level3" data-number="7.3">
+<h3 data-number="7.3" class="anchored" data-anchor-id="sec-desenvolvimento-Markowitz"><span class="header-section-number">7.3</span> MARKOWITZ</h3>
+<p>No período de 2021 devido a alta inflação mundial que alcançou tanto as economias desenvolvidas quanto as em desenvolvimento trouxe diversos desafios a aplicação da administração de portfólio, especialmente a investidores experientes no qual tinha por premissa obter o retorno maior que a inflação. <span class="citation" data-cites="ozdurak2022">(<a href="#ref-ozdurak2022" role="doc-biblioref">Ozdurak, Umut, e Ozay 2022</a>)</span></p>
+<p>Sendo a moderna teoria de portfólio desenvolvida por Harry Markowitz no qual se baseia na abordagem da construção de portfólio com o intuito de maximizar o retorno esperado a um menor risco. <span class="citation" data-cites="abubakar2019">(<a href="#ref-abubakar2019" role="doc-biblioref">Abu Bakar e Rosbi 2019</a>)</span></p>
+<p>a diversificação tem por intenção suavizar os riscos não sistêmicos em um portfólio, no qual se baseia de que se um ativo tiver uma performance ruim, logo os outros da sua cesta neutralizariam, dado que a correlação entre eles seja negativa, sendo considerado assim um ativo de porto seguro para enfrentar os períodos de turbulências no mercado. <span class="citation" data-cites="kliber2019">(<a href="#ref-kliber2019" role="doc-biblioref">Kliber et al. 2019</a>)</span></p>
+<p>Sendo correlação uma medida padrão de como os ativos se movem juntos, ou seja, é um coeficiente que indica a forma como os ativos podem ser usados para um portfólio com o intuito de diversificação. <span class="citation" data-cites="ram2018">(<a href="#ref-ram2018" role="doc-biblioref">Ram 2018</a>)</span></p>
+<p>De tal forma a iniciativa de investimento é uma tentativa de segurança contra qualquer ameaça que possa enfrentar, sendo a alocação de dinheiro para benefício no futuro um traço comum humano. Muitos investem no portfólio por causa da profissão, outros por hobby e outros com o propósito de segurança financeira após a aposentadoria. <span class="citation" data-cites="ma2020">(<a href="#ref-ma2020" role="doc-biblioref">Ma et al. 2020</a>)</span></p>
+<p>A sua função de aplicação da moderna teoria de portfólio no geral é mal compreendida ou pelos seus praticantes, primeiro a diversificação não é garantia por um alto retorno comparado ao retorno mercado que se tem por referência, a proposta principal não é apenas manter uma cesta diversificada de ativos, mas também considerar a relação entre os ativos individuais da sua carteira. <span class="citation" data-cites="ozdurak2022">(<a href="#ref-ozdurak2022" role="doc-biblioref">Ozdurak, Umut, e Ozay 2022</a>)</span></p>
+<p>Ou seja não é sobre o risco individual de cada ativo, e sim sobre como todos os demais se performam como um portfólio, além disso aumenta a adoção mundial de criptomoedas junto com outras moedas estáveis, enquanto governos como china e índia proibiram o comercio, dessa forma o risco maior é de curto prazo, dado a falta de regulação e previsibilidade sobre esses novos ativos, além do mais as criptomoedas tem por sua característica o alto retorno e risco comparadas com ativos tradicionais o que perturba de certa forma a perspectiva da seleção de portfólio <span class="citation" data-cites="ozdurak2022">(<a href="#ref-ozdurak2022" role="doc-biblioref">Ozdurak, Umut, e Ozay 2022</a>)</span></p>
+<p>O perfil de risco recompensa ao nível de risco assumido, isso pode ser medido usando a razão de Sharpe no qual demonstra os retornos por unidade de risco aceitado. <span class="citation" data-cites="ram2018">(<a href="#ref-ram2018" role="doc-biblioref">Ram 2018</a>)</span></p>
+<p>Segundo estudos realizados por (Brauneis and Mestel, 2019) os benefícios da inclusão das criptmoedas no portfolio utilizando a estrutura de markowtiz, resultaram na afirmação que elas reduziam o risco do portfolio <span class="citation" data-cites="ozdurak2022">(APUD <a href="#ref-ozdurak2022" role="doc-biblioref">Ozdurak, Umut, e Ozay 2022</a>)</span></p>
+<p>Sendo o Indice de Sharpe, uma ferramenta que auxilia na comparação de performance entre ativos agrupados no portfólio ao se calcular os retornos excessivos sobre a taxa livre de risco, sendo a Razão Sharpe maior que um aceitável e consequentemente quanto maior for ela mais retornos excessivos sobre a taxa livre de risco, que em sua finalidade é capaz de fornecer a fronteira eficientes entre diferentes portfolios <span class="citation" data-cites="ma2020">(<a href="#ref-ma2020" role="doc-biblioref">Ma et al. 2020</a>)</span></p>
+</section>
+</section>
+<section id="sec-Resultados" class="level2" data-number="8">
+<h2 data-number="8" class="anchored" data-anchor-id="sec-Resultados"><span class="header-section-number">8</span> RESULTADOS</h2>
+<p>A relação de risco e retorno esperado entre os ativos da carteira é demonstrada no <a href="#fig-RiscoxRetorno">Figura&nbsp;1</a>, sendo o BTC-USD o ativo de menor risco com um desvio padrão de 3.59% e retorno esperado de 0.000888. Enquanto MATIC-USD é o ativo de maior retorno esperado com o desvio padrão de <code>r``toPercent(more_proftible$sd)</code> e retorno esperado de 0.0041623</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-RiscoxRetorno" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="TCC2_files/figure-html/fig-RiscoxRetorno-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption">Figura&nbsp;1: Risco x Retorno</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Foi verificado a matriz de correlação dos ativos e verificado que os ativos são positvamente correlacionados, veja em <a href="#tbl-correlacao">Tabela&nbsp;1</a> e no gráfico <a href="#fig-correlacao">Figura&nbsp;2</a></p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="tbl-correlacao" class="anchored">
+<table class="table table-sm table-striped small">
+<caption>Tabela&nbsp;1: Matriz de correlação</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">ATIVO</th>
+<th style="text-align: right;">BTC-USD</th>
+<th style="text-align: right;">ETH-USD</th>
+<th style="text-align: right;">BNB-USD</th>
+<th style="text-align: right;">XRP-USD</th>
+<th style="text-align: right;">ADA-USD</th>
+<th style="text-align: right;">DOGE-USD</th>
+<th style="text-align: right;">SOL-USD</th>
+<th style="text-align: right;">MATIC-USD</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">BTC-USD</td>
+<td style="text-align: right;">1,000</td>
+<td style="text-align: right;">0,810</td>
+<td style="text-align: right;">0,662</td>
+<td style="text-align: right;">0,575</td>
+<td style="text-align: right;">0,648</td>
+<td style="text-align: right;">0,442</td>
+<td style="text-align: right;">0,479</td>
+<td style="text-align: right;">0,598</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">ETH-USD</td>
+<td style="text-align: right;">0,810</td>
+<td style="text-align: right;">1,000</td>
+<td style="text-align: right;">0,693</td>
+<td style="text-align: right;">0,610</td>
+<td style="text-align: right;">0,709</td>
+<td style="text-align: right;">0,423</td>
+<td style="text-align: right;">0,592</td>
+<td style="text-align: right;">0,667</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">BNB-USD</td>
+<td style="text-align: right;">0,662</td>
+<td style="text-align: right;">0,693</td>
+<td style="text-align: right;">1,000</td>
+<td style="text-align: right;">0,551</td>
+<td style="text-align: right;">0,607</td>
+<td style="text-align: right;">0,318</td>
+<td style="text-align: right;">0,532</td>
+<td style="text-align: right;">0,634</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">XRP-USD</td>
+<td style="text-align: right;">0,575</td>
+<td style="text-align: right;">0,610</td>
+<td style="text-align: right;">0,551</td>
+<td style="text-align: right;">1,000</td>
+<td style="text-align: right;">0,571</td>
+<td style="text-align: right;">0,343</td>
+<td style="text-align: right;">0,453</td>
+<td style="text-align: right;">0,532</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">ADA-USD</td>
+<td style="text-align: right;">0,648</td>
+<td style="text-align: right;">0,709</td>
+<td style="text-align: right;">0,607</td>
+<td style="text-align: right;">0,571</td>
+<td style="text-align: right;">1,000</td>
+<td style="text-align: right;">0,402</td>
+<td style="text-align: right;">0,505</td>
+<td style="text-align: right;">0,632</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">DOGE-USD</td>
+<td style="text-align: right;">0,442</td>
+<td style="text-align: right;">0,423</td>
+<td style="text-align: right;">0,318</td>
+<td style="text-align: right;">0,343</td>
+<td style="text-align: right;">0,402</td>
+<td style="text-align: right;">1,000</td>
+<td style="text-align: right;">0,274</td>
+<td style="text-align: right;">0,312</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">SOL-USD</td>
+<td style="text-align: right;">0,479</td>
+<td style="text-align: right;">0,592</td>
+<td style="text-align: right;">0,532</td>
+<td style="text-align: right;">0,453</td>
+<td style="text-align: right;">0,505</td>
+<td style="text-align: right;">0,274</td>
+<td style="text-align: right;">1,000</td>
+<td style="text-align: right;">0,508</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">MATIC-USD</td>
+<td style="text-align: right;">0,598</td>
+<td style="text-align: right;">0,667</td>
+<td style="text-align: right;">0,634</td>
+<td style="text-align: right;">0,532</td>
+<td style="text-align: right;">0,632</td>
+<td style="text-align: right;">0,312</td>
+<td style="text-align: right;">0,508</td>
+<td style="text-align: right;">1,000</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-correlacao" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="TCC2_files/figure-html/fig-correlacao-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption">Figura&nbsp;2: gráfico de correlação</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Ao performar as combinações dos ativos possíveis foram encontradas as 5 combinações com melhores índice Sharpe conforme demonstrado na <a href="#tbl-melhoresCombinacoes">Tabela&nbsp;2</a>. Sendo a combinação de <code>r toPercent(``as.numeric(summaryBestCombination))</code> do ativo BNB-USD, MATIC-USD entre os ativos com um índice Sharpe de 0.0561, desvio padrão de <code>r toPercent(``bestCombination$sd)</code> e retorno esperado de 0.003493</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="tbl-melhoresCombinacoes" class="anchored">
+<table class="table table-sm table-striped small">
+<caption>Tabela&nbsp;2: top 5 melhores combinações com base no índice Sharpe</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">BTC-USD</th>
+<th style="text-align: left;">ETH-USD</th>
+<th style="text-align: left;">BNB-USD</th>
+<th style="text-align: left;">XRP-USD</th>
+<th style="text-align: left;">ADA-USD</th>
+<th style="text-align: left;">DOGE-USD</th>
+<th style="text-align: left;">SOL-USD</th>
+<th style="text-align: left;">MATIC-USD</th>
+<th style="text-align: right;">Indice Sharpe</th>
+<th style="text-align: left;">Risco</th>
+<th style="text-align: right;">Retorno esperado</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">0%</td>
+<td style="text-align: left;">0%</td>
+<td style="text-align: left;">60%</td>
+<td style="text-align: left;">0%</td>
+<td style="text-align: left;">0%</td>
+<td style="text-align: left;">0%</td>
+<td style="text-align: left;">0%</td>
+<td style="text-align: left;">40%</td>
+<td style="text-align: right;">0.0561</td>
+<td style="text-align: left;">5.7764%</td>
+<td style="text-align: right;">0.0034930</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">0%</td>
+<td style="text-align: left;">0%</td>
+<td style="text-align: left;">50%</td>
+<td style="text-align: left;">0%</td>
+<td style="text-align: left;">0%</td>
+<td style="text-align: left;">0%</td>
+<td style="text-align: left;">0%</td>
+<td style="text-align: left;">50%</td>
+<td style="text-align: right;">0.0561</td>
+<td style="text-align: left;">5.9884%</td>
+<td style="text-align: right;">0.0036114</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">0%</td>
+<td style="text-align: left;">0%</td>
+<td style="text-align: left;">50%</td>
+<td style="text-align: left;">0%</td>
+<td style="text-align: left;">0%</td>
+<td style="text-align: left;">10%</td>
+<td style="text-align: left;">0%</td>
+<td style="text-align: left;">40%</td>
+<td style="text-align: right;">0.0561</td>
+<td style="text-align: left;">5.6857%</td>
+<td style="text-align: right;">0.0034412</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">0%</td>
+<td style="text-align: left;">10%</td>
+<td style="text-align: left;">50%</td>
+<td style="text-align: left;">0%</td>
+<td style="text-align: left;">0%</td>
+<td style="text-align: left;">0%</td>
+<td style="text-align: left;">0%</td>
+<td style="text-align: left;">40%</td>
+<td style="text-align: right;">0.0560</td>
+<td style="text-align: left;">5.6772%</td>
+<td style="text-align: right;">0.0034331</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">0%</td>
+<td style="text-align: left;">0%</td>
+<td style="text-align: left;">40%</td>
+<td style="text-align: left;">0%</td>
+<td style="text-align: left;">0%</td>
+<td style="text-align: left;">10%</td>
+<td style="text-align: left;">0%</td>
+<td style="text-align: left;">50%</td>
+<td style="text-align: right;">0.0559</td>
+<td style="text-align: left;">5.905%</td>
+<td style="text-align: right;">0.0035525</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-fronteiraEficiente" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="TCC2_files/figure-html/fig-fronteiraEficiente-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption">Figura&nbsp;3: Optimização de portfolio &amp; Fronteira eficiente</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>De tal forma ao realizar todos os cálculos do retorno do portfolio para todas as 18832 hipóteses de combinações de carteira. Foi possível realizar o gráfico de optimização do portfolio e nele perceber a fronteira eficiente vista no <a href="#fig-fronteiraEficiente">Figura&nbsp;3</a>.</p>
+<div id="fig-retornoPortfolio" class="cell quarto-layout-panel">
+<figure class="figure">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="cell-output-display quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 50.0%;justify-content: center;">
+<div id="fig-retornoPortfolio-1" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="TCC2_files/figure-html/fig-retornoPortfolio-1.png" class="img-fluid figure-img" data-ref-parent="fig-retornoPortfolio" width="672"></p>
+<figcaption class="figure-caption">(a) Portfolio normal</figcaption>
+</figure>
+</div>
+</div>
+<div class="cell-output-display quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 50.0%;justify-content: center;">
+<div id="fig-retornoPortfolio-2" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="TCC2_files/figure-html/fig-retornoPortfolio-2.png" class="img-fluid figure-img" data-ref-parent="fig-retornoPortfolio" width="672"></p>
+<figcaption class="figure-caption">(b) Portfolio Optimizado</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p></p><figcaption class="figure-caption">Figura&nbsp;4: Retorno do portfolio normal e optimizado</figcaption><p></p>
+</figure>
+</div>
+<p>De tal forma é possivel verificar que é possivel a aplicação da Moderna teoria de portfolio ao mercado de critpmoedas mesmo com sua elevada volatilidade porém vale a pena ressaltar que devido a sua natureza especulativa fosse interessante uma analise da finanças comportamentais sobre o assunto.</p>
+</section>
+<section id="sec-Conclusão" class="level2" data-number="9">
+<h2 data-number="9" class="anchored" data-anchor-id="sec-Conclusão"><span class="header-section-number">9</span> Conclusão</h2>
+<div style="page-break-after: always;"></div>
+</section>
+<section id="sec-Bibliografia" class="level2 unnumbered" data-number="10">
+
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">10 BIBLIOGRAFIA</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-abubakar2019" class="csl-entry" role="listitem">
+Abu Bakar, Nashirah, e Sofian Rosbi. 2019. <span>«Robust Statistical Portfolio Investment in Modern Portfolio Theory: A Case Study of Two Stocks Combination in Kuala Lumpur Stock Exchange»</span> 8 (setembro): 214–21. <a href="https://doi.org/10.35940/ijeat.E1031.0585C19">https://doi.org/10.35940/ijeat.E1031.0585C19</a>.
+</div>
+<div id="ref-aragon2018" class="csl-entry" role="listitem">
+Aragon, Matheus. 2018. <span>«CRIPTOMOEDA: UMA ANÁLISE DA UTILIZAÇÃO DO BITCOIN NA SOCIEDADE CONTEMPORÂNEA»</span>, 54.
+</div>
+<div id="ref-arzova2021" class="csl-entry" role="listitem">
+Arzova, Sabri Burak, e Caner ?zdurak. 2021. <span>«Optimal Cryptocurrency and BIST 30 Portfolios with the Perspective of Markowitz Portfolio Theory»</span>. <em>Journal of Finance and Economics</em> 9 (4): 146–54. <a href="https://doi.org/10.12691/jfe-9-4-4">https://doi.org/10.12691/jfe-9-4-4</a>.
+</div>
+<div id="ref-bartoletti2021" class="csl-entry" role="listitem">
+Bartoletti, Massimo, Stefano Lande, Andrea Loddo, Livio Pompianu, e Sergio Serusi. 2021. <span>«Cryptocurrency Scams: Analysis and Perspectives»</span>. <em>IEEE Access</em> 9: 148353–73. <a href="https://doi.org/10.1109/ACCESS.2021.3123894">https://doi.org/10.1109/ACCESS.2021.3123894</a>.
+</div>
+<div id="ref-benedetti2021" class="csl-entry" role="listitem">
+Benedetti, Hugo, e Ehsan Nikbakht. 2021. <span>«Returns and Network Growth of Digital Tokens After Cross-Listings»</span>. <em>Journal of Corporate Finance</em> 66 (fevereiro): 101853. <a href="https://doi.org/10.1016/j.jcorpfin.2020.101853">https://doi.org/10.1016/j.jcorpfin.2020.101853</a>.
+</div>
+<div id="ref-bernardo2019" class="csl-entry" role="listitem">
+Bernardo, Marcel Pereira, Rodrigo Braian Nori, e Luan Vinícius Bernardelli. 2019. <span>«A História da Moeda: Uma proposta de união entre Teoria Econômica e Etnografia»</span>. <em>MISES: Interdisciplinary Journal of Philosophy, Law and Economics</em> 7 (2). <a href="https://doi.org/10.30800/mises.2019.v7.1113">https://doi.org/10.30800/mises.2019.v7.1113</a>.
+</div>
+<div id="ref-biernacki2021" class="csl-entry" role="listitem">
+Biernacki, Kamil, e Małgorzata Plechawska-Wójcik. 2021. <span>«A Comparative Analysis of Cryptocurrency Wallet Management Tools»</span>. <em>Journal of Computer Sciences Institute</em> 21 (dezembro): 373–77. <a href="https://doi.org/10.35784/jcsi.2756">https://doi.org/10.35784/jcsi.2756</a>.
+</div>
+<div id="ref-bitcoin" class="csl-entry" role="listitem">
+<span>«Bitcoin (BTC) Preço, Gráfico, Capitalização de Mercado»</span>. s.d. <a href="https://coinmarketcap.com/pt-br/currencies/bitcoin/">https://coinmarketcap.com/pt-br/currencies/bitcoin/</a>.
+</div>
+<div id="ref-bnb" class="csl-entry" role="listitem">
+<span>«BNB (BNB) Preço, Gráfico, Capitalização de Mercado»</span>. s.d. <a href="https://coinmarketcap.com/pt-br/currencies/bnb/">https://coinmarketcap.com/pt-br/currencies/bnb/</a>.
+</div>
+<div id="ref-breunig2020" class="csl-entry" role="listitem">
+Breunig, Leonardo Henrique. 2020. <span>«Bitcoin : ativo financeiro ou moeda digital?»</span> <a href="http://repositorio.unisc.br:8080/jspui/handle/11624/3094">http://repositorio.unisc.br:8080/jspui/handle/11624/3094</a>.
+</div>
+<div id="ref-cardano" class="csl-entry" role="listitem">
+<span>«Cardano (ADA) Preço, Gráfico, Capitalização de Mercado»</span>. s.d. <a href="https://coinmarketcap.com/pt-br/currencies/cardano/">https://coinmarketcap.com/pt-br/currencies/cardano/</a>.
+</div>
+<div id="ref-castello2019" class="csl-entry" role="listitem">
+Castello, Melissa Guimarães. 2019. <span>«Bitcoin é moeda? Classificação das criptomoedas para o direito tributário»</span>. <em>Revista Direito GV</em> 15 (3): e1931. <a href="https://doi.org/10.1590/2317-6172201931">https://doi.org/10.1590/2317-6172201931</a>.
+</div>
+<div id="ref-cryptoas2019" class="csl-entry" role="listitem">
+<span>«Cryptoassets: AML / CTF Regime»</span>. 2019. <a href="https://www.fca.org.uk/firms/financial-crime/cryptoassets-aml-ctf-regime">https://www.fca.org.uk/firms/financial-crime/cryptoassets-aml-ctf-regime</a>.
+</div>
+<div id="ref-portfoli2018" class="csl-entry" role="listitem">
+DD. 2018. <span>«Portfolio Optimization in R :: Coding Finance <span></span>»</span>. <a href="https://www.codingfinance.com/post/2018-05-31-portfolio-opt-in-r/">https://www.codingfinance.com/post/2018-05-31-portfolio-opt-in-r/</a>.
+</div>
+<div id="ref-dogecoin" class="csl-entry" role="listitem">
+<span>«Dogecoin (DOGE): o que é, valor hoje e como comprar | Coinext»</span>. s.d. <a href="https://coinext.com.br/criptomoedas/dogecoin">https://coinext.com.br/criptomoedas/dogecoin</a>.
+</div>
+<div id="ref-emmert2022" class="csl-entry" role="listitem">
+Emmert, Frank. 2022. <span>«The Regulation of Cryptocurrencies in the United States of America»</span>. <em>SSRN Electronic Journal</em>. <a href="https://doi.org/10.2139/ssrn.4063387">https://doi.org/10.2139/ssrn.4063387</a>.
+</div>
+<div id="ref-estellita2020" class="csl-entry" role="listitem">
+Estellita, Heloisa. 2020. <span>«Criptomoedas e lavagem de dinheiro»</span>. <em>Revista Direito GV</em> 16 (1): e1955–55. <a href="https://bibliotecadigital.fgv.br/ojs/index.php/revdireitogv/article/view/81696">https://bibliotecadigital.fgv.br/ojs/index.php/revdireitogv/article/view/81696</a>.
+</div>
+<div id="ref-ethereum" class="csl-entry" role="listitem">
+<span>«Ethereum (ETH) Preço, Gráfico, Capitalização de Mercado | CoinMarketCap»</span>. s.d. <a href="https://coinmarketcap.com/pt-br/currencies/ethereum/">https://coinmarketcap.com/pt-br/currencies/ethereum/</a>.
+</div>
+<div id="ref-filho2020" class="csl-entry" role="listitem">
+Filho, Torres, e Ernani Teixeira. 2020. <span>«Minsky: moeda, restrição de sobrevivência e hierarquia do sistema monetário globalizado»</span>. <em>Economia e Sociedade</em> 29 (dezembro): 737–60. <a href="https://doi.org/10.1590/1982-3533.2020v29n3art03">https://doi.org/10.1590/1982-3533.2020v29n3art03</a>.
+</div>
+<div id="ref-freitas2022" class="csl-entry" role="listitem">
+Freitas, Wilson. 2022. <em>rbcb: R Interface to Brazilian Central Bank Web Services</em>. <a href="https://CRAN.R-project.org/package=rbcb">https://CRAN.R-project.org/package=rbcb</a>.
+</div>
+<div id="ref-giudici2020" class="csl-entry" role="listitem">
+Giudici, Giancarlo, Alistair Milne, e Dmitri Vinogradov. 2020. <span>«Cryptocurrencies: Market Analysis and Perspectives»</span>. <em>Journal of Industrial and Business Economics</em> 47 (1): 1–18. <a href="https://doi.org/10.1007/s40812-019-00138-6">https://doi.org/10.1007/s40812-019-00138-6</a>.
+</div>
+<div id="ref-guo2022" class="csl-entry" role="listitem">
+Guo, Huaqun, e Xingjie Yu. 2022. <span>«A Survey on Blockchain Technology and Its Security»</span>. <em>Blockchain: Research and Applications</em> 3 (2): 100067. <a href="https://doi.org/10.1016/j.bcra.2022.100067">https://doi.org/10.1016/j.bcra.2022.100067</a>.
+</div>
+<div id="ref-junior2021" class="csl-entry" role="listitem">
+Junior, Paulo Guerreiro Braga, e Boris Asrilhant. 2021. <span>«Análise do Mercado de Criptomoedas Sob o Enfoque da Matriz Swot / Analysis of the Crypto Currency Market Under the Swot Matrix Perspective»</span>. <em>Revista FSA (Centro Universitário Santo Agostinho)</em> 18 (10): 44–67. <a href="https://doi.org/10.12819/2021.18.11.3">https://doi.org/10.12819/2021.18.11.3</a>.
+</div>
+<div id="ref-kliber2019" class="csl-entry" role="listitem">
+Kliber, Agata, Paweł Marszałek, Ida Musiałkowska, e Katarzyna Świerczyńska. 2019. <span>«Bitcoin: Safe Haven, Hedge or Diversifier? Perception of Bitcoin in the Context of a Country<span>’</span>s Economic Situation <span></span> A Stochastic Volatility Approach»</span>. <em>Physica A: Statistical Mechanics and Its Applications</em> 524 (junho): 246–57. <a href="https://doi.org/10.1016/j.physa.2019.04.145">https://doi.org/10.1016/j.physa.2019.04.145</a>.
+</div>
+<div id="ref-kolb2021" class="csl-entry" role="listitem">
+Kolb, John, Moustafa AbdelBaky, Randy H. Katz, e David E. Culler. 2021. <span>«Core Concepts, Challenges, and Future Directions in Blockchain: A Centralized Tutorial»</span>. <em>ACM Computing Surveys</em> 53 (1): 1–39. <a href="https://doi.org/10.1145/3366370">https://doi.org/10.1145/3366370</a>.
+</div>
+<div id="ref-letho2022" class="csl-entry" role="listitem">
+Letho, Lehlohonolo, Grieve Chelwa, e Abdul Latif Alhassan. 2022. <span>«Cryptocurrencies and portfolio diversification in an emerging market»</span>. <em>China Finance Review International</em> 12 (1): 20–50. <a href="https://doi.org/10.1108/CFRI-06-2021-0123">https://doi.org/10.1108/CFRI-06-2021-0123</a>.
+</div>
+<div id="ref-ma2020" class="csl-entry" role="listitem">
+Ma, Yechi, Ferhana Ahmad, Miao Liu, e Zilong Wang. 2020. <span>«Portfolio Optimization in the Era of Digital Financialization Using Cryptocurrencies»</span>. <em>Technological Forecasting and Social Change</em> 161 (dezembro): 120265. <a href="https://doi.org/10.1016/j.techfore.2020.120265">https://doi.org/10.1016/j.techfore.2020.120265</a>.
+</div>
+<div id="ref-martini2022" class="csl-entry" role="listitem">
+Martini, Vitória. 2022. <span>«<span>“</span>Lei Bitcoin<span>”</span> pelo mundo: Como anda a regulamentação das criptomoedas em outros países»</span>. <a href="https://www.moneytimes.com.br/lei-bitcoin-pelo-mundo-como-anda-a-regulamentacao-das-criptomoedas-em-outros-paises/">https://www.moneytimes.com.br/lei-bitcoin-pelo-mundo-como-anda-a-regulamentacao-das-criptomoedas-em-outros-paises/</a>.
+</div>
+<div id="ref-mattos2020" class="csl-entry" role="listitem">
+Mattos, Olívia Bullio, Saulo Abouchedid, e Laís Araújo e Silva. 2020. <span>«As criptomoedas e os novos desafios ao sistema monetário: uma abordagem pós-keynesiana»</span>. <em>Economia e Sociedade</em> 29 (dezembro): 761–78. <a href="https://doi.org/10.1590/1982-3533.2020v29n3art04">https://doi.org/10.1590/1982-3533.2020v29n3art04</a>.
+</div>
+<div id="ref-nascimento2022" class="csl-entry" role="listitem">
+Nascimento, L B, J E Mira, e T Bison. 2022. <em>Criptomoedas e Blockchain</em>. Grupo A.
+</div>
+<div id="ref-neto2023" class="csl-entry" role="listitem">
+Neto, Izaias Bezerra. 2023. <span>«O MARCO LEGAL DOS CRIPTOATIVOS NO BRASIL E A SEGURANÇA JURÍDICA DOS CONSUMIDORES. UMA VISÃO À LUZ DO DIPLOMA CONSUMERISTA SOB O VIÉS DA PROTEÇÃO ECONÔMICA DAS OPERAÇÕES COM ATIVOS DIGITAIS. <span></span> ISSN 1678-0817 Qualis B2»</span>. <a href="https://revistaft.com.br/o-marco-legal-dos-criptoativos-no-brasil-e-a-seguranca-juridica-dos-consumidores-uma-visao-a-luz-do-diploma-consumerista-sob-o-vies-da-protecao-economica-das-operacoes-com-ativos-digitais/">https://revistaft.com.br/o-marco-legal-dos-criptoativos-no-brasil-e-a-seguranca-juridica-dos-consumidores-uma-visao-a-luz-do-diploma-consumerista-sob-o-vies-da-protecao-economica-das-operacoes-com-ativos-digitais/</a>.
+</div>
+<div id="ref-neuwirth2022" class="csl-entry" role="listitem">
+Neuwirth, Erich. 2022. <em>RColorBrewer: ColorBrewer Palettes</em>. <a href="https://CRAN.R-project.org/package=RColorBrewer">https://CRAN.R-project.org/package=RColorBrewer</a>.
+</div>
+<div id="ref-nguyen2022" class="csl-entry" role="listitem">
+Nguyen, An Pham Ngoc, Tai Tan Mai, Marija Bezbradica, e Martin Crane. 2022. <span>«The Cryptocurrency Market in Transition before and after COVID-19: An Opportunity for Investors?»</span> <em>Entropy</em> 24 (9): 1317. <a href="https://doi.org/10.3390/e24091317">https://doi.org/10.3390/e24091317</a>.
+</div>
+<div id="ref-ngwakwe2022" class="csl-entry" role="listitem">
+Ngwakwe, Collins. 2022. <span>«DIGITAL CURRENCY: A CONCEPTUAL FRAMEWORK OF PERFORMANCE»</span>. <em>Journal of Engineering Studies and Research</em> 28 (4): 78–85. <a href="https://doi.org/10.29081/jesr.v28i4.009">https://doi.org/10.29081/jesr.v28i4.009</a>.
+</div>
+<div id="ref-nowroozi2023" class="csl-entry" role="listitem">
+Nowroozi, Ehsan, Seyedsadra Seyedshoari, Yassine Mekdad, Erkay Savaş, e Mauro Conti. 2023. <span>«Cryptocurrency Wallets: Assessment and Security»</span>. Em, editado por Yassine Maleh, Mamoun Alazab, e Imed Romdhani, 119. Cham: Springer International Publishing. <a href="https://doi.org/10.1007/978-3-031-25506-9_1">https://doi.org/10.1007/978-3-031-25506-9_1</a>.
+</div>
+<div id="ref-ozdurak2022" class="csl-entry" role="listitem">
+Ozdurak, Caner, Alican Umut, e Tugba Ozay. 2022. <span>«The Interaction of Major Crypto-Assets, Clean Energy, and Technology Indices in Diversified Portfolios»</span>. <em>International Journal of Energy Economics and Policy</em> 12 (2): 480–90. <a href="https://doi.org/10.32479/ijeep.12888">https://doi.org/10.32479/ijeep.12888</a>.
+</div>
+<div id="ref-peterson2020" class="csl-entry" role="listitem">
+Peterson, Brian G., e Peter Carl. 2020. <em>PerformanceAnalytics: Econometric Tools for Performance and Risk Analysis</em>. <a href="https://CRAN.R-project.org/package=PerformanceAnalytics">https://CRAN.R-project.org/package=PerformanceAnalytics</a>.
+</div>
+<div id="ref-polygon" class="csl-entry" role="listitem">
+<span>«Polygon - Products, Competitors, Financials, Employees, Headquarters Locations»</span>. s.d. <a href="https://www.cbinsights.com/company/matic-network">https://www.cbinsights.com/company/matic-network</a>.
+</div>
+<div id="ref-ram2018" class="csl-entry" role="listitem">
+Ram, Asheer Jaywant. 2018. <span>«Bitcoin as a new asset class»</span>. <em>Meditari Accountancy Research</em> 27 (1): 147–68. <a href="https://doi.org/10.1108/MEDAR-11-2017-0241">https://doi.org/10.1108/MEDAR-11-2017-0241</a>.
+</div>
+<div id="ref-ramalho2020" class="csl-entry" role="listitem">
+RAMALHO, Marcus. 2020. <span>«ANÁLISE DE RISCO E RENTABILIDADE DE UMA CARTEIRA DE FUNDOS DE INVESTIMENTO IMOBILIÁRIO»</span>. <em>ANÁLISE DE RISCO E RENTABILIDADE DE UMA CARTEIRA DE FUNDOS DE INVESTIMENTO IMOBILIÁRIO</em>, dezembro, 33.
+</div>
+<div id="ref-regenstein2018" class="csl-entry" role="listitem">
+Regenstein, J. K. 2018. <em>Reproducible Finance with R: Code Flows and Shiny Apps for Portfolio Analysis</em>. Chapman &amp; Hall/CRC The R Series. CRC Press. <a href="https://books.google.com.br/books?id=M2FwDwAAQBAJ">https://books.google.com.br/books?id=M2FwDwAAQBAJ</a>.
+</div>
+<div id="ref-rocketre" class="csl-entry" role="listitem">
+<span>«RocketReach - Find Email, Phone, Social Media for 450M+ Professionals»</span>. s.d. <a href="https://rocketreach.co/ripple-labs-profile_b5f78cf1f42e90b0">https://rocketreach.co/ripple-labs-profile_b5f78cf1f42e90b0</a>.
+</div>
+<div id="ref-ryan2022" class="csl-entry" role="listitem">
+Ryan, Jeffrey A., e Joshua M. Ulrich. 2022. <em>quantmod: Quantitative Financial Modelling Framework</em>. <a href="https://CRAN.R-project.org/package=quantmod">https://CRAN.R-project.org/package=quantmod</a>.
+</div>
+<div id="ref-schauberger2023" class="csl-entry" role="listitem">
+Schauberger, Philipp, e Alexander Walker. 2023. <em>openxlsx: Read, Write and Edit xlsx Files</em>. <a href="https://CRAN.R-project.org/package=openxlsx">https://CRAN.R-project.org/package=openxlsx</a>.
+</div>
+<div id="ref-schellinger2020" class="csl-entry" role="listitem">
+Schellinger, Benjamin. 2020. <span>«Optimization of special cryptocurrency portfolios»</span>. <em>The Journal of Risk Finance</em> 21 (2): 127–57. <a href="https://doi.org/10.1108/JRF-11-2019-0221">https://doi.org/10.1108/JRF-11-2019-0221</a>.
+</div>
+<div id="ref-shirakawa2019" class="csl-entry" role="listitem">
+Shirakawa, Jacinta Bernadette Rico, e Upalat Korwatanasakul. 2019. <span>«Cryptocurrency Regulations: Institutions and Financial Openness»</span>.
+</div>
+<div id="ref-silveira2020" class="csl-entry" role="listitem">
+Silveira, Renato de Mello Jorge. 2020. <span>«<span>“</span>Criptocrime<span>”</span>: considerações penais econômicas sobre criptomoedas e criptoativos = <span>“</span>Cryptocrime<span>”</span>: criminal economic considerations about bitcoins and cryptoactive»</span> 1 (1): 79–100. <a href="https://bdjur.stj.jus.br/jspui/handle/2011/141992">https://bdjur.stj.jus.br/jspui/handle/2011/141992</a>.
+</div>
+<div id="ref-solana" class="csl-entry" role="listitem">
+<span>«Solana (SOL) Preço, Gráfico, Capitalização de Mercado»</span>. s.d. <a href="https://coinmarketcap.com/pt-br/currencies/solana/">https://coinmarketcap.com/pt-br/currencies/solana/</a>.
+</div>
+<div id="ref-trozze2022" class="csl-entry" role="listitem">
+Trozze, Arianna, Josh Kamps, Eray Arda Akartuna, Florian J. Hetzel, Bennett Kleinberg, Toby Davies, e Shane D. Johnson. 2022. <span>«Cryptocurrencies and future financial crime»</span>. <em>Crime Science</em> 11 (1): 1. <a href="https://doi.org/10.1186/s40163-021-00163-8">https://doi.org/10.1186/s40163-021-00163-8</a>.
+</div>
+<div id="ref-volosovych2023" class="csl-entry" role="listitem">
+Volosovych, Svitlana, Liudmyla Shevchenko, e Antonina Sholoiko. 2023. <span>«CRYPTOCURRENCY MARKET TRANSFORMATION DURING THE PANDEMIC COVID-19»</span>. <em>Financial and Credit Activity Problems of Theory and Practice</em> 1 (fevereiro): 114–26. <a href="https://doi.org/10.55643/fcaptp.1.48.2023.3949">https://doi.org/10.55643/fcaptp.1.48.2023.3949</a>.
+</div>
+<div id="ref-wei2021" class="csl-entry" role="listitem">
+Wei, Taiyun, e Viliam Simko. 2021. <em>R package ’corrplot’: Visualization of a Correlation Matrix</em>. <a href="https://github.com/taiyun/corrplot">https://github.com/taiyun/corrplot</a>.
+</div>
+<div id="ref-whatis" class="csl-entry" role="listitem">
+<span>«What Is Polygon? (MATIC) | Kraken»</span>. s.d. <a href="https://www.kraken.com/learn/what-is-polygon-matic">https://www.kraken.com/learn/what-is-polygon-matic</a>.
+</div>
+<div id="ref-white2020" class="csl-entry" role="listitem">
+White, Reilly, Yorgos Marinakis, Nazrul Islam, e Steven Walsh. 2020. <span>«Is Bitcoin a Currency, a Technology-Based Product, or Something Else?»</span> <em>Technological Forecasting and Social Change</em> 151 (fevereiro): 119877. <a href="https://doi.org/10.1016/j.techfore.2019.119877">https://doi.org/10.1016/j.techfore.2019.119877</a>.
+</div>
+<div id="ref-wickham2019" class="csl-entry" role="listitem">
+Wickham, Hadley, Mara Averick, Jennifer Bryan, Winston Chang, Lucy D’Agostino McGowan, Romain François, Garrett Grolemund, et al. 2019. <span>«Welcome to the tidyverse»</span>. <em>Journal of Open Source Software</em> 4 (43): 1686. <a href="https://doi.org/10.21105/joss.01686">https://doi.org/10.21105/joss.01686</a>.
+</div>
+<div id="ref-wickham2022" class="csl-entry" role="listitem">
+Wickham, Hadley, e Dana Seidel. 2022. <em>scales: Scale Functions for Visualization</em>. <a href="https://CRAN.R-project.org/package=scales">https://CRAN.R-project.org/package=scales</a>.
+</div>
+<div id="ref-xie2014" class="csl-entry" role="listitem">
+Xie, Yihui. 2014. <span>«knitr: A Comprehensive Tool for Reproducible Research in R»</span>. Em, editado por Victoria Stodden, Friedrich Leisch, e Roger D. Peng. Chapman; Hall/CRC.
+</div>
+<div id="ref-xrp" class="csl-entry" role="listitem">
+<span>«XRP (XRP) Preço, Gráfico, Capitalização de Mercado»</span>. s.d. <a href="https://coinmarketcap.com/pt-br/currencies/xrp/">https://coinmarketcap.com/pt-br/currencies/xrp/</a>.
+</div>
+<div id="ref-xu2021" class="csl-entry" role="listitem">
+Xu, Wei, Ting Wang, Runyu Chen, e J. Leon Zhao. 2021. <span>«Prediction of Initial Coin Offering Success Based on Team Knowledge and Expert Evaluation»</span>. <em>Decision Support Systems</em> 147 (agosto): 113574. <a href="https://doi.org/10.1016/j.dss.2021.113574">https://doi.org/10.1016/j.dss.2021.113574</a>.
+</div>
+<div id="ref-zhai2019" class="csl-entry" role="listitem">
+Zhai, Sheping, Yuanyuan Yang, Jing Li, Cheng Qiu, e Jiangming Zhao. 2019. <span>«Research on the Application of Cryptography on the Blockchain»</span>. <em>Journal of Physics: Conference Series</em> 1168 (3): 032077. <a href="https://doi.org/10.1088/1742-6596/1168/3/032077">https://doi.org/10.1088/1742-6596/1168/3/032077</a>.
+</div>
+</div></section></div></main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copiada");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copiada");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

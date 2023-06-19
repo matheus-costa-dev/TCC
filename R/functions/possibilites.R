@@ -62,3 +62,44 @@ getAllPossibilites = function(symbols,by){
   
   return(possibilities)
 }
+
+
+
+loopPossibilites = function(possibilities,asset_return,Nsymbols,rfr){
+  
+  Npossibilites = nrow(possibilities)
+  for(i in 1:Npossibilites) {
+    
+    
+    w = possibilities[i,1:Nsymbols]  %>% as.numeric()
+    
+    portfolio_return = Return.portfolio(asset_return,weights = w,rebalance_on = "months")
+    
+    possibilities[i ,"sharpeRatePortfolio"] = SharpeRatio(portfolio_return,Rf=rfr,FUN = "StdDev")
+    possibilities[i ,"sd"] = sd(portfolio_return$portfolio.returns)
+    possibilities[i,"mean"] = mean(portfolio_return$portfolio.returns)
+    
+    print(paste(i,Npossibilites,sep = " - "))
+    
+  }
+  
+  return(possibilities)
+  
+}
+
+
+loadPossibilites = function(filePossibilites="",fullPathPossibilites="",symbols="",by=0.1){
+
+  if(filePossibilites %in% list.files(folder)){
+    
+    possibilities = read.xlsx(fullPathPossibilites) %>% 
+      mutate_all(~as.numeric(.x))
+    
+  } else {
+    possibilities = getAllPossibilites(symbols,by)
+    possibilities = loopPossibilites(possibilities,asset_return,Nsymbols,rfr)
+    
+    write.xlsx(possibilities,fullPathPossibilites)
+  }
+  
+}

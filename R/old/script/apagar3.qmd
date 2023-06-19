@@ -1,8 +1,6 @@
 ---
 title: "Untitled"
-format: 
-  docx:
-    reference-doc: modeloTest.dotx
+format: html
 editor: visual
 execute: 
   echo: false
@@ -11,53 +9,42 @@ lang: pt
 ---
 
 ## Quarto
-
-::: {custom-style="Citação - ABNT"}
-This is formatted according to the Citação - ABNT dkaskdsahkdhsadsadasdsadsadasdsadsadsadsadsadsaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.
-:::
-
 ```{r}
-#| label: start
-
-
-library(tidyverse)
-library(quantmod)
-library(scales)
-library(PerformanceAnalytics)
-library(openxlsx)
-library(corrplot)
-library(RColorBrewer)
-library(knitr)
-
-symbols = c("BTC-USD","ETH-USD","USDC-USD","USDT-USD","BNB-USD","XRP-USD","ADA-USD","DOGE-USD","SOL-USD","MATIC-USD")
-
-asset_return = readRDS("outputData/assetReturn8.rds")
-correlation = cor(asset_return)
-```
-
-## test
-
-```{r}
-#| label: tbl-demonstração
-#| tbl-cap: Demonstração
-#| class-output: tabela - abnt
-
-x = correlation %>% as.data.frame() %>% rownames_to_column("ATIVO")
-
-tbl = kable(x,
-      format = "simple",
-      digits = 3,
-      format.args = list(scientific=FALSE,big.mark = ".",decimal.mark=",",justify="left"))
-
-tbl
 
 ```
 
+```{mermaid}
+flowchart LR
+ a[Obtenção de dados] --> b[tidyverse]
+ a --> c[rbcb]
+ b --> d[Manipualação]
+ c --> d
+ d --> e[tidyverse]  
+ d --> f[base]
+ d --> g[PerformanceAnalytics]
+ e --> h[Criação de gráfico e tabela]
+ f --> h
+ g --> h
+ h --> i[tiyverse]
+ h --> j[corrplot]
+ h --> k[knitr]
+ h --> l[RColorBrewer]
+ 
+```
+
+```{mermaid}
+flowchart LR
+ a([Obtenção de dados]) ---|Selic| b[rbcb] 
+ a ---|Criptmoedas| c[quantmod] 
+ b & c --> d[Transformação]
+ d --> e[tidyverse] & f[base] & g[PerformanceAnalytics]
+ e & f & g --> h{Resultado}
+ h --> i[Grafico] & j[Tabela]
+ i --> k[tidyverse] & l[corrplot] & m[RColorBrewer]
+ j --> n[tidyverse] & o[knitr]
+```
 
 
-veja em @tbl-demonstração
-
-{{< pagebreak >}}
 
 ## outrotest
 
@@ -78,6 +65,10 @@ flowchart LR
   D --> L[knitr]
   
 ```
+
+
+
+
 
 {{< pagebreak >}}
 

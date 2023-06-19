@@ -3,11 +3,11 @@
     "path": "C:/Users/Desktop/Desktop/tcc/R/TCC2.qmd",
     "project_path": "TCC2.qmd",
     "type": "quarto_markdown",
-    "hash": "1471716032",
+    "hash": "2846661841",
     "contents": "",
     "dirty": false,
     "created": 1686343454212.0,
-    "source_on_save": false,
+    "source_on_save": true,
     "relative_order": 1,
     "properties": {
         "rmdVisualMode": "false",
@@ -15,18 +15,18 @@
         "tempName": "Untitled1",
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "283,0",
-        "scrollLine": "272",
+        "cursorPosition": "843,14",
+        "scrollLine": "804",
         "docOutlineVisible": "0",
         "rmdVisualCollapsedChunks": "",
-        "rmdVisualModeLocation": "2:2590"
+        "rmdVisualModeLocation": "2582:1620"
     },
     "folds": "",
-    "lastKnownWriteTime": 1686964443,
+    "lastKnownWriteTime": 1687153394,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1686964443565,
+    "last_content_update": 1687153394462,
     "read_only": false,
     "read_only_alternatives": []
 }

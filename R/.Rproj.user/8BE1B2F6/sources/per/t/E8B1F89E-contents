@@ -11,24 +11,25 @@ format:
   #   toc: true
   #   toc-depth: 3
   #   number-sections: true
-  #   output-file: "test.pdf"
+  #   link-citations: true
+  #    link-bibliography: true
+  #   output-file: "TCC"
   #   output-ext: "pdf"
   docx:
     toc: true
     toc-depth: 3
     number-sections: true
-    output-file: "test.word"
-    output-ext: "docx"
-    reference-doc: modeloTCC3.dotx
     link-citations: true
     link-bibliography: true
+    reference-doc: modeloTCC4.dotx
+    output-file: "TCC"
+    output-ext: "docx"
 editor: visual
 lang: pt
+bibliography: references.bib
 execute: 
   echo: false
   warning: false
-bibliography: references.bib
-table-of-contents: true
 ---
 
 ```{r}
@@ -42,70 +43,20 @@ library(openxlsx)
 library(corrplot)
 library(RColorBrewer)
 library(knitr)
-source("functions/getAllPossibilites.R")
-source("functions/loopPossibilites.R")
-
-# pacotes = c("tidyverse","quantmod","scales","PerformanceAnalytics","openxlsx","corrplot","RColorBrewer","knitr")
-# lapply(pacotes, require, character.only = TRUE)
-
-## configuração 1 - top 10 maiores capitalização de mercado
-
-## todas as moedas q possuem dados desde 2020-01-01 e estão no top 10 retirada
-
-options(scipen=999)
-from = "2020-01-01"
-to = "2023-01-01"
-rfr = 0.1375 # taxa selic
-by = .1
-symbols = c("BTC-USD","ETH-USD","BNB-USD","XRP-USD","ADA-USD","DOGE-USD","SOL-USD","MATIC-USD")
-Nsymbols = length(symbols)
-folder = "outputData"
-fileAssetReturn = paste0("assetReturn",Nsymbols,".rds")
-fileAssetReturnLong = paste0("AssetReturnLong",Nsymbols,".xlsx")
-filePossibilites = paste0("Possibilities",by,"-",rfr,".xlsx")
-fullPathPossibilites = paste(folder,filePossibilites,sep = "/")
-fullPathassetReturn = paste(folder,fileAssetReturn,sep = "/")
-fullPathassetReturnLong = paste(folder,fileAssetReturnLong,sep = "/")
+source("functions/allFunctions.R")
+source("variaveis.R")
 
 
-
+dataInicio = dmyFormat(from)
+dataFim = dmyFormat(to)
 ## codigo
 
-
-if(fileAssetReturn %in% list.files(folder)){
-  asset_return = readRDS(fullPathassetReturn)
-} else {
-  prices = getSymbols(symbols,
-                      src = "yahoo",
-                      from=from,
-                      to=to,
-                      auto.assign = TRUE) %>%
-    map(~Ad(get(.))) %>%
-    reduce(merge) %>%
-    setNames(symbols)
-  
-  
-  asset_return = Return.calculate(prices,method = "log")  %>% na.omit()
-  
-  saveRDS(asset_return,fullPathassetReturn)
-}
+asset_return = getPrices(folder,symbols,from,to)
 
 covariance = cov(asset_return)
 correlation = cor(asset_return)
 
-
-
-if(fileAssetReturnLong %in% list.files(folder)){
-  asset_return_long = read.xlsx(fullPathassetReturnLong)
-} else {
-  asset_return_long = asset_return %>%  
-    as.data.frame(row.names = index(.)) %>% 
-    rownames_to_column("data") %>%
-    pivot_longer(cols =  all_of(symbols),names_to = "asset",values_to = "returns")  %>%
-    arrange(asset)
-  
-  write.xlsx(asset_return_long,fullPathassetReturnLong)
-}
+asset_return_long = returnToLong(asset_return,symbols)
 
 summary_asset_long = asset_return_long %>% 
   group_by(asset) %>% 
@@ -114,6 +65,7 @@ summary_asset_long = asset_return_long %>%
 less_riskier = slice_min(summary_asset_long,sd)
 more_proftible = slice_max(summary_asset_long,mean)
 
+# portfolio igual
 
 w = 1/Nsymbols %>% rep(Nsymbols)
 
@@ -122,26 +74,18 @@ sd_portfolio = sd(portfolio_return$portfolio.returns)
 mean_portfolio = mean(portfolio_return$portfolio.returns)
 sr_portfolio = SharpeRatio(portfolio_return,Rf=rfr,FUN = "StdDev")
 
+# portfolio optimizado
 
-if(filePossibilites %in% list.files(folder)){
-  
-  possibilities = read.xlsx(fullPathPossibilites) %>% 
-    mutate_all(~as.numeric(.x))
-  
-} else {
-  possibilities = getAllPossibilites(symbols,by)
-  possibilities = loopPossibilites(possibilities,asset_return,Nsymbols)
-  
-  write.xlsx(possibilities,fullPathPossibilites)
-}
+possibilities = loadPossibilites(filePossibilites,fullPathPossibilites,symbols,by)
 
-min_var <- possibilities[which.min(possibilities$sd),]
-max_sr <- possibilities[which.max(possibilities$sharpeRatePortfolio),]
-max_re <- possibilities[which.max(possibilities$mean),]
+min_var <- slice_min(possibilities,sd)
+max_sr <- slice_max(possibilities,sharpeRatePortfolio)
+max_re <- slice_max(possibilities,sharpeRatePortfolio)
 
 
 bestCombination = slice_max(possibilities,sharpeRatePortfolio)
 summaryBestCombination = bestCombination[which(bestCombination[1:Nsymbols] > 0)]
+
 
 
 w = max_sr[1:Nsymbols] %>% unlist()
@@ -155,16 +99,12 @@ mean_portfolio_optimized = mean(portfolio_return_opmitized$portfolio.returns)
 sr_portfolio_optimized = max_sr$sharpeRatePortfolio
 
 
+### limitando o eixo Y
+
+yMax = max(c(portfolio_return$portfolio.returns, portfolio_return_opmitized$portfolio.returns)) 
+yMin = min(c(portfolio_return$portfolio.returns, portfolio_return_opmitized$portfolio.returns)) 
+
 ```
-
-# Table of Equations
-
-1.  \[abc\][@eq-return]
-2.  [@eq-portfolioReturn]
-3.  [@eq-sharpeRation]
-4.  [@eq-covariance]
-5.  [@eq-correlation]
-6.  [@eq-mean]
 
 ## TEMA
 
@@ -202,11 +142,9 @@ No qual para [@white2020] ao classificar o bitcoin definiu com base no seu compo
 
 Foi analisado por (Brauneis and Mestel, 2019) os benefícios da inclusão das criptmoedas no portfolio utilizando a estrutura de markowtiz e constataram que elas reduziam o risco do portfolio [APUD @ozdurak2022]
 
-Porém existe poucas aplicações sobre a utilização do método criado por markowtiz aplicado somente ao mercado de criptmoedas e, esta lacuna que o corrente trabalho visa preencher.
+Porém existe poucos estudos sobre a utilização do método criado por markowtiz aplicado somente ao mercado de criptmoedas e, esta lacuna que o corrente trabalho visa preencher.
 
-Para fins nesse estudo foi adotado a classificação de uma classe de ativo financeiro emergente devido a sua natureza especulativa e o seu perfil de risco e retorno do mercado, além de que a sua alta volatidade impedir a caracterização de criptomoedas como o bitcoin de ser atualmente uma moeda fiduciária.
-
-Este estudo busca verifica a possibilidade da aplicação da moderna teoria de portfólio de Markowitz sobre esse setor instável utilizando assim o índice Sharpe para encontrar a melhor combinação a ponto de tangência e a composição de menor risco
+Para fins nesse estudo foi adotado a classificação de uma classe de ativo financeiro emergente devido a sua natureza especulativa e o seu perfil de risco e retorno do mercado no qual este trabalho busca verifica a possibilidade da aplicação da moderna teoria de portfólio de Markowitz sobre essa classe de ativo utilizando assim o índice Sharpe para encontrar portfólio tangente e o portfólio de menor risco.
 
 Este trabalho está dividido da seguinte maneira, na seção @sec-desenvolvimento Desenvolvimento , seção @sec-Resultados Resultados e na seção @sec-Conclusão Conclusão .
 
@@ -238,25 +176,20 @@ Portanto para alcançar ao objetivo traçado esta pesquisa se identifica em sua 
 
 Tendo como fonte de pesquisa utilizada para o embasamento cientifico obtidas através das seguintes plataformas: Periódicos CAPES, Scopus e Google Acadêmico. As pesquisas foram limitadas em até 5 anos de diferença com restrição da linguagem em português e inglês.
 
-Para realizar os cálculos foi utilizado a linguagem de programação R e os seguintes pacotes: **corrplot** [@wei2021], **knitr** [@xie2014], **openxlsx** [@schauberger2023], **PerformanceAnalytics** [@peterson2020], **quantmod** [@ryan2022], **RColorBrewer** [@neuwirth2022], **scales**[@wickham2022] e **tidyverse**[@wickham2019].
+Para realizar os cálculos foi utilizado a linguagem de programação R e os seguintes pacotes: **corrplot** [@wei2021], **knitr** [@xie2014], **openxlsx** [@schauberger2023], **PerformanceAnalytics** [@peterson2020], **quantmod** [@ryan2022], **rbcb** [@freitas2022] ,**RColorBrewer** [@neuwirth2022], **scales**[@wickham2022] e **tidyverse**[@wickham2019].
 
 é ilustrado a utilização em cada um dos pacotes mencionados no seguinte diagrama
 
 ```{mermaid}
-flowchart LR
-  A[Dados] --> B[Obtenção]
-  B --> E[quantmod]
-  B --> F[tidyverse]
-  A --> C[Manipulação]
-  C --> F
-  C --> G[PerformanceAnalytics]
-  C --> H[base]
-  A --> D[Gráfico e Tabela]
-  D --> F
-  D --> I[scales]
-  D --> J[corrplot]
-  D --> K[RColorBrewer]
-  D --> L[knitr]
+flowchart TD
+ a([Obtenção de dados]) ---|Selic| b[rbcb] 
+ a ---|Criptmoedas| c[quantmod] 
+ b & c --> d[Transformação]
+ d --> e[tidyverse] & f[base] & g[PerformanceAnalytics]
+ e & f & g --> h{Resultado}
+ h --> i[Grafico] & j[Tabela]
+ i --> k[tidyverse] & l[corrplot] & m[RColorBrewer]
+ j --> n[tidyverse] & o[knitr]
   
 ```
 
@@ -266,18 +199,20 @@ Os cálculos para a realização dos retornos mensais, retornos do portfólio e 
 
 Sendo a formula aplicada da função *Return.Calculate*
 
-
 $$
 R = log(r_{i,t}) - log(r_{i,t - 1})
 $$ {#eq-return}
 
-
 Onde:
 
-$_{i}$ = Ativo\
-$_{t}$ = Período\
-$r$ = Valor do ativo\
+::: {custom-style="livre"}
+
+$_{i}$ = Ativo
+$_{t}$ = Período
+$r$ = Valor do ativo
 $R$ = Retorno
+
+:::
 
 Sendo a formula aplicada da função *Return.portfolio*
 
@@ -287,10 +222,13 @@ $$ {#eq-portfolioReturn}
 
 Onde:
 
-$i_{t}$ = o ativo no período\
-$w_{t}$ = Peso no período\
+::: {custom-style="livre"}
+
+$i_{t}$ = o ativo no período
+$w_{t}$ = Peso no período
 $R_{p}$ = Retorno do portfolio
 
+:::
 Sendo a formula aplicada da função *SharpeRatio*
 
 $$
@@ -299,14 +237,32 @@ $$ {#eq-sharpeRation}
 
 Onde:
 
+::: {custom-style="livre"}
+
 $sr$ = Indice sharpe\
 $R_{p}$ = Retorno do portfolio\
 $R_{f}$ = Taxa livre de risco\
 $\sigma_{p}$= Desvio padrão do portfolio
 
-A taxa livre de risco utilizada foi atrelada a taxa Selic, segundo o Banco Central do Brasil em nota emitida [@copomma2023] a taxa é de `r rfr`, ou seja `r paste0(rfr*100,"%")`.
+:::
 
-Para performar os cálculos das matrizes de covariância, correlação e a expectativa de retorno média foram utilizadas as funções *cov*, *cor* e *mean* respectivamente do pacote **Base**.
+A taxa livre de risco foi utilizada com base na taxa selic utilizando a estrutura de [@ramalho2020] no qual transforma a taxa selic anual média para mensal através da equação de conversão de juros anual para mensal, nesse trabalho ao inves de converter para a taxa mensal será convertido pra diária pois será trabalhado com dados diários das criptmoedas, sendo feito a conversão através da seguinte formula matematica.
+
+$$
+i_{a.d} = (1+\overline{i_{a.a}} )^{\frac{1}{12}} - 1
+$$
+
+Onde:
+
+::: {custom-style="livre"}
+$i_{a.m}$ = taxa de juros ao mês
+
+$i_{a.a}$ = taxa de juros média ao ano
+:::
+
+Para tal os dados foram obtidos através da função *get_series* do pacote **rbcb** no qual realiza consultas na API do banco central, sendo os dados coletados do mesmo periodo analisado das criptmoedas `r dataInicio` até `r dataFim` sendo a taxa selic anual média de `r toPercent(selicAnualMedia)`e a taxa selic mensal de `r toPercent(rfr)`.
+
+Para performar os cálculos das matrizes de covariância, correlação e a expectativa de retorno média foram utilizadas as funções *cov*, *cor* e *mean* do pacote **Base**.
 
 Sendo a formula aplicada da função *cov*
 
@@ -316,12 +272,13 @@ $$ {#eq-covariance}
 
 Onde:
 
+::: {custom-style="livre"}
 $x_{i}$ = valor de x\
 $\overline{x}$ = média dos valores de x\
 $y_{i}$ = valor de y\
 $\overline{y}$ = média dos valores de y\
 $n$ = tamanho da amostra
-
+:::
 Sendo a formula aplicada da função *cor*
 
 $$
@@ -330,18 +287,23 @@ $$ {#eq-correlation}
 
 Onde:
 
+::: {custom-style="livre"}
 $cov(x,y)$ = o resultado da covariância de x e y\
 $\sigma_{x}$= o desvio padrão de x\
 $\sigma_{y}$ = o desvio padrão de y
-
+:::
 Sendo a formula aplicada da função *mean*
 
 $$
 E(R) = \frac{\sum x}{n}
 $$ {#eq-mean}
+Onde: 
 
-x = os valores de x n = tamanho da amostra
+::: {custom-style="livre"}
+x = os valores de x
 
+n = tamanho da amostra
+:::
 Para realizar a criação dos gráficos foi utilizado um conjunto de funções do pacote **tidyverse** sendo eles: *ggplot*, *geom_point*, *theme_classic*, *scale_y_continuous*, *scale_x_continuous* e *labs*.
 
 Além dessa aplicação para a realização de gráficos o pacote do tidyverse também foi utilizado para realizar a transformação da tabela de um formato largo para o longo através da função *pivot_longer*, nesse processo também foi necessário a transformação do arquivo provindo do formato xts para o formato tidy usando a função *as.data.frame* e *rownames_to_column*.
@@ -350,11 +312,11 @@ Esses procedimentos de transformação dos dados foram aplicados para que pudess
 
 Para a realização do gráfico de covariancia foram utilizadas as funções *corrplot* do pacote **corrplot** para realizar o gráfico e *brewer.pal* para a seleção da paleta de cores do pacote **RColorBrewer**.
 
-É importante salientar que é variada por `r by`, ou seja `r by * 100`%, os pesos em cada combinação respeitando que a somatória de todos os pesos da carteira deva ser igual a 1, sendo 1 igual a 100%, gerando assim um total de `r nrow(possibilities)` possíveis combinações com `r Nsymbols` ativos na carteira.
+É importante salientar que é variada por `r by`, ou seja `r toPercent(by)`, os pesos em cada combinação respeitando que a somatória de todos os pesos da carteira deva ser igual a 1, sendo 1 igual a 100%, gerando assim um total de `r nrow(possibilities)` possíveis combinações com `r Nsymbols` ativos na carteira.
 
 Para iterar sobre cada um dos pesos foi utilizado o *FOR* que é uma função de looping até que determinada condição seja satisfeita.
 
-Os dados foram obtidos através da plataforma Yahoo Finance utilizando a função *getSymbols* do pacote **quantmod**, tendo o período analisado de `r format(as.Date(from),"%d/%m/%Y")` até `r format(as.Date(to),"%d/%m/%Y")`.
+Os dados foram obtidos através da plataforma Yahoo Finance utilizando a função *getSymbols* do pacote **quantmod**, tendo o período analisado de `r dataInicio` até `r dataFim`
 
 Sendo os ativos selecionados: `r symbols`. O critério utilizado pra fazer a seleção das criptomoedas foi as `r Nsymbols` maiores criptomoedas em relação a capitalização de mercado, sendo removido o USDT-USD e USDC-USD devido a elas funcionarem como uma moeda digital fiduciaria no qual é pareado o seu valor 1:1 com o dolar, sendo este dado extraído da plataforma do coinmarketcap.
 
@@ -739,7 +701,7 @@ Sendo o Indice de Sharpe, uma ferramenta que auxilia na comparação de performa
 
 ## RESULTADOS {#sec-Resultados}
 
-A relação de risco e retorno esperado entre os ativos da carteira é demonstrada no @fig-RiscoxRetorno, sendo o `r less_riskier$asset` o ativo de menor risco com um desvio padrão de `r paste0(round(less_riskier$sd * 100,2),"%")` e retorno esperado de `r less_riskier$mean`. Enquanto `r more_proftible$asset` é o ativo de maior retorno esperado com o desvio padrão de `r paste0(round(more_proftible$sd * 100,2),"%")` e retorno esperado de `r more_proftible$mean`
+A relação de risco e retorno esperado entre os ativos da carteira é demonstrada no @fig-RiscoxRetorno, sendo o `r less_riskier$asset` o ativo de menor risco com um desvio padrão de `r toPercent(less_riskier$sd)` e retorno esperado de `r less_riskier$mean`. Enquanto `r more_proftible$asset` é o ativo de maior retorno esperado com o desvio padrão de ``` r``toPercent(more_proftible$sd) ``` e retorno esperado de `r more_proftible$mean`
 
 ```{R}
 #| label: fig-RiscoxRetorno
@@ -748,7 +710,8 @@ A relação de risco e retorno esperado entre os ativos da carteira é demonstra
 asset_return_long %>%
   group_by(asset) %>%
   summarise(sd= sd(returns), mean= mean(returns)) %>%
-  add_row(asset="PORTFOLIO", sd = sd_portfolio, mean=mean_portfolio ) %>%
+  add_row(asset="PORTFOLIO NORMAL", sd = sd_portfolio, mean=mean_portfolio ) %>%
+  add_row(asset="PORTFOLIO OPTMIZADO", sd = sd_portfolio_optimized, mean=mean_portfolio_optimized ) %>%
   ggplot(aes(x=sd,y=mean,color=asset)) +
   geom_point(size=2, show.legend = FALSE) + 
   scale_x_continuous(labels = scales::percent) +
@@ -787,7 +750,7 @@ corrplot(correlation,
          )
 ```
 
-Ao performar as combinações dos ativos possíveis foram encontradas as 5 combinações com melhores índice Sharpe conforme demonstrado na @tbl-melhoresCombinacoes. Sendo a combinação de `r paste0(as.numeric(summaryBestCombination)  * 100,"%")` do ativo `r names(summaryBestCombination)` entre os ativos com um índice Sharpe de `r paste0(round(bestCombination$sharpeRatePortfolio,4))`, desvio padrão de `r paste0(round(bestCombination$sd * 100,4), "%")` e retorno esperado de `r bestCombination$mean`
+Ao performar as combinações dos ativos possíveis foram encontradas as 5 combinações com melhores índice Sharpe conforme demonstrado na @tbl-melhoresCombinacoes. Sendo a combinação de ``` r toPercent(``as.numeric(summaryBestCombination)) ``` do ativo `r names(summaryBestCombination)` entre os ativos com um índice Sharpe de `r paste0(round(bestCombination$sharpeRatePortfolio,4))`, desvio padrão de ``` r toPercent(``bestCombination$sd) ``` e retorno esperado de `r bestCombination$mean`
 
 ```{R}
 #| label: tbl-melhoresCombinacoes
@@ -824,7 +787,7 @@ possibilities %>%
   ggplot(aes(x = sd, y = mean, color = sharpeRatePortfolio)) +
   geom_point() +
   theme_classic() +
-  #scale_y_continuous(labels = scales::percent) +
+  scale_y_continuous(labels = scales::percent) +
   scale_x_continuous(labels = scales::percent) +
   labs(x = 'Risco',
        y = 'Retorno esperado',
@@ -834,8 +797,8 @@ possibilities %>%
                  y = mean), data = min_var, color = 'red') +
   geom_point(aes(x = sd,
                  y = mean), data = max_sr, color = 'red') +
-  geom_text(x=min_var$sd, y = min_var$mean + .0002,label="Menor risco", color = "red") +
-  geom_text(x=max_sr$sd, y = max_sr$mean + .0002,label="Maior indice sharpe", color = "red", check_overlap = T) +
+  geom_text(x=min_var$sd, y = min_var$mean + .0002,label="Menor variancia", color = "red") +
+  geom_text(x=max_sr$sd, y = max_sr$mean + .0002,label="Ponto de tangência", color = "red", check_overlap = T) +
   theme_bw() +
   theme( plot.title = element_text(hjust = .5))
 
@@ -844,12 +807,8 @@ possibilities %>%
 De tal forma ao realizar todos os cálculos do retorno do portfolio para todas as `r nrow(possibilities)` hipóteses de combinações de carteira. Foi possível realizar o gráfico de optimização do portfolio e nele perceber a fronteira eficiente vista no @fig-fronteiraEficiente.
 
 ```{R}
-#| label: fig-retornoPortfolio
-#| fig-cap: Retorno do portfolio normal e optimizado
-#| fig-subcap:
-#|   - "Portfolio normal"
-#|   - "Portfolio Optimizado" 
-#| layout-ncol: 2
+#| label: fig-retornoPortfolioNormal
+#| fig-cap: Retorno do portfolio normal
 
 portfolio_plot = portfolio_return %>% as.data.frame(row.names = index(.)) %>%
   rownames_to_column("date") %>%
@@ -863,47 +822,8 @@ portfolio_plot = portfolio_return %>% as.data.frame(row.names = index(.)) %>%
          color= factor(color, levels = c("green","darkblue","red")))
 
 
-portfolio_plot_optimized = portfolio_return_opmitized %>% 
-  as.data.frame(row.names = index(.)) %>%
-  rownames_to_column("date") %>%
-  rename("returns"=portfolio.returns) %>%
-  mutate(date = as.Date(date),
-         color = case_when(
-           returns < mean_portfolio_optimized - sd_portfolio_optimized ~ "red",
-           returns > mean_portfolio_optimized + sd_portfolio_optimized ~ "green",
-           T ~ "darkblue"
-         ),
-         color= factor(color, levels = c("green","darkblue","red")))
 
-
-yMax = max(c(portfolio_plot$returns, portfolio_plot_optimized$returns)) %>% round(1)
-yMin = min(c(portfolio_plot$returns, portfolio_plot_optimized$returns)) %>% round(1)
-
-portfolio_plot = portfolio_return %>% as.data.frame(row.names = index(.)) %>%
-  rownames_to_column("date") %>%
-  rename("returns"=portfolio.returns) %>%
-  mutate(date = as.Date(date),
-         color = case_when(
-           returns < mean_portfolio - sd_portfolio ~ "red",
-           returns > mean_portfolio + sd_portfolio ~ "green",
-           T ~ "darkblue"
-         ),
-         color= factor(color, levels = c("green","darkblue","red")))
-
-
-portfolio_plot_optimized = portfolio_return_opmitized %>% 
-  as.data.frame(row.names = index(.)) %>%
-  rownames_to_column("date") %>%
-  rename("returns"=portfolio.returns) %>%
-  mutate(date = as.Date(date),
-         color = case_when(
-           returns < mean_portfolio_optimized - sd_portfolio_optimized ~ "red",
-           returns > mean_portfolio_optimized + sd_portfolio_optimized ~ "green",
-           T ~ "darkblue"
-         ),
-         color= factor(color, levels = c("green","darkblue","red")))
-
-
+###
 
 portfolio_plot %>%
   ggplot(aes(x=date, y =returns,color=color)) +
@@ -913,20 +833,41 @@ portfolio_plot %>%
                               "esta entre um desvio padrão acima e abaixo da média",
                               "1 Desvio padrão abaixo da média"),
                      values = c("darkblue"="darkblue","green"="green","red"="red")) +
-  scale_x_date(breaks = pretty_breaks(n = 12)) +
+  scale_x_date(breaks = pretty_breaks(n = 3)) +
   scale_y_continuous(breaks = pretty_breaks(n = 5),limits = c(yMin,yMax)) +
   geom_hline(yintercept = (mean_portfolio + sd_portfolio),
-             color = "purple",
-             linetype = "solid") +
+             color = "black",
+             linetype = "dashed") +
   geom_hline(yintercept = (mean_portfolio- sd_portfolio),
-             color = "purple",
-             linetype = "solid") +
+             color = "black",
+             linetype = "dashed") +
   theme_bw() +
-  labs(x="Data",y="Retornos",title = "Gráfico de disperção dos retornos do portfolio normal") +
+  labs(x="Data",y="Retornos") +
   theme(legend.text=element_text(size=7),
         legend.position = "bottom",
         legend.spacing.x = unit(0,"mm") ,
         legend.direction = "horizontal")
+
+
+```
+
+```{r}
+#| label: fig-retornoPortfolioOptmiziado
+#| fig-cap: Retorno do portfolio optimizado
+
+
+portfolio_plot_optimized = portfolio_return_opmitized %>% 
+  as.data.frame(row.names = index(.)) %>%
+  rownames_to_column("date") %>%
+  rename("returns"=portfolio.returns) %>%
+  mutate(date = as.Date(date),
+         color = case_when(
+           returns < mean_portfolio_optimized - sd_portfolio_optimized ~ "red",
+           returns > mean_portfolio_optimized + sd_portfolio_optimized ~ "green",
+           T ~ "darkblue"
+         ),
+         color= factor(color, levels = c("green","darkblue","red")))
+
 
 
 portfolio_plot_optimized %>%
@@ -937,16 +878,16 @@ portfolio_plot_optimized %>%
                               "esta entre um desvio padrão acima e abaixo da média",
                               "1 Desvio padrão abaixo da média"),
                      values = c("darkblue"="darkblue","green"="green","red"="red")) +
-  scale_x_date(breaks = pretty_breaks(n = 12)) +
+  scale_x_date(breaks = pretty_breaks(n = 3)) +
   scale_y_continuous(breaks = pretty_breaks(n = 5),limits = c(yMin,yMax)) +
   geom_hline(yintercept = (mean_portfolio_optimized + sd_portfolio_optimized),
-             color = "purple",
-             linetype = "solid") +
+             color = "black",
+             linetype = "dashed") +
   geom_hline(yintercept = (mean_portfolio_optimized- sd_portfolio_optimized),
-             color = "purple",
-             linetype = "solid") +
+             color = "black",
+             linetype = "dashed") +
   theme_bw() +
-  labs(x="Data",y="Retornos",title = "Gráfico de disperção dos retornos do portfolio Optimizado") +
+  labs(x="Data",y="Retornos") +
   theme(legend.text=element_text(size=7),
         legend.position = "bottom",
         legend.spacing.x = unit(0,"mm") ,
