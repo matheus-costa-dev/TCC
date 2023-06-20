@@ -7,18 +7,21 @@ format:
   #   toc: true
   #   toc-depth: 3
   #   number-sections: true
-  # pdf: 
+  # pdf:
   #   toc: true
   #   toc-depth: 3
   #   number-sections: true
   #   link-citations: true
-  #    link-bibliography: true
+  #   link-bibliography: true
+  #   lot: true
+  #   lof: true
   #   output-file: "TCC"
   #   output-ext: "pdf"
   docx:
     toc: true
     toc-depth: 3
     number-sections: true
+    number-depth: 3
     link-citations: true
     link-bibliography: true
     reference-doc: modeloTCC4.dotx
@@ -85,7 +88,8 @@ max_re <- slice_max(possibilities,sharpeRatePortfolio)
 
 bestCombination = slice_max(possibilities,sharpeRatePortfolio)
 summaryBestCombination = bestCombination[which(bestCombination[1:Nsymbols] > 0)]
-
+safetyCombination = slice_min(possibilities,sd)
+summarysafetyCombination = safetyCombination[which(safetyCombination[1:Nsymbols] > 0)]
 
 
 w = max_sr[1:Nsymbols] %>% unlist()
@@ -104,13 +108,41 @@ sr_portfolio_optimized = max_sr$sharpeRatePortfolio
 yMax = max(c(portfolio_return$portfolio.returns, portfolio_return_opmitized$portfolio.returns)) 
 yMin = min(c(portfolio_return$portfolio.returns, portfolio_return_opmitized$portfolio.returns)) 
 
+
+### grafico retorno portfolios
+
+portfolio_plot = portfolio_return %>% 
+  as.data.frame(row.names = index(.)) %>%
+  rownames_to_column("date") %>%
+  rename("returns"=portfolio.returns) %>%
+  mutate(date = as.Date(date),
+         color = case_when(
+           returns < mean_portfolio - sd_portfolio ~ "red",
+           returns > mean_portfolio + sd_portfolio ~ "green",
+           T ~ "darkblue"
+         ),
+         color= factor(color, levels = c("green","darkblue","red")))
+
+portfolio_plot_optimized = portfolio_return_opmitized %>% 
+  as.data.frame(row.names = index(.)) %>%
+  rownames_to_column("date") %>%
+  rename("returns"=portfolio.returns) %>%
+  mutate(date = as.Date(date),
+         color = case_when(
+           returns < mean_portfolio_optimized - sd_portfolio_optimized ~ "red",
+           returns > mean_portfolio_optimized + sd_portfolio_optimized ~ "green",
+           T ~ "darkblue"
+         ),
+         color= factor(color, levels = c("green","darkblue","red")))
+
+
 ```
 
-## TEMA
+# TEMA
 
 Analise da aplicação da teoria moderna de portfolio sobre o mercado das criptomoedas
 
-## RESUMO
+# RESUMO
 
 O mercado de criptomoeda tem se apresentado como alternativa aos ativos de renda variável, transformando assim novos modelos de negócios e formas de realizar transações, no entanto por ser algo recente ainda há poucos estudos utilizando a moderna teoria de portfólio de Markowitz aplicado a este setor, devido à alta instabilidade deste mercado apresenta tem por consequência o desejo em verificar a aplicação da moderna teoria de portfólio de Markowitz. Por isso essa pesquisa se caracteriza como uma pesquisa exploratória-quantitativa que usará como abordagem de revisão bibliográfica e análise de documentos.
 
@@ -124,7 +156,7 @@ Methodology: Por isso essa pesquisa se caracteriza como uma pesquisa exploratór
 
 Results:
 
-## INTRODUÇÃO {#sec-introducao}
+# INTRODUÇÃO {#sec-introducao}
 
 O termo criptomoeda foi um dos assuntos mais discutidos na última década principalmente durante o período de pandemia da covid-19 [@ozdurak2022], no qual esse período foi marcado por grandes incertezas dos investidores em relação ao mercado tradicional devido as diversas restrições impostas pelos governos locais na tentativa de conter o avanço do vírus. [@volosovych2023]
 
@@ -140,7 +172,11 @@ Sendo de tal forma foi levantada a questão conceitual da classificação das cr
 
 No qual para [@white2020] ao classificar o bitcoin definiu com base no seu comportamento como algum produto baseado em tecnologia, uma classe de ativo emergente ou um evento bolha ao invés de ser uma moeda ou título.
 
-Foi analisado por (Brauneis and Mestel, 2019) os benefícios da inclusão das criptmoedas no portfolio utilizando a estrutura de markowtiz e constataram que elas reduziam o risco do portfolio [APUD @ozdurak2022]
+Sendo para (Corbet et al., 2019b) a classificação do bitcoin como um ativo especulativo [APUD @schellinger2020]
+
+Para [@kwon2020] Ao realizar um estudo sobre o comportamento da cauda de risco de diversas classes como bitcoin, ouro, dolar e mercado de ativos tradicional chegou a conclusão de que o bitcoin deva ser classificado como uma alternativa de investimento.
+
+Sendo analisado por (Brauneis and Mestel, 2019) os benefícios da inclusão das criptmoedas no portfolio utilizando a estrutura de markowtiz e constataram que elas reduziam o risco do portfolio [APUD @ozdurak2022]
 
 Porém existe poucos estudos sobre a utilização do método criado por markowtiz aplicado somente ao mercado de criptmoedas e, esta lacuna que o corrente trabalho visa preencher.
 
@@ -150,17 +186,17 @@ Este trabalho está dividido da seguinte maneira, na seção @sec-desenvolviment
 
 Na seção @sec-desenvolvimento é subdivido em @sec-desenvolvimento-Criptomoeda Criptmoeda; aonde se aborda os conceitos de criptomoeda, criptografia, blockchain, mineração, apresenta,os riscos, oportunidades e a diferença do mercado de ações tradicional para o de criptmoedas, @sec-desenvolvimento-Moeda Moeda; é apresentado o conceito de moeda, suas funções, classificação da criptmoeda, regulação e a situação regulatória de cada país sobre o assunto e @sec-desenvolvimento-Markowitz Markowitz; o conceito e suas aplicações
 
-## PROBLEMA DE PESQUISA {#sec-problemaPesquisa}
+# PROBLEMA DE PESQUISA {#sec-problemaPesquisa}
 
 Qual o impacto da utilização da moderna teoria de portfólio sobre o mercado de cripto ativos dado a alta instabilidade do mesmo.
 
-## OBJETIVOS {#sec-objetivos}
+# OBJETIVOS {#sec-objetivos}
 
-### GERAL {#sec-objetivos-Geral}
+## GERAL {#sec-objetivos-Geral}
 
 verificar o impacto da utilização da moderna teoria de portfólio sobre o mercado de criptoativos.
 
-### ESPECÍFICOS {#sec-objetivos-Especifico}
+## ESPECÍFICOS {#sec-objetivos-Especifico}
 
 -   Conceituar criptoativos como ativos financeiros
 -   Diferenciar os criptoativos dos ativos financeiros usuais
@@ -168,17 +204,17 @@ verificar o impacto da utilização da moderna teoria de portfólio sobre o merc
 -   Analisar se a alta instabilidade do setor afeta diretamente na utilização do método da moderna teoria de portfolio
 -   Comparar o resultado da utilização do método contra uma simples seleção de portifólio
 
-## METODOLOGIA {#sec-metodologia}
+# METODOLOGIA {#sec-metodologia}
 
 Esse trabalho teve por intenção realizar um estudo pra verificar a aplicabilidade do método da moderna teoria de portfólio ao setor das criptomoedas.
 
-Portanto para alcançar ao objetivo traçado esta pesquisa se identifica em sua abordagem como quantitativa e possui natureza básica com objetivos exploratórios, usando o método dedutivo.
+Portanto para alcançar ao objetivo traçado esta pesquisa se classifica com o objetivo exploratória, com a abordagem quantitativa, possuindo natureza básica e utilizando o método dedutivo.
 
 Tendo como fonte de pesquisa utilizada para o embasamento cientifico obtidas através das seguintes plataformas: Periódicos CAPES, Scopus e Google Acadêmico. As pesquisas foram limitadas em até 5 anos de diferença com restrição da linguagem em português e inglês.
 
 Para realizar os cálculos foi utilizado a linguagem de programação R e os seguintes pacotes: **corrplot** [@wei2021], **knitr** [@xie2014], **openxlsx** [@schauberger2023], **PerformanceAnalytics** [@peterson2020], **quantmod** [@ryan2022], **rbcb** [@freitas2022] ,**RColorBrewer** [@neuwirth2022], **scales**[@wickham2022] e **tidyverse**[@wickham2019].
 
-é ilustrado a utilização em cada um dos pacotes mencionados no seguinte diagrama
+É ilustrado a utilização em cada um dos pacotes mencionados no seguinte diagrama
 
 ```{mermaid}
 flowchart TD
@@ -206,12 +242,7 @@ $$ {#eq-return}
 Onde:
 
 ::: {custom-style="livre"}
-
-$_{i}$ = Ativo
-$_{t}$ = Período
-$r$ = Valor do ativo
-$R$ = Retorno
-
+$_{i}$ = Ativo $_{t}$ = Período $r$ = Valor do ativo $R$ = Retorno
 :::
 
 Sendo a formula aplicada da função *Return.portfolio*
@@ -223,12 +254,9 @@ $$ {#eq-portfolioReturn}
 Onde:
 
 ::: {custom-style="livre"}
-
-$i_{t}$ = o ativo no período
-$w_{t}$ = Peso no período
-$R_{p}$ = Retorno do portfolio
-
+$i_{t}$ = o ativo no período $w_{t}$ = Peso no período $R_{p}$ = Retorno do portfolio
 :::
+
 Sendo a formula aplicada da função *SharpeRatio*
 
 $$
@@ -238,18 +266,16 @@ $$ {#eq-sharpeRation}
 Onde:
 
 ::: {custom-style="livre"}
-
 $sr$ = Indice sharpe\
 $R_{p}$ = Retorno do portfolio\
 $R_{f}$ = Taxa livre de risco\
 $\sigma_{p}$= Desvio padrão do portfolio
-
 :::
 
-A taxa livre de risco foi utilizada com base na taxa selic utilizando a estrutura de [@ramalho2020] no qual transforma a taxa selic anual média para mensal através da equação de conversão de juros anual para mensal, nesse trabalho ao inves de converter para a taxa mensal será convertido pra diária pois será trabalhado com dados diários das criptmoedas, sendo feito a conversão através da seguinte formula matematica.
+A taxa livre de risco foi utilizada com base na taxa selic utilizando a estrutura de [@ramalho2020] no qual transforma a taxa selic anual média para mensal através da equação de conversão de juros anual para mensal. Nesse trabalho ao inves de converter para a taxa mensal será convertido pra diária pois será trabalhado com dados diários das criptmoedas, sendo feito a conversão através da seguinte formula matematica.
 
 $$
-i_{a.d} = (1+\overline{i_{a.a}} )^{\frac{1}{12}} - 1
+i_{a.d} = (1+\overline{i_{a.a}} )^{\frac{1}{360}} - 1
 $$
 
 Onde:
@@ -279,6 +305,7 @@ $y_{i}$ = valor de y\
 $\overline{y}$ = média dos valores de y\
 $n$ = tamanho da amostra
 :::
+
 Sendo a formula aplicada da função *cor*
 
 $$
@@ -292,18 +319,19 @@ $cov(x,y)$ = o resultado da covariância de x e y\
 $\sigma_{x}$= o desvio padrão de x\
 $\sigma_{y}$ = o desvio padrão de y
 :::
+
 Sendo a formula aplicada da função *mean*
 
 $$
 E(R) = \frac{\sum x}{n}
-$$ {#eq-mean}
-Onde: 
+$$ {#eq-mean} Onde:
 
 ::: {custom-style="livre"}
 x = os valores de x
 
 n = tamanho da amostra
 :::
+
 Para realizar a criação dos gráficos foi utilizado um conjunto de funções do pacote **tidyverse** sendo eles: *ggplot*, *geom_point*, *theme_classic*, *scale_y_continuous*, *scale_x_continuous* e *labs*.
 
 Além dessa aplicação para a realização de gráficos o pacote do tidyverse também foi utilizado para realizar a transformação da tabela de um formato largo para o longo através da função *pivot_longer*, nesse processo também foi necessário a transformação do arquivo provindo do formato xts para o formato tidy usando a função *as.data.frame* e *rownames_to_column*.
@@ -318,11 +346,11 @@ Para iterar sobre cada um dos pesos foi utilizado o *FOR* que é uma função de
 
 Os dados foram obtidos através da plataforma Yahoo Finance utilizando a função *getSymbols* do pacote **quantmod**, tendo o período analisado de `r dataInicio` até `r dataFim`
 
-Sendo os ativos selecionados: `r symbols`. O critério utilizado pra fazer a seleção das criptomoedas foi as `r Nsymbols` maiores criptomoedas em relação a capitalização de mercado, sendo removido o USDT-USD e USDC-USD devido a elas funcionarem como uma moeda digital fiduciaria no qual é pareado o seu valor 1:1 com o dolar, sendo este dado extraído da plataforma do coinmarketcap.
+Sendo os ativos selecionados: `r textList(symbols)`. O critério utilizado pra fazer a seleção das criptomoedas foi as `r Nsymbols` maiores criptomoedas em relação a capitalização de mercado, sendo removido o USDT-USD e USDC-USD devido a elas funcionarem como uma moeda digital fiduciaria no qual é pareado o seu valor 1:1 com o dolar, sendo este dado extraído da plataforma do coinmarketcap.
 
-## DESENVOLVIMENTO {#sec-desenvolvimento}
+# DESENVOLVIMENTO {#sec-desenvolvimento}
 
-### CRIPTOMOEDA {#sec-desenvolvimento-Criptomoeda}
+## CRIPTOMOEDA {#sec-desenvolvimento-Criptomoeda}
 
 A categorização no qual as criptomoedas podem ser enxergadas variam entre pesquisadores.
 
@@ -354,7 +382,7 @@ Até o ouro que é um ativo de menor risco foi afetado negativamente pela covid-
 
 Os impactos causados durante esse período moldaram o cenário atual das criptomoedas tendo como exemplo: a alta inflação, queda no produto interno bruto, distanciamento social e diversas restrições das quarenta impostas. [@volosovych2023]
 
-#### CONTEXTUALIZAÇÂO {#sec-desenvolvimento-Criptomoeda-Contextualizacao}
+### CONTEXTUALIZAÇÂO {#sec-desenvolvimento-Criptomoeda-Contextualizacao}
 
 As criptomoedas, no geral, são observadas por diversos grupos da sociedade ao redor do mundo, sendo eles: investidores, financeiras, organizações governamentais, bancos centrais, legisladores, economistas, pesquisadores e etc. umas das explicações possíveis a esse fenômeno se dá ao fato do alto nível de liquidez como resultado de uma flexibilização monetária e pequenos rendimentos de ativos financeiros. [@arzova2021]
 
@@ -366,7 +394,7 @@ Tendo assim, o bitcoin e outras criptomoedas que surgiram com o tempo, caracter�
 
 Portanto o bitcoin encerra um ciclo de tentativas afim de solucionar o problema de transicionamento de pagamentos sem terceiras partes envolvidas de tal modo que fossem transparentes, seguras e descentralizadas em uma rede de ponto a ponto. [@nascimento2022]
 
-#### CRIPTOGRAFIA {#sec-desenvolvimento-Criptomoeda-Criptografia}
+### CRIPTOGRAFIA {#sec-desenvolvimento-Criptomoeda-Criptografia}
 
 Para garantir a segurança da rede e das transações nela feita é utilizado funções criptografadas denominadas hash, é um protocolo do consenso no qual fornece a validação entre nós anônimos sobre o status atual do histórico de transações armazenado em um livro-razão, comumente referido como blockchain. [@schellinger2020]
 
@@ -392,9 +420,9 @@ Por consequência, a falsificação do pertencimento da propriedade se torna imp
 
 As chaves geradas através do processo de criptografia são normalmente administradas por carteiras digitais que tem por função armazenar as criptomoedas. [@biernacki2021]
 
-#### SOBRE AS CRIPTMOEDAS UTILIZADAS {#sec-desenvolvimento-Criptomoeda-ativosSelecionados}
+### SOBRE AS CRIPTMOEDAS UTILIZADAS {#sec-desenvolvimento-Criptomoeda-ativosSelecionados}
 
-Foram utilizadas nesse trabalho `r Nsymbols` Criptmoedas, nesta seção traz uma breve revisão sobre elas, sendo elas: `r symbols`.
+Foram utilizadas nesse trabalho `r Nsymbols` Criptmoedas, nesta seção traz uma breve revisão sobre elas, sendo elas: `r textList(symbols)`.
 
 1.  BTC: O bitcoin foi criada em 2008 com característica de ser uma moeda descentralizada no qual permite transações entre as partes sem intermediários e não possui alguma entidade a controlando, porém há contribuições continuas de diversos programadores para a continua evolução e melhoramento da rede. [@bitcoin]
 
@@ -412,7 +440,7 @@ Foram utilizadas nesse trabalho `r Nsymbols` Criptmoedas, nesta seção traz uma
 
 8.  MATIC: A Matic funciona como meio para transações dentro da rede da polygon tendo como funcionalidades a possibilidade da participação das decisões adotadas dentro do projeto, funcionar como um meio de pagamento e staking que é uma forma de obter renda passiva com o ativo. Sendo a polygon uma plataforma que busca por facilitar a conexão entre redes compatíveis com a ethereum e reduzir problemas nesse processo. Sendo criada em 2017 por Jaynti Kanani, Sandeep Nailwal e Anurag Arjun. [@polygon] ela foi criada em Mumbai que fica situada na Índia [@whatis]
 
-#### CARTEIRA {#sec-desenvolvimento-Criptomoeda-Carteira}
+### CARTEIRA {#sec-desenvolvimento-Criptomoeda-Carteira}
 
 A carteira digital possui duas funções sendo a primeira de ser uma ferramenta de administração de criptomoedas e a segunda de uma ferramenta de interação com a rede da blockchain. [@biernacki2021] .
 
@@ -424,7 +452,7 @@ As online/hot wallets tem por característica só funcionar se conectado a inter
 
 As offline/cold wallets é o inverso, são armazenadas em arquivos físicos que independem de conexão com a internet. Tendo como exemplos: carteira de papel e carteira física. [@nowroozi2023]
 
-##### HOT WALLETS {#sec-desenvolvimento-Criptomoeda-Carteira-hotwallet}
+#### HOT WALLETS {#sec-desenvolvimento-Criptomoeda-Carteira-hotwallet}
 
 Carteira computador: são carteiras no qual as chaves privadas ficam armazenadas no disco rígido do computador e para usa-las é necessário a instalação de algum software. [@biernacki2021]
 
@@ -432,19 +460,19 @@ Carteira online: são carteiras disponíveis através dos navegadores sem precis
 
 Carteira móvel: são carteiras que podem ser instaladas em smartphones dando assim acesso rápido em qualquer lugar. [TRUST WALLET TOOL PAGE APUD @biernacki2021]
 
-##### COLD WALLETS {#sec-desenvolvimento-Criptomoeda-coldwallet}
+#### COLD WALLETS {#sec-desenvolvimento-Criptomoeda-coldwallet}
 
 Carteira de papel: são carteiras que é impresso num papel um QR code que contém as duas chaves, pública e privada. [@nowroozi2023]
 
 Carteira física: são produtos eletrônicos físicos como um pendrive no qual dentro dela é gerado a chave pública e privadas. Este tipo em especifico é entre as opções a mais segura. [@nowroozi2023]
 
-#### BLOCKCHAIN {#sec-desenvolvimento-Criptomoeda-Blockchain}
+### BLOCKCHAIN {#sec-desenvolvimento-Criptomoeda-Blockchain}
 
 Sendo o conceito de blockchain, para o mercado de criptomoedas, como um livro-razão aonde se registra dados das transações, sendo que só pode ser adicionado o novo dado ao final deste livro. [@kolb2021]
 
 Novos blocos são adicionados por certos nós na rede e vinculados criptograficamente a blocos de dados anteriores, tornando o blockchain inviolável e acessível a todos na rede. [@schellinger2020]
 
-de acordo com (SILVA; BOVÉRIO, 2018) a blockchain é dividida entre 3 grupos, sendo elas 1.0, 2.0 e 3.0. [APUD @junior2021]
+De acordo com (SILVA; BOVÉRIO, 2018) a blockchain é dividida entre 3 grupos, sendo elas 1.0, 2.0 e 3.0. [APUD @junior2021]
 
 -   1.0 apresenta conceitos de moedas virtuais e no sistema de pagamento, tendo o bitcoin como sua representante, de acordo com [SILVA; BOVÉRIO, 2018 APUD @junior2021]
 -   2.0 tem a característica principal a formalização de negociações entre participantes sem intermediários, sendo dessa forma denominado esse processo de contratos inteligentes. [CARDOSO, 2018 APUD @junior2021]
@@ -453,12 +481,12 @@ de acordo com (SILVA; BOVÉRIO, 2018) a blockchain é dividida entre 3 grupos, s
 O processo de operação da blockchain é exemplificado por [@mattos2020] no seguinte trecho:
 
 ::: {custom-style="Citação - ABNT"}
-"os Bitcoins saem da e-wallet (conta na rede blockchain) do agente A e entram na e-wallet do agente B em poucos segundos, porém pendente de validação. Essa validação ocorrerá no sistema DLT, no qual diversos computadores participantes concorrerão para validar a transação por meio da finalização do proof-of-work (mineração) necessário para criar um novo bloco, que satisfaz todos os protocolos requeridos pelo sistema DLT. O primeiro computador a criar o bloco ganha como recompensa alguns Bitcoins; o novo bloco, por sua vez, é propagado pela rede e outros computadores irão checar se o bloco é válido -- já que o sistema é descentralizado, ou seja, não há um órgão central que faz essa validação -- antes de incluí-lo no sistema blockchain. Após esse processo, o agente B receberá a confirmação da transação dos Bitcoins enviados pelo agente A."
+"Os Bitcoins saem da e-wallet (conta na rede blockchain) do agente A e entram na e-wallet do agente B em poucos segundos, porém pendente de validação. Essa validação ocorrerá no sistema DLT, no qual diversos computadores participantes concorrerão para validar a transação por meio da finalização do proof-of-work (mineração) necessário para criar um novo bloco, que satisfaz todos os protocolos requeridos pelo sistema DLT. O primeiro computador a criar o bloco ganha como recompensa alguns Bitcoins; o novo bloco, por sua vez, é propagado pela rede e outros computadores irão checar se o bloco é válido -- já que o sistema é descentralizado, ou seja, não há um órgão central que faz essa validação -- antes de incluí-lo no sistema blockchain. Após esse processo, o agente B receberá a confirmação da transação dos Bitcoins enviados pelo agente A."
 :::
 
 De forma que o nó valide determinado bloco na blockchain é feito um trabalho denominado de mineiração. [ULRICH. 2014 APUD @aragon2018]
 
-#### MINERAÇÂO {#sec-desenvolvimento-Criptomoeda-Mineração}
+### MINERAÇÂO {#sec-desenvolvimento-Criptomoeda-Mineração}
 
 O conceito de mineiração consiste em um processo no qual computadores conectados a rede tentam solucionar os calculos matemáticos, sendo a recompensa uma fração da moeda criada no processo e posteriormente valida um bloco de transações na rede, no caso do bitcoin o nivel é ajustado até que atinja o numero máximo de moedas definidos em seu protocolo criação, que é de 21 milhões de moedas sejam criadas até 2140 [ULRICH. 2014 APUD @aragon2018]
 
@@ -466,17 +494,25 @@ O processo denominado mineração se deu através da analogia com a mineração 
 
 Sendo desse processo gerador da problemática do impacto ambiental ocasionado ao realizar o processo de mineração já que é exigido um elevado custo de energia elétrica, por outro lado esse problema poderia ser reduzido ao se utilizar fontes de energias renováveis, tornando o processo de mineração mais barato ao minerador e menos nocivo ao meio ambiente [@ozdurak2022]
 
-#### RISCOS {#sec-desenvolvimento-Criptomoeda-Riscos}
+### RISCOS {#sec-desenvolvimento-Criptomoeda-Riscos}
 
-##### ASSIMETRIA DA INFORMAÇÂO {#sec-desenvolvimento-Criptomoeda-Riscos-Infomação}
+#### ASSIMETRIA DA INFORMAÇÂO {#sec-desenvolvimento-Criptomoeda-Riscos-Infomação}
 
-Outro problema do mercado de criptomoedas é a assimetria das informações entre os mercados, seja elas causadas por problemas de softwares (Bugs, hacks e etc), Alto volume de vendas que impactaria o preço ou o desfazimento do time responsável por alguma moeda . [@benedetti2021]
+Outro problema do mercado de criptomoedas é a assimetria das informações entre os mercados, seja elas causadas por problemas de softwares (Bugs, hacks e etc), Alto volume de vendas que impactaria o preço ou o desfazimento do time responsável por alguma moeda. [@benedetti2021]
 
-##### BOLHA FINANCEIRA {#sec-desenvolvimento-Criptomoeda-Riscos-BolhaFinanceira}
+Além disso por ser um mercado emergente ele sofre mais facilmente com a propagação de noticias falsas do que o mercado tradicional, no qual essas noticias tem o intuito de enganar o investidor.(APUD TRADINGVIEW, 2021. JÚNIOR, ASRILHANT. 2021) [APUD @junior2021]
+
+Tendo como exemplo segundo (BRANCO, 2021) o caso da criptmoeda Litecoin no qual seu valor subiu em 30% rapidamente após postar um anuncio que seria relizado uma parceria com a Walmart porém logo foi desmentido e seu valor caiu na mesma velocidade. [APUD @junior2021]
+
+\[inserir risco de pump dump scheme\]
+
+#### BOLHA FINANCEIRA {#sec-desenvolvimento-Criptomoeda-Riscos-BolhaFinanceira}
 
 Outro ponto que vale a pena se destacar é a presença de bolhas no mercado de criptomoedas devido a sua elevada expectativa do seu preço no futuro e ao risco incorrido podendo superar até aos casos históricos da South sea company e a cisco. [@white2020]
 
-##### GOLPES {#sec-desenvolvimento-Criptomoeda-Riscos-Golpes}
+Essa ideia também é defendida por [@schellinger2020] ao qual atribui o aparecimento de bolhas no mercado de criptomoedas devido a alta especulação
+
+#### GOLPES {#sec-desenvolvimento-Criptomoeda-Riscos-Golpes}
 
 De acordo com [@bartoletti2021] scams, que traduzido para português significa golpes, são definidas como comportamento ilegal que tem por intenção obter algo ilegalmente ao enganar pessoas.
 
@@ -497,9 +533,9 @@ Os golpes aplicados no setor de criptomoedas podem ser categorizados como sete c
 -   ICO'S FALSAS: Falsas ICOs' se divulgam com alguma característica particular que as demais não possuem sendo por exemplo com apoio de falsa celebridades ou um time falso de trabalho induzindo assim ao comprador adquirir participação no projeto falso. [@bartoletti2021]
 -   LAVAGEM DE DINHEIRO: Sendo o conceito de lavagem de dinheiro definidios por [@silveira2020] como fruto de uma ação ilegal que para ser usado como dinheiro legal é feito um disfarce sobre sua origem.
 
-#### BENEFICIOS {#sec-desenvolvimento-Criptomoeda-Beneficios}
+### BENEFICIOS {#sec-desenvolvimento-Criptomoeda-Beneficios}
 
-##### FINANCEIROS {#sec-desenvolvimento-Criptomoeda-Beneficios-Financeiros}
+#### FINANCEIROS {#sec-desenvolvimento-Criptomoeda-Beneficios-Financeiros}
 
 Por outro lado, o processo de mineração criptomoeda se tornou uma forma de renda acessível aonde há uma alta inflação e falta de confiança nos governos locais. [@kliber2019]
 
@@ -511,7 +547,7 @@ O que por sua vez as criptomoedas além de eliminar os custos com intermediário
 
 Há ainda, através das ICO (Initial Coin Ofering, oferta inicial da moeda), uma nova forma de arrecadar fundos para pequenas startups. [@xu2021]
 
-##### ICO {#sec-desenvolvimento-Criptomoeda-Beneficios-Ico}
+#### ICO {#sec-desenvolvimento-Criptomoeda-Beneficios-Ico}
 
 Sendo, em seu conceito, uma forma descentralizada de fundo colaborativo no qual é empregado sobre a rede da blockchain para arrecadação através da emissão de tokens tendo assim como característica o rápido método de financiamento e um limite baixo. [@xu2021]
 
@@ -529,7 +565,7 @@ por outro lado, a assimetria da informação e ambiente relativamente incerto in
 
 A falta de regulação aumenta o risco de investimento dado que na situação em que o investidor comprou um token no qual a ICO fracassou no seu processo de arrecadação de fundos, ele pode ter grande perdas já que os tokens podem não ser mais negociados na internet. [@xu2021]
 
-##### SOCIAL {#sec-desenvolvimento-Criptomoeda-Beneficios-Social}
+#### SOCIAL {#sec-desenvolvimento-Criptomoeda-Beneficios-Social}
 
 Uma outra possibilidade seria o uso dessa nova tecnologia ao sistema financeiro, visando facilitar a inclusão financeira aos indivíduos marginais da sociedade, no qual não possuem banco e assim não se comunicam com um sistema financeiro formal. Sendo dessa forma as remessas financeiras através de criptomoedas e transferências mobiles uma possível mudança no paradigma da inclusão financeira e inovação. [@ma2020]
 
@@ -539,7 +575,7 @@ Além disso com o surgimento da blockchain e o desenvolvimento dos contratos int
 
 Outro fator importante a se destacar é as diferenças entre o mercado cripto e o mercado de ações tradicional
 
-#### DIFERENÇA MERCADO DE AÇÕES E MERCADO DE CRIPTOMOEDAS {#sec-desenvolvimento-Criptomoeda-DiferençaMercados}
+### DIFERENÇA MERCADO DE AÇÕES E MERCADO DE CRIPTOMOEDAS {#sec-desenvolvimento-Criptomoeda-DiferençaMercados}
 
 No mercado de ações tem por característica ser centralizado, ou seja, os investidores não negociam entre si, eles interagem através de intermediários, e eles negociam na bolsa de valores, tendo dessa forma uma ou mais instituições reguladoras fiscalizando. [@benedetti2021]
 
@@ -551,13 +587,19 @@ A falta de regulação aos mercados de criptoativos é a que mais distância do 
 
 Porém devido a essa ausência aliada com as tecnologias da blockchain propiciam um ambiente para inovações em tipos de aplicações comerciais como por exemplo tipos de pedidos (fill or kill, market, limit e etc), politicas nas taxas de negociações (fee per trade, percentage of traded amount e etc), tipos de participantes (market-makers, proprietary, algorithmic trading support e etc) entre outros. [@benedetti2021]
 
-#### CLASSIFICAÇÃO {#sec-desenvolvimento-Criptomoeda-Classificação}
+### CLASSIFICAÇÃO {#sec-desenvolvimento-Criptomoeda-Classificação}
+
+Ao realizar um estudo sobre o comportamento da cauda de risco de diversas classes como bitcoin, ouro, dolar e mercado de ativos tradicional chegou a conclusão de que o bitcoin deva ser classificado como uma alternativa de investimento. [@kwon2020]
+
+Para (CHUEN, 2015) devido as criptmoedas serem sujeitas a oscilações diarias em seu valor e serem negociadas através de exchanges, casas de cambio especializdas, faz com que eles se caracterizem mais como um ativo financeiro. [APUD @mattos2020]
 
 Além disso A classificação do bitcoin como comodities é algo incerto tendo ele mais semelhança em seu comportamento entre algum produto baseado em tecnologia, uma classe de ativo emergente ou um evento bolha ao invés de ser uma moeda ou título. [@white2020]
 
-Portanto devido a essa perturbação no setor financeiro sobre a conceituação de criptomoeda como uma moeda fiduciária ou não, é um tema bastante debatido e difuso entre os pesquisadores no qual cabe uma análise mais profunda sobre o conceito de moeda, o papel que as moedas exercem e do ponto de vista jurídico para melhor entendimento se as criptomoedas como bitcoin devam ser classificadas como ou um ativo financeiro ou moeda fiduciária
+De acordo com [@fry2023] as criptmoedas se assemlham no geral como um classe de ativo financeiro tecnologica, sendo a exceção o bitcoin e a solana no qual tem caracteristicas de moeda.
 
-### MOEDA {#sec-desenvolvimento-Moeda}
+Portanto devido a essa divergencia sobre a conceituação de criptomoeda ser caracterizada como uma moeda fiduciária ou não, é valido uma analise mais profunda sobre o conceito de moeda, o papel que as moedas exercem e do ponto de vista jurídico para melhor entendimento se as criptomoedas como bitcoin devam ser classificadas como ou um ativo financeiro ou moeda fiduciária
+
+## MOEDA {#sec-desenvolvimento-Moeda}
 
 A conceituação sobre o fator que levou ao surgimento da moeda como atualmente é conhecida, é distinta entre as correntes clássicas da economia e as correntes keynesiana e etnográfica.
 
@@ -573,7 +615,7 @@ Sendo para (KNAPP. 20023) o conceito do dinheiro, uma criação do estado com fi
 
 Ou seja, a moeda é um reconhecimento de dívida no qual há a transformação em dinheiro em seu sentido literal através do poder do estado de declarar que é passível de quitação de outras dividas. [@mattos2020]
 
-#### FUNÇÔES {#sec-desenvolvimento-Moeda-Funções}
+### FUNÇÔES {#sec-desenvolvimento-Moeda-Funções}
 
 Segundo (NUNES, 2016) Para que seja considerado uma moeda, ela deve exercer três funções elementares sendo estas: meio de troca, unidade de conta e reserva de valor. [@aragon2018]
 
@@ -583,7 +625,7 @@ Além dessas três funções clássicas da moeda, ela deve conter as seguintes c
 
 De acordo com (ARAÚJO; SILVA, 2017) no caso especifico do bitcoin, ele tem as propriedades da divisibilidade e portabilidade possuindo assim características de ser um meio de pagamento descentralizado. [APUD @junior2021]
 
-#### CLASSIFICAÇÂO {#sec-desenvolvimento-Moeda-Classificações}
+### CLASSIFICAÇÂO {#sec-desenvolvimento-Moeda-Classificações}
 
 Para (WOODFORD, 2011) As criptomoedas com características semelhantes ao bitcoin possuem as funções reservas de valor, meio de troca mas não a da unidade de conta pois a falta de uma ampla aceitação da sociedade para utilizarem ao realizar trocas entre si. [@white2020]
 
@@ -599,7 +641,7 @@ Por fim destaca [@white2020] que comportamento do bitcoin é diferente das demai
 
 No geral há ainda muitas indefinições de pesquisadores sobre sua classificação sob o ponto de vista econômico, porém é inegável que a natureza especulativa do mercado é um fator preponderante pra sua função reserva de valor, no qual este fator tende a ser menos impeditivo para tal classificação dado a característica deflacionária no caso em específico do bitcoin.
 
-#### REGULAÇÂO {#sec-desenvolvimento-Moeda-Regulação}
+## REGULAÇÂO {#sec-desenvolvimento-Moeda-Regulação}
 
 As criptomoedas de acordo com os seus críticos, não estão livres das fraudes e escândalos, por exemplo em 2014 a plataforma Mt. Gox no Japão houve muitos milhões em bitcoin roubados e em 2016 teve \$50 milhões de ethereum furtados sob um ataque DAO, organização autônoma descentralizada, além disso criptopagamento não são regulados e não restringem compras, isso inclui as ilegais. [@giudici2020]
 
@@ -613,7 +655,7 @@ De acordo com (FOLEY et al.2019) 46% das transações utilizando o bitcoin como 
 
 Esse fato pode ser explicado devido à ausência de uma terceira parte para que possa examinar os fluxos suspeitos e relatar as autoridades competentes, que usualmente esse papel é exercido por bancos. [@estellita2020]
 
-#### CONCEITO {#sec-desenvolvimento-Moeda-Conceito}
+### CONCEITO {#sec-desenvolvimento-Moeda-Conceito}
 
 Para o âmbito jurídico a moeda deve possuir o cursor legal que é classificado quando as pessoas de uma determinada sociedade tem por obrigação aceitar a moeda, o cursor forçado quando não é permitido pedir reembolso em forma de outros ativos e o poder liberatório quando é meio jurídico valido para quitar dívidas e obrigações contraídas. [@castello2019]
 
@@ -623,7 +665,7 @@ No Japão a moeda consta com a característica com o poder liberatório pois é 
 
 No geral as criptomoedas tem diversas classificações acerca de como deva ser compreendida ao redor do mundo, enquanto alguns países baniram o direito de da comercialização e da circulação da moeda como é o caso de Nepal, porém em sua grande maioria é liberado, na Itália e Japão é exigido o registro e a licença da operação da criptomoeda e no México é aceito como meio de pagamento. [@shirakawa2019]
 
-#### PROBLEMATICA {#sec-desenvolvimento-Moeda-Problematica}
+### PROBLEMATICA {#sec-desenvolvimento-Moeda-Problematica}
 
 De acordo com FATF as criptomoedas por sua natureza da descentralização, transnacionalidade, anonimato e transição entre mundo virtual ao real, são potenciais catalisadores para lavagem de dinheiro sendo agrupados em três grandes temas descentralização, pseudoanonimidade e globalidade. [@estellita2020]
 
@@ -651,13 +693,13 @@ Sendo que Segundo Grupo de Ação Financeira Internacional (GAFI), existem três
 -   OCULTAÇÂO: nessa fase o intuito é atrapalhar investigações sobre a origem do dinheiro ao movimentar o ativo entre contas anônimas e assim eliminar as evidencias. [@silveira2020]
 -   INTEGRAÇÂO: É a etapa final no qual consiste em introduzi-lo ao sistema econômico. [@silveira2020]. Sendo na fase de ocultação aplicadas a criptomoedas destaca por [@estellita2020] com a adesão dos serviços de mixing sendo por ela categorizado entre simples e complexo
 
-##### MIXING {#sec-desenvolvimento-Moeda-Problematica-Mixing}
+#### MIXING {#sec-desenvolvimento-Moeda-Problematica-Mixing}
 
 O intuito desse tipo de pratica é eliminar os rastros das criptomoedas dentro da rede da blockchain, devido ao fato dos serviços de carteiras, comumente conhecida como exchanges cemtralizadas, que ficam com a chave privada ao invés do usuário e de tal forma operam como banco no quesito de o dinheiro depositado não significa a própria cédula em especifico como sua propriedade, mas sim a quantidade possuída dentro do sistema. Tem por consequência a possibilidade de realizar a mistura dos ativos para fins de lavagem de dinheiro. [@estellita2020].
 
 Tendo assim mixing expecializados que por sua vez operam de forma mais complexa ao criar camadas extras de ocultação dos rastros das moedas. As moedas enviadas por diversos usuários pra esse serviço, são jogadas em uma piscina com outras moedas legais e misturadas e por fim devolvidas ao endereço especificado pelo usuário, podendo ainda ser fracionadas em pequenas transações e esse ciclo repetido inúmeras vezes. [@estellita2020].
 
-#### CLASSIFICAÇÃO AO REDOR DO MUNDO {#sec-desenvolvimento-Moeda-RegulaçãoMundo}
+### CLASSIFICAÇÃO AO REDOR DO MUNDO {#sec-desenvolvimento-Moeda-RegulaçãoMundo}
 
 Sendo a china, em um período, uma das maiores mineradoras de criptomoedas do mundo, acabou por proibir em todo o seu território as transações e o processo de mineração sob a alegação do alto gasto de energia e computacional para tal. [@neto2023]
 
@@ -677,7 +719,7 @@ O Brasil, atualmente, se integra um grupo seleto de países que possuem regulame
 
 A lei também procura regular as corretoras, Exchanges, pois elas só poderão atuar em território brasileiro mediante autorização dos órgãos da administração pública, além disso também ficou permitido ao Banco Central acumular ou prestar serviço de ativos virtuais. [@neto2023]
 
-### MARKOWITZ {#sec-desenvolvimento-Markowitz}
+## MARKOWITZ {#sec-desenvolvimento-Markowitz}
 
 No período de 2021 devido a alta inflação mundial que alcançou tanto as economias desenvolvidas quanto as em desenvolvimento trouxe diversos desafios a aplicação da administração de portfólio, especialmente a investidores experientes no qual tinha por premissa obter o retorno maior que a inflação. [@ozdurak2022]
 
@@ -695,13 +737,19 @@ Ou seja não é sobre o risco individual de cada ativo, e sim sobre como todos o
 
 O perfil de risco recompensa ao nível de risco assumido, isso pode ser medido usando a razão de Sharpe no qual demonstra os retornos por unidade de risco aceitado. [@ram2018]
 
-Segundo estudos realizados por (Brauneis and Mestel, 2019) os benefícios da inclusão das criptmoedas no portfolio utilizando a estrutura de markowtiz, resultaram na afirmação que elas reduziam o risco do portfolio [APUD @ozdurak2022]
-
 Sendo o Indice de Sharpe, uma ferramenta que auxilia na comparação de performance entre ativos agrupados no portfólio ao se calcular os retornos excessivos sobre a taxa livre de risco, sendo a Razão Sharpe maior que um aceitável e consequentemente quanto maior for ela mais retornos excessivos sobre a taxa livre de risco, que em sua finalidade é capaz de fornecer a fronteira eficientes entre diferentes portfolios [@ma2020]
 
-## RESULTADOS {#sec-Resultados}
+A fronteira eficiente pode ser compreendida como uma linha no qual possui os melhores retornos ao niveis de risco assumidos sobre um conjunto de combinações possiveis na composição do portfolio, para tal ela utiliza o indice sharpe como parametro. [@silva2019]
 
-A relação de risco e retorno esperado entre os ativos da carteira é demonstrada no @fig-RiscoxRetorno, sendo o `r less_riskier$asset` o ativo de menor risco com um desvio padrão de `r toPercent(less_riskier$sd)` e retorno esperado de `r less_riskier$mean`. Enquanto `r more_proftible$asset` é o ativo de maior retorno esperado com o desvio padrão de ``` r``toPercent(more_proftible$sd) ``` e retorno esperado de `r more_proftible$mean`
+Atualmente há inumeros estudos utilizando a teoria de optimização de portfólio no universo de criptomoedas em diversos tipos de cenarios.
+
+### APLICAÇÂO EM CRIPTOMOEDAS
+
+Em um estudo realizado por (Brauneis and Mestel, 2019) sobre os benefícios da inclusão das criptmoedas no portfolio utilizando a estrutura de markowtiz, constataram que elas reduziam o risco do portfolio [APUD @ozdurak2022]
+
+# RESULTADOS {#sec-Resultados}
+
+A relação de risco e retorno esperado entre os ativos da carteira é demonstrada no @fig-RiscoxRetorno, sendo o `r less_riskier$asset` o ativo de menor risco com um desvio padrão de `r toPercent(less_riskier$sd)` e retorno esperado de `r less_riskier$mean`. Enquanto `r more_proftible$asset` é o ativo de maior retorno esperado com o desvio padrão de `r toPercent(more_proftible$sd)` e retorno esperado de `r more_proftible$mean`
 
 ```{R}
 #| label: fig-RiscoxRetorno
@@ -724,7 +772,7 @@ asset_return_long %>%
   theme(legend.position="none", plot.title = element_text(hjust = .5))
 ```
 
-Foi verificado a matriz de correlação dos ativos e verificado que os ativos são positvamente correlacionados, veja em @tbl-correlacao e no gráfico @fig-correlacao
+Em seguida foi verificado a matriz de correlação dos ativos e verificado que os ativos são positvamente correlacionados, veja em @tbl-correlacao e no gráfico @fig-correlacao.
 
 ```{R}
 #| label: tbl-correlacao
@@ -750,7 +798,9 @@ corrplot(correlation,
          )
 ```
 
-Ao performar as combinações dos ativos possíveis foram encontradas as 5 combinações com melhores índice Sharpe conforme demonstrado na @tbl-melhoresCombinacoes. Sendo a combinação de ``` r toPercent(``as.numeric(summaryBestCombination)) ``` do ativo `r names(summaryBestCombination)` entre os ativos com um índice Sharpe de `r paste0(round(bestCombination$sharpeRatePortfolio,4))`, desvio padrão de ``` r toPercent(``bestCombination$sd) ``` e retorno esperado de `r bestCombination$mean`
+Ao performar as combinações dos ativos possíveis foram encontradas as 5 combinações com melhores índice Sharpe conforme demonstrado na @tbl-melhoresCombinacoes. Sendo o ponto de tangência do portfolio com a combinação de `r toPercent(as.numeric(summaryBestCombination))` dos ativos distribuidos em `r textList(names(summaryBestCombination))` respectivamente, sendo o índice Sharpe de `r round(bestCombination$sharpeRatePortfolio,4)`, desvio padrão de `r toPercent(bestCombination$sd)` e retorno esperado de `r bestCombination$mean`.
+
+Já o ponto de menor variancia do portfólio é composto por `r toPercent(as.numeric(summarysafetyCombination))` do ativo composto de `r textList(names(summarysafetyCombination))` com um indice sharpe de `r round(safetyCombination$sharpeRatePortfolio,4)`, desvio padrão de `r toPercent(safetyCombination$sd)` e retorno esperado de `r safetyCombination$mean`.
 
 ```{R}
 #| label: tbl-melhoresCombinacoes
@@ -778,6 +828,8 @@ slice_max(possibilities,sharpeRatePortfolio,n=5) %>%
 
 ```
 
+Ao realizar todas as `r format(nrow(possibilities),big.mark=".",decimal.mark=",")` combinações de carteira possiveis, foi traçado o gráfico de optimização de portfólio e fronteira eficiente, veja em @fig-fronteiraEficiente.
+
 ```{R}
 #| label: fig-fronteiraEficiente
 #| fig-cap: Optimização de portfolio & Fronteira eficiente
@@ -804,26 +856,14 @@ possibilities %>%
 
 ```
 
-De tal forma ao realizar todos os cálculos do retorno do portfolio para todas as `r nrow(possibilities)` hipóteses de combinações de carteira. Foi possível realizar o gráfico de optimização do portfolio e nele perceber a fronteira eficiente vista no @fig-fronteiraEficiente.
+Por fim foi comparado o retorno do portfólio com pesos igualmente dsitribuidos, classificado como portfólio normal veja na @fig-retornoPortfolioNormal, com o retorno do portfólio optimizado segundo o ponto de tangência da fronteira eficiente, veja na @fig-retornoPortfolioOptmiziado.
+
+Os resultados obtidos foram que para o portfólio normal o desvio padrão é igual a `r sd(portfolio_plot$returns)` e retorno esperado de `r mean(portfolio_plot$returns)` enquanto pro portfólio optmizado o desvio padrão é de `r sd(portfolio_plot_optimized$returns)` e o retorno esperado de `r mean(portfolio_plot_optimized$returns)`ou seja a optimização do portfólio o tornou em um portfólio mais arriscado com maior retorno.
 
 ```{R}
 #| label: fig-retornoPortfolioNormal
 #| fig-cap: Retorno do portfolio normal
 
-portfolio_plot = portfolio_return %>% as.data.frame(row.names = index(.)) %>%
-  rownames_to_column("date") %>%
-  rename("returns"=portfolio.returns) %>%
-  mutate(date = as.Date(date),
-         color = case_when(
-           returns < mean_portfolio - sd_portfolio ~ "red",
-           returns > mean_portfolio + sd_portfolio ~ "green",
-           T ~ "darkblue"
-         ),
-         color= factor(color, levels = c("green","darkblue","red")))
-
-
-
-###
 
 portfolio_plot %>%
   ggplot(aes(x=date, y =returns,color=color)) +
@@ -856,20 +896,6 @@ portfolio_plot %>%
 #| fig-cap: Retorno do portfolio optimizado
 
 
-portfolio_plot_optimized = portfolio_return_opmitized %>% 
-  as.data.frame(row.names = index(.)) %>%
-  rownames_to_column("date") %>%
-  rename("returns"=portfolio.returns) %>%
-  mutate(date = as.Date(date),
-         color = case_when(
-           returns < mean_portfolio_optimized - sd_portfolio_optimized ~ "red",
-           returns > mean_portfolio_optimized + sd_portfolio_optimized ~ "green",
-           T ~ "darkblue"
-         ),
-         color= factor(color, levels = c("green","darkblue","red")))
-
-
-
 portfolio_plot_optimized %>%
   ggplot(aes(x=date, y =returns,color=color)) +
   geom_point() +
@@ -894,10 +920,36 @@ portfolio_plot_optimized %>%
         legend.direction = "horizontal")
 ```
 
-De tal forma é possivel verificar que é possivel a aplicação da Moderna teoria de portfolio ao mercado de critpmoedas mesmo com sua elevada volatilidade porém vale a pena ressaltar que devido a sua natureza especulativa fosse interessante uma analise da finanças comportamentais sobre o assunto.
+De tal forma é possivel verificar que a aplicação da Moderna teoria de portfolio ao mercado de critpmoedas é valido, pois através do metodo conseguimos elevar o indice sharpe e encontrar o ponto de tangência do portfólio.
 
-## Conclusão {#sec-Conclusão}
+# CONCLUSÂO {#sec-Conclusão}
+
+Ao longo deste trabalho foi abordado o conceito de criptmoeda, seu funcionamento, os riscos e os benefícios que advem com a sua utilização.
+
+Além disso foi exposto o conceito de moeda e porque as criptmoedas devam ser caracterizadas como um ativo financeiro tecnológico ao invês de uma moeda fiduciária, sendo, sobre o ponto de vista econômico, a sua natureza especulativa com alta volatidade de preços que afasta principalmente as criptomoedas da função reserva de valor.
+
+Também foi avaliado sob o ponto de vista juridico e verificado a situação regulatória atual das criptmoedas ao redor do mundo, sendo definido atualmente no Brasil como um ativo financeiro.
+
+Além do mais buscou compreender o conceito da moderna teoria de portfolio de markowitz e sua aplicação no mercado de criptoativos.
+
+Por fim foi analisado os resultados da moderna teoria de portfolio numa carteira composta exclusivamente de criptmoedas, no qual foi comparado um portfólio de criptomoedas igualmente distribuido com o portfólio optimizado. Sendo os resultados positivos sobre a sua aplicação ao determinar o ponto de tangência, menor variancia e traçar a fronteira eficiente do portfólio,
+
+Sendo o objetivo geral satisfeito ao conseguir aplicar a metodologia de portfólio de markowitz no mercado de criptmoedas.
+
+Já nos objetivos especificos, que compreendiam: Conceituar criptoativos como ativos financeiros, Diferenciar os criptoativos dos ativos financeiros usuais, Analisar os impactos das regulações desse setor no Brasil, Analisar se a alta instabilidade do setor afeta diretamente na utilização do método da moderna teoria de portfolio e Comparar o resultado da utilização do método contra uma seleção de portifólio igualmente distribuido.
+
+Sendo no objetivo específico Conceituar criptoativos como ativos financeiros foi satisfeito ao realizar a revisão bibliográfica.
+
+Já no objetivo específico Diferenciar os criptoativos dos ativos financeiros usuais parcialmente satisfeito \[preencher essa lacuna\].
+
+Da mesma forma no objetivo específico Analisar os impactos das regulações desse setor no Brasil parcialmente satisfeito\[preencher essa lacuna\],
+
+No objetivo específico Analisar se a instabilidade do setor afeta diretamente na utilização do método da moderna teoria de portfólio foi satisfeito pois ao efetuar calculos foi possivel compreender que ao optimizar o portfólio elevou-se tanto o indice sharpe quanto o risco, sendo isso possivelmente explicado devido a carteira ser positivamente correlacionada
+
+Já no objetivo específico Comparar o resultado da utilização do método contra uma seleção de portifólio igualmente distribuido foi satisfeito resultando na melhora de perfomance do portfólio
+
+Por fim vale a pena destacar também que devido a sua natureza especulativa fosse interessante uma analise da finanças comportamentais sobre o assunto a fim de aprofundamento do tema .
 
 {{< pagebreak >}}
 
-## BIBLIOGRAFIA {#sec-Bibliografia}
+# BIBLIOGRAFIA {#sec-Bibliografia}
