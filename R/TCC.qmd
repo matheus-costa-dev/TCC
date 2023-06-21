@@ -24,7 +24,7 @@ format:
     number-depth: 3
     link-citations: true
     link-bibliography: true
-    reference-doc: modeloTCC4.dotx
+    reference-doc: modeloTCC6.dotx
     output-file: "TCC"
     output-ext: "docx"
 editor: visual
@@ -798,7 +798,7 @@ asset_return_long %>%
        x="Risco",
        colour="Ativo",
        title = "Risco x Retorno") +
-  geom_text(aes(label = asset, y = mean + .0002),size=3) +
+  geom_text(aes(label = asset, y = mean + .0002),size=2) +
   theme_bw() +
   theme(legend.position="none", plot.title = element_text(hjust = .5))
 ```

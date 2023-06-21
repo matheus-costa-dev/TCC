@@ -1,0 +1,32 @@
+---
+title: "test"
+format: 
+  docx:
+    reference-doc: "test.dotm"
+
+editor: visual
+execute: 
+  echo: false
+  warning: false
+  
+---
+## test
+
+```{r}
+#| label: start
+
+library(tidyverse)
+library(knitr)
+
+```
+
+```{r}
+#| label: t1
+#| tbl-cap: tbl
+
+
+kable(mtcars)
+
+
+
+```
