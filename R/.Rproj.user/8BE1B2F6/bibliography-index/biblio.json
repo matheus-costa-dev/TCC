@@ -1710,6 +1710,191 @@
             "title": "Towards a taxonomy for crypto assets",
             "type": "article-journal",
             "volume": "11"
+        },
+        {
+            "DOI": "10.34117/bjdv5n12-205",
+            "URL": "https://ojs.brazilianjournals.com.br/ojs/index.php/BRJD/article/view/5425",
+            "author": [
+                {
+                    "family": "Silva",
+                    "given": "Tuany Esthefany Barcellos de Carvalho"
+                },
+                {
+                    "dropping-particle": "do",
+                    "family": "Santos",
+                    "given": "Daiane Rodrigues"
+                },
+                {
+                    "family": "Sanfins",
+                    "given": "Marco Aurélio do Santos"
+                }
+            ],
+            "container-title": "Brazilian Journal of Development",
+            "id": "silva2019",
+            "issue": "12",
+            "issued": {
+                "date-parts": [
+                    [
+                        2019,
+                        12
+                    ]
+                ]
+            },
+            "page": "3100531018",
+            "title": "Modelo de markowitz na otimização de carteiras de investimentos usando o software r / markowitz model in investment portfolio optimization using the r software",
+            "type": "article-journal",
+            "volume": "5"
+        },
+        {
+            "DOI": "10.3390/risks11030051",
+            "URL": "https://www.mdpi.com/2227-9091/11/3/51",
+            "author": [
+                {
+                    "family": "Kerr",
+                    "given": "David S."
+                },
+                {
+                    "family": "Loveland",
+                    "given": "Karen A."
+                },
+                {
+                    "family": "Smith",
+                    "given": "Katherine Taken"
+                },
+                {
+                    "family": "Smith",
+                    "given": "Lawrence Murphy"
+                }
+            ],
+            "container-title": "Risks",
+            "id": "kerr2023",
+            "issue": "3",
+            "issued": {
+                "date-parts": [
+                    [
+                        2023
+                    ]
+                ]
+            },
+            "title": "Cryptocurrency risks, fraud cases, and financial performance",
+            "type": "article-journal",
+            "volume": "11"
+        },
+        {
+            "DOI": "10.1109/eCrime51433.2020.9493255",
+            "author": [
+                {
+                    "family": "Xia",
+                    "given": "Pengcheng"
+                },
+                {
+                    "family": "Wang",
+                    "given": "Haoyu"
+                },
+                {
+                    "family": "Luo",
+                    "given": "Xiapu"
+                },
+                {
+                    "family": "Wu",
+                    "given": "Lei"
+                },
+                {
+                    "family": "Zhou",
+                    "given": "Yajin"
+                },
+                {
+                    "family": "Bai",
+                    "given": "Guangdong"
+                },
+                {
+                    "family": "Xu",
+                    "given": "Guoai"
+                },
+                {
+                    "family": "Huang",
+                    "given": "Gang"
+                },
+                {
+                    "family": "Liu",
+                    "given": "Xuanzhe"
+                }
+            ],
+            "id": "xia2020",
+            "issued": {
+                "date-parts": [
+                    [
+                        2020
+                    ]
+                ]
+            },
+            "page": "1-14",
+            "title": "Don’t fish in troubled waters! Characterizing coronavirus-themed cryptocurrency scams",
+            "type": "paper-conference"
+        },
+        {
+            "URL": "https://revista.cgu.gov.br/Cadernos_CGU/article/view/607",
+            "author": [
+                {
+                    "dropping-particle": "de",
+                    "family": "Morais",
+                    "given": "Fábio Luiz"
+                },
+                {
+                    "family": "Falcão",
+                    "given": "Rondinelli Melo Alcântara"
+                }
+            ],
+            "container-title": "Cadernos Técnicos da CGU",
+            "id": "morais2022",
+            "issued": {
+                "date-parts": [
+                    [
+                        2022,
+                        11,
+                        29
+                    ]
+                ]
+            },
+            "language": "pt",
+            "title": "A regulação de criptomoedas como instrumento de prevenção à lavagem de dinheiro",
+            "type": "article-journal",
+            "volume": "3"
+        },
+        {
+            "DOI": "10.52076/eacad-v4i1.425",
+            "URL": "https://www.eacademica.org/eacademica/article/view/425",
+            "author": [
+                {
+                    "family": "Fontgalland",
+                    "given": "Isabel Lausanne"
+                },
+                {
+                    "dropping-particle": "de",
+                    "family": "Menezes",
+                    "given": "Luka Tarssis Ramalho Cavalcanti Montenegro"
+                },
+                {
+                    "family": "Félix",
+                    "given": "Augusto César Trigueiro"
+                }
+            ],
+            "container-title": "E-Acadêmica",
+            "id": "fontgalland2023",
+            "issue": "1",
+            "issued": {
+                "date-parts": [
+                    [
+                        2023,
+                        2
+                    ]
+                ]
+            },
+            "page": "e1541425",
+            "title": "Criptomoeda e o sistema financeiro nacional: Discutindo o debate brasileiro",
+            "title-short": "Criptomoeda e o sistema financeiro nacional",
+            "type": "article-journal",
+            "volume": "4"
         }
     ],
     "project_biblios": []

@@ -6,6 +6,7 @@ options(scipen=999)
 from = "2020-01-01"
 to = "2023-01-01"
 symbols = c("BTC-USD","ETH-USD","BNB-USD","XRP-USD","ADA-USD","DOGE-USD","SOL-USD","MATIC-USD")
+Fsymbols = c("Bitcoin","Ethereum","Binance","XRP","Cardano","Dogecoin","Solana","Polygon")
 Nsymbols = length(symbols)
 folder = "outputData"
 by = .1
