@@ -774,7 +774,7 @@ A fronteira eficiente pode ser compreendida como uma linha no qual possui os mel
 
 Atualmente há inúmeros estudos utilizando a teoria de optimização de portfólio no universo de criptomoedas em diversos tipos de cenarios.
 
-### APLICAÇÂO EM CRIPTOMOEDAS
+### APLICAÇÂO EM CRIPTOMOEDAS {#sec-desenvolvimento-Markowitz-AplicacaoCriptmoeda}
 
 Em um estudo realizado por (Brauneis and Mestel, 2019) sobre os benefícios da inclusão das criptomoedas no portfólio utilizando a estrutura de markowtiz, constataram que elas reduziam o risco do portfólio [APUD @ozdurak2022]
 
@@ -821,7 +821,7 @@ kable(correlation2,
 ```{R}
 #| label: fig-correlacao
 #| fig-cap: gráfico de correlação
-corrplot(correlation, 
+corrplot(correlation_cryptocurrency, 
          type="upper", 
          method = "ellipse",
          col=brewer.pal(n=length(symbols), name="RdYlBu"),
@@ -963,9 +963,9 @@ Também foi avaliado sob o ponto de vista juridico e verificado a situação reg
 
 Além do mais buscou compreender o conceito da moderna teoria de portfólio de markowitz e sua aplicação no mercado de criptoativos.
 
-Por fim foi analisado os resultados da moderna teoria de portfólio numa carteira composta exclusivamente de criptomoedas , no qual foi comparado um portfólio de criptomoedas igualmente distribuido com o portfólio optimizado. Sendo os resultados positivos sobre a sua aplicação ao determinar o ponto de tangência, menor variancia e traçar a fronteira eficiente do portfólio,
+Por fim foi analisado os resultados da moderna teoria de portfólio numa carteira composta exclusivamente de criptomoedas, no qual foi comparado um portfólio de criptomoedas igualmente distribuido com o portfólio optimizado. Sendo os resultados positivos sobre a sua aplicação ao determinar o ponto de tangência, menor variancia e traçar a fronteira eficiente do portfólio.
 
-Sendo o objetivo geral satisfeito ao conseguir aplicar a metodologia de portfólio de markowitz no mercado de criptomoedas .
+Sendo o objetivo geral satisfeito ao conseguir aplicar a metodologia de portfólio de markowitz no mercado de criptomoedas.
 
 Já nos objetivos especificos, que compreendiam: Conceituar criptoativos como ativos financeiros, Diferenciar o mercado criptoativo do mercado tradicional, Analisar os impactos das regulações desse setor no Brasil, Analisar se a instabilidade do setor afeta diretamente na utilização do método da moderna teoria de portfólio e Comparar o resultado da utilização do método contra uma seleção de portifólio igualmente distribuido.
 
@@ -975,11 +975,11 @@ Já no objetivo específico Diferenciar o mercado criptoativo do mercado tradici
 
 Da mesma forma no objetivo específico Analisar os impactos das regulações desse setor no Brasil foi satisfeito ao verificar que com a criação da lei 14.478/2022 ficou definido a classificação de criptmoeda, a equiparação das empresas prestadoras de serviços de criptoativos com instituições financeiras e elas estariam sujeitas, ao conduzir operações relacionadas a aos ativos digitais, ao codigo de defesa do consumidor.
 
-No objetivo específico Analisar se a instabilidade do setor afeta diretamente na utilização do método da moderna teoria de portfólio foi satisfeito pois ao efetuar cálculos foi possivel compreender que ao optimizar o portfólio elevou-se tanto o indice sharpe quanto o risco, sendo isso possivelmente explicado devido a carteira ser positivamente correlacionada
+No objetivo específico Analisar se a instabilidade do setor afeta diretamente na utilização do método da moderna teoria de portfólio foi satisfeito pois ao efetuar cálculos foi possivel compreender que ao optimizar o portfólio elevou-se tanto o indice sharpe quanto o risco, sendo isso possivelmente explicado devido a carteira ser positivamente correlacionada.
 
-Já no objetivo específico Comparar o resultado da utilização do método contra uma seleção de portifólio igualmente distribuido foi satisfeito resultando na melhora de perfomance do portfólio
+Já no objetivo específico Comparar o resultado da utilização do método contra uma seleção de portifólio igualmente distribuido foi satisfeito resultando na melhora de perfomance do portfólio.
 
-Por fim vale a pena destacar também que devido a sua natureza especulativa fosse interessante uma analise da finanças comportamentais sobre o assunto a fim de aprofundamento do tema .
+Por fim vale a pena destacar também que devido a sua natureza especulativa fosse interessante uma analise da finanças comportamentais sobre o assunto a fim de aprofundamento do tema.
 
 {{< pagebreak >}}
 

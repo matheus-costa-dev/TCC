@@ -15,8 +15,8 @@ source("variaveis.R")
 
 asset_return = getPrices(folder,symbols,from,to)
 
-covariance = cov(asset_return)
-correlation = cor(asset_return)
+covariance_cryptocurrency = cov(asset_return)
+correlation_cryptocurrency = cor(asset_return)
 
 asset_return_long = returnToLong(asset_return,symbols)
 
@@ -66,7 +66,7 @@ sr_portfolio_optimized = max_sr$sharpeRatePortfolio
 
 ## risco x retorno ----
 
-asset_return_long %>%
+pRiskReturn_cryptocurrency = asset_return_long %>%
   group_by(asset) %>%
   summarise(sd= sd(returns), mean= mean(returns)) %>%
   add_row(asset="PORTFOLIO NORMAL", sd = sd_portfolio, mean=mean_portfolio ) %>%
@@ -78,14 +78,14 @@ asset_return_long %>%
        x="Risco",
        colour="Ativo",
        title = "Risco x Retorno") +
-  geom_text(aes(label = asset, y = mean + .0002),size=3) +
+  geom_text(aes(label = asset, y = mean + .0001),size=2) +
   theme_bw() +
   theme(legend.position="none", plot.title = element_text(hjust = .5))
 
 
 ## optimização de portfolio e fronteira eficiente ----
 
-possibilities %>%
+pEficientFrontier_cryptocurrency = possibilities %>%
   ggplot(aes(x = sd, y = mean, color = sharpeRatePortfolio)) +
   geom_point() +
   theme_classic() +

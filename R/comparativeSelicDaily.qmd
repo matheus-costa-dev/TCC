@@ -1,0 +1,110 @@
+---
+title: "Comparativo criptomoeda selic diario"
+format: html
+editor: visual
+execute: 
+  echo: false
+  warning: false
+---
+
+```{r}
+#| label: start
+
+source("TCC.R")
+source("advanceStock.R")
+library(gt)
+
+```
+
+# comparativo taxa selic selic média diária 
+
+
+## matriz correlação
+
+### criptmoeda
+
+```{r}
+
+correlation_cryptocurrency %>% 
+  as.data.frame() %>% 
+  rownames_to_column("ativo")  %>% 
+  gt(rowname_col = "ativo")
+
+corrplot(correlation_cryptocurrency, 
+         type="upper", 
+         method = "ellipse",
+         col=brewer.pal(n=length(symbols), name="RdYlBu"),
+         tl.col = "black"
+         )
+
+```
+
+
+### mercado tradicional
+
+```{r}
+
+correlation_stockMarket %>% 
+  as.data.frame() %>% 
+  rownames_to_column("ativo")  %>% 
+  gt(rowname_col = "ativo")
+
+corrplot(correlation_stockMarket, 
+         type="upper", 
+         method = "ellipse",
+         col=brewer.pal(n=length(symbols), name="RdYlBu"),
+         tl.col = "black"
+         )
+
+```
+
+
+
+
+## comparacao melhor portfolio
+
+### criptomoeda
+
+```{r}
+max_sr %>% as.data.frame() %>% gt()
+```
+
+## mercado tradicional
+
+```{r}
+max_sr_stockMarket %>% as.data.frame() %>% gt()
+```
+
+
+
+
+## comparacao risco x retorno
+
+### criptomoeda
+
+```{r}
+pRiskReturn_cryptocurrency
+```
+
+## mercado tradicional
+
+```{r}
+pRiskReturn_StockMarket
+```
+
+
+
+## comparacao Fronteira eficiente
+
+### criptomoeda
+
+```{r}
+pEficientFrontier_cryptocurrency
+```
+
+### mercado tradicional
+
+```{r}
+pEficientFrontier_StockMarket
+```
+

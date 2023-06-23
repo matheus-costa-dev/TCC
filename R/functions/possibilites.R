@@ -103,3 +103,8 @@ loadPossibilites = function(filePossibilites="",fullPathPossibilites="",symbols=
   }
   
 }
+
+# possibilities = read.xlsx("outputData/Possibilities0.00531176950392753.xlsx") %>%
+#   mutate_all(~as.numeric(.x)) %>%
+#   select(1:Nsymbols) %>%
+#   setNames(symbols)
