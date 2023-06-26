@@ -99,8 +99,8 @@ pEficientFrontier_cryptocurrency = possibilities %>%
                  y = mean), data = min_var, color = 'red') +
   geom_point(aes(x = sd,
                  y = mean), data = max_sr, color = 'red') +
-  geom_text(x=min_var$sd, y = min_var$mean + .0002,label="Menor variancia", color = "red") +
-  geom_text(x=max_sr$sd, y = max_sr$mean + .0002,label="Ponto de tangência", color = "red", check_overlap = T) +
+  geom_text(x=min_var$sd, y = min_var$mean + .0002,label="Menor variancia", color = "red",size=3,check_overlap = T) +
+  geom_text(x=max_sr$sd, y = max_sr$mean + .0002,label="Ponto de tangência", color = "red",size=3, check_overlap = T) +
   theme_bw() +
   theme( plot.title = element_text(hjust = .5))
 
@@ -109,7 +109,9 @@ pEficientFrontier_cryptocurrency = possibilities %>%
 
 ### estrutura ----
 
-portfolio_plot = portfolio_return %>% as.data.frame(row.names = index(.)) %>%
+portfolio_plot = portfolio_return %>% 
+  to.weekly(OHLC=F) %>%
+  as.data.frame(row.names = index(.)) %>%
   rownames_to_column("date") %>%
   rename("returns"=portfolio.returns) %>%
   mutate(date = as.Date(date),
@@ -122,6 +124,7 @@ portfolio_plot = portfolio_return %>% as.data.frame(row.names = index(.)) %>%
 
 
 portfolio_plot_optimized = portfolio_return_opmitized %>% 
+  to.weekly(OHLC=F) %>%
   as.data.frame(row.names = index(.)) %>%
   rownames_to_column("date") %>%
   rename("returns"=portfolio.returns) %>%

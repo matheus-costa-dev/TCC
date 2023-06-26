@@ -13,7 +13,7 @@ by = .1
 
 ## selic
 
-selic = loadSelicSummary(folder,from,to,businessDay=F)
+selic = loadSelicSummary(folder,from,to,businessDay=T)
 rfr = selic$SELICDiariaMédia
 selicAnualMedia = selic$SELICAnualMedia
 
