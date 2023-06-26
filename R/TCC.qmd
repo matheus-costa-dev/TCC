@@ -52,7 +52,8 @@ source("variaveis.R")
 
 dataInicio = dmyFormat(from)
 dataFim = dmyFormat(to)
-
+figWidth = 5.7
+figHeight = 4
 
 ## codigo
 
@@ -223,6 +224,9 @@ Para realizar os cálculos foi utilizado a linguagem de programação R e os seg
 É ilustrado a utilização em cada um dos pacotes mencionados no seguinte diagrama que foi feito utilizando o pacote do **mermaid** [@mermaid].
 
 ```{mermaid}
+%%| fig-width: 5.75
+%%| fig-height: 5
+
 flowchart TD
  a([Obtenção de dados]) ---|Selic| b[rbcb] 
  a ---|criptomoedas | c[quantmod] 
@@ -773,6 +777,9 @@ A relação de risco e retorno esperado entre os ativos da carteira é demonstra
 ```{R}
 #| label: fig-RiscoxRetorno
 #| fig-cap: Risco x Retorno
+#| fig-width: !expr figWidth
+#| fig-height: !expr figHeight
+
 
 asset_return_long %>%
   group_by(asset) %>%
@@ -795,6 +802,7 @@ Em seguida foi verificado a matriz de correlação dos ativos e verificado que o
 ```{R}
 #| label: tbl-correlacao
 #| tbl-cap: "Matriz de correlação"
+
 correlation2 = correlation_cryptocurrency %>% 
   as.data.frame() %>% 
   rownames_to_column("ATIVO")
@@ -810,8 +818,11 @@ kable(correlation2,
 ```{R}
 #| label: fig-correlacao
 #| fig-cap: gráfico de correlação
+#| fig-width: !expr figWidth
+#| fig-height: !expr figHeight
+
 corrplot(correlation_cryptocurrency, 
-         type="upper", 
+         #type="upper", 
          method = "ellipse",
          col=brewer.pal(n=length(symbols), name="RdYlBu"),
          tl.col = "black"
@@ -853,6 +864,8 @@ Ao realizar todas as `r format(nrow(possibilities),big.mark=".",decimal.mark=","
 ```{R}
 #| label: fig-fronteiraEficiente
 #| fig-cap: Optimização de portfolio & Fronteira eficiente
+#| fig-width: !expr figWidth
+#| fig-height: !expr figHeight
 
 
 possibilities %>%
@@ -879,12 +892,13 @@ possibilities %>%
 
 Por fim foi comparado o retorno do portfólio com pesos igualmente dsitribuidos, classificado como portfólio normal veja na @fig-retornoPortfolioNormal, com o retorno do portfólio optimizado segundo o ponto de tangência da fronteira eficiente, veja na @fig-retornoPortfolioOptmiziado.
 
-Os resultados obtidos foram que para o portfólio normal o desvio padrão é igual a `r sd(portfolio_plot$returns)` e retorno esperado de `r mean(portfolio_plot$returns)` enquanto pro portfólio optmizado o desvio padrão é de `r sd(portfolio_plot_optimized$returns)` e o retorno esperado de `r mean(portfolio_plot_optimized$returns)` ou seja a optimização do portfólio o tornou em um portfólio mais arriscado com maior retorno.
+Os resultados obtidos foram que para o portfólio normal o desvio padrão é igual a `r sd(portfolio_return$portfolio.returns)` e retorno esperado de `r mean(portfolio_return$portfolio.returns)` enquanto pro portfólio optmizado o desvio padrão é de `r sd(portfolio_return_opmitized$portfolio.returns)` e o retorno esperado de `r mean(portfolio_return_opmitized$portfolio.returns)` ou seja a optimização do portfólio o tornou em um portfólio mais arriscado com maior retorno.
 
 ```{R}
 #| label: fig-retornoPortfolioNormal
 #| fig-cap: Retorno do portfolio normal
-
+#| fig-width: !expr figWidth
+#| fig-height: !expr figHeight
 
 portfolio_plot %>%
   ggplot(aes(x=date, y =returns,color=color)) +
@@ -904,10 +918,11 @@ portfolio_plot %>%
              linetype = "dashed") +
   theme_bw() +
   labs(x="Data",y="Retornos") +
-  theme(legend.text=element_text(size=7),
+  theme(legend.text=element_text(size=6),
         legend.position = "bottom",
         legend.spacing.x = unit(0,"mm"),
-        legend.direction = "horizontal")
+        legend.direction = "horizontal",
+        legend.title = element_blank())
 
 
 ```
@@ -915,7 +930,8 @@ portfolio_plot %>%
 ```{r}
 #| label: fig-retornoPortfolioOptmiziado
 #| fig-cap: Retorno do portfolio optimizado
-
+#| fig-width: !expr figWidth
+#| fig-height: !expr figHeight
 
 portfolio_plot_optimized %>%
   ggplot(aes(x=date, y =returns,color=color)) +
@@ -935,10 +951,11 @@ portfolio_plot_optimized %>%
              linetype = "dashed") +
   theme_bw() +
   labs(x="Data",y="Retornos") +
-  theme(legend.text=element_text(size=7),
+  theme(legend.text=element_text(size=6),
         legend.position = "bottom",
         legend.spacing.x = unit(0,"mm") ,
-        legend.direction = "horizontal")
+        legend.direction = "horizontal",
+        legend.title = element_blank())
 ```
 
 De tal forma é possivel verificar que a aplicação da Moderna teoria de portfólio ao mercado de critpmoedas é valido, pois através do metodo conseguimos elevar o indice sharpe e encontrar o ponto de tangência do portfólio.

@@ -166,7 +166,8 @@ portfolio_plot %>%
   theme(legend.text=element_text(size=7),
         legend.position = "bottom",
         legend.spacing.x = unit(0,"mm") ,
-        legend.direction = "horizontal")
+        legend.direction = "horizontal",
+        legend.title = element_blank())
 
 
 portfolio_plot_optimized %>%
@@ -190,4 +191,5 @@ portfolio_plot_optimized %>%
   theme(legend.text=element_text(size=7),
         legend.position = "bottom",
         legend.spacing.x = unit(0,"mm") ,
-        legend.direction = "horizontal")
+        legend.direction = "horizontal",
+        legend.title = element_blank())
