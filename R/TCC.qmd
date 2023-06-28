@@ -1,5 +1,5 @@
 ---
-title: "TCC"
+title: "Análise da aplicação da moderna teoriade portfólio de markowitz sobre o mercado das criptomoedas"
 author: "Matheus Pereira Costa"
 date: "`r Sys.Date()`"
 format: 
@@ -147,81 +147,50 @@ portfolio_plot_optimized = portfolio_return_opmitized %>%
 
 ```
 
-# TEMA
-
-Análise da aplicação da teoria moderna de portfólio sobre o mercado das criptomoedas.
-
 # RESUMO
 
-O mercado de criptomoeda tem se apresentado como alternativa aos ativos de renda variável, transformando assim novos modelos de negócios e formas de realizar transações. No entanto, por ser algo recente ainda há poucos estudos utilizando a moderna teoria de portfólio de Markowitz aplicado a este setor. Devido à alta instabilidade deste mercado, o corrente estudo tem por desejo em verificar a aplicação da moderna teoria de portfólio de Markowitz sobre ele. Por isso essa pesquisa se caracteriza como uma pesquisa exploratória-quantitativa que usará como abordagem de revisão bibliográfica e análise de documentos.
+Contexto: O mercado de criptomoeda tem se maturado como uma forte alternativa ao mercado de ações convencionais, transformando assim novos modelos de negócios e formas de realizar transações.
 
-Context: O mercado de criptomoeda tem se maturado como uma forte alternativa ao mercado de ações convencionais, transformando assim novos modelos de negócios e formas de realizar transações.
+Lacuna: No entanto, por ser algo recente ainda há poucos estudos utilizando a moderna teoria de portfólio de Markowitz aplicado a este setor.
 
-Gap: No entanto, por ser algo recente ainda há poucos estudos utilizando a moderna teoria de portfólio de Markowitz aplicado a este setor.
+Proposta: Devido à alta instabilidade deste mercado, o corrente estudo tem por desejo em verificar a aplicação da moderna teoria de portfólio de Markowitz sobre ele.
 
-Purpose: Devido à alta instabilidade deste mercado, o corrente estudo tem por desejo em verificar a aplicação da moderna teoria de portfólio de Markowitz sobre ele.
+Metodologia: Por isso essa pesquisa se caracteriza como uma pesquisa exploratória-quantitativa que usará como abordagem de revisão bibliográfica e análise de documentos.
 
-Methodology: Por isso essa pesquisa se caracteriza como uma pesquisa exploratória-quantitativa que usará como abordagem de revisão bibliográfica e análise de documentos.
-
-Results:
+ResultadoS:
 
 # INTRODUÇÃO {#sec-introducao}
 
-O termo criptomoeda foi um dos assuntos mais discutidos na última década principalmente durante o período de pandemia da covid-19 [@ozdurak2022]. No qual esse período foi marcado por grandes incertezas dos investidores em relação ao mercado tradicional devido as diversas restrições impostas pelos governos locais na tentativa de conter o avanço do vírus. [@volosovych2023]
-
-Durante esse período, o mercado de criptoativos tiveram um crescimento de \$235,5 Bilhões em 2016 para \$1,3 Trilhões 2021. [COINMARKETCAP. 2021 APUD @volosovych2023]
-
-Sendo constatado durante um estudo realizado por (Drozdz et al 2020), ao utilizar a correlação de Pearson, comparou o mercado de ativos, moedas, commodities e criptomoedas. Tendo como resultado que o mercado de criptomoedas é facilmente influenciável em períodos turbulentos pelo mercado de ativos tradicional enquanto os demais não possuem uma correlação significativa. [APUD @nguyen2022]
-
-Além disso, com a escalada da utilização de criptomoedas para realizar pagamentos e negócios, também foi verificado segundo [@shirakawa2019] a utilização de tais novos meios para a realização de atividades ilegais como lavagem de dinheiro, financiamento ao tráfico de drogas e outros crimes.
-
-Sendo de tal forma, levantada a questão conceitual da classificação das criptomoedas e como deveria ser tratada no âmbito jurídico e legislativo.
-
-No qual para [@white2020] ao classificar o bitcoin, definiu com base no seu comportamento como algum produto baseado em tecnologia, uma classe de ativo emergente ou um evento bolha ao invés de ser uma moeda ou título.
-
-Sendo para (Corbet et al., 2019b) a classificação do bitcoin como um ativo especulativo. [APUD @schellinger2020]
-
-Para [@kwon2020] Ao realizar um estudo sobre o comportamento da cauda de risco de diversas classes como bitcoin, ouro, dólar e mercado de ativos tradicional. Chegou a conclusão de que o bitcoin deva ser classificado como uma alternativa de investimento.
-
-Sendo analisado por (Brauneis and Mestel, 2019) os benefícios da inclusão das criptomoedas no portfólio utilizando a estrutura de markowtiz e constataram que elas reduziam o risco do portfólio. [APUD @ozdurak2022]
-
-Porém existem poucos estudos sobre a utilização do método criado por markowtiz aplicado somente ao mercado de criptomoedas e, esta lacuna que o corrente trabalho visa preencher.
-
-Para fins nesse estudo foi adotado a classificação de uma classe de ativo financeiro emergente devido a sua natureza especulativa e o seu perfil de risco e retorno do mercado no qual este trabalho busca verifica a possibilidade da aplicação da moderna teoria de portfólio de Markowitz sobre essa classe de ativo utilizando assim o índice Sharpe para encontrar portfólio tangente e o portfólio de menor risco.
-
-Este trabalho está dividido da seguinte maneira, na seção @sec-desenvolvimento Revisão de literatura, na seção @sec-Resultados Resultados e na Seção @sec-Conclusão Conclusão.
-
-A seção @sec-desenvolvimento Revisão de literatura é subdividida da seguinte forma: na seção @sec-desenvolvimento-Criptomoeda Criptmoeda; é abordado os conceitos de criptomoeda, criptografia, blockchain, mineração, carteiras, apresenta os riscos, beneficios das criptomoedas e a diferença do mercado de ações tradicional para o de criptomoedas, @sec-desenvolvimento-Moeda Moeda; é apresentado o conceito de moeda, suas funções, classificação da criptmoeda, regulação e a situação regulatória de cada país sobre o assunto e @sec-desenvolvimento-Markowitz Markowitz; o conceito e suas aplicações.
-
 ## PROBLEMA DE PESQUISA {#sec-problemaPesquisa}
 
-Qual o impacto da utilização da moderna teoria de portfólio sobre o mercado de cripto ativos dado a alta instabilidade do mesmo.
+Analisar se a volatilidade do mercado de criptomoedas afeta diretamente na utilização da moderna teoria de portfólio.
 
 ## OBJETIVOS {#sec-objetivos}
 
 ### GERAL {#sec-objetivos-Geral}
 
-Verificar o impacto da utilização da moderna teoria de portfólio sobre o mercado de criptoativos.
+Verificar a aplicação da moderna teoria de portfólio sobre o mercado de criptmoedas.
 
 ### ESPECÍFICOS {#sec-objetivos-Especifico}
 
--   Conceituar criptoativos como ativos financeiros.
--   Diferenciar o mercado criptoativo do mercado tradicional.
+-   Conceituar criptmoedas como ativos financeiros.
+-   Diferenciar o mercado criptoativo do mercado de renda variável.
 -   Analisar os impactos das regulações desse setor no Brasil.
--   Analisar se a alta instabilidade do setor afeta diretamente na utilização do método da moderna teoria de portfólio.
 -   Comparar o resultado da utilização do método contra uma seleção de portifólio igualmente distribuído.
 
 ## METODOLOGIA {#sec-metodologia}
 
-Esse trabalho teve por intenção realizar um estudo pra verificar a aplicabilidade do método da moderna teoria de portfólio ao setor das criptomoedas.
+Esse trabalho teve por objetivo verificar a aplicabilidade da moderna teoria de portfólio de Markowitz no mercado de criptomoedas.
 
-Portanto para alcançar ao objetivo traçado esta pesquisa se classifica com o objetivo exploratória, com a abordagem quantitativa, possuindo natureza básica e utilizando o método dedutivo.
+Portanto esta pesquisa se classifica como objetivo exploratória, com a abordagem quantitativa, possuindo natureza básica e utilizando o método dedutivo.
 
-Tendo como fonte de pesquisa utilizada para o embasamento cientifico obtidas através das seguintes plataformas: Periódicos CAPES, Scopus e Google Acadêmico. As pesquisas foram limitadas em até 5 anos de diferença com restrição da linguagem em português e inglês.
+A revisão bibliográfica foi realizada sobre uma seleção de artigos disponíveis nas plataformas: Periódicos CAPES, Scopus e Google Acadêmico. No qual atenderam aos seguintes critérios de busca: Markowitz, Portfolio Optimization, Optimização de portfólio, Cryptocurrency, Criptomoeda, Currency, Moeda, Regulation, Regulação, Scams, Golpes. os idiomas de pesquisa foram limitados a Português e Inglês. Também foi limitado as pesquisas entre o período de 2018 até 2023.
+
+Foram utilizados como fonte para a realização dos códigos em R, o livro [@regenstein2018] e o site [Codingfinance, @portfoli2018].
 
 Para realizar os cálculos foi utilizado a linguagem de programação R e os seguintes pacotes: **corrplot** [@wei2021], **knitr** [@xie2014], **openxlsx** [@schauberger2023], **PerformanceAnalytics** [@peterson2020], **quantmod** [@ryan2022], **rbcb** [@freitas2022], **RColorBrewer** [@neuwirth2022], **scales** [@wickham2022] e **tidyverse** [@wickham2019].
 
-É ilustrado a utilização em cada um dos pacotes mencionados no seguinte diagrama que foi feito utilizando o pacote do **mermaid** [@mermaid].
+É ilustrado a utilização em cada um dos pacotes mencionados no seguinte diagrama que foi feito através do pacote **mermaid** [@mermaid]
 
 ```{mermaid}
 %%| fig-width: 5.75
@@ -239,540 +208,255 @@ flowchart TD
   
 ```
 
-Foram utilizadas também como fonte o livro [@regenstein2018] e o site [Codingfinance, @portfoli2018] para a realização dos códigos em R.
+Os cálculos para a realização dos retornos mensais, retornos do portfólio e do índice Sharpe foram feitos através das seguintes funções *Return.calculate*, *Return.portfolio* e *SharpeRatio*. Estas funções pertencem ao pacote **PerformanceAnalytics**.
 
-Os cálculos para a realização dos retornos mensais, retornos do portfólio e do índice Sharpe foram performados através das seguintes funções *Return.calculate*, *Return.portfolio* e *SharpeRatio*. Estas funções pertencem ao pacote **PerformanceAnalytics**.
+Para realizar os cálculos das matrizes de covariância, correlação e a expectativa de retorno média foram utilizadas as funções *cov*, *cor* e *mean* do pacote **Base**.
 
-Sendo a formula aplicada da função *Return.Calculate*
+Para realizar a criação dos gráficos foi utilizado um conjunto de funções do pacote tidyverse sendo eles: *ggplot*, *geom_point*, *theme_classic*, *scale_y_continuous*, *scale_x_continuous* e *labs*.
 
-$$
-R = log(r_{i,t}) - log(r_{i,t - 1})
-$$ {#eq-return}
+O pacote do tidyverse também foi utilizado para realizar a transformação da tabela de um formato largo para o formato longo através da função *pivot_longer*. Também foi utilizado as funções *as.data.frame* e *rownames_to_column* para converter de um formato xts de arquivo para um formato tidy.
 
-Onde:
+Para a realização do gráfico de covariância foi utilizado a função *corrplot* do pacote **corrplot** e a função *brewer.pal* foi utilizado para a seleção da paleta de cores do gráfico, no qual pertence ao pacote **RColorBrewer**.
 
-::: {custom-style="livre"}
-$_{i}$ = Ativo $_{t}$ = Período $r$ = Valor do ativo $R$ = Retorno
-:::
+Para realizar as diversas combinações de pesos possíveis ao portfólio, foi usado as funções *expand.grid*, *do.call*, *rep*, *list*, *rowSums*, *which*, *seq*, *length* e *setNames* do pacote **Base** e *as_tibble* e *reduce* do pacote **tidyverse**.
 
-Sendo a formula aplicada da função *Return.portfolio*
+Foi variada por `r by`, ou seja `r toPercent(by)`, os pesos em cada combinação ao respeitar que a somatória de todos os pesos da carteira deva ser igual a 1, no qual 1 é igual a 100%, gerando assim um total de `r format(nrow(possibilities),big.mark=".",decimal.mark=",")` possíveis combinações com `r Nsymbols` ativos na carteira.
 
-$$
- R_{p} = \sum_{t = 1}^{N}i_{t}w_{t}
-$$ {#eq-portfolioReturn}
+Para iterar sobre cada um dos pesos foi utilizado o FOR que é uma função de looping até que determinada condição seja satisfeita.
 
-Onde:
+Para a seleção das criptomoedas foi utilizado o critério das 10 maiores criptomoedas em relação a capitalização de mercado segundo a plataforma *coinmarketcap* [@preços]. foi removido o USDT-USD e USDC-USD devido a elas funcionarem como uma moeda digital fiduciária, no qual é pareado o seu valor 1:1 com o dólar. Dessa forma a carteira foi composta de `r Nsymbols` criptomoedas.
 
-::: {custom-style="livre"}
-$i_{t}$ = o ativo no período $w_{t}$ = Peso no período $R_{p}$ = Retorno do portfolio
-:::
+Os ativos selecionados foram: `r textList(Fsymbols)`. No qual os seus símbolos são representados em pares com o a moeda estável USD, sendo eles: `r textList(symbols)`.
 
-Sendo a formula aplicada da função *SharpeRatio*
+Os dados foram obtidos através da plataforma Yahoo Finance utilizando a função *getSymbols* do pacote **quantmod**, no qual o período analisado foi de `r dataInicio` até `r dataFim`. É importante destacar que devido a criptomoeda da Solana só ter seus dados disponíveis a partir de 11/04/2020, a análise para a composição do portfólio foi realizada a partir dessa data em diante.
 
-$$
-sr = \frac{R_{p} - R_{f}}{\sigma_{p}}  
-$$ {#eq-sharpeRation}
+A taxa livre de risco foi utilizada com base na taxa Selic utilizando a estrutura de [@ramalho2020] no qual transforma a taxa Selic anual média para mensal através da equação de conversão de juros anual para mensal. Nesse trabalho ao invés de converter para a taxa mensal será convertido pra diária pois será trabalhado com dados diários das criptomoedas.
 
-Onde:
+Os dados da taxa Selic foram obtidos através da função get_series do pacote rbcb no qual realiza consultas na API do banco central, sendo os dados coletados da taxa Selic do mesmo período analisado das criptomoedas, 01/01/2020 até 01/01/2023, sendo a taxa Selic anual média de `r toPercent(selicAnualMedia)` e a taxa Selic diária média `r toPercent(rfr)`.
 
-::: {custom-style="livre"}
-$sr$ = Indice sharpe\
-$R_{p}$ = Retorno do portfólio\
-$R_{f}$ = Taxa livre de risco\
-$\sigma_{p}$= Desvio padrão do portfólio
-:::
+## REVISÃO SOBRE AS CRIPTOMOEDAS UTILIZADAS
 
-A taxa livre de risco foi utilizada com base na taxa Selic utilizando a estrutura de [@ramalho2020] no qual transforma a taxa Selic anual média para mensal através da equação de conversão de juros anual para mensal. Nesse trabalho ao invés de converter para a taxa mensal será convertido pra diária pois será trabalhado com dados diários das criptomoedas, sendo feito a conversão através da seguinte formula matemática.
+Foram utilizadas nesse trabalho `r Nsymbols` criptomoedas, esta seção traz uma breve revisão sobre elas. Sendo elas: `r Fsymbols`.
 
-$$
-i_{a.d} = (1+\overline{i_{a.a}} )^{\frac{1}{256}} - 1
-$$
+O Bitcoin foi criada em 2008 com característica de ser uma moeda descentralizada no qual permite transações entre as partes sem intermediários e não possui alguma entidade a controlando, porém há contribuições continuas de diversos programadores para a continua evolução e melhoramento da rede [@bitcoin].
 
-Onde:
+O Ethereum assim como o Bitcoin, também é uma criptomoeda descentralizada e funciona como um meio para que as outras criptomoedas possam operar em sua rede, tendo como destaque a elaboração dos smart contracts. Ela teve seu whitepape publicado em 2013, porém só foi fundada em 2014 por oito confundadores, dentre eles o Vitalik Buterin é o mais conhecido, a sua sede fica na cidade de Zug sendo localizada na Suiça. Tendo como seus principais objetivos ser uma plataforma universal para outras criptomoedas executem seus softwares nela [@ethereum].
 
-::: {custom-style="livre"}
-$i_{a.m}$ = taxa de juros ao mês
+O Binance é um token da Binance que por sua vez é uma exchange, ela oferece desconto em taxas aos seus detentores e direito de participação em lançamentos de tokens dentro de sua plataforma, sendo ele lançado em 2017 através de uma ICO [@bnb].
 
-$i_{a.a}$ = taxa de juros média ao ano
-:::
+O XRP é uma moeda nativa da plataforma da Ripple foi criada em 2012 pela empresa Ripple Labs Inc seu intuito é ser um sistema de pagamento global, sendo, uma as suas principais vantagens, o custo baixo ao enviar dinheiro por sua rede [@xrp].
 
-Para tal os dados foram obtidos através da função *get_series* do pacote **rbcb** no qual realiza consultas na API do banco central, sendo os dados coletados do mesmo período analisado das criptomoedas `r dataInicio` até `r dataFim` sendo a taxa Selic anual média de `r toPercent(selicAnualMedia)`e a taxa Selic mensal de `r toPercent(rfr)`.
+O Cardano foi lançada em 2017 sendo ela utilizada por empresas agrícolas no rasteiro dos seus produtos. Tendo como característica a participação democrática dos detentores de sua moeda sobre as mudanças projetadas na rede por sua equipe [@cardano].
 
-Para performar os cálculos das matrizes de covariância, correlação e a expectativa de retorno média foram utilizadas as funções *cov*, *cor* e *mean* do pacote **Base**.
+O Dogecoin é uma moeda meme de uma raça de cachorro Shiba Inu no qual foi criada em 2013, sendo um dos seus fundadores o Billy Markus porém só foi lançada em 2014. Ela é usada principalmente como um sistema de gorjeta no fórum do Reddit e é usada com o intuito especulativo já que ela é amplamente influenciada pelas redes sociais [@dogecoin].
 
-Sendo a formula aplicada da função *cov*
+A Solana foi criada com o intuito de facilitar a elaboração de D'app que também são conhecidos como aplicativos descentralizados. Ela foi criada em 2020 pela empresa Solana Foundation ela tem sua sede em Genebra que fica localizada na suíça. Ela apresenta uma inovação no sistema ao introduzir o sistema de proof of history no qual permite maior usabilidade no protocolo [@solana].
 
-$$
-cov(x,y) = \frac{\sum_{i=1}^{n}(x_{i}-\overline{x})(y_{i}-\overline{y})}{n-1}
-$$ {#eq-covariance}
-
-Onde:
-
-::: {custom-style="livre"}
-$x_{i}$ = valor de x\
-$\overline{x}$ = média dos valores de x\
-$y_{i}$ = valor de y\
-$\overline{y}$ = média dos valores de y\
-$n$ = tamanho da amostra
-:::
-
-Sendo a formula aplicada da função *cor*
-
-$$
-cor(x,y) = \frac{cov(x,y)}{\sigma_{x}\sigma{y}}
-$$ {#eq-correlation}
-
-Onde:
-
-::: {custom-style="livre"}
-$cov(x,y)$ = o resultado da covariância de x e y\
-$\sigma_{x}$= o desvio padrão de x\
-$\sigma_{y}$ = o desvio padrão de y
-:::
-
-Sendo a formula aplicada da função *mean*
-
-$$
-E(R) = \frac{\sum x}{n}
-$$ {#eq-mean} Onde:
-
-::: {custom-style="livre"}
-x = os valores de x
-
-n = tamanho da amostra
-:::
-
-Para realizar a criação dos gráficos foi utilizado um conjunto de funções do pacote **tidyverse** sendo eles: *ggplot*, *geom_point*, *theme_classic*, *scale_y_continuous*, *scale_x_continuous* e *labs*.
-
-Além dessa aplicação para a realização de gráficos o pacote do tidyverse também foi utilizado para realizar a transformação da tabela de um formato largo para o longo através da função *pivot_longer*, nesse processo também foi necessário a transformação do arquivo provindo do formato xts para o formato tidy usando a função *as.data.frame* e *rownames_to_column*.
-
-Esses procedimentos de transformação dos dados foram aplicados para que pudesse ser feito o gráfico retorno esperado e risco de cada ativo. Para realizar as diversas combinações de pesos possíveis ao portfólio, foi usado as funções *expand.grid*, *do.call*, *rep, list*, *rowSums*,*which, seq*, *length* e *setNames* do pacote **Base** e *as_tibble* e *reduce* do pacote **tidyverse**.
-
-Para a realização do gráfico de covariancia foram utilizadas as funções *corrplot* do pacote **corrplot** para realizar o gráfico e *brewer.pal* para a seleção da paleta de cores do pacote **RColorBrewer**.
-
-É importante salientar que é variada por `r by`, ou seja `r toPercent(by)`, os pesos em cada combinação respeitando que a somatória de todos os pesos da carteira deva ser igual a 1, sendo 1 igual a 100%, gerando assim um total de `r  format(nrow(possibilities),big.mark=".",decimal.mark=",")` possíveis combinações com `r Nsymbols` ativos na carteira.
-
-Para iterar sobre cada um dos pesos foi utilizado o *FOR* que é uma função de looping até que determinada condição seja satisfeita.
-
-Os dados foram obtidos através da plataforma Yahoo Finance utilizando a função *getSymbols* do pacote **quantmod**, tendo o período analisado de `r dataInicio` até `r dataFim`. Sendo valido a destacar que devido a criptomoeda da Solana só ter seus dados disponivies apartir de `r dataPortfolio`, a analise foi realizada a partir dessa data em diante para a composição do portfólio.
-
-Sendo os ativos selecionados: `r textList(Fsymbols)`. No qual os seus símbolos são representados em pares com o a stable coin USD, sendo eles `r textList(symbols)` respectivamente.
-
-O critério utilizado pra fazer a seleção das criptomoedas foi as `r Nsymbols` maiores criptomoedas em relação a capitalização de mercado, sendo removido o USDT-USD e USDC-USD devido a elas funcionarem como uma moeda digital fiduciária no qual é pareado o seu valor 1:1 com o dólar, sendo este dado extraído da plataforma do *coinmarketcap*.
+A Matic é uma criptomoeda da Polygon que funciona como meio para transações dentro da sua rede, tendo como funcionalidades: a possibilidade da participação das decisões adotadas dentro do projeto, funcionar como um meio de pagamento e staking que é uma forma de obter renda passiva com o ativo. Sendo a polygon uma plataforma que busca por facilitar a conexão entre redes compatíveis com a ethereum e reduzir problemas nesse processo. Sendo criada em 2017 por Jaynti Kanani, Sandeep Nailwal e Anurag Arjun [@polygon]
 
 # REVISÂO DE LITERATURA {#sec-desenvolvimento}
 
-## CRIPTOMOEDA {#sec-desenvolvimento-Criptomoeda}
+## CRIPTOMOEDA
 
-A categorização no qual as criptomoedas podem ser enxergadas variam entre pesquisadores.
+As criptomoedas são observadas por diversos grupos da sociedade ao redor do mundo, sendo eles: investidores, financeiras, organizações governamentais, bancos centrais, legisladores, economistas, pesquisadores e etc. umas das explicações possíveis a esse fenômeno se dá ao fato do alto nível de liquidez como resultado de uma flexibilização monetária e pequenos rendimentos de ativos financeiros.[@arzova2021].
 
-O termo criptomoeda pode ser visto como parte mais abrangente de ativos financeiros, podendo ser categorizadas dentre os seguintes grupos: criptomoedas, títulos cripto e criptoativos de utilidade. [@giudici2020]
+O seu termo surgiu com o advento da inovação tecnológica desenvolvida pelo pseudônimo Satoshi Nakamoto ao criar o Bitcoin com o intuito de ser um meio de troca. Diferente das moedas fiduciárias, a criptomoeda não se baseia na figura de uma autoridade central, mas sim na criptografia pra controlar e administrar [@kliber2019].
 
-Criptomoedas são ativos que atuam na blockchain para realizar trocas ou transferências entre os participantes da rede e, portanto, são usados como um meio de pagamento tendo ainda subdivisões entre moedas flutuantes, no qual a quantidade é fixada e o mercado determina seu preço tendo por exemplo o Bitcoin e o Ethereum, e as moedas estáveis, no qual o seu preço é fixo sendo esse determinado por uma instituição como por exemplo o Theter. [@giudici2020]
+Com a criação do Bitcoin, foi concretizado os desejos de grupos anarquistas, no qual via o instrumento da criptografia como uma alternativa viável contra o controle e supervisão estatal por volta dos anos 1980 e 1990 [@mattos2020].
 
-Títulos cripto são ativos que oferecem pagamentos futuros como por exemplo a participação nos lucros. [@giudici2020]
+De tal forma as criptomoedas possuem a características de ser uma moeda descentralizada que operam sob a blockchain. Elas são operadas de forma de pessoa para pessoa sem a interferência de terceiras partes envolvidas, no qual a validação de cada transação é feita por computadores conectados à rede [@mattos2020].
 
-Criptoativos de utilidade são um meio de dar acesso ou resgate a um pré-lançamento de um produto ou serviço especifico. [@giudici2020]
+O conceito de blockchain para o mercado de criptomoedas, é como um livro-razão onde se registra dados das transações. No qual só pode ser adicionado o novo dado ao final deste livro [@kolb2021].
+
+Novos blocos são adicionados por certos nós na rede e vinculados criptograficamente a blocos de dados anteriores, o que torna a blockchain inviolável e acessível a todos na rede [@schellinger2020].
+
+Para que um nó valide determinado bloco na blockchain é feito um trabalho denominado de mineração [ULRICH, 2014 apud @aragon2018].
+
+O conceito de mineração consiste em um processo no qual computadores conectados à rede tentam solucionar os cálculos matemáticos [ULRICH, 2014 apud @aragon2018].
+
+O processo de mineração criptomoeda se tornou uma forma de renda acessível onde há uma alta inflação e falta de confiança nos governos locais [@kliber2019].
+
+Um exemplo é o caso da Venezuela, pois em um período, a eletricidade era subsidiada então não havia custos de energia para o indivíduo. No entanto em 2016 o presidente Maduro anunciou a proibição de mineração de Bitcoin e outras criptomoedas, em 2018 foi declarado legal novamente devido a vontade do governo de lançar a sua própria criptomoeda nacional. (Kliber et al. 2019) Além disso as criptomoedas possibilitaram uma nova forma de arrecadar fundos para pequenas startups através da ICO (Initial Coin Ofering, oferta inicial da moeda) [@xu2021].
+
+No qual o conceito de ICO é compreendido como uma forma descentralizada de fundo colaborativo no qual é empregado sobre a rede da blockchain, para arrecadação através da emissão de tokens. De tal maneira possui a característica do rápido método de financiamento e um limite baixo [@xu2021].
+
+Por outro lado, o mercado de criptomoedas possui riscos como por exemplo a assimetria da informação entre os mercados, seja elas causadas por problemas de softwares (Bugs, hacks e etc) [@benedetti2021].
+
+Além disso, o mercado de criptomoedas é sujeito a diversos tipos de golpes, no qual é categorizado entre sete tipos de golpes principais: esquemas ponzi, malware, falsos serviços criptos, golpes de taxas avançadas, e-mail negro, falsa ICO e lavagem de dinheiro [@bartoletti2021].
+
+O esquema ponzi é um golpe que promete pagar altos retornos sobre o montante investido. No qual estes retornos são pagos por novos participantes do esquema [@kerr2023].
+
+O vírus Malware é categorizado entre dois tipos principais de vírus: Ransomware e Crypto loggers. No qual os desenvolvedores de vírus exploram a propriedade da não rastreabilidade das criptomoedas [@bartoletti2021].
+
+O vírus ransoware é uma violação dos aparelhos tecnológicos no qual bloqueiam o acesso a eles, até que determinado pagamento seja feito [MUSIALA, 2020 apud @trozze2022].
+
+Já no caso do vírus Crypto loggers, ele é mais sutil ao ser uma interface transparente que tenta descobrir a chave secreta da carteira da vítima e assim realizar pagamentos da conta dele para a do golpista [@bartoletti2021].
+
+Os falsos serviços criptos são golpes em que criminosos desenvolveram serviços se passando como aplicações reais, alguns exemplos são: falsa corretora, falsa carteira, falso mix, falso piscina de mineração e falsa doações [@bartoletti2021].
+
+As falsas corretoras se referem a golpes em que as vítimas são convencidas a comprar criptomoedas diretamente através dessas falsas corretoras, após a compra fecham as falsas corretoras e somem com o dinheiro [@kerr2023].
+
+As falsas carteiras são serviços que fornecem o armazenamento de criptomoedas no qual assim que as vítimas enviam suas criptomoedas, os criminosos transferem todos ou parcialmente o dinheiro existente da carteira da vítima [@kerr2023].
+
+Os falsos serviços mixing são serviços que permitem, ao randomizar o número de transações e utilizar algum endereço externo, apagar os links entre endereços iniciais e finais nos movimentos da blockchain. Porém eles recebem o dinheiro e não reenviam ao cliente [@bartoletti2021].
+
+As falsas piscinas de mineração são compreendidas como operações no qual, o criminoso, induzem as vítimas a investir em projetos que tem por intenção a operação de mineração e com isso promete altos retornos, porém essas vítimas não são pagas [@kerr2023].
+
+Já nas Falsa doações são criadas campanhas de doações falsas prometendo ajudar em algum projeto ou pessoa, porém eles somem com o dinheiro [@bartoletti2021].
+
+Os golpes de taxas avançadas são práticas que tentam convencer a vítima a enviar criptomoedas a um endereço particular com promessas de retorno maior [Phillips & Wilder, 2020 apud @trozze2022].
+
+Os E-mails negros são um tipo de golpe em que e-mails são enviados as vítimas em que o golpista alega ter hackeado e a gravado através da webcam. Dessa forma ele solicita pagamento de resgate para não publicar em redes sociais e deletar o material coletado [@bartoletti2021].
+
+As falsas ICOs' se caracterizam com alguma característica particular que as demais não possuem, por exemplo como o apoio de uma celebridade ou um time falso de trabalho, induzindo assim ao comprador adquirir participação no falso projeto [@bartoletti2021].
+
+A lavagem de dinheiro é caracterizada como dinheiro provindo de origem ilícita que para ser usado como dinheiro legal é feito um disfarce sobre sua origem. [@silveira2020]
+
+De tal forma é possível notar duas diferenças principais entre o mercado de renda variável com o de criptomoedas, sendo elas: o ambiente regulatório e a característica tecnológica aplicada [@benedetti2021].
+
+A falta de regulação aplicadas ao mercado de criptomoedas acaba por não garantir a integridade desse mercado e a sua transparência sendo este o fator distintivo entre o mercado de renda variável, porém já é possível notar um desenvolvimento nesse sentido com a adesão dos procedimentos anti lavagem de dinheiro (AML), conheça seu cliente (KYC) e requerimento de reserva [@benedetti2021].
+
+Em relação a tecnologia, o mercado de criptomoedas é marcado pela custodia descentralizada, ou seja, o mercado assume a custodia do token no qual o usuário transfere de sua carteira para o mercado [@benedetti2021].
+
+Já para o mercado de renda variável é o oposto, a custodia é centralizada no qual as operações sobre ele são feitas através de intermediários enquanto no mercado criptoativo as operações são feitas diretamente entre as partes [@benedetti2021].
+
+No entanto há divergência de classificação acerca das criptomoedas [Bouri, 2017 apud @kliber2019].
+
+Para Chuen (2015) devido as criptomoedas serem sujeitas a oscilações diárias em seu valor e serem negociadas através de corretoras especializadas, faz com que elas se caracterizem mais como um ativo financeiro [apud @mattos2020].
+
+De acordo com [@fry2023] as criptomoedas se assemelham no geral como uma classe de ativo financeiro tecnológica, sendo a exceção o Bitcoin e a Solana no qual tem características de moeda.
 
 Já para [@ozdurak2022] elas podem ser classificadas em diversos grupos como instrumentos financeiros, valores mobiliários, commodities ou instrumento de pagamento.
 
-Sendo ela assegurada através da tecnologia da criptografia ao invés de uma terceira entidade de confiança, para realizar transferências de propriedade e financeira. [@giudici2020]
+Portanto devido a possibilidade da caracterização da criptomoeda como uma moeda fiduciária, se faz necessário uma análise sobre o conceito do papel que elas exercem e sua classificação do ponto de vista jurídico.
 
-Sendo seu mercado compreendido como um sistema complexo baseado em especulação portanto é gerador de condições instáveis e alguns vieses no qual os investidores possuem estratégias. [MNIF et al., 2020 APUD @volosovych2023]
+## MOEDA
 
-Além disso ainda há divergências entre a possibilidade do bitcoin ser uma alternativa ao ouro Alguns pesquisadores afirmam, isso ocorre devido à falta de confiança na política monetária local enquanto outros afirmam que não se assemelha ao ouro e nem tem a capacidade de servir como um ativo porta seguro. [@kliber2019]
+O conceito de moeda é caracterizado como uma criação do estado com a finalidade de ser um meio de pagamento para obrigações fiscais [KNAPP. 2023 apud @bernardo2019].
 
-O fato é que a sua adoção foi aumentada fortemente durante o período inflacionado da pandemia da covid-19. [@ozdurak2022]
+Ou seja, a moeda é um reconhecimento de dívida. No qual a transformação em dinheiro é realizada através do poder do estado de declarar que é passível de quitação de outras dividas [@mattos2020].
 
-Em estudos realizados por (De Luca; Loperfido) constatou que as notícias negativas são mais impactantes no mercado financeiro tradicional que as notícias boas. [APUD @nguyen2022]
+Para que seja considerado uma moeda, ela deve exercer três funções elementares sendo estas: meio de troca, unidade de conta e reserva de valor [NUNES, 2016 apud @aragon2018].
 
-Já no mercado de criptoativos ocorre o oposto segundo (Sapkota. 2022) tendo assim as notícias boas mais impactos sobre os retornos do que as negativas. [APUD @nguyen2022]
+A função meio de troca é o que possibilita a realização de compra e venda entre bens e serviços, a função unidade de conta é o que permite uma padronização monetária para que as mercadorias e os insumos sejam quantificados em dinheiro e a função reserva de valor resguardar o valor do dinheiro utilizado para que em momento posterior possa ser usado como meio de troca [@estellita2020].
 
-Sendo que o mercado global de criptomoeda cresceu durante o período da pandemia da covid-19, em julho de 2016 seu valor era de \$235,5 Bilhões, já em 2021 seu valor aumentou para \$1,3 Trilhões. [COINMARKETCAP. 2021 APUD @volosovych2023]
+Além dessas três funções clássicas da moeda, ela deve conter as seguintes características: divisibilidade, durabilidade, alta complexibilidade para falsificação, manuseabilidade e transportabilidade [@breunig2020].
 
-Em relação ao mercado de ativos tradicionais dos estados unidos, china e de outros países desenvolvidos e em desenvolvimento sofreram com uma queda durante o período inicial da pandemia, mas começaram a se recuperar ainda em julho de 2020 [@nguyen2022]
+No caso especifico do Bitcoin, ele tem as propriedades da divisibilidade e portabilidade possuindo assim características de ser um meio de pagamento descentralizado [ARAÚJO; SILVA, 2017 apud @junior2021].
 
-Até o ouro que é um ativo de menor risco foi afetado negativamente pela covid-19 [@nguyen2022]
+Para Woodford (2011) As criptomoedas com características semelhantes ao Bitcoin possuem as funções reservas de valor, meio de troca, mas não a da unidade de conta pois a falta de uma ampla aceitação da sociedade para utilizarem ao realizar trocas entre si [apud @white2020].
 
-Os impactos causados durante esse período moldaram o cenário atual das criptomoedas tendo como exemplo: a alta inflação, queda no produto interno bruto, distanciamento social e diversas restrições das quarenta impostas. [@volosovych2023]
+Já para [@breunig2020] o Bitcoin não deva ser categorizado como uma moeda fiduciária devido não possuir a função reserva de valor pois possui a alta variação no seu preço.
 
-### CONTEXTUALIZAÇÂO {#sec-desenvolvimento-Criptomoeda-Contextualizacao}
+Sendo confirmado esse pensamento também por [@aragon2018] ao relacionar a alta volatilidade do Bitcoin com o principal fator impeditivo de classifica-la como moeda e assim a afastando de seu proposito originário.
 
-As criptomoedas, no geral, são observadas por diversos grupos da sociedade ao redor do mundo, sendo eles: investidores, financeiras, organizações governamentais, bancos centrais, legisladores, economistas, pesquisadores e etc. umas das explicações possíveis a esse fenômeno se dá ao fato do alto nível de liquidez como resultado de uma flexibilização monetária e pequenos rendimentos de ativos financeiros. [@arzova2021]
+## REGULAÇÃO
 
-Sendo o seu termo surgido com o advento da inovação tecnológica desenvolvida pelo pseudônimo Satoshi Nakamoto ao criar o BITCOIN com o intuito de ser um meio de troca, contrário as moedas tradicionais, a criptomoeda não se baseia na figura de uma autoridade central, mas sim na criptografia pra controlar e administra-la. [@kliber2019]
+Para o âmbito jurídico a moeda deve possuir o cursor legal que é classificado quando as pessoas de uma determinada sociedade tem por obrigação aceitar a moeda, o cursor forçado quando não é permitido pedir reembolso em forma de outros ativos e o poder liberatório quando é meio jurídico valido para quitar dívidas e obrigações contraídas [@castello2019].
 
-No qual a criação do bitcoin concretiza os desejos dos movimentos de grupos anarquistas, no qual via o instrumento da criptografia como um alternativa viável contra o controle e supervisão estatal por volta dos anos 1980 e 1990. [@mattos2020]
+Segundo Telles (2020, p. 59) as criptomoedas não possuem nenhum desses atributos [apud @morais2022].
 
-Tendo assim, o bitcoin e outras criptomoedas que surgiram com o tempo, características de uma moeda descentralizada que operam sob a blockchain, de forma que seja operada peer-to-peer ou seja de pessoa para pessoa sem a interferência de terceiras partes envolvidas como por exemplo bancos para a realização da validação de sua transação, dessa forma, a validação de cada transação é feita por computadores conectados à rede. [@mattos2020]
+Para Silveira (2020, p. 30/31) há a possibilidade delas possuírem o poder libertário [apud @morais2022].
 
-Portanto o bitcoin encerra um ciclo de tentativas afim de solucionar o problema de transicionamento de pagamentos sem terceiras partes envolvidas de tal modo que fossem transparentes, seguras e descentralizadas em uma rede de ponto a ponto. [@nascimento2022]
+No geral as criptomoedas tem diversas classificações acerca de como deva ser compreendida ao redor do mundo, enquanto alguns países baniram o direito de da comercialização e da circulação da moeda como é o caso de Nepal, porém em sua grande maioria é liberado, na Itália e Japão é exigido o registro e a licença da operação da criptomoeda e no México é aceito como meio de pagamento [@shirakawa2019].
 
-### CRIPTOGRAFIA {#sec-desenvolvimento-Criptomoeda-Criptografia}
+O Brasil atualmente se integra um grupo seleto de países que possuem regulamentação para as criptomoedas por intermédio da Lei 14.478/2022, no qual conceitua as criptomoedas como os ativos virtuais, os classificando como representação de valor que pode ser negociada, utilizada como meio de pagamento ou com propósitos de investimentos, fazendo a desassociação entre o Bitcoin como moeda fiduciária [@neto2023].
 
-Para garantir a segurança da rede e das transações nela feita é utilizado funções criptografadas denominadas hash, é um protocolo do consenso no qual fornece a validação entre nós anônimos sobre o status atual do histórico de transações armazenado em um livro-razão, comumente referido como blockchain. [@schellinger2020]
+A lei também procura regular as corretoras, pois elas só poderão atuar em território brasileiro mediante autorização dos órgãos da administração pública, além disso também ficou permitido ao Banco Central acumular ou prestar serviço de ativos virtuais [@neto2023].
 
-Porém, vale a pena se ressaltar que o conceito da utilização de criptografia, dentro de um sistema de pagamento já havia sido elaborado em 1983 por David Chaum. [@letho2022]
+Segundo Vaz de Almeida (2023) com a criação da lei ficou estabelecido um dispositivo no qual prever a criação de um novo código penal especifico aplicado a fraudes envolvendo criptomoedas [apud @fontgalland2023].
 
-A ideia era proteger os dados do usuário de pagamentos eletrônicos de serem usados por terceiras partes, desde sua criação, envio e recebimento para isso ele propôs um sistema de pagamento irrastreável usando um sistema de assinatura cega, no qual consiste no uso de senha para encriptografar e descriptografar a informação, tendo o objetivo proibir terceiras partes envolvidas de rastrear os detalhes do pagamento, incluindo a hora, o beneficiário e o número de pagamentos efetuados. [@letho2022]
+A classificação de prestadoras de serviço de criptmoedas passou a ser semelhante a de instituições financeiras, também foi estabelecido que tais agentes se enquadravam no rol do artigo 9 da lei 9.613 aplicados a lavagem de dinheiro e no código de defesa do consumidor ao conduzir operações no mercado de criptmoedas [@fontgalland2023].
 
-Segundo (Kaspersky,2022) O conceito da criptografia é, no cenário de dinheiro digital, uma técnica que protege e preserva as informações da mensagem eletrônica, podendo ser visualizada para apenas o emissor e o receptor. De tal forma a palavra criptografia é uma derivação da palavra grega kryptos que significa objeto escondido. [APUD @ngwakwe2022]
+## MARKOWITZ
 
-A criptografia funciona da seguinte forma; os textos são misturados transformando em um texto codificado e assim indecifrável, apenas o usuário destinatário final do texto poderá descodificar. (NGWAKWE, 2022) Há duas formas principais de criptografia aplicadas nas criptomoedas, sendo através da chave assimétrica e simétrica. [@ngwakwe2022]
+Markowitz nasceu em 1927 em Chicago, Estados Unidos [@nobelPrize].
 
-Na chave assimétrica ela é composta por chave pública e privada, enquanto os dados são enviados pela publica o receptor da mensagem apenas poderá descriptografar os dados utilizando a chave privada. [@ngwakwe2022]
+Ele publicou sua teoria em 1952, intitulada seleção de portfólio, no qual posteriormente passou a ser conhecida como moderna teoria de portfólio [@Globo].
 
-Na chave simétrica é gerada uma única chave secreta tanto para encriptografar quanto para descriptografar os dados, sendo compartilhada essa chave apenas aos envolvidos. [@ngwakwe2022]
+Foi um dos pioneiros ao realizar estudos verificando os benefícios da diversificação da carteira [@Globo].
 
-Sendo a utilização da criptografia aplicada na blockchain através das funções hash, que seriam equações matemática. [@guo2022]
+Em 1990 recebeu o prêmio Nobel de economia pela teoria que revolucionou a forma de construir uma carteira de investimento [@Suno].
 
-Essas funções hashs tem por propriedades: o tamanho fixo, suscetibilidade, unidirecionalidade, resistência à colisão e alta sensibilidade. [@zhai2019]
+Ele faleceu no dia 26 de junho de 2023 [@Suno].
 
-O valor resultante dessa função é armazenado no cabeçalho do bloco junto com o hash do bloco anterior, sendo que através delas se torna possível fazer cálculos que comprovem a integridade na informação do bloco anterior. [@zhai2019]
+A iniciativa de investimento é uma tentativa de segurança contra qualquer ameaça que possa enfrentar, sendo a alocação de dinheiro para benefício no futuro um traço comum humano [@ma2020].
 
-Por consequência, a falsificação do pertencimento da propriedade se torna impossível, devido a necessidade de alterar os dados anteriores da cadeia inteira, aonde é mantido na internet por muitos usuários, distribuído na blockchain, se tornando inimaginável. [@giudici2020]
+A moderna teoria de portfólio desenvolvida por Harry Markowitz se baseia na abordagem da construção de portfólio com o intuito de maximizar o retorno esperado a um menor risco [@abubakar2019].
 
-As chaves geradas através do processo de criptografia são normalmente administradas por carteiras digitais que tem por função armazenar as criptomoedas. [@biernacki2021]
+O risco dos ativos são calculados através da formula de desvio padrão [@abubakar2019].
 
-### REVISÃO SOBRE AS CRIPTOMOEDAS UTILIZADAS {#sec-desenvolvimento-Criptomoeda-ativosSelecionados}
+A diversificação do portfólio tem por intenção suavizar os riscos não sistêmicos em um portfólio, no qual se baseia em que se um ativo tiver uma performance ruim, logo os outros ativos da sua cesta neutralizarão o desempenho negativo, dado que a correlação entre eles seja negativa, sendo considerado assim um ativo de porto seguro para enfrentar os períodos de turbulências no mercado [@kliber2019].
 
-Foram utilizadas nesse trabalho `r Nsymbols` criptomoedas, nesta seção traz uma breve revisão sobre elas. Sendo elas: `r textList(Fsymbols)`.
+A correlação é uma medida de como os ativos se movem juntos, ou seja, é um coeficiente que indica a forma como os ativos podem ser usados para um portfólio com o intuito de diversificação [@ram2018].
 
-O Bitcoin foi criada em 2008 com característica de ser uma moeda descentralizada no qual permite transações entre as partes sem intermediários e não possui alguma entidade a controlando, porém há contribuições continuas de diversos programadores para a continua evolução e melhoramento da rede. [@bitcoin]
+O risco pode ser reduzido com a introdução de ativos negativamente correlacionados ao portfólio [@abubakar2019].
 
-O Ethereum assim como o bitcoin, também é uma criptomoeda descentralizada e funciona como um meio para que as outras criptomoedas possam operar em sua rede, tendo como destaque a elaboração dos smart contracts. Ela teve seu whitepape publicado em 2013, porém só foi fundada em 2014 por oito confundadores, dentre eles o Vitalik Buterin é o mais conhecido, a sua sede fica na cidade de Zug sendo localizada na Suiça. Tendo como seus principais objetivos ser uma plataforma universal para outras criptomoedas executem seus softwares nela. [@ethereum]
+Para tal há cinco premissas que permeiam sobre a teoria de Markowitz sendo elas: que o investidor considera as alternativas de investimento pela probabilidade do retorno esperado, a maximização da utilidade esperada e a sua curva marginal da riqueza decrescente, que os riscos são estimados pela variabilidade do retorno esperado, a sua decisão é fundada na premissa de risco e retorno e por fim os investidores preferirão ativos com menos risco ao invés do mais arriscados e que também irão preferir maiores retornos ao invés de retornos menores [@abubakar2019].
 
-O Binance é um token da Binance que por sua vez é uma exchange, ela oferece desconto em taxas aos seus detentores e direito de participação em lançamentos de tokens dentro de sua plataforma, sendo ele lançado em 2017 através de uma ICO. [@bnb]
+No geral, a aplicação da moderna teoria de portfólio é mal compreendida. A diversificação não é garantia por um alto retorno comparado ao retorno mercado que se tem por referência, a proposta principal não é apenas manter uma cesta diversificada de ativos, mas também considerar a relação entre os ativos individuais da sua carteira [@ozdurak2022].
 
-A XRP é uma moeda nativa da plataforma da Ripple foi criada em 2012 pela empresa Ripple Labs Inc seu intuito é ser um sistema de pagamento global, sendo, uma as suas principais vantagens, o custo baixo ao enviar dinheiro por sua rede [@xrp]. Ela fica localizada em são Francisco, Estados Unidos. [@rocketre]
+Ou seja, não é sobre o risco individual de cada ativo, e sim sobre como todos os demais se performam como um portfólio [@ozdurak2022].
 
-A Cardano foi lançada em 2017 sendo ela utilizada por empresas agrícolas no rasteiro dos seus produtos. Tendo como característica a participação democrática dos detentores de sua moeda sobre as mudanças projetadas na rede por sua equipe. [@cardano]
+Além disso aumenta a adoção mundial de criptomoedas junto com outras moedas estáveis, enquanto governos como china e índia proibiram o comercio. Dessa forma o risco maior é de curto prazo dado a falta de regulação e previsibilidade sobre esses novos ativos, além do mais as criptomoedas tem por sua característica o alto retorno e risco comparadas com ativos [@ozdurak2022].
 
-A Dogecoin é uma moeda meme de uma raça de cachorro Shiba Inu no qual foi criada em 2013, sendo um dos seus fundadores o Billy Markus porém só foi lançada em 2014. Ela é usada principalmente como um sistema de gorjeta no fórum do Reddit e é usada com o intuito especulativo já que ela é amplamente influenciada pelas redes sociais. [@dogecoin]
+O perfil de risco premia ao nível de risco assumido, isso pode ser medido usando a razão de Sharpe no qual demonstra os retornos por unidade de risco aceitado [@ram2018].
 
-A Solana foi criada com o intuito de facilitar a elaboração de D'app que também são conhecidos como aplicativos descentralizados. Ela foi criada em 2020 pela empresa Solana Foundation ela tem sua sede em Genebra que fica localizada na suíça. Ela apresenta uma inovação no sistema ao introduzir o sistema de proof of history no qual permite maior usabilidade no protocolo. [@solana]
+O Indice de Sharpe é uma ferramenta que auxilia na comparação de performance entre ativos agrupados no portfólio, ao se calcular os retornos excessivos sobre a taxa livre de risco, sendo a Razão Sharpe maior que um aceitável e consequentemente quanto maior for ela mais retornos excessivos sobre a taxa livre de risco, que em sua finalidade é capaz de fornecer a fronteira eficientes entre diferentes portfólios [@ma2020].
 
-A Matic é uma criptomoeda da Polygon que funciona como meio para transações dentro da sua rede, tendo como funcionalidades: a possibilidade da participação das decisões adotadas dentro do projeto, funcionar como um meio de pagamento e staking que é uma forma de obter renda passiva com o ativo. Sendo a polygon uma plataforma que busca por facilitar a conexão entre redes compatíveis com a ethereum e reduzir problemas nesse processo. Sendo criada em 2017 por Jaynti Kanani, Sandeep Nailwal e Anurag Arjun. [@polygon] ela foi criada em Mumbai que fica situada na Índia. [@whatis]
+A fronteira eficiente pode ser compreendida como uma linha no qual possui os melhores retornos ao niveis de risco assumidos sobre um conjunto de combinações possiveis na composição do portfólio, para tal ela utiliza o indice sharpe como parametro [@silva2019].
 
-### CARTEIRA {#sec-desenvolvimento-Criptomoeda-Carteira}
+Em um estudo realizado por Brauneis and Mestel (2019) sobre os benefícios da inclusão das criptomoedas no portfólio utilizando a estrutura de markowtiz, constataram que elas reduziam o risco do portfólio [apud @ozdurak2022].
 
-A carteira digital possui duas funções sendo a primeira de ser uma ferramenta de administração de criptomoedas e a segunda de uma ferramenta de interação com a rede da blockchain. [@biernacki2021].
+# FORMULAS MATEMATICAS
 
-Elas possuem um endereço alfanumérico gerado das chaves públicas e privadas no qual este endereço é uma localização especifica na rede da blockchain que permite a realização de transferências. [@biernacki2021]
+A formula para calcular o retorno utilizada foi: 
 
-Sendo possível classificar entre dois tipos de carteiras existentes: online e offline, também conhecidas como hot wallets e cold wallets. [@nowroozi2023]
+$$
+R_{x,t} = log(P_{t}) - log(P_{t-1})
+$$
+Onde $R_{x,t}$ = Retorno do ativo x no período e P = Preço do ativo no período t
 
-As online/hot wallets tem por característica só funcionar se conectado a internet. Tendo como exemplo: online, computador e móvel. [@nowroozi2023]
+A formula para calcular o risco utilizada foi:
 
-As offline/cold wallets é o inverso, são armazenadas em arquivos físicos que independem de conexão com a internet. Tendo como exemplos: carteira de papel e carteira física. [@nowroozi2023]
+$$
+\sigma_{x} = \frac{\sum^{n}_{i=1}(x_{i}-\overline{x})^2}{n-1}
+$$
+Onde $\sigma_{x}$ = desvio padrão de x, n = é o numero pontos, $x_{i}$ = os dados de cada valor e $\overline{x}$ = é a media da variavel x
 
-### BLOCKCHAIN {#sec-desenvolvimento-Criptomoeda-Blockchain}
+A formula para calcular a correlação foi:
 
-Sendo o conceito de blockchain, para o mercado de criptomoedas, como um livro-razão aonde se registra dados das transações, sendo que só pode ser adicionado o novo dado ao final deste livro. [@kolb2021]
+$$
+P_{x,y} = \frac{COV_{x,y}}{\sigma_{x}\sigma_{y}}
+$$
 
-Novos blocos são adicionados por certos nós na rede e vinculados criptograficamente a blocos de dados anteriores, tornando o blockchain inviolável e acessível a todos na rede. [@schellinger2020]
+Onde $cov_{x,y}$ = covariância de x e y, $\sigma_{x}$ = desvio padrão de x e $\sigma_{y}$ = desvio padrão de y
 
-De acordo com (SILVA; BOVÉRIO, 2018) a blockchain é dividida entre 3 grupos, sendo elas 1.0, 2.0 e 3.0. [APUD @junior2021]
+A formula para calcular o retorno do portfólio foi:
 
-1.0 apresenta conceitos de moedas virtuais e no sistema de pagamento, tendo o bitcoin como sua representante. [SILVA; BOVÉRIO, 2018 APUD @junior2021]
+$$
+R_{p} = \sum^{N}_{t=1} x_{t}w_{t}
+$$
+Onde $R_{p}$ = Retorno do portfólio, N = quantidade da dados, t = Período, $x_{t}$ = Ativo no período e $w_{t}$ = peso do ativo no período. 
 
-2.0 tem a característica principal a formalização de negociações entre participantes sem intermediários, sendo dessa forma denominado esse processo de contratos inteligentes. [CARDOSO, 2018 APUD @junior2021]
 
-3.0 de acordo com (SILVA. BOVÉRIO. 2018) tem sua característica principal na distribuição de dados. [APUD @junior2021]
+A formula para calcular a razão sharpe foi:
 
-O processo de operação da blockchain é exemplificado por [@mattos2020] no seguinte trecho:
+$$
+sr = \frac{R_{p} - R_{f}}{\sigma}
+$$
+Onde sr = razão sharpe, $R_{p}$ = retorno do portfólio, $R_{f}$ = taxa livre de risco e $\sigma$ = desvio padrão
 
-::: {custom-style="Citação - ABNT"}
-"Os Bitcoins saem da e-wallet (conta na rede blockchain) do agente A e entram na e-wallet do agente B em poucos segundos, porém pendente de validação. Essa validação ocorrerá no sistema DLT, no qual diversos computadores participantes concorrerão para validar a transação por meio da finalização do proof-of-work (mineração) necessário para criar um novo bloco, que satisfaz todos os protocolos requeridos pelo sistema DLT. O primeiro computador a criar o bloco ganha como recompensa alguns Bitcoins; o novo bloco, por sua vez, é propagado pela rede e outros computadores irão checar se o bloco é válido -- já que o sistema é descentralizado, ou seja, não há um órgão central que faz essa validação -- antes de incluí-lo no sistema blockchain. Após esse processo, o agente B receberá a confirmação da transação dos Bitcoins enviados pelo agente A."
-:::
+A formula para realizar a conversão da taxa de juros anual para diária utilizada foi:
 
-De forma que o nó valide determinado bloco na blockchain é feito um trabalho denominado de mineração. [ULRICH. 2014 APUD @aragon2018]
-
-### MINERAÇÂO {#sec-desenvolvimento-Criptomoeda-Mineração}
-
-O conceito de mineração consiste em um processo no qual computadores conectados a rede tentam solucionar os cálculos matemáticos, sendo a recompensa uma fração da moeda criada no processo e posteriormente valida um bloco de transações na rede, no caso do bitcoin o nível é ajustado até que atinja o número máximo de moedas definidos em seu protocolo criação, que é de 21 milhões de moedas sejam criadas até 2140 [ULRICH. 2014 APUD @aragon2018]
-
-O processo denominado mineração se deu através da analogia com a mineração de matérias como o ouro, sendo os mineradores comparados assim aos garimpeiros ao selecionar uma combinação matemática de números pra ser adicionada aos blocos, dessa forma os mineradores não possuem a função de emissão de moedas. [@volosovych2023]
-
-Sendo desse processo gerador da problemática do impacto ambiental ocasionado ao realizar o processo de mineração já que é exigido um elevado custo de energia elétrica, por outro lado esse problema poderia ser reduzido ao se utilizar fontes de energias renováveis, tornando o processo de mineração mais barato ao minerador e menos nocivo ao meio ambiente. [@ozdurak2022]
-
-### RISCOS {#sec-desenvolvimento-Criptomoeda-Riscos}
-
-#### ASSIMETRIA DA INFORMAÇÂO {#sec-desenvolvimento-Criptomoeda-Riscos-Infomação}
-
-Outro problema do mercado de criptomoedas é a assimetria das informações entre os mercados, seja elas causadas por problemas de softwares (Bugs, hacks e etc), Alto volume de vendas que impactaria o preço ou o desfazimento do time responsável por alguma moeda. [@benedetti2021]
-
-Além disso por ser um mercado emergente ele sofre mais facilmente com a propagação de notícias falsas do que o mercado tradicional, no qual essas notícias tem o intuito de enganar o investidor. [TRADINGVIEW, 2021. APUD @junior2021]
-
-Tendo como exemplo segundo (BRANCO, 2021) o caso da criptmoeda Litecoin no qual seu valor subiu em 30% rapidamente após postar um anuncio que seria relizado uma parceria com a Walmart, porém logo foi desmentido e seu valor caiu na mesma velocidade. [APUD @junior2021]
-
-#### BOLHA FINANCEIRA {#sec-desenvolvimento-Criptomoeda-Riscos-BolhaFinanceira}
-
-Outro ponto que vale a pena se destacar é a presença de bolhas no mercado de criptomoedas devido a sua elevada expectativa do seu preço no futuro e ao risco incorrido podendo superar até aos casos históricos da South sea company e a cisco. [@white2020]
-
-Essa ideia também é defendida por [@schellinger2020] ao qual atribui o aparecimento de bolhas no mercado de criptomoedas devido a alta especulação.
-
-#### GOLPES {#sec-desenvolvimento-Criptomoeda-Riscos-Golpes}
-
-De acordo com [@bartoletti2021] scams, que traduzido para português significa golpes, são definidas como comportamento ilegal que tem por intenção obter algo ilegalmente ao enganar pessoas.
-
-Os golpes aplicados no setor de criptomoedas podem ser categorizados como sete categorias principais: Esquemas ponzi, malware, falsos serviços criptos, golpes de taxas avançadas, e-mail negro, ICO's falsas e lavagem de dinheiro. [@bartoletti2021]
-
-O Esquemas ponzi, também conhecido como investimentos de altos rendimentos, são golpes que prometem pagar altos retornos sobre o montante investido, sendo estes retornos pagos por novos participantes dos esquemas. [@kerr2023]
-
-No vírus Malware. Devido a propriedade da irrastrebailidade das criptomoedas os desenvolvedores de vírus exploram essa característica. Sendo categorizadas entre dois tipos principais de vírus: Ransomware e Crypto loggers. [@bartoletti2021]
-
-Os vírus ransoware são relacionados a violação dos aparelhos tecnológicos no qual proíbem o acesso a eles até que determinado pagamento seja feito, geralmente são pagos em criptomoedas. [MUSIALA et al., 2020 APUD @trozze2022]
-
-Já no caso do vírus Crypto loggers, ele é mais sutil ao ser uma interface transparente que tenta descobrir a chave secreta da carteira da vítima e assim realizar pagamentos da conta dele para a do golpista. [@bartoletti2021]
-
-Com relação a falsos serviços cripto, é valido destacar que existe múltiplos serviços para a administração dos ativos no ecossistema de criptomoedas sendo entre eles: serviço de Exchange, carteiras e mixers. Devido a isso criminosos desenvolveram serviços fraudulentos se passando como real como por exemplo: falsa Exchange, falsa carteira, falso mix, falso piscina de mineração e falsa doações. [@bartoletti2021]
-
-No caso das falsas Exchange se refere a golpes que as vítimas são convencidas a comprar criptomoedas diretamente através dessas Exchange falsas e então fecham a Exchange e somem com o dinheiro. [@kerr2023]
-
-As falsas carteiras são serviços que fornecem o armazenamento de criptomoedas no qual assim que as vítimas enviam suas criptomoedas, os criminosos transferem todos ou parcialmente o dinheiro existente na carteira da vítima. [@kerr2023]
-
-Os falsos mixing são serviços que permitem, ao randomizar o número de transações e utilizar algum endereço externo, apagar os links entre endereços iniciais e finais nos movimentos da blockchain porém eles recebem o dinheiro e não reenviam ao cliente desse serviço. [@bartoletti2021]
-
-As falsas piscinas de mineração ou também conhecidas como golpes de mineração são compreendidas como operações no qual, o criminoso, induzem as vítimas a investir em projetos que tem por intenção a operação de mineração e com isso promete altos retornos, porém essas vítimas não são pagas. [@kerr2023]
-
-Já nas Falsa doações são criados campanhas de doações falsas prometendo ajudar em algum projeto ou pessoa e ao invés de destinar o dinheiro ao fim prometido, eles somem com o dinheiro. [@bartoletti2021]
-
-Com relação aos golpes de taxas avançadas, De acordo com (Phillips & Wilder, 2020), Essa pratica se caracteriza ao convencer a vítima enviar criptomoeda a um endereço particular com promessas de retorno maior. [APUD @trozze2022]
-
-Email negro São e-mails enviados as vítimas que o golpista alega ter hackeado e gravado a vítima através da webcam e solicita pagamento de resgate para não publicar em redes sociais e deletar o material coletado. [@bartoletti2021]. Sendo no contexto da pandemia covid-19, enviaram e-mails alegando que era morador do bairro da vitima e que estava infectado com o vírus, exigindo assim pagamento em uma carteira digital para não espalhar a doença. (xia et al 2020) [@xia2020]
-
-Falsas ICOs' se divulgam com alguma característica particular que as demais não possuem sendo por exemplo com apoio de falsa celebridades ou um time falso de trabalho induzindo assim ao comprador adquirir participação no projeto falso. [@bartoletti2021]
-
-A lavagem de dinheiro segundo [@silveira2020] é dinheiro provindo de origem ilicita no qual que para ser usado como dinheiro legal é feito um disfarce sobre sua origem.
-
-### BENEFICIOS {#sec-desenvolvimento-Criptomoeda-Beneficios}
-
-#### FINANCEIROS {#sec-desenvolvimento-Criptomoeda-Beneficios-Financeiros}
-
-Por outro lado, o processo de mineração criptomoeda se tornou uma forma de renda acessível aonde há uma alta inflação e falta de confiança nos governos locais. [@kliber2019]
-
-Um exemplo é o caso da Venezuela, pois em um período a eletricidade era subsidiada então não havia custos de energia para o indivíduo. No entanto em 2016 o presidente Maduro anunciou a proibição de mineração de bitcoin e outras criptomoedas, em 2018 foi declarado legal novamente devido a vontade do governo de lançar a sua própria criptomoeda nacional. [@kliber2019]
-
-Além disso há críticas ao sistema financeiro tradicional devido os seus altos custos com intermediários financeiros, demoras transacionais e a papelada atuam como um fardo aos consumidores. [@ma2020]
-
-O que por sua vez as criptomoedas além de eliminar os custos com intermediários e reduzir o tempo transacional, elas fornecem um sistema transparente, tendo a capacidade de contratos inteligentes e remessas de dinheiro a nível global. [@ma2020]
-
-Há ainda, através das ICO (Initial Coin Ofering, oferta inicial da moeda), uma nova forma de arrecadar fundos para pequenas startups. [@xu2021]
-
-#### ICO {#sec-desenvolvimento-Criptomoeda-Beneficios-Ico}
-
-Sendo, em seu conceito, uma forma descentralizada de fundo colaborativo no qual é empregado sobre a rede da blockchain para arrecadação através da emissão de tokens tendo assim como característica o rápido método de financiamento e um limite baixo. [@xu2021]
-
-Esses tokens dão direito ao comprador na participação dos lucros e o direito de utilizar algum tipo de produto ou serviço. [@giudici2020]
-
-Sendo o processo para a emissão de tokens através das ICOs realizados através da publicação de whitepaper que seria a descrição detalhada do projeto apresentado tendo incluso o time, o preço, propriedades técnicas e o plano pra aplicação do capital obtido. [@xu2021]
-
-A duração de um projeto lançado via ICO é determinado por sua equipe e pode variar entre dias ou meses, de forma que se alcançado o objetivo traçado ou o período acabar, o ICO é encerrado. [CHEN. 2019 APUD @xu2021]
-
-Há ainda projetos que antes de realizarem o lançamento do projeto através das ICOs, praticam a pré-venda a preços reduzidos comparados ao da emissão como forma de atrair investidores em seus estágios iniciais, e esses investidores podem ser recompensados através de bônus assim que encerrar o projeto. [ADHAMI; GIUDICI; MARTINAZZI. 2018 APUD @xu2021]
-
-Sendo categorizados entre ICOs de sucesso ou fracasso, as de sucesso são aquelas que arrecadam o dinheiro de forma igual ou superior as metas pré-estabelecidas, caso não o projeto é categorizado como um fracasso. [@xu2021]
-
-Por outro lado, a assimetria da informação e ambiente relativamente incerto incorrem a maiores risco aos investidores. [@xu2021]
-
-A falta de regulação aumenta o risco de investimento dado que na situação em que o investidor comprou um token no qual a ICO fracassou no seu processo de arrecadação de fundos, ele pode ter grande perdas já que os tokens podem não ser mais negociados na internet. [@xu2021]
-
-#### SOCIAL {#sec-desenvolvimento-Criptomoeda-Beneficios-Social}
-
-Uma outra possibilidade seria o uso dessa nova tecnologia ao sistema financeiro, visando facilitar a inclusão financeira aos indivíduos marginais da sociedade, no qual não possuem banco e assim não se comunicam com um sistema financeiro formal. Sendo dessa forma as remessas financeiras através de criptomoedas e transferências mobiles uma possível mudança no paradigma da inclusão financeira e inovação. [@ma2020]
-
-Segundo (FORBES, 2018) cerca de 50 milhões de brasileiros não possuía conta em um sistema bancário em 2017 e que esse valor corresponderia a 25% de sua população, de tal forma a introdução da criptomoeda seria uma solução viável para resolver esse problema, mas também acabaria por enfrentar na dificuldade de mudança cultural de transações em um país onde estes grupos marginalizados, até então, desconhece o funcionamento de uma conta corrente. [@breunig2020]
-
-Além disso com o surgimento da blockchain e o desenvolvimento dos contratos inteligentes permitiram empreendedores de levantar capital seja via moeda fiduciária, sendo necessário sua troca ser realizada em Exchange, e criptomoeda por meio da emissão de tokens digitais, também conhecido como ICO (Initial Coin Ofering, oferta inicial da moeda). [@giudici2020]
-
-Outro fator importante a se destacar é as diferenças entre o mercado cripto e o mercado de ações tradicional.
-
-### DIFERENÇA MERCADO DE AÇÕES E MERCADO DE CRIPTOMOEDAS {#sec-desenvolvimento-Criptomoeda-DiferençaMercados}
-
-Há duas diferenças principais entre o mercado de ativos tradicional com o de criptomoedas, sendo elas: o ambiente regulatório e a característica tecnológica aplicada. [@benedetti2021]
-
-Devido a falta de regulação aplicadas ao mercado de criptomoedas acaba por não garantir a integridade desse mercado e a sua transparência sendo este o fator distintivo entre o mercado tradicional, porém já é possível notar um desenvolvimento nesse sentido com a adesão dos procedimentos anti lavagem de dinheiro (AML), conheça seu cliente (KYC) e requerimento de reserva. [@benedetti2021]
-
-Outro fator valido a se destacar é que devido a essa ausência aliada com as tecnologias da blockchain propiciam um ambiente livre para inovações em tipos de aplicações comerciais como por exemplo tipos de pedidos (fill or kill, market, limit e etc), politicas nas taxas de negociações (fee per trade, percentage of traded amount e etc), tipos de participantes (market-makers, proprietary, algorithmic trading support e etc) entre outros. [@benedetti2021]
-
-Em relação a tecnologia o mercado de criptomoedas é marcado pela custodia descentralizada, ou seja, o mercado assume a custodia do token no qual o usuário transfere de sua carteira para o mercado. [@benedetti2021]
-
-Já para o mercado tradicional é o oposto, a custodia é centralizada no qual as operações sobre ele são feitas através de intermediários enquanto no mercado criptoativo as operações são feitas diretamente entre as partes. [@benedetti2021]
-
-### CLASSIFICAÇÃO {#sec-desenvolvimento-Criptomoeda-Classificação}
-
-Ao realizar um estudo sobre o comportamento da cauda de risco de diversas classes como bitcoin, ouro, dólar e mercado de ativos tradicional chegou a conclusão de que o bitcoin deva ser classificado como uma alternativa de investimento. [@kwon2020]
-
-Para (CHUEN, 2015) devido as criptomoedas serem sujeitas a oscilações diarias em seu valor e serem negociadas através de exchanges, casas de cambio especializdas, faz com que eles se caracterizem mais como um ativo financeiro. [APUD @mattos2020]
-
-Além disso A classificação do bitcoin como comodities é algo incerto tendo ele mais semelhança em seu comportamento entre algum produto baseado em tecnologia, uma classe de ativo emergente ou um evento bolha ao invés de ser uma moeda ou título. [@white2020]
-
-De acordo com [@fry2023] as criptomoedas se assemlham no geral como uma classe de ativo financeiro tecnologica, sendo a exceção o bitcoin e a solana no qual tem caracteristicas de moeda.
-
-Portanto devido a essa divergencia sobre a conceituação de criptomoeda ser caracterizada como uma moeda fiduciária ou não, é valido uma analise mais profunda sobre o conceito de moeda, o papel que as moedas exercem e do ponto de vista jurídico para melhor entendimento se as criptomoedas como bitcoin devam ser classificadas como ou um ativo financeiro ou moeda fiduciária.
-
-## MOEDA {#sec-desenvolvimento-Moeda}
-
-A conceituação sobre o fator que levou ao surgimento da moeda como atualmente é conhecida, é distinta entre as correntes clássicas da economia e as correntes keynesiana e etnográfica.
-
-Para a teoria clássica da economia, a moeda derivou através da divisão do trabalho nas economias que tinham por características o escambo nas relações de trocas diretas, tendo por evolução ao dinheiro papel devido a necessidade de um produto que fosse transferível e durável, tornando assim como a principal função da moeda como ser um meio de pagamento. [@filho2020]
-
-Já para a teoria etnográfica, a moeda em sua essência não teria partido do escambo, pois na antiguidade não há provas que apontem para intensas atividade do escambo, a manifestação do dinheiro se dá através do formato de credito. [@bernardo2019]
-
-Dado ao fato que as trocas realizadas entre os integrantes do mesmo grupo social praticavam eram trocas de favores, ou seja, cada membro produzia um bem que seria ofertado ao outro mediante a demanda e em troca ele adquiria uma obrigação da que em momento posterior o retribuiria, desenvolvendo assim um sentimento de dívida atribuído aos demais indivíduos daquela sociedade. Dessa forma surge o credito. Sendo a pratica do escambo esporadicamente observada entre tribos diferentes que tinham a incerteza de voltar a se ver novamente. [@bernardo2019]
-
-Dessa forma é possível observar duas formas de se retratar ao surgimento da moeda, para a teoria econômica foi através do escambo, dinheiro e credito. Para a teoria etnográfica isso se dá pelo credito e dinheiro, removendo assim o escambo dessa conjectura. [@bernardo2019]
-
-Sendo para (KNAPP. 20023) o conceito do dinheiro, uma criação do estado com finalidade de ser meio de pagamento para obrigações fiscais através de um longo processo histórico. [APUD @bernardo2019]
-
-Ou seja, a moeda é um reconhecimento de dívida no qual há a transformação em dinheiro em seu sentido literal através do poder do estado de declarar que é passível de quitação de outras dividas. [@mattos2020]
-
-### FUNÇÔES {#sec-desenvolvimento-Moeda-Funções}
-
-Segundo (NUNES, 2016) Para que seja considerado uma moeda, ela deve exercer três funções elementares sendo estas: meio de troca, unidade de conta e reserva de valor. [@aragon2018]
-
-A função meio de troca é o que possibilita a realização de compra e venda entre bens e serviços, a função unidade de conta é o que permite uma padronização monetária para que as mercadorias e os insumos sejam quantificados em dinheiro e a função reserva de valor resguardar o valor do dinheiro utilizado para que em momento posterior possa ser usado como meio de troca. [@estellita2020]
-
-Além dessas três funções clássicas da moeda, ela deve conter as seguintes características: divisibilidade, durabilidade, alta complexibilidade para falsificação, manuseabilidade e transportabilidade. [@breunig2020]
-
-De acordo com (ARAÚJO; SILVA, 2017) no caso especifico do bitcoin, ele tem as propriedades da divisibilidade e portabilidade possuindo assim características de ser um meio de pagamento descentralizado. [APUD @junior2021]
-
-### CLASSIFICAÇÂO {#sec-desenvolvimento-Moeda-Classificações}
-
-Para (WOODFORD, 2011) As criptomoedas com características semelhantes ao bitcoin possuem as funções reservas de valor, meio de troca mas não a da unidade de conta pois a falta de uma ampla aceitação da sociedade para utilizarem ao realizar trocas entre si. [@white2020]
-
-Já para [@breunig2020] o bitcoin não deva ser categorizado como uma moeda fiduciária devido não possuir a função reserva de valor dado ao fato das altas variações do seu preço.
-
-Sendo confirmado esse pensamento também por [@aragon2018] ao relacionar a alta volatilidade do bitcoin com o principal fator impeditivo de classifica-la como moeda e assim a afastando de seu proposito originário.
-
-Já para (HARADA. 2020) o bitcoin é uma moeda por idealização anti-inflacionária por tal motivo a sua função reserva de valor é eficiente. [APUD @junior2021]
-
-O que também confirma (SOUSA, 2021) ao relacionar o bitcoin ao aumento com poder de compra no decorrer do tempo devido a propriedade de deflação da moeda. [APUD @junior2021]
-
-Por fim destaca [@white2020] que comportamento do bitcoin é diferente das demais moedas nacionais, tendo um perfil risco e retorno atraentes como aplicações financeiras, o elevado nível de correlação com índices de derivativos que culminam em características de elementos especulativos, de tal forma se portando como uma classe de ativo emergente com um grau de risco.
-
-No geral há ainda muitas indefinições de pesquisadores sobre sua classificação sob o ponto de vista econômico, porém é inegável que a natureza especulativa do mercado é um fator preponderante pra sua função reserva de valor, no qual este fator tende a ser menos impeditivo para tal classificação dado a característica deflacionária no caso em específico do bitcoin.
-
-## REGULAÇÂO {#sec-desenvolvimento-Moeda-Regulação}
-
-As criptomoedas de acordo com os seus críticos, não estão livres das fraudes e escândalos, por exemplo em 2014 a plataforma Mt. Gox no Japão houve muitos milhões em bitcoin roubados e em 2016 teve \$50 milhões de ethereum furtados sob um ataque DAO, organização autônoma descentralizada, além disso criptopagamento não são regulados e não restringem compras, isso inclui as ilegais. [@giudici2020]
-
-Sendo apontadas que há três tipos de atividades que permeiam o âmbito da criptomoeda e são de preocupação e interesse, sendo elas: as atividades ilegais ao permitir repasses de forma anonimato, as de armazenamento das atividades feitas e por fim as legais que já está em um grau de regulação adiantado, cabendo assim definir entre como deva ser classificado as criptomoedas como uma moeda, derivativo, título ou um veículo de transferência de dinheiro. [@white2020]
-
-Os legisladores estão cientes que a utilização das criptomoedas poderia ser usada para atividades ilegais como: lavagem de dinheiro, negócios ilegais e financiamento ao terrorismo. [@shirakawa2019]
-
-Segundo (BÖHME et al. 2015) Nos estudos realizados é demonstrado que durante o período inicial do bitcoin a utilização da criptomoeda em maioria era pra fins de compra de drogas. [@giudici2020]
-
-De acordo com (FOLEY et al.2019) 46% das transações utilizando o bitcoin como meio de pagamento, eram pra fins ilícitos. [APUD @giudici2020]
-
-Esse fato pode ser explicado devido à ausência de uma terceira parte para que possa examinar os fluxos suspeitos e relatar as autoridades competentes, que usualmente esse papel é exercido por bancos. [@estellita2020]
-
-### CONCEITO {#sec-desenvolvimento-Moeda-Conceito}
-
-Para o âmbito jurídico a moeda deve possuir o cursor legal que é classificado quando as pessoas de uma determinada sociedade tem por obrigação aceitar a moeda, o cursor forçado quando não é permitido pedir reembolso em forma de outros ativos e o poder liberatório quando é meio jurídico valido para quitar dívidas e obrigações contraídas. [@castello2019]
-
-Segundo (TELLES, 2020, p. 59) as criptomoedas não possuem nenhum desses atributos. [APUD @morais2022]
-
-Sendo para (SILVEIRA, 2020, p. 30/31) há a possibilidade delas possuírem o poder libertário. [APUD @morais2022]
-
-Sendo assim a moeda em conceito jurídico podendo ser visto através de duas correntes, sendo a primeira atrelada ao que é legalmente definido e a segunda relacionada a questão social de como a sociedade confia naquele mecanismo para facilitar trocas. [@castello2019]
-
-No Japão a moeda consta com a característica com o poder liberatório pois é permitido a utilização aos que acreditam ter vantagem sobre a moeda fiduciária, sendo dessa forma a voluntariedade o principal fator para a definição de moeda. [@castello2019]
-
-No geral as criptomoedas tem diversas classificações acerca de como deva ser compreendida ao redor do mundo, enquanto alguns países baniram o direito de da comercialização e da circulação da moeda como é o caso de Nepal, porém em sua grande maioria é liberado, na Itália e Japão é exigido o registro e a licença da operação da criptomoeda e no México é aceito como meio de pagamento. [@shirakawa2019]
-
-### PROBLEMATICA {#sec-desenvolvimento-Moeda-Problematica}
-
-De acordo com FATF as criptomoedas por sua natureza da descentralização, transnacionalidade, anonimato e transição entre mundo virtual ao real, são potenciais catalisadores para lavagem de dinheiro sendo agrupados em três grandes temas descentralização, pseudoanonimidade e globalidade. [@estellita2020]
-
-Descentralização: De acordo com (GRZYWOTZ, 2019, p. 98) devido a inexistência no universo das criptomoedas de uma figura intermediária nas operações que fiscalizem e reportem as autoridades competentes sobre operações suspeitas que até então esse papel é exercicido por bancos, torna complexo a operação de investigação por parte da justiça sendo dessa forma as exchanges um auxilio para tal fim já que elas conectam o mundo real econômico ao mundo virtual econômico. [@estellita2020]
-
-Pseudoanonimidade: Segundo (GRZYWOTZ, 2019, p. 98) devido a não necessidade de identificação ao abrir uma conta para começar a realizar transações e a possibilidade do mesmo individuo ter diversos endereços de carteira, acaba por aumentar o nível de anonimidade possível no universo de criptomoedas. [APUD @estellita2020]
-
-Sendo esta problemática um pouco reduzida com a adoção procedimentos que exigem a identificação do cliente em exchanges pra abrir uma conta como o kyc (know your costumer, conheça seu cliente). [@estellita2020]
-
-Globalidade: De acordo com (GRZYWOTZ, 2019, p. 100) em virtude das livres transações globais sem algum tipo de impeditivo e controle acaba por favorecer aqueles que obtém dinheiro de origem ilícita e desejam realizar a lavagem de dinheiro. [APUD @estellita2020]
-
-De acordo com essa temática [@silveira2020] destaca o trilema penal, ou seja, os três dilemas atuais envolvendo criptomoedas ao direito penal econômico. Sendo eles: a lavagem de dinheiro, evasão de divisas e sonegação fiscal.
-
-Segundo (TELLES, 2020, p. 69) o conceito de lavagem de dinheiro é o ato de disfarçar a sua origem tendo a intenção de transparecer que a sua obtenção foi atráves de modo licito. [APUD @morais2022]
-
-Sendo a sonegação fiscal de acordo com a Receita Federal Brasileira aplicado as criptomoedas, a omissão dos criptoativos na declaração anual de pessoas físicas. [@silveira2020]
-
-Vale se destacar que no caso de sonegação fiscal algumas variantes desse tipo poderiam surgir como por exemplo a proteção patrimonial em caso de separação sendo esta exemplificada ao se comprar criptomoedas sem o conhecimento do outro conjunge. [@silveira2020]
-
-E por fim a evasão de divisas se caracteriza pela saída da moeda para outro país ou realizar depósitos em outro país sem o devido consentimento legal. [@silveira2020]
-
-Sendo que Segundo Grupo de Ação Financeira Internacional (GAFI), existem três fases nesse processo, sendo: Inserção, Ocultação e Integração. [@silveira2020]
-
-Na etapa de inserção se compreende Segundo (GRZYWOTZ, 2019, p. 101-103) em obtenção de criptomoedas provindas de dinheiro físico de atividades ilícitas através de diversos meios como: Exchange, plataformas especializadas para transação direta entre usuários e como forma de pagamento direto em criptomoeda. [APUD @estellita2020]
-
-Já na ocultação se refere ao ato, com o intuito de atrapalhar as investigações sobre a origem do dinheiro, de movimentar o ativo entre contas anônimas e assim eliminar as evidencias. [@silveira2020]
-
-Sendo nesta fase, aplicadas ao contexto de criptomoedas, destacada por [@estellita2020] com a adesão dos serviços de mixing sendo por ela categorizado entre simples e complexo.
-
-O intuito do tipo de serviço mixing, é eliminar os rastros das criptomoedas dentro da rede da blockchain, devido ao fato dos serviços de carteiras, comumente conhecida como exchanges centralizadas, que ficam com a chave privada ao invés do usuário e de tal forma operam como banco no quesito de o dinheiro depositado não significa a própria cédula em especifico como sua propriedade, mas sim a quantidade possuída dentro do sistema. Tem por consequência a possibilidade de realizar a mistura dos ativos para fins de lavagem de dinheiro. [@estellita2020].
-
-Tendo assim mixing expecializados que por sua vez operam de forma mais complexa ao criar camadas extras de ocultação dos rastros das moedas. As moedas enviadas por diversos usuários pra esse serviço, são jogadas em uma piscina com outras moedas legais e misturadas e por fim devolvidas ao endereço especificado pelo usuário, podendo ainda ser fracionadas em pequenas transações e esse ciclo repetido inúmeras vezes. [@estellita2020].
-
-Por fim na etapa de integração pode ser compreendida como a etapa final no qual consiste na introdução ao sistema econômico o dinheiro lavado. [@silveira2020].
-
-### CLASSIFICAÇÃO AO REDOR DO MUNDO {#sec-desenvolvimento-Moeda-RegulaçãoMundo}
-
-Sendo a china, em um período, uma das maiores mineradoras de criptomoedas do mundo, acabou por proibir em todo o seu território as transações e o processo de mineração sob a alegação do alto gasto de energia e computacional para tal. [@neto2023]
-
-O País de el salvador acabou por oficializar o bitcoin como uma moeda legal em seu território, dessa forma as emissões de títulos passam também a ser lastreadas em criptomoedas. [@neto2023]
-
-No Estados Unidos há um embate entre as entidades regulatórias sobre como deve ser classificado as criptomoedas para SEC (Securities and Exchange Commission) classifica as criptomoedas no geral como títulos devido que qualquer um que oferte moeda digital ou tokens digitais em troca de moedas fiduciárias estão sujeitos a sua regulação. Porém para CFTC (Commodity Futures Trading Commission) a classifica como comodities devido algumas moedas ofertarem contratos inteligentes de tal forma que o pagamento é realizado no futuro sendo assim que o contrato seja completamente executado no qual essa operação é conhecida como contrato futuro, e portanto a regulação estaria sujeita a ela. [@emmert2022]
-
-Além desses embates de entidades regulatórias há a discussão de ser do âmbito estadual ou federal tal jurisdição, sendo um exemplo o estado do Texas que aprovou a lei que define como uma representação digital de valor, usado como meio de troca e reserva de valor. Permitindo assim que bancos estatais ofereçam serviços cripto a clientes. [@martini2022]
-
-A união europeia em um caso julgado em operação de cambio com divisa tradicionais e operações com moedas virtuais, decidiu ao não reconhecimento da criptomoeda como moeda fiduciária, porém salientou que ao operar com bitcoin ou qualquer outra moeda estrangeira as consequências jurídicas-tributarias serão tratadas como as mesmas. [@castello2019]
-
-No Reino Unido, em 2020, foi proibido a negociação de determinados derivativos de criptomoedas, devido a não confiança na natureza dos ativos e a volatilidade em seus preços. [@martini2022]
-
-Porem atualmente o FCA, Financial Conduct Authority que é uma entidade regulatória do Reino Unido, adotou procedimentos de segurança no intuito da proteção contra lavagem de dinheiro e financiamento ao terrorismo, no qual regula determinadas criptomoedas. [@cryptoas2019]
-
-O Brasil, atualmente, se integra um grupo seleto de países que possuem regulamentação para as criptomoedas por intermédio da Lei 14.478/2022, no qual conceitua as criptomoedas como os ativos virtuais, os classificando como representação de valor que pode ser negociada, utilizada como meio de pagamento ou com propósitos de investimentos, fazendo a desassociação entre o bitcoin como moeda fiduciária. [@neto2023]
-
-A lei também procura regular as corretoras, Exchanges, pois elas só poderão atuar em território brasileiro mediante autorização dos órgãos da administração pública, além disso também ficou permitido ao Banco Central acumular ou prestar serviço de ativos virtuais. [@neto2023]
-
-Segundo (Vaz de Almeida, 2023) com a criação da lei ficou estabelecido um dispositivo no qual prever a criação de um novo código penal especifico aplicado a fraudes envolvendo criptomoedas. [@fontgalland2023]
-
-Sendo a classificação de prestadoras de serviço de criptoativos semelhantes a instituições financeiras, também foi estabelecido que tais agentes se enquadravam no rol do artigo 9 da lei 9.613 aplicados a lavagem de dinheiro e no código de defesa do consumidor ao conduzir operações no mercado de criptoativos. [@fontgalland2023]
-
-## MARKOWITZ {#sec-desenvolvimento-Markowitz}
-
-No período de 2021 devido a alta inflação mundial que alcançou tanto as economias desenvolvidas quanto as em desenvolvimento trouxe diversos desafios a aplicação da administração de portfólio, especialmente a investidores experientes no qual tinha por premissa obter o retorno maior que a inflação. [@ozdurak2022]
-
-Sendo a moderna teoria de portfólio desenvolvida por Harry Markowitz no qual se baseia na abordagem da construção de portfólio com o intuito de maximizar o retorno esperado a um menor risco. [@abubakar2019]
-
-A diversificação tem por intenção suavizar os riscos não sistêmicos em um portfólio, no qual se baseia de que se um ativo tiver uma performance ruim, logo os outros da sua cesta neutralizariam, dado que a correlação entre eles seja negativa, sendo considerado assim um ativo de porto seguro para enfrentar os períodos de turbulências no mercado. [@kliber2019]
-
-Sendo correlação uma medida padrão de como os ativos se movem juntos, ou seja, é um coeficiente que indica a forma como os ativos podem ser usados para um portfólio com o intuito de diversificação. [@ram2018]
-
-Sendo o risco podendo ser reduzido com a introdução de ativos negativamente correlacionados ao portfólio. [@abubakar2019]
-
-Para tal há cinco premissas que permeiam sobre a teoria de Markowitz sendo elas: que o investidor considera as alternativas de investimento pela probabilidade do retorno esperado, a maximização da utilidade esperada e a sua curva marginal da riqueza decrescente, que os riscos são estimados pela variabilidade do retorno esperado, a sua decisão é fundada na premissa de risco e retorno e por fim os investidores preferirão ativos com menos risco ao invés do mais arriscados e que também irão preferir maiores retornos ao invés de menores. [@abubakar2019]
-
-De tal forma a iniciativa de investimento é uma tentativa de segurança contra qualquer ameaça que possa enfrentar, sendo a alocação de dinheiro para benefício no futuro um traço comum humano. Muitos investem no portfólio por causa da profissão, outros por hobby e outros com o propósito de segurança financeira após a aposentadoria. [@ma2020]
-
-A sua função de aplicação da moderna teoria de portfólio no geral é mal compreendida ou pelos seus praticantes, primeiro a diversificação não é garantia por um alto retorno comparado ao retorno mercado que se tem por referência, a proposta principal não é apenas manter uma cesta diversificada de ativos, mas também considerar a relação entre os ativos individuais da sua carteira. [@ozdurak2022]
-
-Ou seja não é sobre o risco individual de cada ativo, e sim sobre como todos os demais se performam como um portfólio, além disso aumenta a adoção mundial de criptomoedas junto com outras moedas estáveis, enquanto governos como china e índia proibiram o comercio, dessa forma o risco maior é de curto prazo, dado a falta de regulação e previsibilidade sobre esses novos ativos, além do mais as criptomoedas tem por sua característica o alto retorno e risco comparadas com ativos tradicionais o que perturba de certa forma a perspectiva da seleção de portfólio. [@ozdurak2022]
-
-O perfil de risco recompensa ao nível de risco assumido, isso pode ser medido usando a razão de Sharpe no qual demonstra os retornos por unidade de risco aceitado. [@ram2018]
-
-Sendo o Indice de Sharpe, uma ferramenta que auxilia na comparação de performance entre ativos agrupados no portfólio ao se calcular os retornos excessivos sobre a taxa livre de risco, sendo a Razão Sharpe maior que um aceitável e consequentemente quanto maior for ela mais retornos excessivos sobre a taxa livre de risco, que em sua finalidade é capaz de fornecer a fronteira eficientes entre diferentes portfólios. [@ma2020]
-
-A fronteira eficiente pode ser compreendida como uma linha no qual possui os melhores retornos ao niveis de risco assumidos sobre um conjunto de combinações possiveis na composição do portfólio, para tal ela utiliza o indice sharpe como parametro. [@silva2019]
-
-Em um estudo realizado por (Brauneis and Mestel, 2019) sobre os benefícios da inclusão das criptomoedas no portfólio utilizando a estrutura de markowtiz, constataram que elas reduziam o risco do portfólio. [APUD @ozdurak2022]
+$$
+i_{a.d} = (1+\overline{i_{a.a}})^\frac{1}{252}-1
+$$
+Onde $i_{a.d}$ = taxa de juros diária e $\overline{i_{a.a}}$ = taxa de juros média anual 
 
 # RESULTADOS {#sec-Resultados}
 
-A relação de risco e retorno esperado entre os ativos da carteira é demonstrada no @fig-RiscoxRetorno, sendo o `r less_riskier$asset` o ativo de menor risco com um desvio padrão de `r toPercent(less_riskier$sd)` e retorno esperado de `r less_riskier$mean`. Enquanto `r more_proftible$asset` é o ativo de maior retorno esperado com o desvio padrão de `r toPercent(more_proftible$sd)` e retorno esperado de `r more_proftible$mean`
+A relação de risco e retorno esperado entre os ativos da carteira é demonstrada no @fig-RiscoxRetorno, sendo o `r less_riskier$asset` o ativo de menor risco com um desvio padrão de `r toPercent(less_riskier$sd)` e retorno esperado de `r less_riskier$mean`. Enquanto `r more_proftible$asset` é o ativo de maior retorno esperado com o desvio padrão de `r toPercent(more_proftible$sd)` e retorno esperado de `r more_proftible$mean`.
 
 ```{R}
 #| label: fig-RiscoxRetorno
@@ -962,37 +646,23 @@ De tal forma é possivel verificar que a aplicação da Moderna teoria de portf�
 
 # CONCLUSÂO {#sec-Conclusão}
 
-Ao longo deste trabalho foi abordado o conceito de criptmoeda, seu funcionamento, os riscos e os benefícios que advem com a sua utilização.
+Ao longo deste estudo foi abordado o conceito de criptmoeda, seu funcionamento, os riscos e os benefícios que advem com a sua utilização.
 
 Além disso foi exposto o conceito de moeda e porque as criptomoedas devam ser caracterizadas como um ativo financeiro tecnológico ao invês de uma moeda fiduciária, sendo, sobre o ponto de vista econômico, a sua natureza especulativa com alta volatidade de preços que afasta principalmente as criptomoedas da função reserva de valor.
 
-Também foi avaliado sob o ponto de vista juridico e verificado a situação regulatória atual das criptomoedas ao redor do mundo, sendo definido atualmente no Brasil como um ativo financeiro.
+Também foi avaliado sob o ponto de vista juridico e verificado a situação regulatória atual das criptomoedas no Brasil no qual é definido atualmente como um ativo financeiro.
 
-Além do mais buscou compreender o conceito da moderna teoria de portfólio de markowitz e sua aplicação no mercado de criptoativos.
+Além do mais buscou compreender o conceito da moderna teoria de portfólio de markowitz e sua aplicação no mercado de criptmoedas.
 
 Por fim foi analisado os resultados da moderna teoria de portfólio numa carteira composta exclusivamente de criptomoedas, no qual foi comparado um portfólio de criptomoedas igualmente distribuido com o portfólio optimizado. Sendo os resultados positivos sobre a sua aplicação ao determinar o ponto de tangência, menor variancia e traçar a fronteira eficiente do portfólio.
 
-Sendo o objetivo geral satisfeito ao conseguir aplicar a metodologia de portfólio de markowitz no mercado de criptomoedas.
-
-Já nos objetivos especificos, que compreendiam: Conceituar criptoativos como ativos financeiros, Diferenciar o mercado criptoativo do mercado tradicional, Analisar os impactos das regulações desse setor no Brasil, Analisar se a instabilidade do setor afeta diretamente na utilização do método da moderna teoria de portfólio e Comparar o resultado da utilização do método contra uma seleção de portifólio igualmente distribuido.
-
-Sendo no objetivo específico Conceituar criptoativos como ativos financeiros foi satisfeito ao realizar a revisão bibliográfica.
-
-Já no objetivo específico Diferenciar o mercado criptoativo do mercado tradicional foi satifesito ao verificar sobre os pontos regulatorios e tecnologicos que ambos diferem.
-
-Da mesma forma no objetivo específico Analisar os impactos das regulações desse setor no Brasil foi satisfeito ao verificar que com a criação da lei 14.478/2022 ficou definido a classificação de criptmoeda, a equiparação das empresas prestadoras de serviços de criptoativos com instituições financeiras e elas estariam sujeitas, ao conduzir operações relacionadas a aos ativos digitais, ao codigo de defesa do consumidor.
-
-No objetivo específico Analisar se a instabilidade do setor afeta diretamente na utilização do método da moderna teoria de portfólio foi satisfeito pois ao efetuar cálculos foi possivel compreender que ao optimizar o portfólio elevou-se tanto o indice sharpe quanto o risco, sendo a elevação do risco possivelmente explicado devido a carteira ser positivamente correlacionada.
-
-Já no objetivo específico Comparar o resultado da utilização do método contra uma seleção de portifólio igualmente distribuido foi satisfeito resultando na melhora de perfomance do portfólio.
-
-Ao realizar o estudo foi encontrado a limitação temporal dos dados no qual a criptomoeda da Solana só há dados a partir de 11/04/2020, dessa forma para poder comparar o portfólio foram utilizadas somente os dados de 11/04/2020 em diante.
+Ao realizar o estudo, foi encontrado a limitação temporal dos dados no qual a criptomoeda da Solana só há dados a partir de 11/04/2020, dessa forma para poder comparar o portfólio foram utilizadas somente os dados de 11/04/2020 em diante.
 
 Outra limitação encontrada foi a memória computacional, no qual ao tentar verificar todas as combinações possíveis de carteira alterando em 0,05 da quantidade percentual alocado em determinados ativos, sendo que o somatório de todos os ativos seja igual a 1, excedeu a memória limite disposta no momento, sendo assim, afim de contornar tal problemática a variação em cada ativo passou pra 0,1.
 
-A taxa livre de risco utilizada foi a Selic, no qual foi retirado uma média da Selic de 01/01/2020 até 01/01/2023 e convertido o valor a taxa de juros diárias.
+A taxa livre de risco utilizada foi a taxa Selic diária média, no qual foi retirado uma média da taxa Selic anual de `r dataInicio` até `r`dataFim`que resultou em`r toPercent(selicAnualMedia)`e posteriormente convertido a taxa de juros diária que resultou em`r toPercent(rfr)\`.
 
-Ao final desse estudo foi aprendido a performar cálculos dos retornos do portfólio, índice Sharpe, curtose, distorções e gerar diversas combinações de carteiras a fim de encontrar a fronteira eficiente e ponto de tangência.
+foi possivel aprender também a realizar cálculos dos retornos do portfólio, índice Sharpe, curtose, distorções e gerar diversas combinações de carteiras a fim de encontrar a fronteira eficiente e ponto de tangência.
 
 Também foi possível a compreensão do ponto de vista econômico quais características devem ser preenchidas pra que seja considerado uma moeda e da mesma forma do ponto de vista jurídico para tal assunto.
 
@@ -1000,11 +670,25 @@ Além disso foi exposto alguns riscos de golpes envolvendo criptomoedas e suas a
 
 Da mesma, foi exposto os benefícios advindos de tais tecnologias e investimentos, como por exemplo uma fonte de renda extra através da prática da mineração e levantamento de fundo de investimento para startups e pequenas empresas através de ICO.
 
-Destaca-se nesse estudo, o fato do Brasil ser uns dos poucos países a ter uma legislação própria sobre criptomoedas e a limitar as exchanges que operam sobre o território nacional sujeitas a fiscalização. Sendo nesse ponto, valido verificar se com a presença dessa nova legislação impactara positivamente na adesão da população para utilização das criptomoedas como um investimento de curto, médio e longo prazo.
+Destaca-se nesse estudo, o fato do Brasil ser uns dos poucos países a ter uma legislação própria sobre criptomoedas e a limitar as exchanges que operam sobre o território nacional, no qual são sujeitas a fiscalização. Sendo nesse ponto, valido verificar se com a presença dessa nova legislação impactara positivamente na adesão da população para utilização das criptomoedas como um investimento de curto, médio e longo prazo.
 
 Além disso como pontos de aprofundamento sobre o atual método empregado, seria interessante a alocação de um ou mais ativos negativamente correlacionado na carteira a fim de verificar a performance do portfólio.
 
 Por fim vale a pena destacar também que devido a sua natureza especulativa fosse interessante uma análise das finanças comportamentais.
+
+Ao analisar os objetivos traçados na pesquisa foi possivel obter os seguintes resultados em cada um deles:
+
+objetivo geral satisfeito ao conseguir aplicar a metodologia de portfólio de markowitz no mercado de criptomoedas.
+
+Já nos objetivos especificos, que compreendiam: Conceituar criptmoedas como ativos financeiro, Diferenciar o mercado criptoativo do mercado de renda variável, Analisar os impactos das regulações desse setor no Brasil e Comparar o resultado da utilização do método contra uma seleção de portifólio igualmente distribuído.
+
+O objetivo específico conceituar criptmoedas como ativos financeiros foi satisfeito ao realizar a revisão de literatura.
+
+O objetivo específico diferenciar o mercado criptoativo do mercado de renda variável foi satifesito ao verificar sobre os pontos regulatorios e tecnologicos que ambos diferem.
+
+O objetivo específico Analisar os impactos das regulações desse setor no Brasil foi satisfeito ao verificar que com a criação da lei 14.478/2022 ficou definido a classificação de criptmoeda, a equiparação das empresas prestadoras de serviços de criptmoedas com instituições financeiras e elas estariam sujeitas, ao conduzir operações relacionadas a aos ativos digitais, ao codigo de defesa do consumidor.
+
+O objetivo específico comparar o resultado da utilização do método contra uma seleção de portifólio igualmente distribuído foi satisfeito resultando na melhora de perfomance do portfólio.
 
 {{< pagebreak >}}
 

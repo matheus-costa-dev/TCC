@@ -1,4 +1,1951 @@
 {
-    "sources": [],
+    "sources": [
+        {
+            "DOI": "10.21105/joss.01686",
+            "author": [
+                {
+                    "family": "Wickham",
+                    "given": "Hadley"
+                },
+                {
+                    "family": "Averick",
+                    "given": "Mara"
+                },
+                {
+                    "family": "Bryan",
+                    "given": "Jennifer"
+                },
+                {
+                    "family": "Chang",
+                    "given": "Winston"
+                },
+                {
+                    "family": "McGowan",
+                    "given": "Lucy D’Agostino"
+                },
+                {
+                    "family": "François",
+                    "given": "Romain"
+                },
+                {
+                    "family": "Grolemund",
+                    "given": "Garrett"
+                },
+                {
+                    "family": "Hayes",
+                    "given": "Alex"
+                },
+                {
+                    "family": "Henry",
+                    "given": "Lionel"
+                },
+                {
+                    "family": "Hester",
+                    "given": "Jim"
+                },
+                {
+                    "family": "Kuhn",
+                    "given": "Max"
+                },
+                {
+                    "family": "Pedersen",
+                    "given": "Thomas Lin"
+                },
+                {
+                    "family": "Miller",
+                    "given": "Evan"
+                },
+                {
+                    "family": "Bache",
+                    "given": "Stephan Milton"
+                },
+                {
+                    "family": "Müller",
+                    "given": "Kirill"
+                },
+                {
+                    "family": "Ooms",
+                    "given": "Jeroen"
+                },
+                {
+                    "family": "Robinson",
+                    "given": "David"
+                },
+                {
+                    "family": "Seidel",
+                    "given": "Dana Paige"
+                },
+                {
+                    "family": "Spinu",
+                    "given": "Vitalie"
+                },
+                {
+                    "family": "Takahashi",
+                    "given": "Kohske"
+                },
+                {
+                    "family": "Vaughan",
+                    "given": "Davis"
+                },
+                {
+                    "family": "Wilke",
+                    "given": "Claus"
+                },
+                {
+                    "family": "Woo",
+                    "given": "Kara"
+                },
+                {
+                    "family": "Yutani",
+                    "given": "Hiroaki"
+                }
+            ],
+            "container-title": "Journal of Open Source Software",
+            "id": "wickham2019",
+            "issue": "43",
+            "issued": {
+                "date-parts": [
+                    [
+                        2019
+                    ]
+                ]
+            },
+            "page": "1686",
+            "title": "Welcome to the tidyverse",
+            "type": "article-journal",
+            "volume": "4"
+        },
+        {
+            "URL": "https://github.com/taiyun/corrplot",
+            "author": [
+                {
+                    "family": "Wei",
+                    "given": "Taiyun"
+                },
+                {
+                    "family": "Simko",
+                    "given": "Viliam"
+                }
+            ],
+            "id": "wei2021",
+            "issued": {
+                "date-parts": [
+                    [
+                        2021
+                    ]
+                ]
+            },
+            "title": "R package ’corrplot’: Visualization of a correlation matrix",
+            "title-short": "R package ’corrplot’",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Xie",
+                    "given": "Yihui"
+                }
+            ],
+            "editor": [
+                {
+                    "family": "Stodden",
+                    "given": "Victoria"
+                },
+                {
+                    "family": "Leisch",
+                    "given": "Friedrich"
+                },
+                {
+                    "family": "Peng",
+                    "given": "Roger D."
+                }
+            ],
+            "id": "xie2014",
+            "issued": {
+                "date-parts": [
+                    [
+                        2014
+                    ]
+                ]
+            },
+            "publisher": "Chapman; Hall/CRC",
+            "title": "Knitr: A comprehensive tool for reproducible research in r",
+            "title-short": "Knitr",
+            "type": "chapter"
+        },
+        {
+            "URL": "https://CRAN.R-project.org/package=openxlsx",
+            "author": [
+                {
+                    "family": "Schauberger",
+                    "given": "Philipp"
+                },
+                {
+                    "family": "Walker",
+                    "given": "Alexander"
+                }
+            ],
+            "id": "schauberger2023",
+            "issued": {
+                "date-parts": [
+                    [
+                        2023
+                    ]
+                ]
+            },
+            "title": "Openxlsx: Read, write and edit xlsx files",
+            "title-short": "Openxlsx",
+            "type": "book"
+        },
+        {
+            "URL": "https://CRAN.R-project.org/package=PerformanceAnalytics",
+            "author": [
+                {
+                    "family": "Peterson",
+                    "given": "Brian G."
+                },
+                {
+                    "family": "Carl",
+                    "given": "Peter"
+                }
+            ],
+            "id": "peterson2020",
+            "issued": {
+                "date-parts": [
+                    [
+                        2020
+                    ]
+                ]
+            },
+            "title": "PerformanceAnalytics: Econometric tools for performance and risk analysis",
+            "title-short": "PerformanceAnalytics",
+            "type": "book"
+        },
+        {
+            "URL": "https://CRAN.R-project.org/package=quantmod",
+            "author": [
+                {
+                    "family": "Ryan",
+                    "given": "Jeffrey A."
+                },
+                {
+                    "family": "Ulrich",
+                    "given": "Joshua M."
+                }
+            ],
+            "id": "ryan2022",
+            "issued": {
+                "date-parts": [
+                    [
+                        2022
+                    ]
+                ]
+            },
+            "title": "Quantmod: Quantitative financial modelling framework",
+            "title-short": "Quantmod",
+            "type": "book"
+        },
+        {
+            "URL": "https://CRAN.R-project.org/package=RColorBrewer",
+            "author": [
+                {
+                    "family": "Neuwirth",
+                    "given": "Erich"
+                }
+            ],
+            "id": "neuwirth2022",
+            "issued": {
+                "date-parts": [
+                    [
+                        2022
+                    ]
+                ]
+            },
+            "title": "RColorBrewer: ColorBrewer palettes",
+            "title-short": "RColorBrewer",
+            "type": "book"
+        },
+        {
+            "URL": "https://CRAN.R-project.org/package=scales",
+            "author": [
+                {
+                    "family": "Wickham",
+                    "given": "Hadley"
+                },
+                {
+                    "family": "Seidel",
+                    "given": "Dana"
+                }
+            ],
+            "id": "wickham2022",
+            "issued": {
+                "date-parts": [
+                    [
+                        2022
+                    ]
+                ]
+            },
+            "title": "Scales: Scale functions for visualization",
+            "title-short": "Scales",
+            "type": "book"
+        },
+        {
+            "DOI": "10.1007/s40812-019-00138-6",
+            "URL": "https://doi.org/10.1007/s40812-019-00138-6",
+            "author": [
+                {
+                    "family": "Giudici",
+                    "given": "Giancarlo"
+                },
+                {
+                    "family": "Milne",
+                    "given": "Alistair"
+                },
+                {
+                    "family": "Vinogradov",
+                    "given": "Dmitri"
+                }
+            ],
+            "container-title": "Journal of Industrial and Business Economics",
+            "id": "giudici2020",
+            "issue": "1",
+            "issued": {
+                "date-parts": [
+                    [
+                        2020,
+                        3,
+                        1
+                    ]
+                ]
+            },
+            "language": "en",
+            "page": "1-18",
+            "title": "Cryptocurrencies: market analysis and perspectives",
+            "title-short": "Cryptocurrencies",
+            "type": "article-journal",
+            "volume": "47"
+        },
+        {
+            "DOI": "10.32479/ijeep.12888",
+            "URL": "https://www.econjournals.com/index.php/ijeep/article/view/12888",
+            "author": [
+                {
+                    "family": "Ozdurak",
+                    "given": "Caner"
+                },
+                {
+                    "family": "Umut",
+                    "given": "Alican"
+                },
+                {
+                    "family": "Ozay",
+                    "given": "Tugba"
+                }
+            ],
+            "container-title": "International Journal of Energy Economics and Policy",
+            "id": "ozdurak2022",
+            "issue": "2",
+            "issued": {
+                "date-parts": [
+                    [
+                        2022,
+                        3,
+                        20
+                    ]
+                ]
+            },
+            "language": "en",
+            "note": "Number: 2",
+            "page": "480-490",
+            "title": "The Interaction of Major Crypto-assets, Clean Energy, and Technology Indices in Diversified Portfolios",
+            "type": "article-journal",
+            "volume": "12"
+        },
+        {
+            "DOI": "10.55643/fcaptp.1.48.2023.3949",
+            "author": [
+                {
+                    "family": "Volosovych",
+                    "given": "Svitlana"
+                },
+                {
+                    "family": "Shevchenko",
+                    "given": "Liudmyla"
+                },
+                {
+                    "family": "Sholoiko",
+                    "given": "Antonina"
+                }
+            ],
+            "container-title": "Financial and Credit Activity Problems of Theory and Practice",
+            "id": "volosovych2023",
+            "issued": {
+                "date-parts": [
+                    [
+                        2023,
+                        2,
+                        28
+                    ]
+                ]
+            },
+            "page": "114-126",
+            "title": "CRYPTOCURRENCY MARKET TRANSFORMATION DURING THE PANDEMIC COVID-19",
+            "type": "article-journal",
+            "volume": "1"
+        },
+        {
+            "DOI": "10.1016/j.physa.2019.04.145",
+            "URL": "https://linkinghub.elsevier.com/retrieve/pii/S0378437119305175",
+            "author": [
+                {
+                    "family": "Kliber",
+                    "given": "Agata"
+                },
+                {
+                    "family": "Marszałek",
+                    "given": "Paweł"
+                },
+                {
+                    "family": "Musiałkowska",
+                    "given": "Ida"
+                },
+                {
+                    "family": "Świerczyńska",
+                    "given": "Katarzyna"
+                }
+            ],
+            "container-title": "Physica A: Statistical Mechanics and its Applications",
+            "id": "kliber2019",
+            "issued": {
+                "date-parts": [
+                    [
+                        2019,
+                        6
+                    ]
+                ]
+            },
+            "language": "en",
+            "page": "246-257",
+            "title": "Bitcoin: Safe haven, hedge or diversifier? Perception of bitcoin in the context of a country’s economic situation  A stochastic volatility approach",
+            "title-short": "Bitcoin",
+            "type": "article-journal",
+            "volume": "524"
+        },
+        {
+            "DOI": "10.12691/jfe-9-4-4",
+            "URL": "http://pubs.sciepub.com/jfe/9/4/4",
+            "author": [
+                {
+                    "family": "Arzova",
+                    "given": "Sabri Burak"
+                },
+                {
+                    "family": "?zdurak",
+                    "given": "Caner"
+                }
+            ],
+            "container-title": "Journal of Finance and Economics",
+            "id": "arzova2021",
+            "issue": "4",
+            "issued": {
+                "date-parts": [
+                    [
+                        2021,
+                        7,
+                        28
+                    ]
+                ]
+            },
+            "note": "Publisher: Science and Education Publishing",
+            "page": "146-154",
+            "title": "Optimal cryptocurrency and BIST 30 portfolios with the perspective of markowitz portfolio theory",
+            "type": "article-journal",
+            "volume": "9"
+        },
+        {
+            "DOI": "10.1590/1982-3533.2020v29n3art04",
+            "URL": "https://www.scielo.br/j/ecos/a/TWMCNj944HvrSbbsn88jnHD/",
+            "author": [
+                {
+                    "family": "Mattos",
+                    "given": "Olívia Bullio"
+                },
+                {
+                    "family": "Abouchedid",
+                    "given": "Saulo"
+                },
+                {
+                    "dropping-particle": "e",
+                    "family": "Silva",
+                    "given": "Laís Araújo"
+                }
+            ],
+            "container-title": "Economia e Sociedade",
+            "id": "mattos2020",
+            "issued": {
+                "date-parts": [
+                    [
+                        2020,
+                        12,
+                        14
+                    ]
+                ]
+            },
+            "language": "pt",
+            "note": "Publisher: Instituto de Economia da Universidade Estadual de Campinas, Publicações",
+            "page": "761-778",
+            "title": "As criptomoedas e os novos desafios ao sistema monetário: uma abordagem pós-keynesiana",
+            "title-short": "As criptomoedas e os novos desafios ao sistema monetário",
+            "type": "article-journal",
+            "volume": "29"
+        },
+        {
+            "author": [
+                {
+                    "family": "Nascimento",
+                    "given": "L B"
+                },
+                {
+                    "family": "Mira",
+                    "given": "J E"
+                },
+                {
+                    "family": "Bison",
+                    "given": "T"
+                }
+            ],
+            "id": "nascimento2022",
+            "issued": {
+                "date-parts": [
+                    [
+                        2022
+                    ]
+                ]
+            },
+            "publisher": "Grupo A",
+            "title": "Criptomoedas e blockchain",
+            "type": "book"
+        },
+        {
+            "DOI": "10.1108/JRF-11-2019-0221",
+            "URL": "https://doi.org/10.1108/JRF-11-2019-0221",
+            "author": [
+                {
+                    "family": "Schellinger",
+                    "given": "Benjamin"
+                }
+            ],
+            "container-title": "The Journal of Risk Finance",
+            "id": "schellinger2020",
+            "issue": "2",
+            "issued": {
+                "date-parts": [
+                    [
+                        2020,
+                        1,
+                        1
+                    ]
+                ]
+            },
+            "note": "Publisher: Emerald Publishing Limited",
+            "page": "127-157",
+            "title": "Optimization of special cryptocurrency portfolios",
+            "type": "article-journal",
+            "volume": "21"
+        },
+        {
+            "DOI": "10.1108/CFRI-06-2021-0123",
+            "URL": "https://doi.org/10.1108/CFRI-06-2021-0123",
+            "author": [
+                {
+                    "family": "Letho",
+                    "given": "Lehlohonolo"
+                },
+                {
+                    "family": "Chelwa",
+                    "given": "Grieve"
+                },
+                {
+                    "family": "Alhassan",
+                    "given": "Abdul Latif"
+                }
+            ],
+            "container-title": "China Finance Review International",
+            "id": "letho2022",
+            "issue": "1",
+            "issued": {
+                "date-parts": [
+                    [
+                        2022,
+                        1,
+                        1
+                    ]
+                ]
+            },
+            "note": "Publisher: Emerald Publishing Limited",
+            "page": "20-50",
+            "title": "Cryptocurrencies and portfolio diversification in an emerging market",
+            "type": "article-journal",
+            "volume": "12"
+        },
+        {
+            "DOI": "10.29081/jesr.v28i4.009",
+            "URL": "https://jesr.ub.ro/1/article/view/354",
+            "author": [
+                {
+                    "family": "Ngwakwe",
+                    "given": "Collins"
+                }
+            ],
+            "container-title": "Journal of Engineering Studies and Research",
+            "id": "ngwakwe2022",
+            "issue": "4",
+            "issued": {
+                "date-parts": [
+                    [
+                        2022
+                    ]
+                ]
+            },
+            "language": "en",
+            "note": "Number: 4",
+            "page": "78-85",
+            "title": "DIGITAL CURRENCY: A CONCEPTUAL FRAMEWORK OF PERFORMANCE",
+            "title-short": "DIGITAL CURRENCY",
+            "type": "article-journal",
+            "volume": "28"
+        },
+        {
+            "DOI": "10.1016/j.bcra.2022.100067",
+            "URL": "https://www.sciencedirect.com/science/article/pii/S2096720922000070",
+            "author": [
+                {
+                    "family": "Guo",
+                    "given": "Huaqun"
+                },
+                {
+                    "family": "Yu",
+                    "given": "Xingjie"
+                }
+            ],
+            "container-title": "Blockchain: Research and Applications",
+            "id": "guo2022",
+            "issue": "2",
+            "issued": {
+                "date-parts": [
+                    [
+                        2022,
+                        6,
+                        1
+                    ]
+                ]
+            },
+            "language": "en",
+            "page": "100067",
+            "title": "A survey on blockchain technology and its security",
+            "type": "article-journal",
+            "volume": "3"
+        },
+        {
+            "DOI": "10.1088/1742-6596/1168/3/032077",
+            "URL": "https://dx.doi.org/10.1088/1742-6596/1168/3/032077",
+            "author": [
+                {
+                    "family": "Zhai",
+                    "given": "Sheping"
+                },
+                {
+                    "family": "Yang",
+                    "given": "Yuanyuan"
+                },
+                {
+                    "family": "Li",
+                    "given": "Jing"
+                },
+                {
+                    "family": "Qiu",
+                    "given": "Cheng"
+                },
+                {
+                    "family": "Zhao",
+                    "given": "Jiangming"
+                }
+            ],
+            "container-title": "Journal of Physics: Conference Series",
+            "id": "zhai2019",
+            "issue": "3",
+            "issued": {
+                "date-parts": [
+                    [
+                        2019,
+                        2
+                    ]
+                ]
+            },
+            "language": "en",
+            "note": "Publisher: IOP Publishing",
+            "page": "032077",
+            "title": "Research on the Application of Cryptography on the Blockchain",
+            "type": "article-journal",
+            "volume": "1168"
+        },
+        {
+            "DOI": "10.35784/jcsi.2756",
+            "URL": "https://ph.pollub.pl/index.php/jcsi/article/view/2756",
+            "author": [
+                {
+                    "family": "Biernacki",
+                    "given": "Kamil"
+                },
+                {
+                    "family": "Plechawska-Wójcik",
+                    "given": "Małgorzata"
+                }
+            ],
+            "container-title": "Journal of Computer Sciences Institute",
+            "id": "biernacki2021",
+            "issued": {
+                "date-parts": [
+                    [
+                        2021,
+                        12,
+                        30
+                    ]
+                ]
+            },
+            "language": "en",
+            "page": "373-377",
+            "title": "A comparative analysis of cryptocurrency wallet management tools",
+            "type": "article-journal",
+            "volume": "21"
+        },
+        {
+            "URL": "https://coinmarketcap.com/pt-br/currencies/bitcoin/",
+            "id": "bitcoin",
+            "language": "pt-br",
+            "title": "Bitcoin (BTC) Preço, Gráfico, Capitalização de Mercado",
+            "type": ""
+        },
+        {
+            "URL": "https://coinmarketcap.com/pt-br/currencies/ethereum/",
+            "id": "ethereum",
+            "title": "Ethereum (ETH) preço, gráfico, capitalização de mercado | CoinMarketCap",
+            "type": ""
+        },
+        {
+            "URL": "https://www.swfinstitute.org/profile/5cc90774b7ecd379fe56bbfa",
+            "id": "tetherl",
+            "title": "Tether limited (tether limited) - company, hong kong - SWFI",
+            "type": ""
+        },
+        {
+            "URL": "https://coinmarketcap.com/pt-br/currencies/tether/",
+            "id": "tether",
+            "language": "pt-br",
+            "title": "Tether (USDT) Preço, Gráfico, Capitalização de Mercado",
+            "type": ""
+        },
+        {
+            "URL": "https://coinmarketcap.com/pt-br/currencies/usd-coin/",
+            "id": "usdcoin",
+            "language": "pt-br",
+            "title": "USD Coin (USDC) Preço, Gráfico, Capitalização de Mercado",
+            "type": ""
+        },
+        {
+            "URL": "https://coinmarketcap.com/pt-br/currencies/bnb/",
+            "id": "bnb",
+            "language": "pt-br",
+            "title": "BNB (BNB) Preço, Gráfico, Capitalização de Mercado",
+            "type": ""
+        },
+        {
+            "URL": "https://rocketreach.co/ripple-labs-profile_b5f78cf1f42e90b0",
+            "id": "rocketre",
+            "language": "en",
+            "title": "RocketReach - Find email, phone, social media for 450M+ professionals",
+            "type": ""
+        },
+        {
+            "URL": "https://coinmarketcap.com/pt-br/currencies/xrp/",
+            "id": "xrp",
+            "language": "pt-br",
+            "title": "XRP (XRP) Preço, Gráfico, Capitalização de Mercado",
+            "type": ""
+        },
+        {
+            "URL": "https://coinmarketcap.com/pt-br/currencies/cardano/",
+            "id": "cardano",
+            "language": "pt-br",
+            "title": "Cardano (ADA) Preço, Gráfico, Capitalização de Mercado",
+            "type": ""
+        },
+        {
+            "URL": "https://coinext.com.br/criptomoedas/dogecoin",
+            "id": "dogecoin",
+            "language": "pt",
+            "title": "Dogecoin (DOGE): o que é, valor hoje e como comprar | Coinext",
+            "title-short": "Dogecoin (DOGE)",
+            "type": ""
+        },
+        {
+            "URL": "https://coinmarketcap.com/pt-br/currencies/solana/",
+            "id": "solana",
+            "language": "pt-br",
+            "title": "Solana (SOL) Preço, Gráfico, Capitalização de Mercado",
+            "type": ""
+        },
+        {
+            "URL": "https://www.cbinsights.com/company/matic-network",
+            "id": "polygon",
+            "title": "Polygon - products, competitors, financials, employees, headquarters locations",
+            "type": ""
+        },
+        {
+            "DOI": "10.1145/3366370",
+            "URL": "https://dl.acm.org/doi/10.1145/3366370",
+            "author": [
+                {
+                    "family": "Kolb",
+                    "given": "John"
+                },
+                {
+                    "family": "AbdelBaky",
+                    "given": "Moustafa"
+                },
+                {
+                    "family": "Katz",
+                    "given": "Randy H."
+                },
+                {
+                    "family": "Culler",
+                    "given": "David E."
+                }
+            ],
+            "container-title": "ACM Computing Surveys",
+            "id": "kolb2021",
+            "issue": "1",
+            "issued": {
+                "date-parts": [
+                    [
+                        2021,
+                        1,
+                        31
+                    ]
+                ]
+            },
+            "language": "en",
+            "page": "1-39",
+            "title": "Core Concepts, Challenges, and Future Directions in Blockchain: A Centralized Tutorial",
+            "title-short": "Core Concepts, Challenges, and Future Directions in Blockchain",
+            "type": "article-journal",
+            "volume": "53"
+        },
+        {
+            "DOI": "10.12819/2021.18.11.3",
+            "URL": "http://www4.unifsa.com.br/revista/index.php/fsa/article/view/2403",
+            "author": [
+                {
+                    "family": "Junior",
+                    "given": "Paulo Guerreiro Braga"
+                },
+                {
+                    "family": "Asrilhant",
+                    "given": "Boris"
+                }
+            ],
+            "container-title": "Revista FSA (Centro Universitário Santo Agostinho)",
+            "id": "junior2021",
+            "issue": "10",
+            "issued": {
+                "date-parts": [
+                    [
+                        2021,
+                        11,
+                        23
+                    ]
+                ]
+            },
+            "language": "pt",
+            "note": "Number: 10",
+            "page": "44-67",
+            "title": "Análise do Mercado de Criptomoedas Sob o Enfoque da Matriz Swot / Analysis of the Crypto Currency Market Under the Swot Matrix Perspective",
+            "type": "article-journal",
+            "volume": "18"
+        },
+        {
+            "author": [
+                {
+                    "family": "Aragon",
+                    "given": "Matheus"
+                }
+            ],
+            "id": "aragon2018",
+            "issued": {
+                "date-parts": [
+                    [
+                        2018
+                    ]
+                ]
+            },
+            "language": "pt",
+            "page": "54",
+            "title": "CRIPTOMOEDA: UMA ANÁLISE DA UTILIZAÇÃO DO BITCOIN NA SOCIEDADE CONTEMPORÂNEA",
+            "title-short": "CRIPTOMOEDA",
+            "type": "article-journal"
+        },
+        {
+            "DOI": "10.1016/j.jcorpfin.2020.101853",
+            "URL": "https://linkinghub.elsevier.com/retrieve/pii/S0929119920302972",
+            "author": [
+                {
+                    "family": "Benedetti",
+                    "given": "Hugo"
+                },
+                {
+                    "family": "Nikbakht",
+                    "given": "Ehsan"
+                }
+            ],
+            "container-title": "Journal of Corporate Finance",
+            "id": "benedetti2021",
+            "issued": {
+                "date-parts": [
+                    [
+                        2021,
+                        2
+                    ]
+                ]
+            },
+            "language": "en",
+            "page": "101853",
+            "title": "Returns and network growth of digital tokens after cross-listings",
+            "type": "article-journal",
+            "volume": "66"
+        },
+        {
+            "DOI": "10.1016/j.techfore.2019.119877",
+            "URL": "https://www.sciencedirect.com/science/article/pii/S0040162519301337",
+            "author": [
+                {
+                    "family": "White",
+                    "given": "Reilly"
+                },
+                {
+                    "family": "Marinakis",
+                    "given": "Yorgos"
+                },
+                {
+                    "family": "Islam",
+                    "given": "Nazrul"
+                },
+                {
+                    "family": "Walsh",
+                    "given": "Steven"
+                }
+            ],
+            "container-title": "Technological Forecasting and Social Change",
+            "id": "white2020",
+            "issued": {
+                "date-parts": [
+                    [
+                        2020,
+                        2,
+                        1
+                    ]
+                ]
+            },
+            "language": "en",
+            "page": "119877",
+            "title": "Is Bitcoin a currency, a technology-based product, or something else?",
+            "type": "article-journal",
+            "volume": "151"
+        },
+        {
+            "DOI": "10.1109/ACCESS.2021.3123894",
+            "author": [
+                {
+                    "family": "Bartoletti",
+                    "given": "Massimo"
+                },
+                {
+                    "family": "Lande",
+                    "given": "Stefano"
+                },
+                {
+                    "family": "Loddo",
+                    "given": "Andrea"
+                },
+                {
+                    "family": "Pompianu",
+                    "given": "Livio"
+                },
+                {
+                    "family": "Serusi",
+                    "given": "Sergio"
+                }
+            ],
+            "container-title": "IEEE Access",
+            "id": "bartoletti2021",
+            "issued": {
+                "date-parts": [
+                    [
+                        2021
+                    ]
+                ]
+            },
+            "note": "Conference Name: IEEE Access",
+            "page": "148353-148373",
+            "title": "Cryptocurrency scams: Analysis and perspectives",
+            "title-short": "Cryptocurrency scams",
+            "type": "article-journal",
+            "volume": "9"
+        },
+        {
+            "DOI": "10.1186/s40163-021-00163-8",
+            "URL": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8730302/",
+            "author": [
+                {
+                    "family": "Trozze",
+                    "given": "Arianna"
+                },
+                {
+                    "family": "Kamps",
+                    "given": "Josh"
+                },
+                {
+                    "family": "Akartuna",
+                    "given": "Eray Arda"
+                },
+                {
+                    "family": "Hetzel",
+                    "given": "Florian J."
+                },
+                {
+                    "family": "Kleinberg",
+                    "given": "Bennett"
+                },
+                {
+                    "family": "Davies",
+                    "given": "Toby"
+                },
+                {
+                    "family": "Johnson",
+                    "given": "Shane D."
+                }
+            ],
+            "container-title": "Crime Science",
+            "id": "trozze2022",
+            "issue": "1",
+            "issued": {
+                "date-parts": [
+                    [
+                        2022
+                    ]
+                ]
+            },
+            "note": "PMID: 35013699 PMCID: PMC8730302",
+            "page": "1",
+            "title": "Cryptocurrencies and future financial crime",
+            "type": "article-journal",
+            "volume": "11"
+        },
+        {
+            "URL": "https://bdjur.stj.jus.br/jspui/handle/2011/141992",
+            "author": [
+                {
+                    "family": "Silveira",
+                    "given": "Renato de Mello Jorge"
+                }
+            ],
+            "id": "silveira2020",
+            "issue": "1",
+            "issued": {
+                "date-parts": [
+                    [
+                        2020
+                    ]
+                ]
+            },
+            "language": "pt-BR",
+            "note": "Publisher: Revista dos Tribunais",
+            "page": "79-100",
+            "title": "“Criptocrime”: considerações penais econômicas sobre criptomoedas e criptoativos = “Cryptocrime”: criminal economic considerations about bitcoins and cryptoactive",
+            "title-short": "“Criptocrime”",
+            "type": "article-journal",
+            "volume": "1"
+        },
+        {
+            "DOI": "10.1016/j.techfore.2020.120265",
+            "URL": "https://linkinghub.elsevier.com/retrieve/pii/S004016252031091X",
+            "author": [
+                {
+                    "family": "Ma",
+                    "given": "Yechi"
+                },
+                {
+                    "family": "Ahmad",
+                    "given": "Ferhana"
+                },
+                {
+                    "family": "Liu",
+                    "given": "Miao"
+                },
+                {
+                    "family": "Wang",
+                    "given": "Zilong"
+                }
+            ],
+            "container-title": "Technological Forecasting and Social Change",
+            "id": "ma2020",
+            "issued": {
+                "date-parts": [
+                    [
+                        2020,
+                        12
+                    ]
+                ]
+            },
+            "language": "en",
+            "page": "120265",
+            "title": "Portfolio optimization in the era of digital financialization using cryptocurrencies",
+            "type": "article-journal",
+            "volume": "161"
+        },
+        {
+            "DOI": "10.1016/j.dss.2021.113574",
+            "URL": "https://linkinghub.elsevier.com/retrieve/pii/S0167923621000841",
+            "author": [
+                {
+                    "family": "Xu",
+                    "given": "Wei"
+                },
+                {
+                    "family": "Wang",
+                    "given": "Ting"
+                },
+                {
+                    "family": "Chen",
+                    "given": "Runyu"
+                },
+                {
+                    "family": "Zhao",
+                    "given": "J. Leon"
+                }
+            ],
+            "container-title": "Decision Support Systems",
+            "id": "xu2021",
+            "issued": {
+                "date-parts": [
+                    [
+                        2021,
+                        8
+                    ]
+                ]
+            },
+            "language": "en",
+            "page": "113574",
+            "title": "Prediction of initial coin offering success based on team knowledge and expert evaluation",
+            "type": "article-journal",
+            "volume": "147"
+        },
+        {
+            "URL": "http://repositorio.unisc.br:8080/jspui/handle/11624/3094",
+            "author": [
+                {
+                    "family": "Breunig",
+                    "given": "Leonardo Henrique"
+                }
+            ],
+            "id": "breunig2020",
+            "issued": {
+                "date-parts": [
+                    [
+                        2020
+                    ]
+                ]
+            },
+            "language": "pt{\\_}br",
+            "note": "Accepted: 2021-04-06T12:00:34Z",
+            "title": "Bitcoin : ativo financeiro ou moeda digital?",
+            "title-short": "Bitcoin ",
+            "type": "article-journal"
+        },
+        {
+            "DOI": "10.1590/1982-3533.2020v29n3art03",
+            "URL": "https://www.scielo.br/j/ecos/a/VqNjRBPQNvJgSJgsgWFkTHy/",
+            "author": [
+                {
+                    "family": "Filho",
+                    "given": "Torres"
+                },
+                {
+                    "family": "Teixeira",
+                    "given": "Ernani"
+                }
+            ],
+            "container-title": "Economia e Sociedade",
+            "id": "filho2020",
+            "issued": {
+                "date-parts": [
+                    [
+                        2020,
+                        12,
+                        14
+                    ]
+                ]
+            },
+            "language": "pt",
+            "note": "Publisher: Instituto de Economia da Universidade Estadual de Campinas, Publicações",
+            "page": "737-760",
+            "title": "Minsky: moeda, restrição de sobrevivência e hierarquia do sistema monetário globalizado",
+            "title-short": "Minsky",
+            "type": "article-journal",
+            "volume": "29"
+        },
+        {
+            "DOI": "10.30800/mises.2019.v7.1113",
+            "URL": "https://www.misesjournal.org.br/misesjournal/article/view/1113",
+            "author": [
+                {
+                    "family": "Bernardo",
+                    "given": "Marcel Pereira"
+                },
+                {
+                    "family": "Nori",
+                    "given": "Rodrigo Braian"
+                },
+                {
+                    "family": "Bernardelli",
+                    "given": "Luan Vinícius"
+                }
+            ],
+            "container-title": "MISES: Interdisciplinary Journal of Philosophy, Law and Economics",
+            "id": "bernardo2019",
+            "issue": "2",
+            "issued": {
+                "date-parts": [
+                    [
+                        2019,
+                        8,
+                        19
+                    ]
+                ]
+            },
+            "language": "pt",
+            "note": "Number: 2",
+            "title": "A História da Moeda: Uma proposta de união entre Teoria Econômica e Etnografia",
+            "title-short": "A História da Moeda",
+            "type": "article-journal",
+            "volume": "7"
+        },
+        {
+            "URL": "https://bibliotecadigital.fgv.br/ojs/index.php/revdireitogv/article/view/81696",
+            "author": [
+                {
+                    "family": "Estellita",
+                    "given": "Heloisa"
+                }
+            ],
+            "container-title": "Revista Direito GV",
+            "id": "estellita2020",
+            "issue": "1",
+            "issued": {
+                "date-parts": [
+                    [
+                        2020,
+                        6,
+                        8
+                    ]
+                ]
+            },
+            "language": "pt",
+            "note": "Number: 1",
+            "page": "e1955-e1955",
+            "title": "Criptomoedas e lavagem de dinheiro",
+            "type": "article-journal",
+            "volume": "16"
+        },
+        {
+            "author": [
+                {
+                    "family": "Shirakawa",
+                    "given": "Jacinta Bernadette Rico"
+                },
+                {
+                    "family": "Korwatanasakul",
+                    "given": "Upalat"
+                }
+            ],
+            "id": "shirakawa2019",
+            "issued": {
+                "date-parts": [
+                    [
+                        2019
+                    ]
+                ]
+            },
+            "language": "en",
+            "title": "Cryptocurrency Regulations: Institutions and Financial Openness",
+            "title-short": "Cryptocurrency Regulations",
+            "type": "article-journal"
+        },
+        {
+            "DOI": "10.1590/2317-6172201931",
+            "URL": "http://www.scielo.br/scielo.php?script=sci_arttext&pid=S1808-24322019000300205&tlng=pt",
+            "author": [
+                {
+                    "family": "Castello",
+                    "given": "Melissa Guimarães"
+                }
+            ],
+            "container-title": "Revista Direito GV",
+            "id": "castello2019",
+            "issue": "3",
+            "issued": {
+                "date-parts": [
+                    [
+                        2019
+                    ]
+                ]
+            },
+            "language": "pt",
+            "page": "e1931",
+            "title": "Bitcoin é moeda? Classificação das criptomoedas para o direito tributário",
+            "type": "article-journal",
+            "volume": "15"
+        },
+        {
+            "URL": "https://revistaft.com.br/o-marco-legal-dos-criptoativos-no-brasil-e-a-seguranca-juridica-dos-consumidores-uma-visao-a-luz-do-diploma-consumerista-sob-o-vies-da-protecao-economica-das-operacoes-com-ativos-digitais/",
+            "author": [
+                {
+                    "family": "Neto",
+                    "given": "Izaias Bezerra"
+                }
+            ],
+            "id": "neto2023",
+            "issued": {
+                "date-parts": [
+                    [
+                        2023,
+                        5,
+                        23
+                    ]
+                ]
+            },
+            "language": "pt-BR",
+            "title": "O MARCO LEGAL DOS CRIPTOATIVOS NO BRASIL E A SEGURANÇA JURÍDICA DOS CONSUMIDORES. UMA VISÃO À LUZ DO DIPLOMA CONSUMERISTA SOB O VIÉS DA PROTEÇÃO ECONÔMICA DAS OPERAÇÕES COM ATIVOS DIGITAIS.  ISSN 1678-0817 Qualis B2",
+            "type": ""
+        },
+        {
+            "URL": "https://www.moneytimes.com.br/lei-bitcoin-pelo-mundo-como-anda-a-regulamentacao-das-criptomoedas-em-outros-paises/",
+            "author": [
+                {
+                    "family": "Martini",
+                    "given": "Vitória"
+                }
+            ],
+            "id": "martini2022",
+            "issued": {
+                "date-parts": [
+                    [
+                        2022,
+                        4,
+                        24
+                    ]
+                ]
+            },
+            "language": "pt-br",
+            "title": "“Lei Bitcoin” pelo mundo: Como anda a regulamentação das criptomoedas em outros países",
+            "title-short": "“Lei Bitcoin” pelo mundo",
+            "type": ""
+        },
+        {
+            "DOI": "10.35940/ijeat.E1031.0585C19",
+            "author": [
+                {
+                    "family": "Abu Bakar",
+                    "given": "Nashirah"
+                },
+                {
+                    "family": "Rosbi",
+                    "given": "Sofian"
+                }
+            ],
+            "id": "abubakar2019",
+            "issued": {
+                "date-parts": [
+                    [
+                        2019,
+                        9,
+                        26
+                    ]
+                ]
+            },
+            "page": "214-221",
+            "title": "Robust statistical portfolio investment in modern portfolio theory: A case study of two stocks combination in kuala lumpur stock exchange",
+            "title-short": "Robust statistical portfolio investment in modern portfolio theory",
+            "type": "article-journal",
+            "volume": "8"
+        },
+        {
+            "DOI": "10.1108/MEDAR-11-2017-0241",
+            "URL": "https://doi.org/10.1108/MEDAR-11-2017-0241",
+            "author": [
+                {
+                    "family": "Ram",
+                    "given": "Asheer Jaywant"
+                }
+            ],
+            "container-title": "Meditari Accountancy Research",
+            "id": "ram2018",
+            "issue": "1",
+            "issued": {
+                "date-parts": [
+                    [
+                        2018,
+                        1,
+                        1
+                    ]
+                ]
+            },
+            "note": "Publisher: Emerald Publishing Limited",
+            "page": "147-168",
+            "title": "Bitcoin as a new asset class",
+            "type": "article-journal",
+            "volume": "27"
+        },
+        {
+            "URL": "https://books.google.com.br/books?id=M2FwDwAAQBAJ",
+            "author": [
+                {
+                    "family": "Regenstein",
+                    "given": "J. K."
+                }
+            ],
+            "collection-title": "Chapman & hall/CRC the r series",
+            "id": "regenstein2018",
+            "issued": {
+                "date-parts": [
+                    [
+                        2018
+                    ]
+                ]
+            },
+            "publisher": "CRC Press",
+            "title": "Reproducible finance with r: Code flows and shiny apps for portfolio analysis",
+            "title-short": "Reproducible finance with r",
+            "type": "book"
+        },
+        {
+            "URL": "https://www.codingfinance.com/post/2018-05-31-portfolio-opt-in-r/",
+            "author": [
+                {
+                    "given": "DD"
+                }
+            ],
+            "id": "portfoli2018",
+            "issued": {
+                "date-parts": [
+                    [
+                        2018,
+                        5,
+                        31
+                    ]
+                ]
+            },
+            "language": "en",
+            "title": "Portfolio Optimization in R :: Coding Finance ",
+            "title-short": "Portfolio Optimization in R ",
+            "type": ""
+        },
+        {
+            "URL": "https://www.bcb.gov.br/detalhenoticia/17886/nota",
+            "id": "copomma2023",
+            "issued": {
+                "date-parts": [
+                    [
+                        2023,
+                        5,
+                        3
+                    ]
+                ]
+            },
+            "language": "pt-br",
+            "title": "Copom mantém a taxa Selic em 13,75",
+            "type": ""
+        },
+        {
+            "URL": "https://www.fca.org.uk/firms/financial-crime/cryptoassets-aml-ctf-regime",
+            "id": "cryptoas2019",
+            "issued": {
+                "date-parts": [
+                    [
+                        2019,
+                        10,
+                        24
+                    ]
+                ]
+            },
+            "language": "en",
+            "title": "Cryptoassets: AML / CTF regime",
+            "title-short": "Cryptoassets",
+            "type": ""
+        },
+        {
+            "DOI": "10.2139/ssrn.4063387",
+            "URL": "https://www.ssrn.com/abstract=4063387",
+            "author": [
+                {
+                    "family": "Emmert",
+                    "given": "Frank"
+                }
+            ],
+            "container-title": "SSRN Electronic Journal",
+            "id": "emmert2022",
+            "issued": {
+                "date-parts": [
+                    [
+                        2022
+                    ]
+                ]
+            },
+            "language": "en",
+            "title": "The Regulation of Cryptocurrencies in the United States of America",
+            "type": "article-journal"
+        },
+        {
+            "DOI": "10.1007/978-3-031-25506-9_1",
+            "URL": "https://doi.org/10.1007/978-3-031-25506-9_1",
+            "author": [
+                {
+                    "family": "Nowroozi",
+                    "given": "Ehsan"
+                },
+                {
+                    "family": "Seyedshoari",
+                    "given": "Seyedsadra"
+                },
+                {
+                    "family": "Mekdad",
+                    "given": "Yassine"
+                },
+                {
+                    "family": "Savaş",
+                    "given": "Erkay"
+                },
+                {
+                    "family": "Conti",
+                    "given": "Mauro"
+                }
+            ],
+            "editor": [
+                {
+                    "family": "Maleh",
+                    "given": "Yassine"
+                },
+                {
+                    "family": "Alazab",
+                    "given": "Mamoun"
+                },
+                {
+                    "family": "Romdhani",
+                    "given": "Imed"
+                }
+            ],
+            "id": "nowroozi2023",
+            "issued": {
+                "date-parts": [
+                    [
+                        2023
+                    ]
+                ]
+            },
+            "note": "DOI: 10.1007/978-3-031-25506-9_1",
+            "page": "119",
+            "publisher": "Springer International Publishing",
+            "publisher-place": "Cham",
+            "title": "Cryptocurrency wallets: Assessment and security",
+            "title-short": "Cryptocurrency wallets",
+            "type": "chapter"
+        },
+        {
+            "URL": "https://www.kraken.com/learn/what-is-polygon-matic",
+            "id": "whatis",
+            "language": "en-US",
+            "title": "What is polygon? (MATIC) | kraken",
+            "type": ""
+        },
+        {
+            "DOI": "10.3390/e24091317",
+            "URL": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9498238/",
+            "author": [
+                {
+                    "family": "Nguyen",
+                    "given": "An Pham Ngoc"
+                },
+                {
+                    "family": "Mai",
+                    "given": "Tai Tan"
+                },
+                {
+                    "family": "Bezbradica",
+                    "given": "Marija"
+                },
+                {
+                    "family": "Crane",
+                    "given": "Martin"
+                }
+            ],
+            "container-title": "Entropy",
+            "id": "nguyen2022",
+            "issue": "9",
+            "issued": {
+                "date-parts": [
+                    [
+                        2022,
+                        9,
+                        19
+                    ]
+                ]
+            },
+            "note": "PMID: 36141203 PMCID: PMC9498238",
+            "page": "1317",
+            "title": "The cryptocurrency market in transition before and after COVID-19: An opportunity for investors?",
+            "title-short": "The cryptocurrency market in transition before and after COVID-19",
+            "type": "article-journal",
+            "volume": "24"
+        },
+        {
+            "author": [
+                {
+                    "family": "RAMALHO",
+                    "given": "Marcus"
+                }
+            ],
+            "container-title": "ANÁLISE DE RISCO E RENTABILIDADE DE UMA CARTEIRA DE FUNDOS DE INVESTIMENTO IMOBILIÁRIO",
+            "id": "ramalho2020",
+            "issued": {
+                "date-parts": [
+                    [
+                        2020,
+                        12,
+                        14
+                    ]
+                ]
+            },
+            "language": "pt-BR",
+            "page": "33",
+            "title": "ANÁLISE DE RISCO E RENTABILIDADE DE UMA CARTEIRA DE FUNDOS DE INVESTIMENTO IMOBILIÁRIO",
+            "type": "article-journal"
+        },
+        {
+            "URL": "https://CRAN.R-project.org/package=rbcb",
+            "author": [
+                {
+                    "family": "Freitas",
+                    "given": "Wilson"
+                }
+            ],
+            "id": "freitas2022",
+            "issued": {
+                "date-parts": [
+                    [
+                        2022
+                    ]
+                ]
+            },
+            "title": "Rbcb: R interface to brazilian central bank web services",
+            "title-short": "Rbcb",
+            "type": "book"
+        },
+        {
+            "DOI": "https://doi.org/10.1016/j.intfin.2020.101202",
+            "URL": "https://www.sciencedirect.com/science/article/pii/S104244312030086X",
+            "author": [
+                {
+                    "family": "Kwon",
+                    "given": "Ji Ho"
+                }
+            ],
+            "container-title": "Journal of International Financial Markets, Institutions and Money",
+            "id": "kwon2020",
+            "issued": {
+                "date-parts": [
+                    [
+                        2020
+                    ]
+                ]
+            },
+            "page": "101202",
+            "title": "Tail behavior of bitcoin, the dollar, gold and the stock market index",
+            "type": "article-journal",
+            "volume": "67"
+        },
+        {
+            "DOI": "10.1080/23322039.2023.2207266",
+            "URL": "https://doi.org/10.1080/23322039.2023.2207266",
+            "author": [
+                {
+                    "family": "Fry",
+                    "given": "John"
+                },
+                {
+                    "family": "Ibiloye",
+                    "given": "Olamide"
+                }
+            ],
+            "container-title": "Cogent Economics & Finance",
+            "id": "fry2023",
+            "issue": "1",
+            "issued": {
+                "date-parts": [
+                    [
+                        2023
+                    ]
+                ]
+            },
+            "note": "Publisher: Cogent OA _eprint: https://doi.org/10.1080/23322039.2023.2207266",
+            "page": "2207266",
+            "title": "Towards a taxonomy for crypto assets",
+            "type": "article-journal",
+            "volume": "11"
+        },
+        {
+            "DOI": "10.34117/bjdv5n12-205",
+            "URL": "https://ojs.brazilianjournals.com.br/ojs/index.php/BRJD/article/view/5425",
+            "author": [
+                {
+                    "family": "Silva",
+                    "given": "Tuany Esthefany Barcellos de Carvalho"
+                },
+                {
+                    "dropping-particle": "do",
+                    "family": "Santos",
+                    "given": "Daiane Rodrigues"
+                },
+                {
+                    "family": "Sanfins",
+                    "given": "Marco Aurélio do Santos"
+                }
+            ],
+            "container-title": "Brazilian Journal of Development",
+            "id": "silva2019",
+            "issue": "12",
+            "issued": {
+                "date-parts": [
+                    [
+                        2019,
+                        12
+                    ]
+                ]
+            },
+            "page": "3100531018",
+            "title": "Modelo de markowitz na otimização de carteiras de investimentos usando o software r / markowitz model in investment portfolio optimization using the r software",
+            "type": "article-journal",
+            "volume": "5"
+        },
+        {
+            "DOI": "10.3390/risks11030051",
+            "URL": "https://www.mdpi.com/2227-9091/11/3/51",
+            "author": [
+                {
+                    "family": "Kerr",
+                    "given": "David S."
+                },
+                {
+                    "family": "Loveland",
+                    "given": "Karen A."
+                },
+                {
+                    "family": "Smith",
+                    "given": "Katherine Taken"
+                },
+                {
+                    "family": "Smith",
+                    "given": "Lawrence Murphy"
+                }
+            ],
+            "container-title": "Risks",
+            "id": "kerr2023",
+            "issue": "3",
+            "issued": {
+                "date-parts": [
+                    [
+                        2023
+                    ]
+                ]
+            },
+            "title": "Cryptocurrency risks, fraud cases, and financial performance",
+            "type": "article-journal",
+            "volume": "11"
+        },
+        {
+            "DOI": "10.1109/eCrime51433.2020.9493255",
+            "author": [
+                {
+                    "family": "Xia",
+                    "given": "Pengcheng"
+                },
+                {
+                    "family": "Wang",
+                    "given": "Haoyu"
+                },
+                {
+                    "family": "Luo",
+                    "given": "Xiapu"
+                },
+                {
+                    "family": "Wu",
+                    "given": "Lei"
+                },
+                {
+                    "family": "Zhou",
+                    "given": "Yajin"
+                },
+                {
+                    "family": "Bai",
+                    "given": "Guangdong"
+                },
+                {
+                    "family": "Xu",
+                    "given": "Guoai"
+                },
+                {
+                    "family": "Huang",
+                    "given": "Gang"
+                },
+                {
+                    "family": "Liu",
+                    "given": "Xuanzhe"
+                }
+            ],
+            "id": "xia2020",
+            "issued": {
+                "date-parts": [
+                    [
+                        2020
+                    ]
+                ]
+            },
+            "page": "1-14",
+            "title": "Don’t fish in troubled waters! Characterizing coronavirus-themed cryptocurrency scams",
+            "type": "paper-conference"
+        },
+        {
+            "URL": "https://revista.cgu.gov.br/Cadernos_CGU/article/view/607",
+            "author": [
+                {
+                    "dropping-particle": "de",
+                    "family": "Morais",
+                    "given": "Fábio Luiz"
+                },
+                {
+                    "family": "Falcão",
+                    "given": "Rondinelli Melo Alcântara"
+                }
+            ],
+            "container-title": "Cadernos Técnicos da CGU",
+            "id": "morais2022",
+            "issued": {
+                "date-parts": [
+                    [
+                        2022,
+                        11,
+                        29
+                    ]
+                ]
+            },
+            "language": "pt",
+            "title": "A regulação de criptomoedas como instrumento de prevenção à lavagem de dinheiro",
+            "type": "article-journal",
+            "volume": "3"
+        },
+        {
+            "DOI": "10.52076/eacad-v4i1.425",
+            "URL": "https://www.eacademica.org/eacademica/article/view/425",
+            "author": [
+                {
+                    "family": "Fontgalland",
+                    "given": "Isabel Lausanne"
+                },
+                {
+                    "dropping-particle": "de",
+                    "family": "Menezes",
+                    "given": "Luka Tarssis Ramalho Cavalcanti Montenegro"
+                },
+                {
+                    "family": "Félix",
+                    "given": "Augusto César Trigueiro"
+                }
+            ],
+            "container-title": "E-Acadêmica",
+            "id": "fontgalland2023",
+            "issue": "1",
+            "issued": {
+                "date-parts": [
+                    [
+                        2023,
+                        2
+                    ]
+                ]
+            },
+            "page": "e1541425",
+            "title": "Criptomoeda e o sistema financeiro nacional: Discutindo o debate brasileiro",
+            "title-short": "Criptomoeda e o sistema financeiro nacional",
+            "type": "article-journal",
+            "volume": "4"
+        },
+        {
+            "URL": "https://mermaid.js.org/",
+            "id": "mermaid",
+            "title": "Mermaid | diagramming and charting tool",
+            "type": ""
+        },
+        {
+            "URL": "https://coinmarketcap.com/pt-br/",
+            "id": "preços",
+            "language": "pt-br",
+            "title": "Preços, Gráficos e Capitalização de Mercado das Criptomoedas",
+            "type": ""
+        },
+        {
+            "URL": "https://www.nobelprize.org/prizes/economic-sciences/1990/markowitz/biographical/",
+            "id": "nobelPrize",
+            "language": "en-US",
+            "title": "The sveriges riksbank prize in economic sciences in memory of alfred nobel 1990",
+            "type": ""
+        },
+        {
+            "URL": "https://valor.globo.com/financas/noticia/2023/06/25/economista-harry-markowitz-criador-da-teoria-moderna-de-portflio-morre-aos-95-anos.ghtml",
+            "id": "Globo",
+            "issued": {
+                "date-parts": [
+                    [
+                        2023,
+                        6,
+                        25
+                    ]
+                ]
+            },
+            "language": "pt-br",
+            "title": "Economista Harry Markowitz, criador da Teoria Moderna de Portfólio, morre aos 95 anos",
+            "type": ""
+        },
+        {
+            "URL": "https://www.suno.com.br/tudo-sobre/harry-markowitz/",
+            "author": [
+                {
+                    "family": "Research",
+                    "given": "Suno"
+                }
+            ],
+            "id": "Suno",
+            "language": "pt-BR",
+            "title": "Markowitz: Conheça o criador da teoria moderna do portfólio",
+            "title-short": "Markowitz",
+            "type": ""
+        }
+    ],
     "project_biblios": []
 }
