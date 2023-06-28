@@ -1,7 +1,7 @@
 ---
-title: "Análise da aplicação da moderna teoriade portfólio de markowitz sobre o mercado das criptomoedas"
+title: "Análise da aplicação da moderna teoria de portfólio de Markowitz sobre o mercado de criptomoedas"
 author: "Matheus Pereira Costa"
-date: "`r Sys.Date()`"
+date: "`r format(Sys.Date(),'%d/%m/%Y')`"
 format: 
   # html:
   #   toc: true
@@ -24,12 +24,15 @@ format:
     number-depth: 3
     link-citations: true
     link-bibliography: true
+    table-of-contents: true
+    toc-title: "Sumário"
     reference-doc: ModeloTCC8.dotx
     output-file: "TCC"
     output-ext: "docx"
 editor: visual
 lang: pt
 bibliography: references.bib
+csl: ABNT.csl
 execute: 
   echo: false
   warning: false
@@ -147,17 +150,9 @@ portfolio_plot_optimized = portfolio_return_opmitized %>%
 
 ```
 
-# RESUMO
+Resumo
 
-Contexto: O mercado de criptomoeda tem se maturado como uma forte alternativa ao mercado de ações convencionais, transformando assim novos modelos de negócios e formas de realizar transações.
-
-Lacuna: No entanto, por ser algo recente ainda há poucos estudos utilizando a moderna teoria de portfólio de Markowitz aplicado a este setor.
-
-Proposta: Devido à alta instabilidade deste mercado, o corrente estudo tem por desejo em verificar a aplicação da moderna teoria de portfólio de Markowitz sobre ele.
-
-Metodologia: Por isso essa pesquisa se caracteriza como uma pesquisa exploratória-quantitativa que usará como abordagem de revisão bibliográfica e análise de documentos.
-
-ResultadoS:
+Contexto: O mercado de criptomoeda tem se maturado como uma forte alternativa ao mercado de ações convencionais, transformando assim novos modelos de negócios e formas de realizar transações. Lacuna: No entanto, por ser algo recente ainda há poucos estudos utilizando a moderna teoria de portfólio de Markowitz aplicado a este setor. Proposta: Devido à alta instabilidade deste mercado, o corrente estudo tem por desejo em verificar a aplicação da moderna teoria de portfólio de Markowitz sobre ele. Metodologia: Por isso essa pesquisa se caracteriza como uma pesquisa exploratória-quantitativa que usará como abordagem de revisão bibliográfica e análise de documentos. Resultados:
 
 # INTRODUÇÃO {#sec-introducao}
 
@@ -169,11 +164,11 @@ Analisar se a volatilidade do mercado de criptomoedas afeta diretamente na utili
 
 ### GERAL {#sec-objetivos-Geral}
 
-Verificar a aplicação da moderna teoria de portfólio sobre o mercado de criptmoedas.
+Verificar a aplicação da moderna teoria de portfólio sobre o mercado de criptomoedas.
 
 ### ESPECÍFICOS {#sec-objetivos-Especifico}
 
--   Conceituar criptmoedas como ativos financeiros.
+-   Conceituar criptomoedas como ativos financeiros.
 -   Diferenciar o mercado criptoativo do mercado de renda variável.
 -   Analisar os impactos das regulações desse setor no Brasil.
 -   Comparar o resultado da utilização do método contra uma seleção de portifólio igualmente distribuído.
@@ -184,7 +179,7 @@ Esse trabalho teve por objetivo verificar a aplicabilidade da moderna teoria de 
 
 Portanto esta pesquisa se classifica como objetivo exploratória, com a abordagem quantitativa, possuindo natureza básica e utilizando o método dedutivo.
 
-A revisão bibliográfica foi realizada sobre uma seleção de artigos disponíveis nas plataformas: Periódicos CAPES, Scopus e Google Acadêmico. No qual atenderam aos seguintes critérios de busca: Markowitz, Portfolio Optimization, Optimização de portfólio, Cryptocurrency, Criptomoeda, Currency, Moeda, Regulation, Regulação, Scams, Golpes. os idiomas de pesquisa foram limitados a Português e Inglês. Também foi limitado as pesquisas entre o período de 2018 até 2023.
+A revisão bibliográfica foi realizada sobre uma seleção de artigos disponíveis nas plataformas: Periódicos CAPES, Scopus e Google Acadêmico. No qual atenderam aos seguintes critérios de busca: Markowitz, Portfolio Optimization, otimização de portfólio, Cryptocurrency, Criptomoeda, Currency, Moeda, Regulation, Regulação, Scams, Golpes. os idiomas de pesquisa foram limitados a Português e Inglês. Também foi limitado as pesquisas entre o período de 2018 até 2023.
 
 Foram utilizados como fonte para a realização dos códigos em R, o livro [@regenstein2018] e o site [Codingfinance, @portfoli2018].
 
@@ -224,7 +219,7 @@ Foi variada por `r by`, ou seja `r toPercent(by)`, os pesos em cada combinação
 
 Para iterar sobre cada um dos pesos foi utilizado o FOR que é uma função de looping até que determinada condição seja satisfeita.
 
-Para a seleção das criptomoedas foi utilizado o critério das 10 maiores criptomoedas em relação a capitalização de mercado segundo a plataforma *coinmarketcap* [@preços]. foi removido o USDT-USD e USDC-USD devido a elas funcionarem como uma moeda digital fiduciária, no qual é pareado o seu valor 1:1 com o dólar. Dessa forma a carteira foi composta de `r Nsymbols` criptomoedas.
+Para a seleção das criptomoedas foi utilizado o critério das 10 maiores criptomoedas em relação a capitalização de mercado segundo a plataforma *coinmarketcap* [@preços] no dia 01/05/2023. Foi removido o USDT-USD e USDC-USD devido a elas funcionarem como uma moeda digital fiduciária, no qual é pareado o seu valor 1:1 com o dólar. Dessa forma a carteira foi composta de `r Nsymbols` criptomoedas.
 
 Os ativos selecionados foram: `r textList(Fsymbols)`. No qual os seus símbolos são representados em pares com o a moeda estável USD, sendo eles: `r textList(symbols)`.
 
@@ -240,15 +235,15 @@ Foram utilizadas nesse trabalho `r Nsymbols` criptomoedas, esta seção traz uma
 
 O Bitcoin foi criada em 2008 com característica de ser uma moeda descentralizada no qual permite transações entre as partes sem intermediários e não possui alguma entidade a controlando, porém há contribuições continuas de diversos programadores para a continua evolução e melhoramento da rede [@bitcoin].
 
-O Ethereum assim como o Bitcoin, também é uma criptomoeda descentralizada e funciona como um meio para que as outras criptomoedas possam operar em sua rede, tendo como destaque a elaboração dos smart contracts. Ela teve seu whitepape publicado em 2013, porém só foi fundada em 2014 por oito confundadores, dentre eles o Vitalik Buterin é o mais conhecido, a sua sede fica na cidade de Zug sendo localizada na Suiça. Tendo como seus principais objetivos ser uma plataforma universal para outras criptomoedas executem seus softwares nela [@ethereum].
+O Ethereum assim como o Bitcoin, também é uma criptomoeda descentralizada e funciona como um meio para que as outras criptomoedas possam operar em sua rede, tendo como destaque a elaboração dos smart contracts. Ela teve seu whitepape publicado em 2013, porém só foi fundada em 2014 por oito confundadores, dentre eles o Vitalik Buterin é o mais conhecido, a sua sede fica na cidade de Zug sendo localizada na Suíça. Tendo como seus principais objetivos ser uma plataforma universal para outras criptomoedas executem seus softwares nela [@ethereum].
 
 O Binance é um token da Binance que por sua vez é uma exchange, ela oferece desconto em taxas aos seus detentores e direito de participação em lançamentos de tokens dentro de sua plataforma, sendo ele lançado em 2017 através de uma ICO [@bnb].
 
 O XRP é uma moeda nativa da plataforma da Ripple foi criada em 2012 pela empresa Ripple Labs Inc seu intuito é ser um sistema de pagamento global, sendo, uma as suas principais vantagens, o custo baixo ao enviar dinheiro por sua rede [@xrp].
 
-O Cardano foi lançada em 2017 sendo ela utilizada por empresas agrícolas no rasteiro dos seus produtos. Tendo como característica a participação democrática dos detentores de sua moeda sobre as mudanças projetadas na rede por sua equipe [@cardano].
+O Cardano foi lançado em 2017 sendo ela utilizada por empresas agrícolas no rasteiro dos seus produtos. Tendo como característica a participação democrática dos detentores de sua moeda sobre as mudanças projetadas na rede por sua equipe [@cardano].
 
-O Dogecoin é uma moeda meme de uma raça de cachorro Shiba Inu no qual foi criada em 2013, sendo um dos seus fundadores o Billy Markus porém só foi lançada em 2014. Ela é usada principalmente como um sistema de gorjeta no fórum do Reddit e é usada com o intuito especulativo já que ela é amplamente influenciada pelas redes sociais [@dogecoin].
+O Dogecoin é uma moeda meme de uma raça de cachorro Shiba Inu no qual foi criada em 2013, sendo um dos seus fundadores o Billy Markus, porém só foi lançada em 2014. Ela é usada principalmente como um sistema de gorjeta no fórum do Reddit e é usada com o intuito especulativo já que ela é amplamente influenciada pelas redes sociais [@dogecoin].
 
 A Solana foi criada com o intuito de facilitar a elaboração de D'app que também são conhecidos como aplicativos descentralizados. Ela foi criada em 2020 pela empresa Solana Foundation ela tem sua sede em Genebra que fica localizada na suíça. Ela apresenta uma inovação no sistema ao introduzir o sistema de proof of history no qual permite maior usabilidade no protocolo [@solana].
 
@@ -258,7 +253,7 @@ A Matic é uma criptomoeda da Polygon que funciona como meio para transações d
 
 ## CRIPTOMOEDA
 
-As criptomoedas são observadas por diversos grupos da sociedade ao redor do mundo, sendo eles: investidores, financeiras, organizações governamentais, bancos centrais, legisladores, economistas, pesquisadores e etc. umas das explicações possíveis a esse fenômeno se dá ao fato do alto nível de liquidez como resultado de uma flexibilização monetária e pequenos rendimentos de ativos financeiros.[@arzova2021].
+As criptomoedas são observadas por diversos grupos da sociedade ao redor do mundo, sendo eles: investidores, financeiras, organizações governamentais, bancos centrais, legisladores, economistas, pesquisadores e etc. umas das explicações possíveis a esse fenômeno se dá ao fato do alto nível de liquidez como resultado de uma flexibilização monetária e pequenos rendimentos de ativos financeiros [@arzova2021].
 
 O seu termo surgiu com o advento da inovação tecnológica desenvolvida pelo pseudônimo Satoshi Nakamoto ao criar o Bitcoin com o intuito de ser um meio de troca. Diferente das moedas fiduciárias, a criptomoeda não se baseia na figura de uma autoridade central, mas sim na criptografia pra controlar e administrar [@kliber2019].
 
@@ -314,7 +309,7 @@ A lavagem de dinheiro é caracterizada como dinheiro provindo de origem ilícita
 
 De tal forma é possível notar duas diferenças principais entre o mercado de renda variável com o de criptomoedas, sendo elas: o ambiente regulatório e a característica tecnológica aplicada [@benedetti2021].
 
-A falta de regulação aplicadas ao mercado de criptomoedas acaba por não garantir a integridade desse mercado e a sua transparência sendo este o fator distintivo entre o mercado de renda variável, porém já é possível notar um desenvolvimento nesse sentido com a adesão dos procedimentos anti lavagem de dinheiro (AML), conheça seu cliente (KYC) e requerimento de reserva [@benedetti2021].
+A falta de regulação aplicadas ao mercado de criptomoedas acaba por não garantir a integridade desse mercado e a sua transparência sendo este o fator distintivo entre o mercado de renda variável, porém já é possível notar um desenvolvimento nesse sentido com a adesão dos procedimentos antilavagem de dinheiro (AML), conheça seu cliente (KYC) e requerimento de reserva [@benedetti2021].
 
 Em relação a tecnologia, o mercado de criptomoedas é marcado pela custodia descentralizada, ou seja, o mercado assume a custodia do token no qual o usuário transfere de sua carteira para o mercado [@benedetti2021].
 
@@ -342,7 +337,7 @@ A função meio de troca é o que possibilita a realização de compra e venda e
 
 Além dessas três funções clássicas da moeda, ela deve conter as seguintes características: divisibilidade, durabilidade, alta complexibilidade para falsificação, manuseabilidade e transportabilidade [@breunig2020].
 
-No caso especifico do Bitcoin, ele tem as propriedades da divisibilidade e portabilidade possuindo assim características de ser um meio de pagamento descentralizado [ARAÚJO; SILVA, 2017 apud @junior2021].
+No caso específico do Bitcoin, ele tem as propriedades da divisibilidade e portabilidade possuindo assim características de ser um meio de pagamento descentralizado [ARAÚJO; SILVA, 2017 apud @junior2021].
 
 Para Woodford (2011) As criptomoedas com características semelhantes ao Bitcoin possuem as funções reservas de valor, meio de troca, mas não a da unidade de conta pois a falta de uma ampla aceitação da sociedade para utilizarem ao realizar trocas entre si [apud @white2020].
 
@@ -364,9 +359,9 @@ O Brasil atualmente se integra um grupo seleto de países que possuem regulament
 
 A lei também procura regular as corretoras, pois elas só poderão atuar em território brasileiro mediante autorização dos órgãos da administração pública, além disso também ficou permitido ao Banco Central acumular ou prestar serviço de ativos virtuais [@neto2023].
 
-Segundo Vaz de Almeida (2023) com a criação da lei ficou estabelecido um dispositivo no qual prever a criação de um novo código penal especifico aplicado a fraudes envolvendo criptomoedas [apud @fontgalland2023].
+Segundo Vaz de Almeida (2023) com a criação da lei ficou estabelecido um dispositivo no qual prever a criação de um novo código penal específico aplicado a fraudes envolvendo criptomoedas [apud @fontgalland2023].
 
-A classificação de prestadoras de serviço de criptmoedas passou a ser semelhante a de instituições financeiras, também foi estabelecido que tais agentes se enquadravam no rol do artigo 9 da lei 9.613 aplicados a lavagem de dinheiro e no código de defesa do consumidor ao conduzir operações no mercado de criptmoedas [@fontgalland2023].
+A classificação de prestadoras de serviço de criptomoedas passou a ser semelhante a de instituições financeiras, também foi estabelecido que tais agentes se enquadravam no rol do artigo 9 da lei 9.613 aplicados a lavagem de dinheiro e no código de defesa do consumidor ao conduzir operações no mercado de criptomoedas [@fontgalland2023].
 
 ## MARKOWITZ
 
@@ -384,7 +379,7 @@ A iniciativa de investimento é uma tentativa de segurança contra qualquer amea
 
 A moderna teoria de portfólio desenvolvida por Harry Markowitz se baseia na abordagem da construção de portfólio com o intuito de maximizar o retorno esperado a um menor risco [@abubakar2019].
 
-O risco dos ativos são calculados através da formula de desvio padrão [@abubakar2019].
+O risco dos ativos é calculado através da formula de desvio padrão [@abubakar2019].
 
 A diversificação do portfólio tem por intenção suavizar os riscos não sistêmicos em um portfólio, no qual se baseia em que se um ativo tiver uma performance ruim, logo os outros ativos da sua cesta neutralizarão o desempenho negativo, dado que a correlação entre eles seja negativa, sendo considerado assim um ativo de porto seguro para enfrentar os períodos de turbulências no mercado [@kliber2019].
 
@@ -402,11 +397,11 @@ Além disso aumenta a adoção mundial de criptomoedas junto com outras moedas e
 
 O perfil de risco premia ao nível de risco assumido, isso pode ser medido usando a razão de Sharpe no qual demonstra os retornos por unidade de risco aceitado [@ram2018].
 
-O Indice de Sharpe é uma ferramenta que auxilia na comparação de performance entre ativos agrupados no portfólio, ao se calcular os retornos excessivos sobre a taxa livre de risco, sendo a Razão Sharpe maior que um aceitável e consequentemente quanto maior for ela mais retornos excessivos sobre a taxa livre de risco, que em sua finalidade é capaz de fornecer a fronteira eficientes entre diferentes portfólios [@ma2020].
+O índice de Sharpe é uma ferramenta que auxilia na comparação de performance entre ativos agrupados no portfólio, ao se calcular os retornos excessivos sobre a taxa livre de risco, sendo a Razão Sharpe maior que um aceitável e consequentemente quanto maior for ela mais retornos excessivos sobre a taxa livre de risco, que em sua finalidade é capaz de fornecer a fronteira eficientes entre diferentes portfólios [@ma2020].
 
-A fronteira eficiente pode ser compreendida como uma linha no qual possui os melhores retornos ao niveis de risco assumidos sobre um conjunto de combinações possiveis na composição do portfólio, para tal ela utiliza o indice sharpe como parametro [@silva2019].
+A fronteira eficiente pode ser compreendida como uma linha no qual possui os melhores retornos aos níveis de risco assumidos sobre um conjunto de combinações possíveis na composição do portfólio, para tal ela utiliza o índice Sharpe como parâmetro [@silva2019].
 
-Em um estudo realizado por Brauneis and Mestel (2019) sobre os benefícios da inclusão das criptomoedas no portfólio utilizando a estrutura de markowtiz, constataram que elas reduziam o risco do portfólio [apud @ozdurak2022].
+Em um estudo realizado por Brauneis and Mestel (2019) sobre os benefícios da inclusão das criptomoedas no portfólio utilizando a estrutura de Markowtiz, constataram que elas reduziam o risco do portfólio [apud @ozdurak2022].
 
 # FORMULAS MATEMATICAS
 
@@ -440,12 +435,12 @@ $$
 Onde $R_{p}$ = Retorno do portfólio, N = quantidade da dados, t = Período, $x_{t}$ = Ativo no período e $w_{t}$ = peso do ativo no período. 
 
 
-A formula para calcular a razão sharpe foi:
+A formula para calcular a razão Sharpe foi:
 
 $$
 sr = \frac{R_{p} - R_{f}}{\sigma}
 $$
-Onde sr = razão sharpe, $R_{p}$ = retorno do portfólio, $R_{f}$ = taxa livre de risco e $\sigma$ = desvio padrão
+Onde sr = razão Sharpe, $R_{p}$ = retorno do portfólio, $R_{f}$ = taxa livre de risco e $\sigma$ = desvio padrão
 
 A formula para realizar a conversão da taxa de juros anual para diária utilizada foi:
 
@@ -481,7 +476,7 @@ asset_return_long %>%
   theme(legend.position="none", plot.title = element_text(hjust = .5))
 ```
 
-Em seguida foi verificado a matriz de correlação dos ativos e verificado que os ativos são positvamente correlacionados, veja em @tbl-correlacao e no gráfico @fig-correlacao.
+Em seguida foi verificado a matriz de correlação dos ativos e verificado que os ativos são positivamente correlacionados, veja em @tbl-correlacao e no gráfico @fig-correlacao.
 
 ```{R}
 #| label: tbl-correlacao
@@ -513,13 +508,13 @@ corrplot(correlation_cryptocurrency,
          )
 ```
 
-Ao performar as combinações dos ativos possíveis foram encontradas as 5 combinações com melhores índice Sharpe conforme demonstrado na @tbl-melhoresCombinacoes. Sendo o ponto de tangência do portfolio com a combinação de `r toPercent(as.numeric(summaryBestCombination))` dos ativos distribuidos em `r textList(names(summaryBestCombination))` respectivamente, sendo o índice Sharpe de `r round(bestCombination$sharpeRatePortfolio,4)`, desvio padrão de `r toPercent(bestCombination$sd)` e retorno esperado de `r bestCombination$mean`.
+Ao performar as combinações dos ativos possíveis foram encontradas as 5 combinações com melhores índice Sharpe conforme demonstrado na @tbl-melhoresCombinacoes. Sendo o ponto de tangência do portfólio com a combinação de `r toPercent(as.numeric(summaryBestCombination))` dos ativos distribuídos em `r textList(names(summaryBestCombination))` respectivamente, sendo o índice Sharpe de `r round(bestCombination$sharpeRatePortfolio,4)`, desvio padrão de `r toPercent(bestCombination$sd)` e retorno esperado de `r bestCombination$mean`.
 
-Já o ponto de menor variancia do portfólio é composto por `r toPercent(as.numeric(summarysafetyCombination))` do ativo composto de `r textList(names(summarysafetyCombination))` com um indice sharpe de `r round(safetyCombination$sharpeRatePortfolio,4)`, desvio padrão de `r toPercent(safetyCombination$sd)` e retorno esperado de `r safetyCombination$mean`.
+Já o ponto de menor variância do portfólio é composto por `r toPercent(as.numeric(summarysafetyCombination))` do ativo composto de `r textList(names(summarysafetyCombination))` com um índice Sharpe de `r round(safetyCombination$sharpeRatePortfolio,4)`, desvio padrão de `r toPercent(safetyCombination$sd)` e retorno esperado de `r safetyCombination$mean`.
 
 ```{R}
 #| label: tbl-melhoresCombinacoes
-#| tbl-cap: "top 5 melhores combinações com base no índice Sharpe"
+#| tbl-cap: "top 5 melhores combinações com base na razão de Sharpe"
 
 slice_max(possibilities,sharpeRatePortfolio,n=5) %>% 
   mutate_at(vars(1:length(symbols)),~paste0(.x*100,"%")) %>%
@@ -543,11 +538,11 @@ slice_max(possibilities,sharpeRatePortfolio,n=5) %>%
 
 ```
 
-Ao realizar todas as `r format(nrow(possibilities),big.mark=".",decimal.mark=",")` combinações de carteira possiveis, foi traçado o gráfico de optimização de portfólio e fronteira eficiente no qual foi destacado as siglas M.V significando o ponto de menor variância e a sigla P.T se referindo ao Ponto de Tangência, veja em @fig-fronteiraEficiente.
+Ao realizar todas as `r format(nrow(possibilities),big.mark=".",decimal.mark=",")` combinações de carteira possíveis, foi traçado o gráfico de otimização de portfólio e fronteira eficiente no qual foi destacado as siglas M.V significando o ponto de menor variância e a sigla P.T se referindo ao Ponto de Tangência, veja em @fig-fronteiraEficiente.
 
 ```{R}
 #| label: fig-fronteiraEficiente
-#| fig-cap: Optimização de portfolio & Fronteira eficiente
+#| fig-cap: Otimização de portfólio & Fronteira eficiente
 #| fig-width: !expr figWidth
 #| fig-height: !expr figHeight
 
@@ -574,13 +569,13 @@ possibilities %>%
 
 ```
 
-Por fim foi comparado o retorno do portfólio com pesos igualmente dsitribuidos, classificado como portfólio normal veja na @fig-retornoPortfolioNormal, com o retorno do portfólio optimizado segundo o ponto de tangência da fronteira eficiente, veja na @fig-retornoPortfolioOptmiziado.
+Por fim foi comparado o retorno do portfólio com pesos igualmente distribuídos, classificado como portfólio normal veja na @fig-retornoPortfolioNormal, com o retorno do portfólio otimizado segundo o ponto de tangência da fronteira eficiente, veja na @fig-retornoPortfolioOptmiziado.
 
-Os resultados obtidos foram que para o portfólio normal o desvio padrão é igual a `r sd(portfolio_return$portfolio.returns)` e retorno esperado de `r mean(portfolio_return$portfolio.returns)` enquanto pro portfólio optmizado o desvio padrão é de `r sd(portfolio_return_opmitized$portfolio.returns)` e o retorno esperado de `r mean(portfolio_return_opmitized$portfolio.returns)` ou seja a optimização do portfólio o tornou em um portfólio mais arriscado com maior retorno.
+Os resultados obtidos foram que para o portfólio normal o desvio padrão é igual a `r sd(portfolio_return$portfolio.returns)` e retorno esperado de `r mean(portfolio_return$portfolio.returns)` enquanto pro portfólio optmizado o desvio padrão é de `r sd(portfolio_return_opmitized$portfolio.returns)` e o retorno esperado de `r mean(portfolio_return_opmitized$portfolio.returns)` ou seja a otimização do portfólio o tornou em um portfólio mais arriscado com maior retorno.
 
 ```{R}
 #| label: fig-retornoPortfolioNormal
-#| fig-cap: Retorno do portfolio normal
+#| fig-cap: Retorno do portfólio normal
 #| fig-width: !expr figWidth
 #| fig-height: !expr figHeight
 
@@ -613,7 +608,7 @@ portfolio_plot %>%
 
 ```{r}
 #| label: fig-retornoPortfolioOptmiziado
-#| fig-cap: Retorno do portfolio optimizado
+#| fig-cap: Retorno do portfólio optimizado
 #| fig-width: !expr figWidth
 #| fig-height: !expr figHeight
 
@@ -642,27 +637,27 @@ portfolio_plot_optimized %>%
         legend.title = element_blank())
 ```
 
-De tal forma é possivel verificar que a aplicação da Moderna teoria de portfólio ao mercado de critpmoedas é valido, pois através do metodo conseguimos elevar o indice sharpe e encontrar o ponto de tangência do portfólio.
+De tal forma é possível verificar que a aplicação da Moderna teoria de portfólio ao mercado de criptomoedas é valido, pois através da moderna teoria de portfólio conseguimos elevar a razão de Sharpe e encontrar o ponto de tangência do portfólio.
 
 # CONCLUSÂO {#sec-Conclusão}
 
-Ao longo deste estudo foi abordado o conceito de criptmoeda, seu funcionamento, os riscos e os benefícios que advem com a sua utilização.
+Ao longo deste estudo foi abordado o conceito de criptomoeda, seu funcionamento, os riscos e os benefícios da sua utilização.
 
-Além disso foi exposto o conceito de moeda e porque as criptomoedas devam ser caracterizadas como um ativo financeiro tecnológico ao invês de uma moeda fiduciária, sendo, sobre o ponto de vista econômico, a sua natureza especulativa com alta volatidade de preços que afasta principalmente as criptomoedas da função reserva de valor.
+Além disso foi exposto o conceito de moeda e porque as criptomoedas devam ser caracterizadas como um ativo financeiro tecnológico ao invés de uma moeda fiduciária, sendo, sobre o ponto de vista econômico, a sua natureza especulativa com alta volatidade de preços que afasta principalmente as criptomoedas da função reserva de valor.
 
-Também foi avaliado sob o ponto de vista juridico e verificado a situação regulatória atual das criptomoedas no Brasil no qual é definido atualmente como um ativo financeiro.
+Também foi avaliado sob o ponto de vista jurídico e verificado a situação regulatória atual das criptomoedas no Brasil no qual é definido atualmente como um ativo financeiro.
 
-Além do mais buscou compreender o conceito da moderna teoria de portfólio de markowitz e sua aplicação no mercado de criptmoedas.
+Além do mais buscou compreender o conceito da moderna teoria de portfólio de Markowitz e sua aplicação no mercado de criptomoedas.
 
-Por fim foi analisado os resultados da moderna teoria de portfólio numa carteira composta exclusivamente de criptomoedas, no qual foi comparado um portfólio de criptomoedas igualmente distribuido com o portfólio optimizado. Sendo os resultados positivos sobre a sua aplicação ao determinar o ponto de tangência, menor variancia e traçar a fronteira eficiente do portfólio.
+Por fim foi analisado os resultados da moderna teoria de portfólio numa carteira composta exclusivamente de criptomoedas, no qual foi comparado um portfólio de criptomoedas igualmente distribuído com o portfólio otimizado. Sendo os resultados positivos sobre a sua aplicação ao determinar o ponto de tangência, menor variância e traçar a fronteira eficiente do portfólio.
 
 Ao realizar o estudo, foi encontrado a limitação temporal dos dados no qual a criptomoeda da Solana só há dados a partir de 11/04/2020, dessa forma para poder comparar o portfólio foram utilizadas somente os dados de 11/04/2020 em diante.
 
 Outra limitação encontrada foi a memória computacional, no qual ao tentar verificar todas as combinações possíveis de carteira alterando em 0,05 da quantidade percentual alocado em determinados ativos, sendo que o somatório de todos os ativos seja igual a 1, excedeu a memória limite disposta no momento, sendo assim, afim de contornar tal problemática a variação em cada ativo passou pra 0,1.
 
-A taxa livre de risco utilizada foi a taxa Selic diária média, no qual foi retirado uma média da taxa Selic anual de `r dataInicio` até `r`dataFim`que resultou em`r toPercent(selicAnualMedia)`e posteriormente convertido a taxa de juros diária que resultou em`r toPercent(rfr)\`.
+A taxa livre de risco utilizada foi a taxa Selic diária média, no qual foi retirado uma média da taxa Selic anual de `r dataInicio` até `r dataFim`que resultou em`r toPercent(selicAnualMedia)`e posteriormente convertido a taxa de juros diária que resultou em`r toPercent(rfr)`.
 
-foi possivel aprender também a realizar cálculos dos retornos do portfólio, índice Sharpe, curtose, distorções e gerar diversas combinações de carteiras a fim de encontrar a fronteira eficiente e ponto de tangência.
+foi possível aprender também a realizar cálculos dos retornos do portfólio, índice Sharpe, curtose, distorções e gerar diversas combinações de carteiras a fim de encontrar a fronteira eficiente e ponto de tangência.
 
 Também foi possível a compreensão do ponto de vista econômico quais características devem ser preenchidas pra que seja considerado uma moeda e da mesma forma do ponto de vista jurídico para tal assunto.
 
@@ -676,19 +671,19 @@ Além disso como pontos de aprofundamento sobre o atual método empregado, seria
 
 Por fim vale a pena destacar também que devido a sua natureza especulativa fosse interessante uma análise das finanças comportamentais.
 
-Ao analisar os objetivos traçados na pesquisa foi possivel obter os seguintes resultados em cada um deles:
+Ao analisar os objetivos traçados na pesquisa foi possível obter os seguintes resultados em cada um deles:
 
-objetivo geral satisfeito ao conseguir aplicar a metodologia de portfólio de markowitz no mercado de criptomoedas.
+objetivo geral satisfeito ao conseguir aplicar a metodologia de portfólio de Markowitz no mercado de criptomoedas.
 
-Já nos objetivos especificos, que compreendiam: Conceituar criptmoedas como ativos financeiro, Diferenciar o mercado criptoativo do mercado de renda variável, Analisar os impactos das regulações desse setor no Brasil e Comparar o resultado da utilização do método contra uma seleção de portifólio igualmente distribuído.
+Já nos objetivos específicos, que compreendiam: conceituar criptomoedas como ativos financeiro, diferenciar o mercado criptoativo do mercado de renda variável, analisar os impactos das regulações desse setor no Brasil e comparar o resultado da utilização do método contra uma seleção de portifólio igualmente distribuído.
 
-O objetivo específico conceituar criptmoedas como ativos financeiros foi satisfeito ao realizar a revisão de literatura.
+O objetivo específico conceituar criptomoedas como ativos financeiros foi satisfeito ao realizar a revisão de literatura.
 
-O objetivo específico diferenciar o mercado criptoativo do mercado de renda variável foi satifesito ao verificar sobre os pontos regulatorios e tecnologicos que ambos diferem.
+O objetivo específico diferenciar o mercado criptoativo do mercado de renda variável foi satisfeito ao verificar sobre os pontos regulatórios e tecnológicos que ambos diferem.
 
-O objetivo específico Analisar os impactos das regulações desse setor no Brasil foi satisfeito ao verificar que com a criação da lei 14.478/2022 ficou definido a classificação de criptmoeda, a equiparação das empresas prestadoras de serviços de criptmoedas com instituições financeiras e elas estariam sujeitas, ao conduzir operações relacionadas a aos ativos digitais, ao codigo de defesa do consumidor.
+O objetivo específico analisar os impactos das regulações desse setor no Brasil foi satisfeito ao verificar que com a criação da lei 14.478/2022 ficou definido a classificação de criptomoeda, a equiparação das empresas prestadoras de serviços de criptomoedas com instituições financeiras e elas estariam sujeitas, ao conduzir operações relacionadas a aos ativos digitais, ao código de defesa do consumidor.
 
-O objetivo específico comparar o resultado da utilização do método contra uma seleção de portifólio igualmente distribuído foi satisfeito resultando na melhora de perfomance do portfólio.
+O objetivo específico comparar o resultado da utilização do método contra uma seleção de portifólio igualmente distribuído foi satisfeito resultando na melhora de performance do portfólio.
 
 {{< pagebreak >}}
 
