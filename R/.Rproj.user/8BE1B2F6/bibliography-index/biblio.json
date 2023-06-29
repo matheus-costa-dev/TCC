@@ -1945,6 +1945,51 @@
             "title": "Markowitz: Conheça o criador da teoria moderna do portfólio",
             "title-short": "Markowitz",
             "type": ""
+        },
+        {
+            "URL": "https://www.R-project.org/",
+            "author": [
+                {
+                    "given": "R Core Team"
+                }
+            ],
+            "id": "base",
+            "issued": {
+                "date-parts": [
+                    [
+                        2023
+                    ]
+                ]
+            },
+            "title": "R: A language and environment for statistical computing",
+            "title-short": "R",
+            "type": "article-journal"
+        },
+        {
+            "DOI": "10.2307/2975974",
+            "URL": "https://www.jstor.org/stable/2975974?origin=crossref",
+            "author": [
+                {
+                    "family": "Markowitz",
+                    "given": "Harry"
+                }
+            ],
+            "container-title": "The Journal of Finance",
+            "id": "markowitz1952",
+            "issue": "1",
+            "issued": {
+                "date-parts": [
+                    [
+                        1952,
+                        3
+                    ]
+                ]
+            },
+            "language": "en",
+            "page": "77",
+            "title": "Portfolio Selection",
+            "type": "article-journal",
+            "volume": "7"
         }
     ],
     "project_biblios": []

@@ -69,18 +69,31 @@ sr_portfolio_optimized = max_sr$sharpeRatePortfolio
 pRiskReturn_cryptocurrency = asset_return_long %>%
   group_by(asset) %>%
   summarise(sd= sd(returns), mean= mean(returns)) %>%
-  add_row(asset="PORTFOLIO NORMAL", sd = sd_portfolio, mean=mean_portfolio ) %>%
-  add_row(asset="PORTFOLIO OPTMIZADO", sd = sd_portfolio_optimized, mean=mean_portfolio_optimized ) %>%
   ggplot(aes(x=sd,y=mean,color=asset)) +
   geom_point(size=2, show.legend = FALSE) + 
   scale_x_continuous(labels = scales::percent) +
   labs(y="Retorno esperado",
        x="Risco",
-       colour="Ativo",
-       title = "Risco x Retorno") +
+       colour="Ativo") +
   geom_text(aes(label = asset, y = mean + .0001),size=2) +
   theme_bw() +
   theme(legend.position="none", plot.title = element_text(hjust = .5))
+
+
+pRiskReturnComparative_cryptocurrency = data.frame(asset = c("Normal","Otimizado"),
+                                                   sd = c(sd_portfolio,sd_portfolio_optimized),
+                                                   mean = c(mean_portfolio,mean_portfolio_optimized)) %>%
+  ggplot(aes(x=sd,y=mean,color=asset)) +
+  geom_point(size=2, show.legend = T) + 
+  scale_x_continuous(labels = scales::percent) +
+  labs(y="Retorno esperado",
+       x="Risco",
+       colour="Portfólio") +
+  theme_bw() +
+  theme(legend.position = "bottom")
+
+
+  
 
 
 ## optimização de portfolio e fronteira eficiente ----
@@ -110,7 +123,7 @@ pEficientFrontier_cryptocurrency = possibilities %>%
 ### estrutura ----
 
 portfolio_plot = portfolio_return %>% 
-  to.weekly(OHLC=F) %>%
+  #to.weekly(OHLC=F) %>%
   as.data.frame(row.names = index(.)) %>%
   rownames_to_column("date") %>%
   rename("returns"=portfolio.returns) %>%
@@ -124,7 +137,7 @@ portfolio_plot = portfolio_return %>%
 
 
 portfolio_plot_optimized = portfolio_return_opmitized %>% 
-  to.weekly(OHLC=F) %>%
+  #to.weekly(OHLC=F) %>%
   as.data.frame(row.names = index(.)) %>%
   rownames_to_column("date") %>%
   rename("returns"=portfolio.returns) %>%
@@ -147,7 +160,7 @@ yMin = min(c(portfolio_plot$returns, portfolio_plot_optimized$returns))
 
 portfolio_plot %>%
   ggplot(aes(x=date, y =returns,color=color)) +
-  geom_point() +
+  geom_point(size=.5) +
   scale_color_manual(name="Legenda",
                      labels=c("1 Desvio padrão acima da media",
                               "esta entre um desvio padrão acima e abaixo da média",
@@ -172,7 +185,7 @@ portfolio_plot %>%
 
 portfolio_plot_optimized %>%
   ggplot(aes(x=date, y =returns,color=color)) +
-  geom_point() +
+  geom_point(size=.5) +
   scale_color_manual(name="Legenda",
                      labels=c("1 Desvio padrão acima da media",
                               "esta entre um desvio padrão acima e abaixo da média",
