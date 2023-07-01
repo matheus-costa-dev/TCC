@@ -26,13 +26,13 @@ format:
     link-citations: true
     link-bibliography: true
     table-of-contents: true
-    reference-doc: ModeloTCC8.dotx
+    reference-doc: source/ModeloTCC8.dotx
     output-file: "TCC"
     output-ext: "docx"
 editor: visual
 lang: pt
-bibliography: references.bib
-csl: ABNT.csl
+bibliography: source/references.bib
+csl: source/ABNT.csl
 execute: 
   echo: false
   warning: false
@@ -50,7 +50,7 @@ library(corrplot)
 library(RColorBrewer)
 library(knitr)
 source("functions/allFunctions.R")
-source("variaveis.R")
+source("source/variaveis.R")
 
 
 dataInicio = dmyFormat(from)

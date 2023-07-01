@@ -9,7 +9,7 @@ library(corrplot)
 library(RColorBrewer)
 library(knitr)
 source("functions/allFunctions.R")
-source("variaveis.R")
+source("source/variaveis.R")
 
 # codigo ----
 
