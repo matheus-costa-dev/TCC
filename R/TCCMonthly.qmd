@@ -502,7 +502,7 @@ A fronteira eficiente é composta por dois pontos extremos: o ponto de menor var
 
 # RESULTADOS {#sec-resultados}
 
-A relação de risco e retorno esperado entre os ativos da carteira é demonstrada na @fig-RiscoxRetorno, o ativo de menor risco é `r less_riskier$asset` com um desvio padrão de `r toPercent(less_riskier$sd)` e retorno esperado de `r less_riskier$mean`. Enquanto o ativo de maior retorno esperado é `r more_proftible$asset` com o desvio padrão de `r toPercent(more_proftible$sd)` e retorno esperado de `r more_proftible$mean`.
+A relação de risco e retorno esperado entre os ativos da carteira é demonstrada na @fig-RiscoxRetorno, o ativo de menor risco é `r less_riskier$asset` com um desvio padrão de `r less_riskier$sd` e retorno esperado de `r less_riskier$mean`. Enquanto o ativo de maior retorno esperado é `r more_proftible$asset` com o desvio padrão de `r more_proftible$sd` e retorno esperado de `r more_proftible$mean`.
 
 
 ```{R}
@@ -569,9 +569,9 @@ corrplot(correlation_cryptocurrency,
 ```
 
 
-Ao realizar as combinações dos ativos possíveis foram encontradas as 5 melhores combinações com base no índice Sharpe, conforme demonstrado na @tbl-melhoresCombinacoes. O ponto de tangência do portfólio com a combinação de `r toPercent(as.numeric(summaryBestCombination))` dos ativos distribuídos em `r textList(names(summaryBestCombination))` respectivamente, O índice Sharpe foi de `r round(bestCombination$sharpeRatePortfolio,4)`, desvio padrão de `r toPercent(bestCombination$sd)` e retorno esperado de `r bestCombination$mean`.
+Ao realizar as combinações dos ativos possíveis foram encontradas as 5 melhores combinações com base no índice Sharpe, conforme demonstrado na @tbl-melhoresCombinacoes. O ponto de tangência do portfólio com a combinação de `r toPercent(as.numeric(summaryBestCombination))` dos ativos distribuídos em `r textList(names(summaryBestCombination))` respectivamente, O índice Sharpe foi de `r round(bestCombination$sharpeRatePortfolio,4)`, desvio padrão de `r bestCombination$sd` e retorno esperado de `r bestCombination$mean`.
 
-Já o ponto de menor variância do portfólio é composto por `r toPercent(as.numeric(summarysafetyCombination))` alocado em `r textList(names(summarysafetyCombination))` com um índice Sharpe de `r round(safetyCombination$sharpeRatePortfolio,4)`, desvio padrão de `r toPercent(safetyCombination$sd)` e retorno esperado de `r safetyCombination$mean`.
+Já o ponto de menor variância do portfólio é composto por `r toPercent(as.numeric(summarysafetyCombination))` alocado em `r textList(names(summarysafetyCombination))` respectivamente, com um índice Sharpe de `r round(safetyCombination$sharpeRatePortfolio,4)`, desvio padrão de `r safetyCombination$sd` e retorno esperado de `r safetyCombination$mean`.
 
 
 ```{R}
@@ -644,7 +644,7 @@ data.frame(asset = c("Igualmente distribuído","Otimizado"),
           mean = c(mean_portfolio,mean_portfolio_optimized)) %>%
   ggplot(aes(x=sd,y=mean,color=asset)) +
   geom_point(size=2, show.legend = T) + 
-  scale_x_continuous(labels = scales::percent) +
+  # scale_x_continuous(labels = scales::percent) +
   labs(y="Retorno esperado",
        x="Risco",
        colour="Portfólio") +
@@ -652,7 +652,7 @@ data.frame(asset = c("Igualmente distribuído","Otimizado"),
   theme(legend.position = "bottom")
 ```
 
-Por fim foi comparado os retornos diários do portfólio igualmente distribuído, veja na @fig-retornoPortfolioIgualmenteDistribuido, contra os retornos diários do portfólio otimizado, veja na @fig-retornoPortfolioOtimizado.
+Por fim foi comparado os retornos mensais do portfólio igualmente distribuído, veja na @fig-retornoPortfolioIgualmenteDistribuido, contra os retornos mensais do portfólio otimizado, veja na @fig-retornoPortfolioOtimizado.
 
 No qual confirma que o portfólio otimizado é mais arriscado com maiores retornos.
 
