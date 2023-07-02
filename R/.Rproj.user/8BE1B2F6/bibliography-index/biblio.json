@@ -1990,6 +1990,81 @@
             "title": "Portfolio Selection",
             "type": "article-journal",
             "volume": "7"
+        },
+        {
+            "URL": "https://www.anbima.com.br/pt_br/noticias/cresce-numero-de-investidores-brasileiros-em-2022-e-perspectiva-para-2023-e-de-novo-aumento.htm",
+            "author": [
+                {
+                    "family": "ANBIMA"
+                }
+            ],
+            "id": "anbima2023",
+            "issued": {
+                "date-parts": [
+                    [
+                        2023,
+                        4,
+                        6
+                    ]
+                ]
+            },
+            "language": "pt-BR",
+            "title": "Cresce número de investidores brasileiros em 2022 e perspectiva para 2023 é de novo aumento  ANBIMA",
+            "type": ""
+        },
+        {
+            "author": [
+                {
+                    "family": "Zanjirdar",
+                    "given": "Majid"
+                }
+            ],
+            "id": "zanjirdar2020",
+            "issue": "4",
+            "issued": {
+                "date-parts": [
+                    [
+                        2020
+                    ]
+                ]
+            },
+            "language": "en",
+            "title": "Overview of Portfolio Optimization Models",
+            "type": "article-journal",
+            "volume": "5"
+        },
+        {
+            "DOI": "10.33448/rsd-v11i2.25921",
+            "URL": "https://rsdjournal.org/index.php/rsd/article/view/25921",
+            "author": [
+                {
+                    "family": "Neto",
+                    "given": "João José de Melo"
+                },
+                {
+                    "family": "Fontgalland",
+                    "given": "Isabel Lausanne"
+                }
+            ],
+            "container-title": "Research, Society and Development",
+            "id": "neto2022",
+            "issue": "2",
+            "issued": {
+                "date-parts": [
+                    [
+                        2022,
+                        1,
+                        23
+                    ]
+                ]
+            },
+            "language": "en",
+            "note": "Number: 2",
+            "page": "e26011225921-e26011225921",
+            "title": "Share portfolio advisory: Use of the Markowitz method to optimize the risk/return ratio in individual investor shares portfolio",
+            "title-short": "Share portfolio advisory",
+            "type": "article-journal",
+            "volume": "11"
         }
     ],
     "project_biblios": []

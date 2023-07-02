@@ -11,9 +11,28 @@ library(knitr)
 source("functions/allFunctions.R")
 source("source/variaveis.R")
 
+# alterando variavies ----
+
+rfr = selic$SELICMENSALMedia
+filePossibilites = paste0("PossibilitiesMonthly",rfr,".xlsx")
+fullPathPossibilites = paste(folder,filePossibilites,sep = "/")
 # codigo ----
 
-asset_return = getPrices(folder,symbols,from,to)
+prices = getSymbols(symbols,
+                    src = "yahoo",
+                    from=from,
+                    to=to,
+                    auto.assign = TRUE) %>%
+  map(~Ad(get(.))) %>%
+  reduce(merge) %>%
+  setNames(symbols)
+
+prices_monthly <- to.monthly(prices,
+                             indexAt = "lastof",
+                             OHLC = FALSE)
+
+
+asset_return = Return.calculate(prices_monthly,method = "log")  %>% na.omit()
 
 covariance_cryptocurrency = cov(asset_return)
 correlation_cryptocurrency = cor(asset_return)
@@ -42,7 +61,7 @@ possibilities = loadPossibilites(filePossibilites,fullPathPossibilites,symbols,b
 
 min_var <- slice_min(possibilities,sd)
 max_sr <- slice_max(possibilities,sharpeRatePortfolio)
-max_re <- slice_max(possibilities,sharpeRatePortfolio)
+max_re <- slice_max(possibilities,mean)
 
 
 bestCombination = slice_max(possibilities,sharpeRatePortfolio)
@@ -66,18 +85,20 @@ sr_portfolio_optimized = max_sr$sharpeRatePortfolio
 
 ## risco x retorno ----
 
-pRiskReturn_cryptocurrency = asset_return_long %>%
+asset_return_long %>%
   group_by(asset) %>%
   summarise(sd= sd(returns), mean= mean(returns)) %>%
   ggplot(aes(x=sd,y=mean,color=asset)) +
   geom_point(size=2, show.legend = FALSE) + 
-  scale_x_continuous(labels = scales::percent) +
+  # scale_x_continuous(labels = scales::percent) +
+  geom_text(aes(label = asset, y = mean + .005),size=2) +
   labs(y="Retorno esperado",
        x="Risco",
        colour="Ativo") +
-  geom_text(aes(label = asset, y = mean + .0001),size=2) +
   theme_bw() +
-  theme(legend.position="none", plot.title = element_text(hjust = .5))
+  theme(legend.position="none")
+
+
 
 
 pRiskReturnComparative_cryptocurrency = data.frame(asset = c("Normal","Otimizado"),
@@ -98,24 +119,40 @@ pRiskReturnComparative_cryptocurrency = data.frame(asset = c("Normal","Otimizado
 
 ## optimização de portfolio e fronteira eficiente ----
 
-pEficientFrontier_cryptocurrency = possibilities %>%
+p = possibilities %>%
   ggplot(aes(x = sd, y = mean, color = sharpeRatePortfolio)) +
   geom_point() +
-  theme_classic() +
-  scale_y_continuous(labels = scales::percent) +
-  scale_x_continuous(labels = scales::percent) +
-  labs(x = 'Risco',
-       y = 'Retorno esperado',
-       title = "Optimização de portfolio & Fronteira eficiente",
-       colour = "Indice sharpe") +
   geom_point(aes(x = sd,
                  y = mean), data = min_var, color = 'red') +
   geom_point(aes(x = sd,
                  y = mean), data = max_sr, color = 'red') +
-  geom_text(x=min_var$sd, y = min_var$mean + .0002,label="Menor variancia", color = "red",size=3,check_overlap = T) +
-  geom_text(x=max_sr$sd, y = max_sr$mean + .0002,label="Ponto de tangência", color = "red",size=3, check_overlap = T) +
+  geom_text(x=min_var$sd - .01, y = min_var$mean,label="M.V", color = "red",size=3,check_overlap = T) +
+  geom_text(x=max_sr$sd - .01, y = max_sr$mean,label="P.T", color = "red",size=3, check_overlap = T) +
+  geom_text(x= 0.01,y=rfr,color="red",label="Rf",size=3, check_overlap = T) +
+  geom_point(aes(x = 0,y=rfr),color="red") +
+  expand_limits(x = 0, y = 0) +
+  scale_x_continuous(expand = c(0, 0)) + 
+  scale_y_continuous(expand = c(0, 0)) +
+  labs(x = 'Risco',
+       y = 'Retorno esperado',
+       title = "Optimização de portfolio & Fronteira eficiente",
+       colour = "Indice sharpe") +
   theme_bw() +
   theme( plot.title = element_text(hjust = .5))
+
+
+p + geom_segment(aes(x=0,
+                     y=rfr,
+                     xend= max_sr$sd,
+                     yend=max_sr$mean), color="black")
+
+
+
+
+# p + geom_segment(aes(x=0,
+#                      y=rfr,
+#                      xend= max_risk$sd,
+#                      yend=max_sr$mean + .048), color="black")
 
 
 ## retornos diarios portfolio ----
@@ -160,7 +197,7 @@ yMin = min(c(portfolio_plot$returns, portfolio_plot_optimized$returns))
 
 portfolio_plot %>%
   ggplot(aes(x=date, y =returns,color=color)) +
-  geom_point(size=.5) +
+  geom_point() +
   scale_color_manual(name="Legenda",
                      labels=c("1 Desvio padrão acima da media",
                               "esta entre um desvio padrão acima e abaixo da média",
@@ -185,7 +222,7 @@ portfolio_plot %>%
 
 portfolio_plot_optimized %>%
   ggplot(aes(x=date, y =returns,color=color)) +
-  geom_point(size=.5) +
+  geom_point() +
   scale_color_manual(name="Legenda",
                      labels=c("1 Desvio padrão acima da media",
                               "esta entre um desvio padrão acima e abaixo da média",
@@ -206,3 +243,10 @@ portfolio_plot_optimized %>%
         legend.spacing.x = unit(0,"mm") ,
         legend.direction = "horizontal",
         legend.title = element_blank())
+
+###
+
+
+
+
+

@@ -102,6 +102,7 @@ loadPossibilites = function(filePossibilites="",fullPathPossibilites="",symbols=
     write.xlsx(possibilities,fullPathPossibilites)
   }
   
+  return(possibilities)
 }
 
 # possibilities = read.xlsx("outputData/Possibilities0.00531176950392753.xlsx") %>%

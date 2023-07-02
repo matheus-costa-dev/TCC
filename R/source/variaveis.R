@@ -14,10 +14,10 @@ by = .1
 ## selic
 
 selic = loadSelicSummary(folder,from,to,businessDay=T)
-rfr = selic$SELICDiariaMédia
+rfr = selic$SELICMENSALMedia
 selicAnualMedia = selic$SELICAnualMedia
 
 # todas possibilidades de construção de portfolio
 
-filePossibilites = paste0("Possibilities",rfr,".xlsx")
+filePossibilites = paste0("PossibilitiesMonthly",rfr,".xlsx")
 fullPathPossibilites = paste(folder,filePossibilites,sep = "/")
