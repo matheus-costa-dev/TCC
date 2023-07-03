@@ -440,7 +440,7 @@
                     "given": "Sabri Burak"
                 },
                 {
-                    "family": "?zdurak",
+                    "family": "Özdurak",
                     "given": "Caner"
                 }
             ],
@@ -2065,6 +2065,126 @@
             "title-short": "Share portfolio advisory",
             "type": "article-journal",
             "volume": "11"
+        },
+        {
+            "URL": "https://dadosabertos.bcb.gov.br/dataset/11-taxa-de-juros---selic/resource/b73edc07-bbac-430c-a2cb-b1639e605fa8",
+            "id": "BancoCentralAPI",
+            "language": "pt{\\_}br",
+            "title": "Taxa de juros - Selic - json_serie-sgs-11 - Portal de Dados Abertos do Banco Central do Brasil",
+            "type": ""
+        },
+        {
+            "author": [
+                {
+                    "family": "Nakamoto",
+                    "given": "Satoshi"
+                }
+            ],
+            "id": "nakamoto",
+            "language": "en",
+            "title": "Bitcoin: A Peer-to-Peer Electronic Cash System",
+            "title-short": "Bitcoin",
+            "type": "article-journal"
+        },
+        {
+            "URL": "https://ethereum.org",
+            "id": "ethereuma",
+            "language": "en",
+            "title": "Ethereum Whitepaper",
+            "type": ""
+        },
+        {
+            "URL": "https://whitepaper.io/document/10/binance-whitepaper",
+            "id": "binance",
+            "title": "Binance BNB whitepapers - whitepaper.io",
+            "type": ""
+        },
+        {
+            "URL": "https://whitepaper.io/document/1/ripple-whitepaper",
+            "id": "ripplex",
+            "title": "Ripple XRP whitepapers - whitepaper.io",
+            "type": ""
+        },
+        {
+            "URL": "https://whitepaper.io/document/581/cardano-whitepaper",
+            "id": "cardanoa",
+            "title": "Cardano ADA whitepapers - whitepaper.io",
+            "type": ""
+        },
+        {
+            "URL": "https://whitepaper.io/document/672/dogecoin-whitepaper",
+            "id": "dogecoina",
+            "title": "Dogecoin DOGE whitepapers - whitepaper.io",
+            "type": ""
+        },
+        {
+            "URL": "https://whitepaper.io/document/602/solana-whitepaper",
+            "id": "solanas",
+            "title": "Solana SOL whitepapers - whitepaper.io",
+            "type": ""
+        },
+        {
+            "URL": "https://whitepaper.io/document/594/matic-network-whitepaper",
+            "id": "maticne",
+            "title": "Matic network MATIC whitepapers - whitepaper.io",
+            "type": ""
+        },
+        {
+            "URL": "https://whitepaper.io/document/0/bitcoin-whitepaper",
+            "id": "bitcoina",
+            "title": "Bitcoin BTC whitepapers - whitepaper.io",
+            "type": ""
+        },
+        {
+            "URL": "https://finance.yahoo.com/?guccounter=1&guce_referrer=aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS8&guce_referrer_sig=AQAAAIkcEOAymeA74yWSirY9wv3Q5Kkdy09X3-6DxArWocTYnELL9JNWXKwO9qqeoPBAARcZAWourslOKhowdmYNZ_fg1E6V8wx35ld6CQgaHiao4i9JX1N1kxaffXCCAk11uO-EEvO9dxXGWgVLhKEye1X8Dja1mvJ3nKUIgPc9N0gw",
+            "id": "yahoofi",
+            "title": "Yahoo finance - stock market live, quotes, business & finance news",
+            "type": ""
+        },
+        {
+            "URL": "https://ggplot2.tidyverse.org",
+            "author": [
+                {
+                    "family": "Wickham",
+                    "given": "Hadley"
+                }
+            ],
+            "id": "wickham2016",
+            "issued": {
+                "date-parts": [
+                    [
+                        2016
+                    ]
+                ]
+            },
+            "publisher": "Springer-Verlag New York",
+            "title": "ggplot2: Elegant graphics for data analysis",
+            "title-short": "ggplot2",
+            "type": "book"
+        },
+        {
+            "URL": "https://CRAN.R-project.org/package=xts",
+            "author": [
+                {
+                    "family": "Ryan",
+                    "given": "Jeffrey A."
+                },
+                {
+                    "family": "Ulrich",
+                    "given": "Joshua M."
+                }
+            ],
+            "id": "ryan2023",
+            "issued": {
+                "date-parts": [
+                    [
+                        2023
+                    ]
+                ]
+            },
+            "title": "Xts: eXtensible time series",
+            "title-short": "Xts",
+            "type": "book"
         }
     ],
     "project_biblios": []
