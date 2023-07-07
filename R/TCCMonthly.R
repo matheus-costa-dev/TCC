@@ -55,7 +55,15 @@ sd_portfolio = sd(portfolio_return$portfolio.returns)
 mean_portfolio = mean(portfolio_return$portfolio.returns)
 sr_portfolio = SharpeRatio(portfolio_return,Rf=rfr,FUN = "StdDev")
 
-## portfolio optimizado ----
+
+summaryPortfolioEquity= data.frame(asset=symbols,w,sharpeRatePortfolio=as.numeric(sr_portfolio),sd=sd_portfolio,mean=mean_portfolio)  %>%
+  pivot_wider(names_from = asset,values_from = w) %>% 
+  relocate(all_of(symbols))  %>%
+  suppressWarnings()
+
+
+
+## portfolio otimizado ----
 
 possibilities = loadPossibilites(filePossibilites,fullPathPossibilites,symbols,by)
 
@@ -78,6 +86,14 @@ portfolio_return_opmitized = Return.portfolio(asset_return,
 sd_portfolio_optimized = sd(portfolio_return_opmitized$portfolio.returns)
 mean_portfolio_optimized = mean(portfolio_return_opmitized$portfolio.returns)
 sr_portfolio_optimized = max_sr$sharpeRatePortfolio
+
+
+### comparando portfólios
+
+summaryPortfolios = rbind(summaryPortfolioEquity,bestCombination) %>%
+  mutate(Portfólio=c("Igualmente distribuído","Otimizado")) %>%
+  relocate(Portfólio) %>%
+  setNames(c("Portfólio",symbols,"Índice Sharpe","Risco", "Retorno esperado"))
 
 
 # graficos e tabelas ----
@@ -241,10 +257,6 @@ portfolio_plot_optimized %>%
         legend.spacing.x = unit(0,"mm") ,
         legend.direction = "horizontal",
         legend.title = element_blank())
-
-###
-
-
 
 
 

@@ -85,7 +85,12 @@ sd_portfolio = sd(portfolio_return$portfolio.returns)
 mean_portfolio = mean(portfolio_return$portfolio.returns)
 sr_portfolio = SharpeRatio(portfolio_return,Rf=rfr,FUN = "StdDev")
 
-# portfolio optimizado
+summaryPortfolioEquity= data.frame(asset=symbols,w,sharpeRatePortfolio=as.numeric(sr_portfolio),sd=sd_portfolio,mean=mean_portfolio)  %>%
+  pivot_wider(names_from = asset,values_from = w) %>% 
+  relocate(all_of(symbols))  %>%
+  suppressWarnings()
+
+# portfolio otimizado
 
 possibilities = loadPossibilites(filePossibilites,fullPathPossibilites,symbols,by)
 
@@ -110,6 +115,11 @@ sd_portfolio_optimized = sd(portfolio_return_opmitized$portfolio.returns)
 mean_portfolio_optimized = mean(portfolio_return_opmitized$portfolio.returns)
 sr_portfolio_optimized = max_sr$sharpeRatePortfolio
 
+### comparando portfólios
+
+summaryPortfolios = rbind(summaryPortfolioEquity,bestCombination) %>%
+  mutate(Portfólio=c("Igualmente distribuído","Otimizado")) %>%
+  relocate(Portfólio) 
 
 ### limitando o eixo Y
 
@@ -205,8 +215,8 @@ Para realizar os cálculos foi utilizado a linguagem de programação R e os seg
 %%| fig-height: 5
 
 flowchart TD
- a([Obtenção de dados]) ---|Selic| b[rbcb] 
- a ---|criptomoedas | c[quantmod] 
+ a([Obtenção de dados]) ---|SELIC| b[rbcb] 
+ a ---|Criptomoedas | c[quantmod] 
  b & c --> d[Transformação]
  d --> e[tidyverse] & f[R] & g[PerformanceAnalytics] & h[xts]
  e & f & g & h --> i{Resultado}
@@ -307,34 +317,6 @@ Outro ponto a destacar é a presença de bolhas no mercado de criptomoedas devid
 Para @schellinger2020 o aparecimento de bolhas no mercado de criptomoedas é devido à alta especulação.
 
 Além disso, o mercado de criptomoedas é sujeito a diversos tipos de golpes, no qual é categorizado entre sete tipos de golpes principais: esquemas ponzi, malware, falsos serviços criptos, golpes de taxas avançadas, e-mail negro, falsa ICO e lavagem de dinheiro [@bartoletti2021].
-
-O esquema ponzi é um golpe que promete pagar altos retornos sobre o montante investido. No qual estes retornos são pagos por novos participantes do esquema [@kerr2023].
-
-O vírus malware é categorizado entre dois tipos principais de vírus: ransomware e crypto loggers. No qual os desenvolvedores de vírus exploram a propriedade da não rastreabilidade das criptomoedas [@bartoletti2021].
-
-O vírus ransoware é uma violação dos aparelhos tecnológicos no qual bloqueiam o acesso a eles, até que determinado pagamento seja feito [MUSIALA, 2020 apud @trozze2022].
-
-Já no caso do vírus crypto loggers, ele é mais sutil ao ser uma interface transparente que tenta descobrir a chave secreta da carteira da vítima e assim realizar pagamentos da conta dele para a do golpista [@bartoletti2021].
-
-Os falsos serviços criptos são golpes em que criminosos desenvolveram serviços que se passam como aplicações reais, alguns exemplos são: falsas corretoras de criptomoedas, falsas carteiras, falsas misturas, falsas piscinas de mineração e falsas doações [@bartoletti2021].
-
-As falsas corretoras de criptomoedas se referem a golpes em que as vítimas são convencidas a comprar criptomoedas através dessas falsas corretoras de criptomoedas, após a compra fecham as falsas corretoras de criptomoedas e somem com o dinheiro [@kerr2023].
-
-As falsas carteiras são serviços que fornecem o armazenamento de criptomoedas no qual assim que as vítimas enviam suas criptomoedas, os criminosos transferem todos ou parcialmente o dinheiro existente da carteira da vítima [@kerr2023].
-
-Os falsos serviços de mistura permitem, ao randomizar o número de transações e utilizar algum endereço externo, apagar os links entre endereços iniciais e finais nos movimentos da blockchain. Porém eles recebem o dinheiro e não reenviam ao cliente [@bartoletti2021].
-
-As falsas piscinas de mineração são compreendidas como operações no qual, o criminoso, induzem as vítimas a investir em projetos que tem por intenção a operação de mineração de criptomoeda e com isso promete altos retornos, porém essas vítimas não são pagas [@kerr2023].
-
-As falsas doações são feitas através de campanhas de doações falsas que prometem ajudar em algum projeto ou pessoa, porém eles somem com o dinheiro [@bartoletti2021].
-
-Os golpes das taxas avançadas são práticas que tentam convencer a vítima a enviar criptomoedas a um endereço particular com promessas de retorno maior [Phillips & Wilder, 2020 apud @trozze2022].
-
-Os e-mails negros são um tipo de golpe em que e-mails são enviados as vítimas em que o golpista alega ter as hackeado e as gravado através da webcam. Dessa forma ele solicita pagamento de resgate para não publicar em redes sociais e deletar o material coletado [@bartoletti2021].
-
-As falsas ICO's se caracterizam com alguma característica particular que as demais não possuem, por exemplo como o apoio de uma celebridade ou um time falso de trabalho, induzem assim ao comprador adquirir participação no falso projeto [@bartoletti2021].
-
-A lavagem de dinheiro é caracterizada como dinheiro que provém de origem ilícita que para ser usado como dinheiro legal é feito um disfarce sobre sua origem. [@silveira2020]
 
 De tal forma é possível notar duas diferenças principais entre o mercado de renda variável com o de criptomoedas, são elas: o ambiente regulatório e a característica tecnológica aplicada [@benedetti2021].
 
@@ -546,9 +528,9 @@ corrplot(correlation_cryptocurrency,
          )
 ```
 
-Ao realizar as combinações dos ativos possíveis foram encontradas as 5 melhores combinações com base no índice Sharpe, conforme demonstrado na @tbl-melhoresCombinacoes. O ponto de tangência do portfólio com a combinação de `r toPercent(as.numeric(summaryBestCombination))` dos ativos distribuídos em `r textList(names(summaryBestCombination))` respectivamente, O índice Sharpe foi de `r round(bestCombination$sharpeRatePortfolio,4)`, desvio padrão de `r bestCombination$sd` e retorno esperado de `r bestCombination$mean`.
+Ao realizar as combinações dos ativos possíveis foram encontradas as 5 melhores combinações com base no índice Sharpe, conforme demonstrado na @tbl-melhoresCombinacoes. O ponto de tangência do portfólio com a combinação de `r textList(toPercent(as.numeric(summaryBestCombination)))` dos ativos distribuídos em `r textList(names(summaryBestCombination))` respectivamente, O índice Sharpe foi de `r round(bestCombination$sharpeRatePortfolio,4)`, desvio padrão de `r bestCombination$sd` e retorno esperado de `r bestCombination$mean`.
 
-Já o ponto de menor variância do portfólio é composto por `r toPercent(as.numeric(summarysafetyCombination))` alocado em `r textList(names(summarysafetyCombination))` respectivamente, com um índice Sharpe de `r round(safetyCombination$sharpeRatePortfolio,4)`, desvio padrão de `r safetyCombination$sd` e retorno esperado de `r safetyCombination$mean`.
+Já o ponto de menor variância do portfólio é composto por `r textList(toPercent(as.numeric(summarysafetyCombination)))` alocado em `r textList(names(summarysafetyCombination))` respectivamente, com um índice Sharpe de `r round(safetyCombination$sharpeRatePortfolio,4)`, desvio padrão de `r safetyCombination$sd` e retorno esperado de `r safetyCombination$mean`.
 
 ```{R}
 #| label: tbl-melhoresCombinacoes
@@ -557,8 +539,8 @@ Já o ponto de menor variância do portfólio é composto por `r toPercent(as.nu
 slice_max(possibilities,sharpeRatePortfolio,n=5) %>% 
   mutate_at(vars(1:length(symbols)),~paste0(.x*100,"%")) %>%
   mutate(sharpeRatePortfolio = round(sharpeRatePortfolio,4),
-         sd = paste0(round(sd * 100,4),"%") ) %>%
-  rename(`Indice Sharpe` = sharpeRatePortfolio,
+         sd = round(sd,4) ) %>%
+  rename(`Índice Sharpe` = sharpeRatePortfolio,
   Risco=sd,
   `Retorno esperado`= mean) %>%
   kable(format = "simple") 
@@ -604,7 +586,7 @@ p + geom_segment(aes(x=0,
 
 ```
 
-Após otimizar o portfólio foi possível verificar a relação de risco e retorno entre o portfólio otimizado e o portfólio igualmente distribuído, no qual o portfólio igualmente distribuído apresenta um risco de `r sd_portfolio` e retorno esperado de `r mean_portfolio`, enquanto no portfólio otimizado apresenta um risco de `r sd_portfolio_optimized` e retorno esperado de `r mean_portfolio_optimized`, veja na @fig-RiscoxRetornoComparativo. Ou seja, o portfólio otimizado é `r toPercent((sd_portfolio_optimized - sd_portfolio)/sd_portfolio_optimized)` mais arriscado e `r toPercent((mean_portfolio_optimized - mean_portfolio)/mean_portfolio_optimized)` mais lucrativo que o portfólio igualmente distribuído.
+Após otimizar o portfólio foi possível verificar a relação de risco e retorno entre o portfólio otimizado e o portfólio igualmente distribuído, no qual o portfólio igualmente distribuído apresenta um risco de `r sd_portfolio`, retorno esperado de `r mean_portfolio`, enquanto no portfólio otimizado apresenta um risco de `r sd_portfolio_optimized` e retorno esperado de `r mean_portfolio_optimized`, veja na @fig-RiscoxRetornoComparativo. Ou seja, o portfólio otimizado é `r toPercent((sd_portfolio_optimized - sd_portfolio)/sd_portfolio_optimized)` mais arriscado e `r toPercent((mean_portfolio_optimized - mean_portfolio)/mean_portfolio_optimized)` mais lucrativo que o portfólio igualmente distribuído.
 
 ```{R}
 #| label: fig-RiscoxRetornoComparativo
@@ -618,12 +600,29 @@ data.frame(asset = c("Igualmente distribuído","Otimizado"),
           mean = c(mean_portfolio,mean_portfolio_optimized)) %>%
   ggplot(aes(x=sd,y=mean,color=asset)) +
   geom_point(size=2, show.legend = T) + 
-  # scale_x_continuous(labels = scales::percent) +
   labs(y="Retorno esperado",
        x="Risco",
        colour="Portfólio") +
   theme_bw() +
   theme(legend.position = "bottom")
+```
+
+Também foi comparado o índice Sharpe entre esses dois portfólios, veja na tabela  no qual resultou para o portfólio igualmente distribuido um valor de `r as.numeric(sr_portfolio)` e no portfólio otimizado um valor de `r sr_portfolio_optimized`. Ou seja, o índice Sharpe no portfólio otimizado é `r toPercent((as.numeric(sr_portfolio_optimized) - sr_portfolio)/as.numeric(sr_portfolio_optimized))` maior que o no portfólio igualmente distribuído.
+
+```{R}
+#| label: tbl-comparativePortfolio
+#| tbl-cap: "Comparativo entre portfólios"
+
+comparativePortfolio = summaryPortfolios %>%
+  mutate_at(vars(1:Nsymbols+1),~paste0(.x*100,"%")) %>%
+  setNames(c("Portfólio",symbols,"Índice Sharpe","Risco", "Retorno esperado")) 
+
+kable(comparativePortfolio,
+      format = "simple",
+      digits = 3,
+      format.args = list(scientific=FALSE,big.mark = ".",decimal.mark=","))
+
+
 ```
 
 Por fim foi comparado os retornos mensais do portfólio igualmente distribuído, veja na @fig-retornoPortfolioIgualmenteDistribuido, contra os retornos mensais do portfólio otimizado, veja na @fig-retornoPortfolioOtimizado.
@@ -698,56 +697,23 @@ De tal forma é possível verificar que a aplicação da teoria moderna de portf
 
 # CONCLUSÂO {#sec-conclusao}
 
-Ao longo deste estudo foi abordado o conceito de criptomoeda, seu funcionamento, os riscos e os benefícios da sua utilização.
+Ao longo deste estudo foi abordado o conceito de criptomoeda, seu funcionamento, os riscos e os benefícios da sua utilização, o conceito de moeda e porque as criptomoedas devam ser caracterizadas como um ativo financeiro tecnológico ao invés de uma moeda fiduciária, buscou compreender o conceito da teoria moderna de portfólio de Markowitz e os benefícios da sua aplicação no mercado de criptomoedas.
 
-Foi exposto o conceito de moeda e porque as criptomoedas devam ser caracterizadas como um ativo financeiro tecnológico ao invés de uma moeda fiduciária.
+destaca-se nesse estudo, o fato do Brasil ser uns dos poucos países a ter uma legislação própria sobre criptomoedas e a limitar as corretoras de criptomoedas que operam sobre o território nacional, no qual são sujeitas a fiscalização. 
 
-Além disso foi exposto alguns riscos de golpes que envolvem criptomoedas e suas aplicações tanto no âmbito digital quanto no âmbito real.
+Ao analisar os resultados da aplicação da teoria moderna de otimização de portfólio de Markowitz no mercado de criptomoedas foi possível perceber em uma melhora nos resultados das aplicações financeiras utilizando como base o índice Sharpe. No qual foi comparado a carteira otimizada com uma carteira igualmente distribuída, resultando em um aumento do índice Sharpe de `r toPercent((as.numeric(sr_portfolio_optimized) - sr_portfolio)/as.numeric(sr_portfolio_optimized))`, no retorno esperado de `r toPercent((mean_portfolio_optimized - mean_portfolio)/mean_portfolio_optimized)` e no risco de `r toPercent((sd_portfolio_optimized - sd_portfolio)/sd_portfolio_optimized)`
 
-Da mesma, foi exposto os benefícios advindos de tais tecnologias e investimentos, como por exemplo uma fonte de renda extra através da prática da mineração e levantamento de fundo de investimento para startups e pequenas empresas através de ICO.
+Através desses resultados é possível inferir como positiva a aplicação desta teoria neste mercado financeiro emergente ao determinar o ponto de tangência, menor variância e traçar a fronteira eficiente do portfólio.
 
-Ao analisar sobre o ponto de vista econômico, a sua natureza especulativa com alta volatidade de preços que afasta principalmente as criptomoedas da função reserva de valor.
+Foi encontrado durante o estudo a limitação temporal dos dados no qual a criptomoeda da Solana só há dados disponíveis a partir de 11/04/2020, dessa forma para poder comparar o portfólio foram utilizadas somente os dados de 11/04/2020 em diante. Outra limitação encontrada foi a memória computacional, no qual ao tentar verificar todas as combinações possíveis da carteira ao alterar em 0,05 da quantidade percentual alocado em determinados ativos, respeitado que o somatório de todos os ativos deva ser igual a 1, excedeu a memória limite disposta, para contornar tal problemática a variação em cada ativo passou pra 0,1.
 
-Também foi avaliado sob o ponto de vista jurídico e verificado a situação regulatória das criptomoedas no Brasil no qual é definido como um ativo financeiro.
+É valido destacar que neste estudo foi utilizado a taxa SELIC como taxa livre de risco no qual por ser um mercado financeiro global fosse interessante a aplicação do mesmo estudo com a taxa livre de risco associada a B3, afim de verificar se com uma taxa mais baixa se a carteira otimizada se mantém como:`r textList(toPercent(as.numeric(summaryBestCombination)))` alocado em `r textList(names(summaryBestCombination))` respectivamente.
 
-Além do mais buscou compreender o conceito da teoria moderna de portfólio de Markowitz e sua aplicação no mercado de criptomoedas.
+Além disso como pontos de aprofundamento sobre a teoria utilizada seria interessante a alocação de um ou mais ativos negativamente correlacionado na carteira a fim de verificar a performance do portfólio. Da mesma forma, seria interessante verificar a utilização das criptomoedas como um ativo diversificador de investimento em uma carteira de renda variável. Também seria valido uma comparação entre os retornos obtidos através de uma carteira de criptomoedas otimizada, uma carteira de renda variável otimizada e uma carteira otimizada composta de criptomoedas e renda variável. Por outra lado, a utilização de outros teorias de otimização de portfólio poderia trazer novas perspectivas e resultados, alguns exemplos de teorias de otimização de portfólio a ser aplicadas são: Valor ao risco (Var), Valor condicional ao risco (CVar) e abordagem de Fuzzy (fuzzy approach). Vale a pena analisar também sob o enfoque das finanças comportamentais devido a sua natureza especulativa. Por fim seria valido analisar os benefícios provindos da recente regulação brasileira sobre criptomoedas, tanto para a sociedade quanto para o desenvolvimento do mercado financeiro de criptomoedas.
 
-Foi analisado os resultados da teoria moderna de portfólio numa carteira composta exclusivamente de criptomoedas, no qual foi comparado um portfólio de criptomoedas igualmente distribuído com o portfólio otimizado. Os resultados foram positivos sobre a sua aplicação ao determinar o ponto de tangência, menor variância e traçar a fronteira eficiente do portfólio.
+Ao analisar os objetivos traçados na pesquisa foi possível obter os seguintes resultados em cada um deles: objetivo principal foi satisfeito ao conseguir aplicar a metodologia de portfólio de Markowitz no mercado de criptomoedas. No objetivo específico conceituar criptomoedas como ativos financeiros foi satisfeito ao realizar a revisão de literatura. No objetivo específico diferenciar o mercado criptoativo do mercado de renda variável foi satisfeito ao verificar sobre os pontos regulatórios e tecnológicos que ambos diferem. No objetivo específico analisar os impactos das regulações desse setor no Brasil foi satisfeito ao verificar que com a criação da lei 14.478/2022 ficou definido a classificação de criptomoeda, a equiparação das empresas prestadoras de serviços de criptomoedas com instituições financeiras e elas estariam sujeitas, ao conduzir operações relacionadas aos ativos digitais e ao código de defesa do consumidor. No objetivo específico comparar o resultado da utilização do método contra uma seleção de portifólio igualmente distribuído foi satisfeito ao resultar na melhora de performance do portfólio.
 
-Ao realizar o estudo, foi encontrado a limitação temporal dos dados no qual a criptomoeda da Solana só há dados a partir de 11/04/2020, dessa forma para poder comparar o portfólio foram utilizadas somente os dados de 11/04/2020 em diante.
+Por fim, devido as criptomoedas estarem em seu estágio de desenvolvimento e serem uma nova forma de aplicação financeira, independentes de uma autoridade central e regulatória, é preciso cautela e estudos mais aprofundados sobre todas as possibilidades de benefícios que é possível obter com o continuo avanço desse mercado e as inovações tecnológico provenientes da evolução das criptomoedas. Também procurar compreender todos os riscos para a sociedade e o sistema financeiro.
 
-Outra limitação encontrada foi a memória computacional, no qual ao tentar verificar todas as combinações possíveis da carteira ao alterar em 0,05 da quantidade percentual alocado em determinados ativos, respeitado que o somatório de todos os ativos deva ser igual a 1, excedeu a memória limite disposta, para contornar tal problemática a variação em cada ativo passou pra 0,1.
-
-A taxa livre de risco utilizada no estudo foi a taxa SELIC mensal média, no qual foi retirado uma média da taxa SELIC anual, de `r dataInicio` até `r dataFim`, que resultou em `r toPercent(selicAnualMedia)` e posteriormente convertido a taxa de juros mensal que resultou em `r toPercent(rfr)`.
-
-foi possível aprender através do estudo a realização de cálculos de retorno do portfólio, índice Sharpe, curtose, distorções e gerar diversas combinações de carteiras a fim de encontrar a fronteira eficiente e ponto de tangência.
-
-Também foi possível a compreensão do ponto de vista econômico quais características devem ser preenchidas pra que seja considerado uma moeda e da mesma forma do ponto de vista jurídico para tal assunto.
-
-Ao analisar os objetivos traçados na pesquisa foi possível obter os seguintes resultados em cada um deles:
-
-objetivo principal foi satisfeito ao conseguir aplicar a metodologia de portfólio de Markowitz no mercado de criptomoedas.
-
-Já nos objetivos específicos, que compreendiam: conceituar criptomoedas como ativos financeiro, diferenciar o mercado criptoativo do mercado de renda variável, analisar os impactos das regulações desse setor no Brasil e comparar o resultado da utilização do método contra uma seleção de portifólio igualmente distribuído.
-
-O objetivo específico conceituar criptomoedas como ativos financeiros foi satisfeito ao realizar a revisão de literatura.
-
-O objetivo específico diferenciar o mercado criptoativo do mercado de renda variável foi satisfeito ao verificar sobre os pontos regulatórios e tecnológicos que ambos diferem.
-
-O objetivo específico analisar os impactos das regulações desse setor no Brasil foi satisfeito ao verificar que com a criação da lei 14.478/2022 ficou definido a classificação de criptomoeda, a equiparação das empresas prestadoras de serviços de criptomoedas com instituições financeiras e elas estariam sujeitas, ao conduzir operações relacionadas a aos ativos digitais, ao código de defesa do consumidor.
-
-O objetivo específico comparar o resultado da utilização do método contra uma seleção de portifólio igualmente distribuído foi satisfeito ao resultar na melhora de performance do portfólio.
-
-Portanto, destaca-se nesse estudo, o fato do Brasil ser uns dos poucos países a ter uma legislação própria sobre criptomoedas e a limitar as corretoras de criptomoedas que operam sobre o território nacional, no qual são sujeitas a fiscalização. É valido verificar se com a presença dessa nova legislação irá impactar positivamente na adesão da população para utilização das criptomoedas como um investimento de curto, médio e longo prazo.
-
-Além disso como pontos de aprofundamento sobre a teoria utilizada, seria interessante a alocação de um ou mais ativos negativamente correlacionado na carteira a fim de verificar a performance do portfólio.
-
-Da mesma forma, seria interessante verificar a utilização das criptomoedas como um ativo diversificador de investimento em uma carteira de renda variável.
-
-Também seria interessante uma comparação entre os retornos obtidos através de uma carteira de criptomoedas otimizada, uma carteira de renda variável otimizada e uma carteira otimizada composta de criptomoedas e renda variável.
-
-Por outra lado, a utilização de outros teorias de otimização de portfólio poderia trazer novas perspectivas e resultados, alguns exemplos de teorias de otimização de portfólio a ser aplicadas são: Valor ao risco (Var), Valor condicional ao risco (CVar) e abordagem de Fuzzy (fuzzy approach).
-
-Por fim vale a pena destacar que devido a sua natureza especulativa fosse interessante uma análise das finanças comportamentais.
 
 # BIBLIOGRAFIA {#sec-Bibliografia}
